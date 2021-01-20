@@ -7,6 +7,6 @@ namespace tggd::common
 	protected:
 		virtual SDL_Renderer* GetMainRenderer() const = 0;
 	public:
-		virtual void Draw() = 0;
+		virtual void Draw() const = 0;
 	};
 }

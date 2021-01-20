@@ -23,6 +23,7 @@
     <ClCompile Include="Common\main.cpp" />
     <ClCompile Include="Common\SoundManager.cpp" />
     <ClCompile Include="Common\Utility.cpp" />
+    <ClCompile Include="FortuneHunterApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h" />
@@ -31,6 +32,7 @@
     <ClInclude Include="Common\SoundManager.h" />
     <ClInclude Include="Common\Updater.h" />
     <ClInclude Include="Common\Utility.h" />
+    <ClInclude Include="FortuneHunterApplication.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
