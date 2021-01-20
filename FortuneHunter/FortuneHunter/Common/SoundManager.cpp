@@ -120,7 +120,7 @@ namespace tggd::common
 	{
 	}
 
-	void SoundManager::Start(const std::string& sfxFileName, const std::string& muxFileName)
+	void SoundManager::StartSound(const std::string& sfxFileName)
 	{
 		std::ifstream input(sfxFileName);
 		if (input.is_open())
@@ -138,6 +138,32 @@ namespace tggd::common
 			}
 			input.close();
 		}
+	}
+
+	void SoundManager::StartMusic(const std::string& muxFileName)
+	{
+		std::ifstream input(muxFileName);
+		if (input.is_open())
+		{
+			std::string line;
+			while (std::getline(input, line))
+			{
+				auto position = line.find('=');
+				if (position != std::string::npos)
+				{
+					std::string name = line.substr(0, position);
+					std::string fileName = line.substr(position + 1);
+					AddMusic(name, fileName);
+				}
+			}
+			input.close();
+		}
+	}
+
+	void SoundManager::Start(const std::string& sfxFileName, const std::string& muxFileName)
+	{
+		StartSound(sfxFileName);
+		StartMusic(muxFileName);
 	}
 }
 

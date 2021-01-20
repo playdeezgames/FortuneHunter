@@ -15,6 +15,8 @@ namespace tggd::common
 
 		bool muted;
 
+		void StartSound(const std::string&);
+		void StartMusic(const std::string&);
 		void FinishSound();
 		void FinishMusic();
 		void AddSound(const std::string&, const std::string&);
