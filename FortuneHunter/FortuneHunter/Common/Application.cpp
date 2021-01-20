@@ -3,6 +3,10 @@
 #include "SDL_mixer.h"
 namespace tggd::common
 {
+	const int MIXER_FREQUENCY = 44100;
+	const int CHANNEL_COUNT = 2;
+	const int CHUNK_SIZE = 1024;
+
 	Application* Application::s_application = nullptr;
 
 	Application::Application(int width, int height, const std::string& title)
@@ -22,7 +26,7 @@ namespace tggd::common
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
 		Mix_Init(MIX_INIT_OGG);
-		Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+		Mix_OpenAudio(MIXER_FREQUENCY, MIX_DEFAULT_FORMAT, CHANNEL_COUNT, CHUNK_SIZE);
 		SDL_CreateWindowAndRenderer(
 			s_application->windowWidth,
 			s_application->windowHeight,

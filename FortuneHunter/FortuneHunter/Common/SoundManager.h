@@ -20,6 +20,7 @@ namespace tggd::common
 	public:
 		SoundManager();
 
+		void Start(const std::string&, const std::string&);
 		void Finish();
 
 		void AddSound(const std::string&, const std::string&);

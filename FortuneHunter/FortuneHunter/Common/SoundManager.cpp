@@ -115,5 +115,10 @@ namespace tggd::common
 		, muxVolume(MIX_MAX_VOLUME)
 	{
 	}
+
+	void SoundManager::Start(const std::string& sfxFileName, const std::string& muxFileName)
+	{
+		//TODO: load sounds from filename
+	}
 }
 
