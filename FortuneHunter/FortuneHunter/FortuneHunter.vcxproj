@@ -24,6 +24,7 @@
     <ClCompile Include="Common\SoundManager.cpp" />
     <ClCompile Include="Common\Utility.cpp" />
     <ClCompile Include="FortuneHunterApplication.cpp" />
+    <ClCompile Include="Common\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h" />
@@ -35,6 +36,7 @@
     <ClInclude Include="Constants\Config.h" />
     <ClInclude Include="Constants\Window.h" />
     <ClInclude Include="FortuneHunterApplication.h" />
+    <ClInclude Include="Common\TextureManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

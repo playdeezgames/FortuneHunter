@@ -1,5 +1,6 @@
 #include "SoundManager.h"
 #include <fstream>
+#include "Utility.h"
 namespace tggd::common
 {
 	const int ANY_CHANNEL = -1;
@@ -122,41 +123,19 @@ namespace tggd::common
 
 	void SoundManager::StartSound(const std::string& sfxFileName)
 	{
-		std::ifstream input(sfxFileName);
-		if (input.is_open())
+		auto resourceMap = Utility::LoadResourceMap(sfxFileName);
+		for (auto& entry : resourceMap)
 		{
-			std::string line;
-			while (std::getline(input, line))
-			{
-				auto position = line.find('=');
-				if (position != std::string::npos)
-				{
-					std::string name = line.substr(0, position);
-					std::string fileName = line.substr(position + 1);
-					AddSound(name, fileName);
-				}
-			}
-			input.close();
+			AddSound(entry.first, entry.second);
 		}
 	}
 
 	void SoundManager::StartMusic(const std::string& muxFileName)
 	{
-		std::ifstream input(muxFileName);
-		if (input.is_open())
+		auto resourceMap = Utility::LoadResourceMap(muxFileName);
+		for (auto& entry : resourceMap)
 		{
-			std::string line;
-			while (std::getline(input, line))
-			{
-				auto position = line.find('=');
-				if (position != std::string::npos)
-				{
-					std::string name = line.substr(0, position);
-					std::string fileName = line.substr(position + 1);
-					AddMusic(name, fileName);
-				}
-			}
-			input.close();
+			AddMusic(entry.first, entry.second);
 		}
 	}
 

@@ -6,5 +6,6 @@ namespace Constants::Config
 	{
 		const std::string SFX = "config/sfx.txt";
 		const std::string MUX = "config/mux.txt";
+		const std::string TEXTURES = "config/textures.txt";
 	}
 }

@@ -6,18 +6,21 @@ FortuneHunterApplication FortuneHunterApplication::application;
 FortuneHunterApplication::FortuneHunterApplication()
 	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
 	, soundManager()
+	, textureManager()
 {
 
 }
 
 void FortuneHunterApplication::Start()
 {
+	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 }
 
 void FortuneHunterApplication::Finish()
 {
 	soundManager.Finish();
+	textureManager.Finish();
 }
 
 void FortuneHunterApplication::Update(int milliSeconds)
