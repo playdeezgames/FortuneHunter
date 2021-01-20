@@ -2,6 +2,7 @@
 #include "Common\Application.h"
 #include "Common\SoundManager.h"
 #include "Common\TextureManager.h"
+#include "Common\Sprite.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:

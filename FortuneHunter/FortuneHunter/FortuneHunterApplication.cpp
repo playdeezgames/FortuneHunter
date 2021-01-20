@@ -1,6 +1,7 @@
 #include "FortuneHunterApplication.h"
 #include "Constants\Window.h"
 #include "Constants\Config.h"
+#include "Constants\Color.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -15,6 +16,7 @@ void FortuneHunterApplication::Start()
 {
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
+	SDL_Rect source = { 16, 0, 16, 16 };
 }
 
 void FortuneHunterApplication::Finish()
@@ -30,7 +32,7 @@ void FortuneHunterApplication::Update(int milliSeconds)
 
 void FortuneHunterApplication::Draw() const
 {
-
+	SDL_RenderClear(GetMainRenderer());
 }
 
 bool FortuneHunterApplication::OnEvent(const SDL_Event& evt)
@@ -39,12 +41,6 @@ bool FortuneHunterApplication::OnEvent(const SDL_Event& evt)
 	{
 	case SDL_QUIT:
 		return false;
-	case SDL_KEYDOWN:
-		if (evt.key.keysym.sym == SDLK_SPACE)
-		{
-			soundManager.PlaySound("ting");
-		}
-		return true;
 	default:
 		return true;
 	}
