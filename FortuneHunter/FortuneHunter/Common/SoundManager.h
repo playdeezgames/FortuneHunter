@@ -17,18 +17,18 @@ namespace tggd::common
 
 		void FinishSound();
 		void FinishMusic();
+		void AddSound(const std::string&, const std::string&);
+		void AddMusic(const std::string&, const std::string&);
 	public:
 		SoundManager();
 
 		void Start(const std::string&, const std::string&);
 		void Finish();
 
-		void AddSound(const std::string&, const std::string&);
 		void PlaySound(const std::string&) const;
 		void SetSfxVolume(int);
 		int GetSfxVolume() const;
 
-		void AddMusic(const std::string&, const std::string&);
 		void PlayMusic(const std::string&) const;
 		void SetMuxVolume(int);
 		int GetMuxVolume() const;

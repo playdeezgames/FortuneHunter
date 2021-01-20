@@ -1,5 +1,6 @@
 #include "FortuneHunterApplication.h"
 #include "Constants\Window.h"
+#include "Constants\Config.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -11,12 +12,12 @@ FortuneHunterApplication::FortuneHunterApplication()
 
 void FortuneHunterApplication::Start()
 {
-
+	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 }
 
 void FortuneHunterApplication::Finish()
 {
-
+	soundManager.Finish();
 }
 
 void FortuneHunterApplication::Update(int milliSeconds)
@@ -35,6 +36,12 @@ bool FortuneHunterApplication::OnEvent(const SDL_Event& evt)
 	{
 	case SDL_QUIT:
 		return false;
+	case SDL_KEYDOWN:
+		if (evt.key.keysym.sym == SDLK_SPACE)
+		{
+			soundManager.PlaySound("ting");
+		}
+		return true;
 	default:
 		return true;
 	}

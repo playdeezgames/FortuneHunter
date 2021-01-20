@@ -1,4 +1,5 @@
 #include "SoundManager.h"
+#include <fstream>
 namespace tggd::common
 {
 	const int ANY_CHANNEL = -1;
@@ -53,7 +54,10 @@ namespace tggd::common
 		if (!muted)
 		{
 			const auto& item = sounds.find(name);
-			Mix_PlayChannel(ANY_CHANNEL, item->second , NO_LOOPS);
+			if (item != sounds.end())
+			{
+				Mix_PlayChannel(ANY_CHANNEL, item->second, NO_LOOPS);
+			}
 		}
 	}
 
@@ -118,7 +122,22 @@ namespace tggd::common
 
 	void SoundManager::Start(const std::string& sfxFileName, const std::string& muxFileName)
 	{
-		//TODO: load sounds from filename
+		std::ifstream input(sfxFileName);
+		if (input.is_open())
+		{
+			std::string line;
+			while (std::getline(input, line))
+			{
+				auto position = line.find('=');
+				if (position != std::string::npos)
+				{
+					std::string name = line.substr(0, position);
+					std::string fileName = line.substr(position + 1);
+					AddSound(name, fileName);
+				}
+			}
+			input.close();
+		}
 	}
 }
 
