@@ -1,12 +1,9 @@
 #include "FortuneHunterApplication.h"
+#include "Constants\Window.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
-const int WINDOW_WIDTH = 640;
-const int WINDOW_HEIGHT = 480;
-const char* WINDOW_TITLE = "Fortune Hunter";
-
 FortuneHunterApplication::FortuneHunterApplication()
-	: Application(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE)
+	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
 	, soundManager()
 {
 

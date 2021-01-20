@@ -32,6 +32,7 @@
     <ClInclude Include="Common\SoundManager.h" />
     <ClInclude Include="Common\Updater.h" />
     <ClInclude Include="Common\Utility.h" />
+    <ClInclude Include="Constants\Window.h" />
     <ClInclude Include="FortuneHunterApplication.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

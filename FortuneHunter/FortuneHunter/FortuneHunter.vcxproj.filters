@@ -53,5 +53,8 @@
     <ClInclude Include="FortuneHunterApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Constants\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
