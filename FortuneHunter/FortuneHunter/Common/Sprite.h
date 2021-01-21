@@ -10,6 +10,7 @@ namespace tggd::common
 	public:
 		Sprite(SDL_Texture*, const SDL_Rect&);
 		void Draw(SDL_Renderer*, int, int, const SDL_Color&) const;
+		int GetWidth() const;
 	};
 }
 

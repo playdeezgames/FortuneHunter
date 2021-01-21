@@ -6,6 +6,7 @@
 #include "Common\SpriteManager.h"
 #include "Common\EventHandlerManager.h"
 #include "Common\RenderManager.h"
+#include "Common\SpriteFont.h"
 #include "Game\GameState.h"
 #include "EventHandlers\MainMenuEventHandler.h"
 #include "Renderers\MainMenuRenderer.h"
@@ -18,6 +19,7 @@ private:
 	tggd::common::SpriteManager spriteManager;
 	tggd::common::EventHandlerManager<GameState> eventHandlers;
 	tggd::common::RenderManager<GameState> renderers;
+	tggd::common::SpriteFont romFont;
 	GameState gameState;
 protected:
 	void Start();

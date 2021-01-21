@@ -21,4 +21,9 @@ namespace tggd::common
 		SDL_RenderCopy(renderer, texture, &source, &rcDst);
 	}
 
+	int Sprite::GetWidth() const
+	{
+		return source.w;
+	}
+
 }

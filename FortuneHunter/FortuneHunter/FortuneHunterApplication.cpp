@@ -11,6 +11,8 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, gameState(GameState::MAIN_MENU)
 	, eventHandlers(gameState)
 	, renderers(gameState)
+	, spriteManager()
+	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
 {
 
 }
@@ -23,7 +25,7 @@ void FortuneHunterApplication::Start()
 
 	eventHandlers.AddEventHandler(GameState::MAIN_MENU, new MainMenuEventHandler());
 
-	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), spriteManager));
+	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont));
 }
 
 void FortuneHunterApplication::Finish()

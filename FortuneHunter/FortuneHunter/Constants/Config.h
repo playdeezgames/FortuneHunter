@@ -8,5 +8,6 @@ namespace Constants::Config
 		const std::string MUX = "config/mux.txt";
 		const std::string TEXTURES = "config/textures.txt";
 		const std::string SPRITES = "config/sprites.txt";
+		const std::string ROMFONT = "config/romfont.txt";
 	}
 }
