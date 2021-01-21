@@ -8,7 +8,7 @@ namespace tggd::common
 
 	}
 
-	void Sprite::Draw(SDL_Renderer* renderer, int x, int y, const SDL_Color& color)
+	void Sprite::Draw(SDL_Renderer* renderer, int x, int y, const SDL_Color& color) const
 	{
 		SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
 		SDL_Rect rcDst =

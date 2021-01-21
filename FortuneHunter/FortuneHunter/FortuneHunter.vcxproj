@@ -26,6 +26,7 @@
     <ClCompile Include="FortuneHunterApplication.cpp" />
     <ClCompile Include="Common\TextureManager.cpp" />
     <ClCompile Include="Common\Sprite.cpp" />
+    <ClCompile Include="Common\SpriteManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h" />
@@ -40,6 +41,7 @@
     <ClInclude Include="FortuneHunterApplication.h" />
     <ClInclude Include="Common\TextureManager.h" />
     <ClInclude Include="Common\Sprite.h" />
+    <ClInclude Include="Common\SpriteManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
