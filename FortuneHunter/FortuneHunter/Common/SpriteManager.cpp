@@ -32,7 +32,6 @@ namespace tggd::common
 
 	void SpriteManager::Start(const TextureManager& textureManager, const std::string& fileName)
 	{
-		//Character00=romfont8x8,0,0,16,16
 		auto resourceMap = Utility::LoadResourceMap(fileName);
 		for (auto& entry : resourceMap)
 		{
@@ -46,7 +45,6 @@ namespace tggd::common
 			Sprite* sprite = new Sprite(texture, source);
 			AddSprite(entry.first, sprite);
 		}
-
 	}
 
 	void SpriteManager::Finish()
