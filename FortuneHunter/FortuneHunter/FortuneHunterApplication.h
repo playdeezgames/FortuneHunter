@@ -11,6 +11,7 @@
 #include "Game\MainMenuState.h"
 #include "EventHandlers\MainMenuEventHandler.h"
 #include "Renderers\MainMenuRenderer.h"
+#include "Common\ControllerManager.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -20,6 +21,7 @@ private:
 	tggd::common::SpriteManager spriteManager;
 	tggd::common::EventHandlerManager<GameState> eventHandlers;
 	tggd::common::RenderManager<GameState> renderers;
+	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
 	GameState gameState;
 	MainMenuState mainMenuState;

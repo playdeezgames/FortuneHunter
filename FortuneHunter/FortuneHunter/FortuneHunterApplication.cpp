@@ -14,12 +14,15 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, renderers(gameState)
 	, spriteManager()
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
+	, controllerManager()
 {
 
 }
 
 void FortuneHunterApplication::Start()
 {
+	controllerManager.Start();
+
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
@@ -35,6 +38,7 @@ void FortuneHunterApplication::Finish()
 	spriteManager.Finish();
 	textureManager.Finish();
 	eventHandlers.Finish();
+	controllerManager.Finish();
 }
 
 void FortuneHunterApplication::Update(int milliSeconds)
