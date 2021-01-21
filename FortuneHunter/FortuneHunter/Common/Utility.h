@@ -11,6 +11,7 @@ namespace tggd::common
 		static void SeedRandomNumberGenerator();
 		static std::map<std::string, std::string> LoadResourceMap(const std::string&);
 		static std::vector<std::string> Tokenize(const std::string&, char);
+		static int StringToInt(const std::string&);
 	};
 }
 

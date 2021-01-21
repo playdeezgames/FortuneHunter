@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <fstream>
+#include <sstream>
 namespace tggd::common
 {
 	std::vector<std::string> Utility::CommandLineToStringVector(int argc, char** argv)
@@ -54,6 +55,7 @@ namespace tggd::common
 				result.push_back(token);
 			}
 			input = input.substr(position + 1);
+			position = input.find(separator);
 		}
 		if (!input.empty())
 		{
@@ -61,5 +63,15 @@ namespace tggd::common
 		}
 		return result;
 	}
+
+	int Utility::StringToInt(const std::string& text)
+	{
+		std::stringstream ss;
+		ss.str(text);
+		int result = 0;
+		ss >> result;
+		return result;
+	}
+
 }
 
