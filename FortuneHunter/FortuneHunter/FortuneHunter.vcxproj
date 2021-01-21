@@ -28,6 +28,7 @@
     <ClCompile Include="Common\Sprite.cpp" />
     <ClCompile Include="Common\SpriteManager.cpp" />
     <ClCompile Include="EventHandlers\MainMenuEventHandler.cpp" />
+    <ClCompile Include="Renderers\MainMenuRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h" />
@@ -46,6 +47,8 @@
     <ClInclude Include="Common\SpriteManager.h" />
     <ClInclude Include="EventHandlers\MainMenuEventHandler.h" />
     <ClInclude Include="Game\GameState.h" />
+    <ClInclude Include="Common\RenderManager.h" />
+    <ClInclude Include="Renderers\MainMenuRenderer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

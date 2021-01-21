@@ -5,8 +5,10 @@
 #include "Common\Sprite.h"
 #include "Common\SpriteManager.h"
 #include "Common\EventHandlerManager.h"
+#include "Common\RenderManager.h"
 #include "Game\GameState.h"
 #include "EventHandlers\MainMenuEventHandler.h"
+#include "Renderers\MainMenuRenderer.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -15,6 +17,7 @@ private:
 	tggd::common::TextureManager textureManager;
 	tggd::common::SpriteManager spriteManager;
 	tggd::common::EventHandlerManager<GameState> eventHandlers;
+	tggd::common::RenderManager<GameState> renderers;
 	GameState gameState;
 protected:
 	void Start();
