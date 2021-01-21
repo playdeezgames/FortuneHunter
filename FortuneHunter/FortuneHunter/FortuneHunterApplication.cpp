@@ -8,6 +8,8 @@ FortuneHunterApplication::FortuneHunterApplication()
 	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
 	, soundManager()
 	, textureManager()
+	, gameState(GameState::MAIN_MENU)
+	, eventHandlers(gameState)
 {
 
 }
@@ -17,6 +19,7 @@ void FortuneHunterApplication::Start()
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
+	eventHandlers.AddEventHandler(GameState::MAIN_MENU, new MainMenuEventHandler());
 }
 
 void FortuneHunterApplication::Finish()
@@ -24,6 +27,7 @@ void FortuneHunterApplication::Finish()
 	soundManager.Finish();
 	spriteManager.Finish();
 	textureManager.Finish();
+	eventHandlers.Finish();
 }
 
 void FortuneHunterApplication::Update(int milliSeconds)
@@ -44,6 +48,6 @@ bool FortuneHunterApplication::OnEvent(const SDL_Event& evt)
 	case SDL_QUIT:
 		return false;
 	default:
-		return true;
+		return eventHandlers.OnEvent(evt);
 	}
 }
