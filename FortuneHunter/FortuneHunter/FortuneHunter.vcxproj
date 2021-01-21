@@ -28,6 +28,7 @@
     <ClCompile Include="Common\Sprite.cpp" />
     <ClCompile Include="Common\SpriteManager.cpp" />
     <ClCompile Include="EventHandlers\MainMenuEventHandler.cpp" />
+    <ClCompile Include="Game\MainMenuState.cpp" />
     <ClCompile Include="Renderers\MainMenuRenderer.cpp" />
     <ClCompile Include="Common\SpriteFont.cpp" />
   </ItemGroup>
@@ -49,6 +50,7 @@
     <ClInclude Include="EventHandlers\MainMenuEventHandler.h" />
     <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Common\RenderManager.h" />
+    <ClInclude Include="Game\MainMenuState.h" />
     <ClInclude Include="Renderers\MainMenuRenderer.h" />
     <ClInclude Include="Common\SpriteFont.h" />
   </ItemGroup>

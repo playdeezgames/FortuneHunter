@@ -9,6 +9,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, soundManager()
 	, textureManager()
 	, gameState(GameState::MAIN_MENU)
+	, mainMenuState(MainMenuState::START)
 	, eventHandlers(gameState)
 	, renderers(gameState)
 	, spriteManager()
@@ -23,9 +24,9 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 
-	eventHandlers.AddEventHandler(GameState::MAIN_MENU, new MainMenuEventHandler());
+	eventHandlers.AddEventHandler(GameState::MAIN_MENU, new MainMenuEventHandler(gameState, mainMenuState));
 
-	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont));
+	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
 }
 
 void FortuneHunterApplication::Finish()
