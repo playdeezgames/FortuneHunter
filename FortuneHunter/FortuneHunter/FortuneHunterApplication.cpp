@@ -16,7 +16,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
 	, controllerManager()
 	, commandProcessors(gameState)
-	, eventHandler(commandProcessors, controllerManager)
+	, eventHandler(commandProcessors, controllerManager, gameState)
 {
 
 }
@@ -54,7 +54,12 @@ void FortuneHunterApplication::Draw() const
 	renderers.Draw();
 }
 
-bool FortuneHunterApplication::OnEvent(const SDL_Event& evt)
+void FortuneHunterApplication::OnEvent(const SDL_Event& evt)
 {
-	return eventHandler.OnEvent(evt);
+	eventHandler.OnEvent(evt);
+}
+
+bool FortuneHunterApplication::IsRunning() const
+{
+	return gameState != GameState::QUIT;
 }

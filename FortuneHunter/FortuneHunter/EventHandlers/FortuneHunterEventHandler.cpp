@@ -2,81 +2,72 @@
 FortuneHunterEventHandler::FortuneHunterEventHandler
 	(
 		tggd::common::CommandProcessorManager<GameState, Command>& commandProcessors,
-		tggd::common::ControllerManager& controllerManager
+		tggd::common::ControllerManager& controllerManager,
+		GameState& gameState
 	)
 	: commandProcessors(commandProcessors)
 	, controllerManager(controllerManager)
+	, gameState(gameState)
 {
 
 }
 
-bool FortuneHunterEventHandler::OnKeyDown(const SDL_KeyboardEvent& evt)
+void FortuneHunterEventHandler::OnKeyDown(const SDL_KeyboardEvent& evt)
 {
 	switch (evt.keysym.sym)
 	{
 	case SDLK_UP:
 		commandProcessors.OnCommand(Command::UP);
-		return true;
+		return;
 	case SDLK_DOWN:
 		commandProcessors.OnCommand(Command::DOWN);
-		return true;
+		return;
 	}
-	return true;
 }
 
-bool FortuneHunterEventHandler::OnJoyAxis(const SDL_JoyAxisEvent& evt)
+void FortuneHunterEventHandler::OnJoyAxis(const SDL_JoyAxisEvent& evt)
 {
-	if (controllerManager.IsController(evt.which))
+	if (!controllerManager.IsController(evt.which))
 	{
-		return true;//it should be handled by the game controller events, not here
-	}
-	else
-	{
-		return true;
 	}
 }
 
-bool FortuneHunterEventHandler::OnJoyButtonDown(const SDL_JoyButtonEvent& evt)
+void FortuneHunterEventHandler::OnJoyButtonDown(const SDL_JoyButtonEvent& evt)
 {
-	if (controllerManager.IsController(evt.which))
+	if (!controllerManager.IsController(evt.which))
 	{
-		return true;//it should be handled by the game controller events, not here
-	}
-	else
-	{
-		return true;
 	}
 }
 
-bool FortuneHunterEventHandler::OnControllerAxis(const SDL_ControllerAxisEvent& evt)
+void FortuneHunterEventHandler::OnControllerAxis(const SDL_ControllerAxisEvent& evt)
 {
-	return true;
 }
 
-bool FortuneHunterEventHandler::OnControllerButtonDown(const SDL_ControllerButtonEvent& evt)
+void FortuneHunterEventHandler::OnControllerButtonDown(const SDL_ControllerButtonEvent& evt)
 {
-	return true;
 }
 
-
-
-bool FortuneHunterEventHandler::OnEvent(const SDL_Event& evt)
+void FortuneHunterEventHandler::OnEvent(const SDL_Event& evt)
 {
 	switch (evt.type)
 	{
 	case SDL_QUIT:
-		return false;
+		gameState = GameState::QUIT;
+		return;
 	case SDL_KEYDOWN:
-		return OnKeyDown(evt.key);
+		OnKeyDown(evt.key);
+		return;
 	case SDL_JOYAXISMOTION:
-		return OnJoyAxis(evt.jaxis);
+		OnJoyAxis(evt.jaxis);
+		return;
 	case SDL_JOYBUTTONDOWN:
-		return OnJoyButtonDown(evt.jbutton);
+		OnJoyButtonDown(evt.jbutton);
+		return;
 	case SDL_CONTROLLERAXISMOTION:
-		return OnControllerAxis(evt.caxis);
+		OnControllerAxis(evt.caxis);
+		return;
 	case SDL_CONTROLLERBUTTONDOWN:
-		return OnControllerButtonDown(evt.cbutton);
-	default:
-		return true;
+		OnControllerButtonDown(evt.cbutton);
+		return;
 	}
 }

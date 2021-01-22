@@ -7,19 +7,21 @@
 class FortuneHunterEventHandler : public tggd::common::EventHandler
 {
 private:
+	GameState& gameState;
 	tggd::common::CommandProcessorManager<GameState, Command>& commandProcessors;
 	tggd::common::ControllerManager& controllerManager;
-	bool OnKeyDown(const SDL_KeyboardEvent&);
-	bool OnJoyAxis(const SDL_JoyAxisEvent&);
-	bool OnJoyButtonDown(const SDL_JoyButtonEvent&);
-	bool OnControllerAxis(const SDL_ControllerAxisEvent&);
-	bool OnControllerButtonDown(const SDL_ControllerButtonEvent&);
+	void OnKeyDown(const SDL_KeyboardEvent&);
+	void OnJoyAxis(const SDL_JoyAxisEvent&);
+	void OnJoyButtonDown(const SDL_JoyButtonEvent&);
+	void OnControllerAxis(const SDL_ControllerAxisEvent&);
+	void OnControllerButtonDown(const SDL_ControllerButtonEvent&);
 public:
 	FortuneHunterEventHandler
 		(
 			tggd::common::CommandProcessorManager<GameState, Command>&,
-			tggd::common::ControllerManager&
+			tggd::common::ControllerManager&,
+			GameState&
 		);
-	bool OnEvent(const SDL_Event&);
+	void OnEvent(const SDL_Event&);
 
 };

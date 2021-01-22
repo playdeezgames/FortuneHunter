@@ -31,9 +31,10 @@ protected:
 	void Start();
 	void Finish();
 	void Update(int);
+	bool IsRunning() const;
 public:
 	FortuneHunterApplication();
 	void Draw() const;
-	bool OnEvent(const SDL_Event&);
+	void OnEvent(const SDL_Event&);
 };
 

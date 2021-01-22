@@ -42,7 +42,7 @@ namespace tggd::common
 		int oldCounter = SDL_GetTicks();
 		int frameCounter;
 		SDL_Event evt;
-		for (;;)
+		while(s_application->IsRunning())
 		{
 			frameCounter = SDL_GetTicks();
 			s_application->Update(frameCounter - oldCounter);
@@ -51,10 +51,7 @@ namespace tggd::common
 			SDL_RenderPresent(s_application->renderer);
 			if (SDL_PollEvent(&evt))
 			{
-				if (!s_application->OnEvent(evt))
-				{
-					break;
-				}
+				s_application->OnEvent(evt);
 			}
 		}
 

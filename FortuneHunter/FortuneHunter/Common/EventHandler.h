@@ -5,6 +5,6 @@ namespace tggd::common
 	class EventHandler
 	{
 	public:
-		virtual bool OnEvent(const SDL_Event&) = 0;
+		virtual void OnEvent(const SDL_Event&) = 0;
 	};
 }
