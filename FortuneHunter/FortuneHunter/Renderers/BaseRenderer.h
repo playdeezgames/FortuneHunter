@@ -1,6 +1,6 @@
 #pragma once
-#include "..\Common\Renderer.h"
-#include "..\Common\SpriteFont.h"
+#include "..\Common\Interfaces\Renderer.h"
+#include "..\Common\Graphics\SpriteFont.h"
 class BaseRenderer : public tggd::common::Renderer
 {
 private:

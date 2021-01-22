@@ -1,5 +1,5 @@
 #include "SpriteManager.h"
-#include "Utility.h"
+#include "..\Utility.h"
 namespace tggd::common
 {
 	void SpriteManager::AddSprite(const std::string& name, Sprite* sprite)

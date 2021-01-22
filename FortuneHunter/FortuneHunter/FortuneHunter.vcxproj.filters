@@ -27,25 +27,10 @@
     <ClCompile Include="FortuneHunterApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\TextureManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\SpriteManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Renderers\MainMenuRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\SpriteFont.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game\MainMenuState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\ControllerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CommandProcessors\MainMenuCommandProcessor.cpp">
@@ -66,18 +51,24 @@
     <ClCompile Include="Common\Managers\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Common\Managers\ControllerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Managers\SpriteManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Managers\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Graphics\Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Graphics\SpriteFont.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\EventHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Updater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Common\Utility.h">
@@ -92,43 +83,19 @@
     <ClInclude Include="Constants\Config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\TextureManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Constants\Color.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\SpriteManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\RenderManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Renderers\MainMenuRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\SpriteFont.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\MainMenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\ControllerManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Command.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\CommandProcessor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\CommandProcessorManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h">
@@ -153,6 +120,39 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Common\Managers\SoundManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Managers\CommandProcessorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Managers\ControllerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Managers\RenderManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Managers\SpriteManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Managers\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Interfaces\CommandProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Interfaces\EventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Interfaces\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Interfaces\Updater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Graphics\Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Graphics\SpriteFont.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

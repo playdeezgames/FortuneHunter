@@ -1,5 +1,5 @@
 #pragma once
-#include "SpriteManager.h"
+#include "..\Managers\SpriteManager.h"
 #include <string>
 #include <map>
 namespace tggd::common

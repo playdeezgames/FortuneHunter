@@ -1,5 +1,5 @@
 #pragma once
-#include "CommandProcessor.h"
+#include "..\Interfaces\CommandProcessor.h"
 #include <map>
 namespace tggd::common
 {

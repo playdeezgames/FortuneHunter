@@ -1,5 +1,5 @@
 #pragma once
-#include "Renderer.h"
+#include "..\Interfaces\Renderer.h"
 #include <map>
 namespace tggd::common
 {

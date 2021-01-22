@@ -2,9 +2,9 @@
 #include <SDL.h>
 #include <string>
 #include <vector>
-#include "Renderer.h"
-#include "Updater.h"
-#include "EventHandler.h"
+#include "Interfaces\Renderer.h"
+#include "Interfaces\Updater.h"
+#include "Interfaces\EventHandler.h"
 namespace tggd::common
 {
 	class Application : public Renderer, public Updater, public EventHandler

@@ -1,7 +1,7 @@
 #pragma once
 #include <map>
 #include <string>
-#include "Sprite.h"
+#include "..\Graphics\Sprite.h"
 #include "TextureManager.h"
 namespace tggd::common
 {

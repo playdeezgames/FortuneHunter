@@ -1,5 +1,5 @@
 #include "TextureManager.h"
-#include "Utility.h"
+#include "..\Utility.h"
 #include <SDL_image.h>
 namespace tggd::common
 {

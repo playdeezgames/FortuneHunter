@@ -1,5 +1,5 @@
 #include "SpriteFont.h"
-#include "Utility.h"
+#include "..\Utility.h"
 namespace tggd::common
 {
 	SpriteFont::SpriteFont(const SpriteManager& spriteManager, const std::string& fileName)

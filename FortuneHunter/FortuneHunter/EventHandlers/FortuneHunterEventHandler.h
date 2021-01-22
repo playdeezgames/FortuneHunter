@@ -1,7 +1,7 @@
 #pragma once
-#include "..\Common\EventHandler.h"
-#include "..\Common\CommandProcessorManager.h"
-#include "..\Common\ControllerManager.h"
+#include "..\Common\Interfaces\EventHandler.h"
+#include "..\Common\Managers\CommandProcessorManager.h"
+#include "..\Common\Managers\ControllerManager.h"
 #include "..\Game\GameState.h"
 #include "..\Game\Command.h"
 class FortuneHunterEventHandler : public tggd::common::EventHandler

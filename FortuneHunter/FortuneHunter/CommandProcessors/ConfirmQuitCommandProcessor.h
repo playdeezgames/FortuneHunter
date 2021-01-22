@@ -1,5 +1,5 @@
 #pragma once
-#include "..\Common\CommandProcessor.h"
+#include "..\Common\Interfaces\CommandProcessor.h"
 #include "..\Game\Command.h"
 #include "..\Game\GameState.h"
 #include "..\Game\ConfirmState.h"
