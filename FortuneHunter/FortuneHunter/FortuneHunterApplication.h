@@ -12,6 +12,7 @@
 #include "Common\ControllerManager.h"
 #include "Common\CommandProcessorManager.h"
 #include "Game\Command.h"
+#include "EventHandlers\FortuneHunterEventHandler.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -23,13 +24,9 @@ private:
 	tggd::common::RenderManager<GameState> renderers;
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
+	FortuneHunterEventHandler eventHandler;
 	GameState gameState;
 	MainMenuState mainMenuState;
-	bool OnKeyDown(const SDL_KeyboardEvent&);
-	bool OnJoyAxis(const SDL_JoyAxisEvent&);
-	bool OnJoyButtonDown(const SDL_JoyButtonEvent&);
-	bool OnControllerAxis(const SDL_ControllerAxisEvent&);
-	bool OnControllerButtonDown(const SDL_ControllerButtonEvent&);
 protected:
 	void Start();
 	void Finish();

@@ -25,6 +25,7 @@
     <ClCompile Include="Common\main.cpp" />
     <ClCompile Include="Common\SoundManager.cpp" />
     <ClCompile Include="Common\Utility.cpp" />
+    <ClCompile Include="EventHandlers\FortuneHunterEventHandler.cpp" />
     <ClCompile Include="FortuneHunterApplication.cpp" />
     <ClCompile Include="Common\TextureManager.cpp" />
     <ClCompile Include="Common\Sprite.cpp" />
@@ -47,6 +48,7 @@
     <ClInclude Include="Constants\Color.h" />
     <ClInclude Include="Constants\Config.h" />
     <ClInclude Include="Constants\Window.h" />
+    <ClInclude Include="EventHandlers\FortuneHunterEventHandler.h" />
     <ClInclude Include="FortuneHunterApplication.h" />
     <ClInclude Include="Common\TextureManager.h" />
     <ClInclude Include="Common\Sprite.h" />
