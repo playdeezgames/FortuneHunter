@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandProcessors\MainMenuCommandProcessor.cpp" />
     <ClCompile Include="Common\Application.cpp" />
     <ClCompile Include="Common\ControllerManager.cpp" />
     <ClCompile Include="Common\main.cpp" />
@@ -34,8 +35,10 @@
     <ClCompile Include="Common\SpriteFont.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h" />
     <ClInclude Include="Common\Application.h" />
     <ClInclude Include="Common\CommandProcessor.h" />
+    <ClInclude Include="Common\CommandProcessorManager.h" />
     <ClInclude Include="Common\ControllerManager.h" />
     <ClInclude Include="Common\EventHandler.h" />
     <ClInclude Include="Common\Renderer.h" />
@@ -45,7 +48,6 @@
     <ClInclude Include="Constants\Color.h" />
     <ClInclude Include="Constants\Config.h" />
     <ClInclude Include="Constants\Window.h" />
-    <ClInclude Include="Common\EventHandlerManager.h" />
     <ClInclude Include="FortuneHunterApplication.h" />
     <ClInclude Include="Common\TextureManager.h" />
     <ClInclude Include="Common\Sprite.h" />

@@ -54,6 +54,9 @@
     <ClCompile Include="Common\ControllerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CommandProcessors\MainMenuCommandProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h">
@@ -95,9 +98,6 @@
     <ClInclude Include="Common\SpriteManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\EventHandlerManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EventHandlers\MainMenuEventHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -123,6 +123,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Common\CommandProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\CommandProcessorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

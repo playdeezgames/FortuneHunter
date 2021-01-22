@@ -4,7 +4,6 @@
 #include "Common\TextureManager.h"
 #include "Common\Sprite.h"
 #include "Common\SpriteManager.h"
-#include "Common\EventHandlerManager.h"
 #include "Common\RenderManager.h"
 #include "Common\SpriteFont.h"
 #include "Game\GameState.h"
@@ -12,6 +11,8 @@
 #include "EventHandlers\MainMenuEventHandler.h"
 #include "Renderers\MainMenuRenderer.h"
 #include "Common\ControllerManager.h"
+#include "Common\CommandProcessorManager.h"
+#include "Game\Command.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -19,7 +20,7 @@ private:
 	tggd::common::SoundManager soundManager;
 	tggd::common::TextureManager textureManager;
 	tggd::common::SpriteManager spriteManager;
-	tggd::common::EventHandlerManager<GameState> eventHandlers;
+	tggd::common::CommandProcessorManager<GameState, Command> commandProcessors;
 	tggd::common::RenderManager<GameState> renderers;
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;

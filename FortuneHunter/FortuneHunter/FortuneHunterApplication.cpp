@@ -2,6 +2,7 @@
 #include "Constants\Window.h"
 #include "Constants\Config.h"
 #include "Constants\Color.h"
+#include "CommandProcessors\MainMenuCommandProcessor.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -10,11 +11,11 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, textureManager()
 	, gameState(GameState::MAIN_MENU)
 	, mainMenuState(MainMenuState::START)
-	, eventHandlers(gameState)
 	, renderers(gameState)
 	, spriteManager()
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
 	, controllerManager()
+	, commandProcessors(gameState)
 {
 
 }
@@ -27,17 +28,17 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 
-	eventHandlers.AddEventHandler(GameState::MAIN_MENU, new MainMenuEventHandler(gameState, mainMenuState));
+	commandProcessors.AddCommandProcessor(GameState::MAIN_MENU, new MainMenuCommandProcessor(gameState, mainMenuState));
 
 	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
 }
 
 void FortuneHunterApplication::Finish()
 {
+	commandProcessors.Finish();
 	soundManager.Finish();
 	spriteManager.Finish();
 	textureManager.Finish();
-	eventHandlers.Finish();
 	controllerManager.Finish();
 }
 
@@ -58,7 +59,18 @@ bool FortuneHunterApplication::OnEvent(const SDL_Event& evt)
 	{
 	case SDL_QUIT:
 		return false;
+	case SDL_KEYDOWN:
+		switch (evt.key.keysym.sym)
+		{
+		case SDLK_UP:
+			commandProcessors.OnCommand(Command::UP);
+			return true;
+		case SDLK_DOWN:
+			commandProcessors.OnCommand(Command::DOWN);
+			return true;
+		}
+		return true;
 	default:
-		return eventHandlers.OnEvent(evt);
+		return true;
 	}
 }
