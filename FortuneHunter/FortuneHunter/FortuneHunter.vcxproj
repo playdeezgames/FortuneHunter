@@ -62,6 +62,7 @@
     <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Common\RenderManager.h" />
     <ClInclude Include="Game\MainMenuState.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Renderers\BaseRenderer.h" />
     <ClInclude Include="Renderers\ConfirmQuitRenderer.h" />
     <ClInclude Include="Renderers\MainMenuRenderer.h" />

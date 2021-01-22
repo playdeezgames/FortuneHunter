@@ -1,6 +1,8 @@
 #include "SoundManager.h"
 #include <fstream>
 #include "Utility.h"
+#include "..\json.hpp"
+#include <fstream>
 namespace tggd::common
 {
 	const int ANY_CHANNEL = -1;
@@ -123,10 +125,16 @@ namespace tggd::common
 
 	void SoundManager::StartSound(const std::string& sfxFileName)
 	{
-		auto resourceMap = Utility::LoadResourceMap(sfxFileName);
-		for (auto& entry : resourceMap)
+		std::ifstream input(sfxFileName);
+		if (input.is_open())
 		{
-			AddSound(entry.first, entry.second);
+			nlohmann::json j;
+			input >> j;
+			input.close();
+			for (auto& i : j.items())
+			{
+				AddSound(i.key(), i.value());
+			}
 		}
 	}
 
