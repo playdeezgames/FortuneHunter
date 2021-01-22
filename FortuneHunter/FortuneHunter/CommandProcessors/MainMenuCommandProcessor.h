@@ -6,7 +6,7 @@
 class MainMenuCommandProcessor : public tggd::common::CommandProcessor<Command>
 {
 private:
-	GameState& gameState;
+	GameState& gameState;//TODO: put into base command processor
 	MainMenuState& mainMenuState;
 	void DoGreenAction();
 public:
