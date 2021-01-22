@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include "..\json.hpp"
 namespace tggd::common
 {
 	class Utility
@@ -10,6 +11,7 @@ namespace tggd::common
 		static std::vector<std::string> CommandLineToStringVector(int, char**);
 		static void SeedRandomNumberGenerator();
 		static std::map<std::string, std::string> LoadResourceMap(const std::string&);
+		static nlohmann::json LoadJSON(const std::string&);
 		static std::vector<std::string> Tokenize(const std::string&, char);
 		static int StringToInt(const std::string&);
 	};

@@ -6,11 +6,11 @@ namespace tggd::common
 		: spriteManager(spriteManager)
 		, glyphs()
 	{
-		auto resourceMap = Utility::LoadResourceMap(fileName);
-		for (auto& item : resourceMap)
+		nlohmann::json j = Utility::LoadJSON(fileName);
+		for (auto& item : j.items())
 		{
-			char ch = (char)Utility::StringToInt(item.first);
-			glyphs[ch] = item.second;
+			char ch = (char)Utility::StringToInt(item.key());
+			glyphs[ch] = item.value();
 		}
 	}
 

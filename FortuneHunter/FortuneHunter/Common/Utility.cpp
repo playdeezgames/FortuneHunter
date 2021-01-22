@@ -73,5 +73,16 @@ namespace tggd::common
 		return result;
 	}
 
+	nlohmann::json Utility::LoadJSON(const std::string& fileName)
+	{
+		nlohmann::json j;
+		std::ifstream input(fileName);
+		if (input.is_open())
+		{
+			input >> j;
+			input.close();
+		}
+		return j;
+	}
 }
 

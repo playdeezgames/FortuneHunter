@@ -125,25 +125,19 @@ namespace tggd::common
 
 	void SoundManager::StartSound(const std::string& sfxFileName)
 	{
-		std::ifstream input(sfxFileName);
-		if (input.is_open())
+		nlohmann::json j = Utility::LoadJSON(sfxFileName);
+		for (auto& i : j.items())
 		{
-			nlohmann::json j;
-			input >> j;
-			input.close();
-			for (auto& i : j.items())
-			{
-				AddSound(i.key(), i.value());
-			}
+			AddSound(i.key(), i.value());
 		}
 	}
 
 	void SoundManager::StartMusic(const std::string& muxFileName)
 	{
-		auto resourceMap = Utility::LoadResourceMap(muxFileName);
-		for (auto& entry : resourceMap)
+		nlohmann::json j = Utility::LoadJSON(muxFileName);
+		for (auto& i : j.items())
 		{
-			AddMusic(entry.first, entry.second);
+			AddMusic(i.key(), i.value());
 		}
 	}
 
