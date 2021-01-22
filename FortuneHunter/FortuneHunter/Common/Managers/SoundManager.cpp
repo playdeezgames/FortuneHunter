@@ -1,7 +1,6 @@
 #include "SoundManager.h"
 #include <fstream>
-#include "Utility.h"
-#include "..\json.hpp"
+#include "..\Utility.h"
 #include <fstream>
 namespace tggd::common
 {

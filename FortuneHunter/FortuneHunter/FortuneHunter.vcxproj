@@ -24,7 +24,7 @@
     <ClCompile Include="Common\Application.cpp" />
     <ClCompile Include="Common\ControllerManager.cpp" />
     <ClCompile Include="Common\main.cpp" />
-    <ClCompile Include="Common\SoundManager.cpp" />
+    <ClCompile Include="Common\Managers\SoundManager.cpp" />
     <ClCompile Include="Common\Utility.cpp" />
     <ClCompile Include="EventHandlers\FortuneHunterEventHandler.cpp" />
     <ClCompile Include="FortuneHunterApplication.cpp" />
@@ -46,7 +46,7 @@
     <ClInclude Include="Common\ControllerManager.h" />
     <ClInclude Include="Common\EventHandler.h" />
     <ClInclude Include="Common\Renderer.h" />
-    <ClInclude Include="Common\SoundManager.h" />
+    <ClInclude Include="Common\Managers\SoundManager.h" />
     <ClInclude Include="Common\Updater.h" />
     <ClInclude Include="Common\Utility.h" />
     <ClInclude Include="Constants\Color.h" />

@@ -1,6 +1,6 @@
 #pragma once
 #include "Common\Application.h"
-#include "Common\SoundManager.h"
+#include "Common\Managers\SoundManager.h"
 #include "Common\TextureManager.h"
 #include "Common\Sprite.h"
 #include "Common\SpriteManager.h"
