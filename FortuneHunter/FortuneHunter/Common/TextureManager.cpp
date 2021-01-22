@@ -11,10 +11,11 @@ namespace tggd::common
 
 	void TextureManager::Start(SDL_Renderer* renderer, const std::string& fileName)
 	{
-		auto resourceMap = Utility::LoadResourceMap(fileName);
-		for (auto& entry : resourceMap)
+		auto j = Utility::LoadJSON(fileName);
+		for (auto& entry : j.items())
 		{
-			AddTexture(entry.first, IMG_LoadTexture(renderer, entry.second.c_str()));
+			std::string imageFileName = entry.value();
+			AddTexture(entry.key(), IMG_LoadTexture(renderer, imageFileName.c_str()));
 		}
 	}
 

@@ -23,27 +23,26 @@ namespace tggd::common
 		return nullptr;
 	}
 
-	const int TEXTURE_NAME_INDEX = 0;
-	const int TEXTURE_X_INDEX = 1;
-	const int TEXTURE_Y_INDEX = 2;
-	const int TEXTURE_WIDTH_INDEX = 3;
-	const int TEXTURE_HEIGHT_INDEX = 4;
-	const char TEXTURE_SEPARATOR = ',';
+	const std::string PROPERTY_TEXTURE = "texture";
+	const std::string PROPERTY_X = "x";
+	const std::string PROPERTY_Y = "y";
+	const std::string PROPERTY_W = "w";
+	const std::string PROPERTY_H = "h";
 
 	void SpriteManager::Start(const TextureManager& textureManager, const std::string& fileName)
 	{
-		auto resourceMap = Utility::LoadResourceMap(fileName);
-		for (auto& entry : resourceMap)
+		nlohmann::json j = Utility::LoadJSON(fileName);
+		for (auto& item : j.items())
 		{
-			auto properties = Utility::Tokenize(entry.second, TEXTURE_SEPARATOR);
-			SDL_Texture* texture = textureManager.GetTexture(properties[TEXTURE_NAME_INDEX]);
+			auto& properties = item.value();
+			SDL_Texture* texture = textureManager.GetTexture(properties[PROPERTY_TEXTURE]);
 			SDL_Rect source;
-			source.x = Utility::StringToInt(properties[TEXTURE_X_INDEX]);
-			source.y = Utility::StringToInt(properties[TEXTURE_Y_INDEX]);
-			source.w = Utility::StringToInt(properties[TEXTURE_WIDTH_INDEX]);
-			source.h = Utility::StringToInt(properties[TEXTURE_HEIGHT_INDEX]);
+			source.x = properties[PROPERTY_X];
+			source.y = properties[PROPERTY_Y];
+			source.w = properties[PROPERTY_W];
+			source.h = properties[PROPERTY_H];
 			Sprite* sprite = new Sprite(texture, source);
-			AddSprite(entry.first, sprite);
+			AddSprite(item.key(), sprite);
 		}
 	}
 

@@ -1,0 +1,1794 @@
+{
+  "Character00": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character01": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character02": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character03": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character04": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character05": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character06": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character07": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character08": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character09": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character0A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character0B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character0C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character0D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character0E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character0F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "Character10": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character11": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character12": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character13": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character14": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character15": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character16": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character17": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character18": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character19": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character1A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character1B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character1C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character1D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character1E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character1F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "Character20": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character21": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character22": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character23": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character24": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character25": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character26": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character27": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character28": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character29": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character2A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character2B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character2C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character2D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character2E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character2F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Character30": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character31": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character32": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character33": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character34": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character35": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character36": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character37": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character38": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character39": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character3A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character3B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character3C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character3D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character3E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character3F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "Character40": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character41": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character42": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character43": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character44": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character45": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character46": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character47": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character48": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character49": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character4A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character4B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character4C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character4D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character4E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character4F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "Character50": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character51": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character52": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character53": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character54": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character55": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character56": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character57": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character58": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character59": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character5A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character5B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character5C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character5D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character5E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character5F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 80,
+    "w": 16,
+    "h": 16
+  },
+  "Character60": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character61": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character62": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character63": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character64": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character65": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character66": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character67": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character68": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character69": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character6A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character6B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character6C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character6D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character6E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character6F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 96,
+    "w": 16,
+    "h": 16
+  },
+  "Character70": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character71": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character72": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character73": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character74": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character75": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character76": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character77": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character78": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character79": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character7A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character7B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character7C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character7D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character7E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character7F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 112,
+    "w": 16,
+    "h": 16
+  },
+  "Character80": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character81": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character82": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character83": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character84": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character85": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character86": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character87": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character88": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character89": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character8A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character8B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character8C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character8D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character8E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character8F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 128,
+    "w": 16,
+    "h": 16
+  },
+  "Character90": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character91": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character92": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character93": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character94": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character95": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character96": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character97": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character98": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character99": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character9A": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character9B": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character9C": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character9D": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character9E": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "Character9F": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 144,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA0": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA1": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA2": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA3": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA4": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA5": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA6": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA7": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA8": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterA9": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterAA": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterAB": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterAC": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterAD": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterAE": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterAF": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 160,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB0": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB1": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB2": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB3": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB4": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB5": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB6": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB7": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB8": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterB9": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterBA": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterBB": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterBC": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterBD": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterBE": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterBF": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 176,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC0": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC1": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC2": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC3": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC4": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC5": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC6": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC7": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC8": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterC9": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterCA": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterCB": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterCC": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterCD": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterCE": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterCF": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 192,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD0": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD1": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD2": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD3": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD4": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD5": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD6": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD7": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD8": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterD9": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterDA": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterDB": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterDC": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterDD": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterDE": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterDF": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 208,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE0": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE1": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE2": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE3": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE4": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE5": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE6": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE7": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE8": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterE9": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterEA": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterEB": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterEC": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterED": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterEE": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterEF": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 224,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF0": {
+    "texture": "romfont8x8",
+    "x": 0,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF1": {
+    "texture": "romfont8x8",
+    "x": 16,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF2": {
+    "texture": "romfont8x8",
+    "x": 32,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF3": {
+    "texture": "romfont8x8",
+    "x": 48,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF4": {
+    "texture": "romfont8x8",
+    "x": 64,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF5": {
+    "texture": "romfont8x8",
+    "x": 80,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF6": {
+    "texture": "romfont8x8",
+    "x": 96,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF7": {
+    "texture": "romfont8x8",
+    "x": 112,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF8": {
+    "texture": "romfont8x8",
+    "x": 128,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterF9": {
+    "texture": "romfont8x8",
+    "x": 144,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterFA": {
+    "texture": "romfont8x8",
+    "x": 160,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterFB": {
+    "texture": "romfont8x8",
+    "x": 176,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterFC": {
+    "texture": "romfont8x8",
+    "x": 192,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterFD": {
+    "texture": "romfont8x8",
+    "x": 208,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterFE": {
+    "texture": "romfont8x8",
+    "x": 224,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  },
+  "CharacterFF": {
+    "texture": "romfont8x8",
+    "x": 240,
+    "y": 240,
+    "w": 16,
+    "h": 16
+  }
+}

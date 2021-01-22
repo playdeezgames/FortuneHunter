@@ -20,28 +20,6 @@ namespace tggd::common
 		srand((unsigned int)time(nullptr));
 	}
 
-	std::map<std::string, std::string> Utility::LoadResourceMap(const std::string& fileName)
-	{
-		std::map < std::string, std::string> result;
-		std::ifstream input(fileName);
-		if (input.is_open())
-		{
-			std::string line;
-			while (std::getline(input, line))
-			{
-				auto position = line.find('=');
-				if (position != std::string::npos)
-				{
-					std::string name = line.substr(0, position);
-					std::string fileName = line.substr(position + 1);
-					result[name] = fileName;
-				}
-			}
-			input.close();
-		}
-		return result;
-	}
-
 	std::vector<std::string> Utility::Tokenize(const std::string& original, char separator)
 	{
 		std::string input = original;
