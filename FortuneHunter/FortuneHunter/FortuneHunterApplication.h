@@ -13,6 +13,7 @@
 #include "Common\CommandProcessorManager.h"
 #include "Game\Command.h"
 #include "EventHandlers\FortuneHunterEventHandler.h"
+#include "Game\ConfirmState.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -24,9 +25,12 @@ private:
 	tggd::common::RenderManager<GameState> renderers;
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
+
 	FortuneHunterEventHandler eventHandler;
+
 	GameState gameState;
 	MainMenuState mainMenuState;
+	ConfirmState confirmState;
 protected:
 	void Start();
 	void Finish();

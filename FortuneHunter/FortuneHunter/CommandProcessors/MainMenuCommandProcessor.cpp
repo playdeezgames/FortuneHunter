@@ -27,7 +27,7 @@ void MainMenuCommandProcessor::DoGreenAction()
 	switch (mainMenuState)
 	{
 	case MainMenuState::QUIT:
-		gameState = GameState::QUIT;
+		gameState = GameState::CONFIRM_QUIT;
 		break;
 	}
 }

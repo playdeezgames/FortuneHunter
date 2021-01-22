@@ -3,6 +3,8 @@
 #include "Constants\Config.h"
 #include "Constants\Color.h"
 #include "CommandProcessors\MainMenuCommandProcessor.h"
+#include "CommandProcessors\ConfirmQuitCommandProcessor.h"
+#include "Renderers\ConfirmQuitRenderer.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -17,6 +19,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, controllerManager()
 	, commandProcessors(gameState)
 	, eventHandler(commandProcessors, controllerManager, gameState)
+	, confirmState(ConfirmState::NO)
 {
 
 }
@@ -30,8 +33,10 @@ void FortuneHunterApplication::Start()
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 
 	commandProcessors.AddCommandProcessor(GameState::MAIN_MENU, new MainMenuCommandProcessor(gameState, mainMenuState));
+	commandProcessors.AddCommandProcessor(GameState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(gameState, confirmState));
 
 	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
+	renderers.AddRenderer(GameState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
 }
 
 void FortuneHunterApplication::Finish()
