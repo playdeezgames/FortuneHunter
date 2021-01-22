@@ -26,6 +26,11 @@ private:
 	tggd::common::SpriteFont romFont;
 	GameState gameState;
 	MainMenuState mainMenuState;
+	bool OnKeyDown(const SDL_KeyboardEvent&);
+	bool OnJoyAxis(const SDL_JoyAxisEvent&);
+	bool OnJoyButtonDown(const SDL_JoyButtonEvent&);
+	bool OnControllerAxis(const SDL_ControllerAxisEvent&);
+	bool OnControllerButtonDown(const SDL_ControllerButtonEvent&);
 protected:
 	void Start();
 	void Finish();

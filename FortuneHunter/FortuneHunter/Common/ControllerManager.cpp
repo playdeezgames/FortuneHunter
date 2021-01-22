@@ -44,4 +44,10 @@ namespace tggd::common
 		controllers.clear();
 
 	}
+
+	bool ControllerManager::IsController(int which) const
+	{
+		return controllers.contains(which);
+	}
+
 }

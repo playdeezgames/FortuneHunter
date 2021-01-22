@@ -11,5 +11,6 @@ namespace tggd::common
 	public:
 		void Start();
 		void Finish();
+		bool IsController(int) const;
 	};
 }

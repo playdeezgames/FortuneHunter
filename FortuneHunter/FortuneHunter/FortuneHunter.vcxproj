@@ -29,7 +29,6 @@
     <ClCompile Include="Common\TextureManager.cpp" />
     <ClCompile Include="Common\Sprite.cpp" />
     <ClCompile Include="Common\SpriteManager.cpp" />
-    <ClCompile Include="EventHandlers\MainMenuEventHandler.cpp" />
     <ClCompile Include="Game\MainMenuState.cpp" />
     <ClCompile Include="Renderers\MainMenuRenderer.cpp" />
     <ClCompile Include="Common\SpriteFont.cpp" />
@@ -52,7 +51,6 @@
     <ClInclude Include="Common\TextureManager.h" />
     <ClInclude Include="Common\Sprite.h" />
     <ClInclude Include="Common\SpriteManager.h" />
-    <ClInclude Include="EventHandlers\MainMenuEventHandler.h" />
     <ClInclude Include="Game\Command.h" />
     <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Common\RenderManager.h" />
