@@ -22,6 +22,9 @@ void FortuneHunterEventHandler::OnKeyDown(const SDL_KeyboardEvent& evt)
 	case SDLK_DOWN:
 		commandProcessors.OnCommand(Command::DOWN);
 		return;
+	case SDLK_SPACE:
+		commandProcessors.OnCommand(Command::GREEN);
+		return;
 	}
 }
 

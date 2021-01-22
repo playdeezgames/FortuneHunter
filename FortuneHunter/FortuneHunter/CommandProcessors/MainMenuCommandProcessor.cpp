@@ -9,6 +9,9 @@ void MainMenuCommandProcessor::OnCommand(const Command& command)
 	case Command::DOWN:
 		mainMenuState = NextMainMenuState(mainMenuState);
 		break;
+	case Command::GREEN:
+		DoGreenAction();
+		break;
 	}
 }
 
@@ -17,4 +20,14 @@ MainMenuCommandProcessor::MainMenuCommandProcessor(GameState& gameState, MainMen
 	, gameState(gameState)
 {
 
+}
+
+void MainMenuCommandProcessor::DoGreenAction()
+{
+	switch (mainMenuState)
+	{
+	case MainMenuState::QUIT:
+		gameState = GameState::QUIT;
+		break;
+	}
 }
