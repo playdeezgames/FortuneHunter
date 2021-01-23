@@ -3,5 +3,6 @@ enum class UIState
 {
 	MAIN_MENU,
 	CONFIRM_QUIT,
-	QUIT
+	QUIT,
+	IN_PLAY
 };

@@ -6,9 +6,9 @@ class Room
 private:
 	size_t columns;
 	size_t rows;
-	std::vector<RoomCell*> cells;
+	std::vector<RoomCell> cells;
 public:
 	Room(size_t, size_t);
-	~Room();
-	RoomCell* GetCell(size_t, size_t) const;
+	const RoomCell& GetCell(size_t, size_t) const;
+	RoomCell& GetCell(size_t, size_t);
 };

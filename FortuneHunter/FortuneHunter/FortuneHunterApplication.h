@@ -8,7 +8,6 @@
 #include "Common\Graphics\SpriteFont.h"
 #include "UI\UIState.h"
 #include "UI\MainMenuState.h"
-#include "Renderers\MainMenuRenderer.h"
 #include "Common\Managers\ControllerManager.h"
 #include "Common\Managers\CommandProcessorManager.h"
 #include "CommandProcessors\Command.h"

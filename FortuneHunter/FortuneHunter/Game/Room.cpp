@@ -6,24 +6,17 @@ Room::Room(size_t columns, size_t rows)
 {
 	while (cells.size() < columns * rows)
 	{
-		cells.push_back(new RoomCell());
+		cells.push_back(RoomCell());
 	}
 }
 
-Room::~Room()
+const RoomCell& Room::GetCell(size_t column, size_t row) const
 {
-	for (auto& cell : cells)
-	{
-		delete cell;
-		cell = nullptr;
-	}
+	return cells[column + row * columns];
 }
 
-RoomCell* Room::GetCell(size_t column, size_t row) const
+RoomCell& Room::GetCell(size_t column, size_t row)
 {
-	if (column < columns && row < rows)
-	{
-		return cells[column + row * columns];
-	}
-	return nullptr;
+	return cells[column + row * columns];
 }
+

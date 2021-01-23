@@ -4,7 +4,10 @@
 #include "Constants\Color.h"
 #include "CommandProcessors\MainMenuCommandProcessor.h"
 #include "CommandProcessors\ConfirmQuitCommandProcessor.h"
+#include "CommandProcessors\InPlayCommandProcessor.h"
+#include "Renderers\MainMenuRenderer.h"
 #include "Renderers\ConfirmQuitRenderer.h"
+#include "Renderers\InPlayRenderer.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -33,11 +36,13 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 
-	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState));
+	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
+	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
 
 	renderers.AddRenderer(UIState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
 	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
+	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, gameData));
 }
 
 void FortuneHunterApplication::Finish()

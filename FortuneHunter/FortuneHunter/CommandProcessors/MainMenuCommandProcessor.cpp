@@ -15,9 +15,15 @@ void MainMenuCommandProcessor::OnCommand(const Command& command)
 	}
 }
 
-MainMenuCommandProcessor::MainMenuCommandProcessor(UIState& uiState, MainMenuState& mainMenuState)
+MainMenuCommandProcessor::MainMenuCommandProcessor
+	(
+		UIState& uiState, 
+		MainMenuState& mainMenuState,
+		GameData& gameData
+	)
 	: mainMenuState(mainMenuState)
 	, uiState(uiState)
+	, gameData(gameData)
 {
 
 }
@@ -28,6 +34,9 @@ void MainMenuCommandProcessor::DoGreenAction()
 	{
 	case MainMenuState::QUIT:
 		uiState = UIState::CONFIRM_QUIT;
-		break;
+		return;
+	case MainMenuState::START:
+		uiState = UIState::IN_PLAY;
+		return;
 	}
 }
