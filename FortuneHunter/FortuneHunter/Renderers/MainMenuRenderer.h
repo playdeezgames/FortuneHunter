@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseRenderer.h"
-#include "..\Game\MainMenuState.h"
+#include "..\UI\MainMenuState.h"
 class MainMenuRenderer : public BaseRenderer
 {
 private:

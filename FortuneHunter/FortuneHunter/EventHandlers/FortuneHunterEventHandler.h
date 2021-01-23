@@ -2,7 +2,7 @@
 #include "..\Common\Interfaces\EventHandler.h"
 #include "..\Common\Managers\CommandProcessorManager.h"
 #include "..\Common\Managers\ControllerManager.h"
-#include "..\Game\UIState.h"
+#include "..\UI\UIState.h"
 #include "..\CommandProcessors\Command.h"
 class FortuneHunterEventHandler : public tggd::common::EventHandler
 {

@@ -30,9 +30,6 @@
     <ClCompile Include="Renderers\MainMenuRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\MainMenuState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CommandProcessors\MainMenuCommandProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,6 +63,9 @@
     <ClCompile Include="Common\Graphics\SpriteFont.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UI\MainMenuState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h">
@@ -89,9 +89,6 @@
     <ClInclude Include="Renderers\MainMenuRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\MainMenuState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -102,9 +99,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Renderers\ConfirmQuitRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\ConfirmState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Renderers\BaseRenderer.h">
@@ -155,7 +149,13 @@
     <ClInclude Include="CommandProcessors\Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\UIState.h">
+    <ClInclude Include="UI\ConfirmState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\MainMenuState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

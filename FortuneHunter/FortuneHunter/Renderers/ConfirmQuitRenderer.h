@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseRenderer.h"
-#include "..\Game\ConfirmState.h"
+#include "..\UI\ConfirmState.h"
 class ConfirmQuitRenderer : public BaseRenderer
 {
 private:

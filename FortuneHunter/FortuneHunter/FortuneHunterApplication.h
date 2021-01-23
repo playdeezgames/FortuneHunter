@@ -6,14 +6,14 @@
 #include "Common\Managers\SpriteManager.h"
 #include "Common\Managers\RenderManager.h"
 #include "Common\Graphics\SpriteFont.h"
-#include "Game\UIState.h"
-#include "Game\MainMenuState.h"
+#include "UI\UIState.h"
+#include "UI\MainMenuState.h"
 #include "Renderers\MainMenuRenderer.h"
 #include "Common\Managers\ControllerManager.h"
 #include "Common\Managers\CommandProcessorManager.h"
 #include "CommandProcessors\Command.h"
 #include "EventHandlers\FortuneHunterEventHandler.h"
-#include "Game\ConfirmState.h"
+#include "UI\ConfirmState.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:

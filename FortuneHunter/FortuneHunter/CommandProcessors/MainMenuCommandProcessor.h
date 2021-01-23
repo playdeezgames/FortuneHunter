@@ -1,7 +1,7 @@
 #pragma once
 #include "..\Common\Interfaces\CommandProcessor.h"
-#include "..\Game\MainMenuState.h"
-#include "..\Game\UIState.h"
+#include "..\UI\MainMenuState.h"
+#include "..\UI\UIState.h"
 #include "Command.h"
 class MainMenuCommandProcessor : public tggd::common::CommandProcessor<Command>
 {

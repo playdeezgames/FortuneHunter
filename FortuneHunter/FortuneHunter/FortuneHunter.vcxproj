@@ -31,7 +31,7 @@
     <ClCompile Include="Common\Managers\TextureManager.cpp" />
     <ClCompile Include="Common\Graphics\Sprite.cpp" />
     <ClCompile Include="Common\Managers\SpriteManager.cpp" />
-    <ClCompile Include="Game\MainMenuState.cpp" />
+    <ClCompile Include="UI\MainMenuState.cpp" />
     <ClCompile Include="Renderers\BaseRenderer.cpp" />
     <ClCompile Include="Renderers\ConfirmQuitRenderer.cpp" />
     <ClCompile Include="Renderers\MainMenuRenderer.cpp" />
@@ -59,10 +59,10 @@
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
-    <ClInclude Include="Game\ConfirmState.h" />
-    <ClInclude Include="Game\UIState.h" />
+    <ClInclude Include="UI\ConfirmState.h" />
+    <ClInclude Include="UI\UIState.h" />
     <ClInclude Include="Common\Managers\RenderManager.h" />
-    <ClInclude Include="Game\MainMenuState.h" />
+    <ClInclude Include="UI\MainMenuState.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Renderers\BaseRenderer.h" />
     <ClInclude Include="Renderers\ConfirmQuitRenderer.h" />
