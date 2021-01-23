@@ -6,7 +6,7 @@
 #include "Common\Managers\SpriteManager.h"
 #include "Common\Managers\RenderManager.h"
 #include "Common\Graphics\SpriteFont.h"
-#include "Game\GameState.h"
+#include "Game\UIState.h"
 #include "Game\MainMenuState.h"
 #include "Renderers\MainMenuRenderer.h"
 #include "Common\Managers\ControllerManager.h"
@@ -21,14 +21,14 @@ private:
 	tggd::common::SoundManager soundManager;
 	tggd::common::TextureManager textureManager;
 	tggd::common::SpriteManager spriteManager;
-	tggd::common::CommandProcessorManager<GameState, Command> commandProcessors;
-	tggd::common::RenderManager<GameState> renderers;
+	tggd::common::CommandProcessorManager<UIState, Command> commandProcessors;
+	tggd::common::RenderManager<UIState> renderers;
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
 
 	FortuneHunterEventHandler eventHandler;
 
-	GameState gameState;
+	UIState uiState;
 	MainMenuState mainMenuState;
 	ConfirmState confirmState;
 protected:

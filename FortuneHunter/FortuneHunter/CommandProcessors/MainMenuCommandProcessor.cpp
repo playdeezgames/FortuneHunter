@@ -15,9 +15,9 @@ void MainMenuCommandProcessor::OnCommand(const Command& command)
 	}
 }
 
-MainMenuCommandProcessor::MainMenuCommandProcessor(GameState& gameState, MainMenuState& mainMenuState)
+MainMenuCommandProcessor::MainMenuCommandProcessor(UIState& uiState, MainMenuState& mainMenuState)
 	: mainMenuState(mainMenuState)
-	, gameState(gameState)
+	, uiState(uiState)
 {
 
 }
@@ -27,7 +27,7 @@ void MainMenuCommandProcessor::DoGreenAction()
 	switch (mainMenuState)
 	{
 	case MainMenuState::QUIT:
-		gameState = GameState::CONFIRM_QUIT;
+		uiState = UIState::CONFIRM_QUIT;
 		break;
 	}
 }

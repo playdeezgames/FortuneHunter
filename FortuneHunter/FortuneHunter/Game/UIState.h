@@ -1,5 +1,5 @@
 #pragma once
-enum class GameState
+enum class UIState
 {
 	MAIN_MENU,
 	CONFIRM_QUIT,

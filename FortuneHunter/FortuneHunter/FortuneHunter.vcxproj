@@ -60,7 +60,7 @@
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
     <ClInclude Include="Game\ConfirmState.h" />
-    <ClInclude Include="Game\GameState.h" />
+    <ClInclude Include="Game\UIState.h" />
     <ClInclude Include="Common\Managers\RenderManager.h" />
     <ClInclude Include="Game\MainMenuState.h" />
     <ClInclude Include="json.hpp" />

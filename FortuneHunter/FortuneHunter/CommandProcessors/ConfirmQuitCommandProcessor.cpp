@@ -11,10 +11,10 @@ void ConfirmQuitCommandProcessor::OnCommand(const Command& command)
 		switch (confirmState)
 		{
 		case ConfirmState::YES:
-			gameState = GameState::QUIT;
+			uiState = UIState::QUIT;
 			return;
 		case ConfirmState::NO:
-			gameState = GameState::MAIN_MENU;
+			uiState = UIState::MAIN_MENU;
 			return;
 		default:
 			return;
@@ -24,10 +24,10 @@ void ConfirmQuitCommandProcessor::OnCommand(const Command& command)
 
 ConfirmQuitCommandProcessor::ConfirmQuitCommandProcessor
 	(
-		GameState& gameState,
+		UIState& uiState,
 		ConfirmState& confirmState
 	)
-	: gameState(gameState)
+	: uiState(uiState)
 	, confirmState(confirmState)
 {
 

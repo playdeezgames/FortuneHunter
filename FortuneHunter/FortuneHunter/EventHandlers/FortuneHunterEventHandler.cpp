@@ -1,13 +1,13 @@
 #include "FortuneHunterEventHandler.h"
 FortuneHunterEventHandler::FortuneHunterEventHandler
 	(
-		tggd::common::CommandProcessorManager<GameState, Command>& commandProcessors,
+		tggd::common::CommandProcessorManager<UIState, Command>& commandProcessors,
 		tggd::common::ControllerManager& controllerManager,
-		GameState& gameState
+		UIState& uiState
 	)
 	: commandProcessors(commandProcessors)
 	, controllerManager(controllerManager)
-	, gameState(gameState)
+	, uiState(uiState)
 {
 
 }
@@ -121,7 +121,7 @@ void FortuneHunterEventHandler::OnEvent(const SDL_Event& evt)
 	switch (evt.type)
 	{
 	case SDL_QUIT:
-		gameState = GameState::QUIT;
+		uiState = UIState::QUIT;
 		return;
 	case SDL_KEYDOWN:
 		OnKeyDown(evt.key);

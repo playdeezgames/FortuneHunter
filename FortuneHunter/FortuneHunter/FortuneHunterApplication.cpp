@@ -11,14 +11,14 @@ FortuneHunterApplication::FortuneHunterApplication()
 	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
 	, soundManager()
 	, textureManager()
-	, gameState(GameState::MAIN_MENU)
+	, uiState(UIState::MAIN_MENU)
 	, mainMenuState(MainMenuState::START)
-	, renderers(gameState)
+	, renderers(uiState)
 	, spriteManager()
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
 	, controllerManager()
-	, commandProcessors(gameState)
-	, eventHandler(commandProcessors, controllerManager, gameState)
+	, commandProcessors(uiState)
+	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
 {
 
@@ -32,11 +32,11 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 
-	commandProcessors.AddCommandProcessor(GameState::MAIN_MENU, new MainMenuCommandProcessor(gameState, mainMenuState));
-	commandProcessors.AddCommandProcessor(GameState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(gameState, confirmState));
+	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState));
+	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
 
-	renderers.AddRenderer(GameState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
-	renderers.AddRenderer(GameState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
+	renderers.AddRenderer(UIState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
+	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
 }
 
 void FortuneHunterApplication::Finish()
@@ -66,5 +66,5 @@ void FortuneHunterApplication::OnEvent(const SDL_Event& evt)
 
 bool FortuneHunterApplication::IsRunning() const
 {
-	return gameState != GameState::QUIT;
+	return uiState != UIState::QUIT;
 }
