@@ -22,8 +22,35 @@ void FortuneHunterEventHandler::OnKeyDown(const SDL_KeyboardEvent& evt)
 	case SDLK_DOWN:
 		commandProcessors.OnCommand(Command::DOWN);
 		return;
+	case SDLK_LEFT:
+		commandProcessors.OnCommand(Command::LEFT);
+		return;
+	case SDLK_RIGHT:
+		commandProcessors.OnCommand(Command::RIGHT);
+		return;
+	case SDLK_ESCAPE:
+		commandProcessors.OnCommand(Command::BACK);
+		return;
+	case SDLK_RETURN:
+		commandProcessors.OnCommand(Command::START);
+		return;
 	case SDLK_SPACE:
 		commandProcessors.OnCommand(Command::GREEN);
+		return;
+	case SDLK_z:
+		commandProcessors.OnCommand(Command::BLUE);
+		return;
+	case SDLK_x:
+		commandProcessors.OnCommand(Command::YELLOW);
+		return;
+	case SDLK_c:
+		commandProcessors.OnCommand(Command::RED);
+		return;
+	case SDLK_COMMA:
+		commandProcessors.OnCommand(Command::PREVIOUS);
+		return;
+	case SDLK_PERIOD:
+		commandProcessors.OnCommand(Command::NEXT);
 		return;
 	}
 }
@@ -48,6 +75,45 @@ void FortuneHunterEventHandler::OnControllerAxis(const SDL_ControllerAxisEvent& 
 
 void FortuneHunterEventHandler::OnControllerButtonDown(const SDL_ControllerButtonEvent& evt)
 {
+	switch ((SDL_GameControllerButton)evt.button)
+	{
+	case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
+		commandProcessors.OnCommand(Command::DOWN);
+		return;
+	case SDL_CONTROLLER_BUTTON_DPAD_UP:
+		commandProcessors.OnCommand(Command::UP);
+		return;
+	case SDL_CONTROLLER_BUTTON_DPAD_LEFT:
+		commandProcessors.OnCommand(Command::LEFT);
+		return;
+	case SDL_CONTROLLER_BUTTON_DPAD_RIGHT:
+		commandProcessors.OnCommand(Command::RIGHT);
+		return;
+	case SDL_CONTROLLER_BUTTON_A:
+		commandProcessors.OnCommand(Command::GREEN);
+		return;
+	case SDL_CONTROLLER_BUTTON_B:
+		commandProcessors.OnCommand(Command::RED);
+		return;
+	case SDL_CONTROLLER_BUTTON_X:
+		commandProcessors.OnCommand(Command::BLUE);
+		return;
+	case SDL_CONTROLLER_BUTTON_Y:
+		commandProcessors.OnCommand(Command::YELLOW);
+		return;
+	case SDL_CONTROLLER_BUTTON_BACK:
+		commandProcessors.OnCommand(Command::BACK);
+		return;
+	case SDL_CONTROLLER_BUTTON_START:
+		commandProcessors.OnCommand(Command::START);
+		return;
+	case SDL_CONTROLLER_BUTTON_LEFTSHOULDER:
+		commandProcessors.OnCommand(Command::PREVIOUS);
+		return;
+	case SDL_CONTROLLER_BUTTON_RIGHTSHOULDER:
+		commandProcessors.OnCommand(Command::NEXT);
+		return;
+	}
 }
 
 void FortuneHunterEventHandler::OnEvent(const SDL_Event& evt)
