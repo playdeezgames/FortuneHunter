@@ -2,7 +2,7 @@
 #include "..\Common\Interfaces\CommandProcessor.h"
 #include "..\Game\MainMenuState.h"
 #include "..\Game\GameState.h"
-#include "..\Game\Command.h"
+#include "Command.h"
 class MainMenuCommandProcessor : public tggd::common::CommandProcessor<Command>
 {
 private:

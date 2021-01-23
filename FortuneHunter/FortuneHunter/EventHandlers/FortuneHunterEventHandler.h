@@ -3,7 +3,7 @@
 #include "..\Common\Managers\CommandProcessorManager.h"
 #include "..\Common\Managers\ControllerManager.h"
 #include "..\Game\GameState.h"
-#include "..\Game\Command.h"
+#include "..\CommandProcessors\Command.h"
 class FortuneHunterEventHandler : public tggd::common::EventHandler
 {
 private:

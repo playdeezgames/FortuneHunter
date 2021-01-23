@@ -11,7 +11,7 @@
 #include "Renderers\MainMenuRenderer.h"
 #include "Common\Managers\ControllerManager.h"
 #include "Common\Managers\CommandProcessorManager.h"
-#include "Game\Command.h"
+#include "CommandProcessors\Command.h"
 #include "EventHandlers\FortuneHunterEventHandler.h"
 #include "Game\ConfirmState.h"
 class FortuneHunterApplication : public tggd::common::Application

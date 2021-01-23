@@ -1,6 +1,6 @@
 #pragma once
 #include "..\Common\Interfaces\CommandProcessor.h"
-#include "..\Game\Command.h"
+#include "Command.h"
 #include "..\Game\GameState.h"
 #include "..\Game\ConfirmState.h"
 class ConfirmQuitCommandProcessor : public tggd::common::CommandProcessor<Command>

@@ -58,7 +58,7 @@
     <ClInclude Include="Common\Managers\TextureManager.h" />
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
-    <ClInclude Include="Game\Command.h" />
+    <ClInclude Include="CommandProcessors\Command.h" />
     <ClInclude Include="Game\ConfirmState.h" />
     <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Common\Managers\RenderManager.h" />

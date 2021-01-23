@@ -95,9 +95,6 @@
     <ClInclude Include="Game\MainMenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Command.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,6 +153,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Constants\UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandProcessors\Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
