@@ -20,6 +20,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, commandProcessors(uiState)
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
+	, gameData()
 {
 
 }

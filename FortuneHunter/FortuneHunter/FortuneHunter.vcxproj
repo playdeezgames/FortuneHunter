@@ -31,6 +31,9 @@
     <ClCompile Include="Common\Managers\TextureManager.cpp" />
     <ClCompile Include="Common\Graphics\Sprite.cpp" />
     <ClCompile Include="Common\Managers\SpriteManager.cpp" />
+    <ClCompile Include="Game\GameData.cpp" />
+    <ClCompile Include="Game\Room.cpp" />
+    <ClCompile Include="Game\RoomCell.cpp" />
     <ClCompile Include="UI\MainMenuState.cpp" />
     <ClCompile Include="Renderers\BaseRenderer.cpp" />
     <ClCompile Include="Renderers\ConfirmQuitRenderer.cpp" />
@@ -51,6 +54,7 @@
     <ClInclude Include="Common\Utility.h" />
     <ClInclude Include="Constants\Color.h" />
     <ClInclude Include="Constants\Config.h" />
+    <ClInclude Include="Constants\Room.h" />
     <ClInclude Include="Constants\UI.h" />
     <ClInclude Include="Constants\Window.h" />
     <ClInclude Include="EventHandlers\FortuneHunterEventHandler.h" />
@@ -59,6 +63,10 @@
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
+    <ClInclude Include="Game\GameData.h" />
+    <ClInclude Include="Game\Room.h" />
+    <ClInclude Include="Game\RoomCell.h" />
+    <ClInclude Include="Game\Terrain.h" />
     <ClInclude Include="UI\ConfirmState.h" />
     <ClInclude Include="UI\UIState.h" />
     <ClInclude Include="Common\Managers\RenderManager.h" />

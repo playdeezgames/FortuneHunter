@@ -14,6 +14,7 @@
 #include "CommandProcessors\Command.h"
 #include "EventHandlers\FortuneHunterEventHandler.h"
 #include "UI\ConfirmState.h"
+#include "Game\GameData.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -27,6 +28,8 @@ private:
 	tggd::common::SpriteFont romFont;
 
 	FortuneHunterEventHandler eventHandler;
+
+	GameData gameData;
 
 	UIState uiState;
 	MainMenuState mainMenuState;
