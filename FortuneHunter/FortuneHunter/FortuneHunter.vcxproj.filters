@@ -155,5 +155,8 @@
     <ClInclude Include="Common\Graphics\SpriteFont.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Constants\UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

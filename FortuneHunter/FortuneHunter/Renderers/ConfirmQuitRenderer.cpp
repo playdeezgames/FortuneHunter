@@ -1,5 +1,6 @@
 #include "ConfirmQuitRenderer.h"
 #include "..\Constants\Color.h"
+#include "..\Constants\UI.h"
 ConfirmQuitRenderer::ConfirmQuitRenderer
 	(
 		SDL_Renderer* renderer,
@@ -14,6 +15,18 @@ ConfirmQuitRenderer::ConfirmQuitRenderer
 
 void ConfirmQuitRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "No", (confirmState == ConfirmState::NO) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY));
-	GetRomFont().WriteText(GetMainRenderer(), 0, 16, "Yes", (confirmState == ConfirmState::YES) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY));
+	DrawConfirmItem(0, "No", ConfirmState::NO);
+	DrawConfirmItem(1, "Yes", ConfirmState::YES);
+}
+
+void ConfirmQuitRenderer::DrawConfirmItem(int line, const std::string& text, const ConfirmState& state) const
+{
+	GetRomFont().WriteText
+	(
+		GetMainRenderer(),
+		0,
+		Constants::UI::ConfirmQuit::OFFSET_Y + Constants::UI::ConfirmQuit::LINE_HEIGHT * line,
+		text,
+		(confirmState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
+	);
 }

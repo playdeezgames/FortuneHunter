@@ -2,6 +2,9 @@
 enum class MainMenuState
 {
 	START,
+	INSTRUCTIONS,
+	ABOUT,
+	OPTIONS,
 	QUIT
 };
 MainMenuState NextMainMenuState(const MainMenuState&);

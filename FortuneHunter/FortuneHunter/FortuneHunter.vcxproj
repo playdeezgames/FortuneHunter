@@ -51,6 +51,7 @@
     <ClInclude Include="Common\Utility.h" />
     <ClInclude Include="Constants\Color.h" />
     <ClInclude Include="Constants\Config.h" />
+    <ClInclude Include="Constants\UI.h" />
     <ClInclude Include="Constants\Window.h" />
     <ClInclude Include="EventHandlers\FortuneHunterEventHandler.h" />
     <ClInclude Include="FortuneHunterApplication.h" />
