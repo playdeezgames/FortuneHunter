@@ -11,6 +11,7 @@ MainMenuRenderer::MainMenuRenderer(SDL_Renderer* renderer, const tggd::common::S
 
 void MainMenuRenderer::Draw() const
 {
+	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "Welcome to Fortune Hunter!", Constants::Color::GREEN);
 	DrawMenuItem(0, "Start", MainMenuState::START);
 	DrawMenuItem(1, "Instructions", MainMenuState::INSTRUCTIONS);
 	DrawMenuItem(2, "About", MainMenuState::ABOUT);
