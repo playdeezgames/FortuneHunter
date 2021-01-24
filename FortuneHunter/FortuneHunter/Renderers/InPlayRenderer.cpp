@@ -24,7 +24,7 @@ void InPlayRenderer::DrawRoomPanel() const
 			switch (gameData.GetRoom().GetCell(column, row).GetTerrain())
 			{
 			case Terrain::WALL:
-				GetRomFont().WriteGlyph(GetMainRenderer(), x, y, '#', Constants::Color::BLUE);
+				GetRomFont().WriteGlyph(GetMainRenderer(), x, y, '#', Constants::Color::GRAY);
 				break;
 			}
 		}

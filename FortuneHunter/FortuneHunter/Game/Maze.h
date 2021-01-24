@@ -16,4 +16,6 @@ public:
 	MazeCell* GetCell(int, int);
 	const MazeCell* GetCell(int, int) const;
 	void Generate();
+	size_t GetColumns() const;
+	size_t GetRows() const;
 };

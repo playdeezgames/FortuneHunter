@@ -22,9 +22,9 @@ Maze::Maze(size_t columns, size_t rows)
 				{
 					int nextColumn = GetNextColumn(column, row, direction);
 					int nextRow = GetNextRow(column, row, direction);
-					if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < row)
+					if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < rows)
 					{
-						MazeCell* neighbor = GetCell(column, row);
+						MazeCell* neighbor = GetCell(nextColumn, nextRow);
 						MazeDoor* door = new MazeDoor();
 						doors.push_back(door);
 						cell->SetNeighbor(direction, neighbor);
@@ -129,3 +129,14 @@ void Maze::Generate()
 		}
 	}
 }
+
+size_t Maze::GetColumns() const
+{
+	return columns;
+}
+
+size_t Maze::GetRows() const
+{
+	return rows;
+}
+
