@@ -6,4 +6,6 @@ private:
 	Terrain terrain;
 public:
 	RoomCell();
+	Terrain GetTerrain() const;
+	void SetTerrain(Terrain);
 };

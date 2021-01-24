@@ -20,3 +20,12 @@ RoomCell& Room::GetCell(size_t column, size_t row)
 	return cells[column + row * columns];
 }
 
+size_t Room::GetColumns() const
+{
+	return columns;
+}
+
+size_t Room::GetRows() const
+{
+	return rows;
+}

@@ -11,4 +11,6 @@ public:
 	Room(size_t, size_t);
 	const RoomCell& GetCell(size_t, size_t) const;
 	RoomCell& GetCell(size_t, size_t);
+	size_t GetColumns() const;
+	size_t GetRows() const;
 };
