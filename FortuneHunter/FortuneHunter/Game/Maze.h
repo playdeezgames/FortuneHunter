@@ -9,9 +9,11 @@ private:
 	size_t rows;
 	std::vector<MazeCell*> cells;
 	std::vector<MazeDoor*> doors;
+	void Clear();
 public:
 	Maze(size_t, size_t);
 	~Maze();
 	MazeCell* GetCell(int, int);
 	const MazeCell* GetCell(int, int) const;
+	void Generate();
 };

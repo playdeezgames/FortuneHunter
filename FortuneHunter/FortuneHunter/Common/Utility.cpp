@@ -62,5 +62,10 @@ namespace tggd::common
 		}
 		return j;
 	}
+
+	int Utility::GenerateRandomNumberFromRange(int minimum, int maximum)
+	{
+		return rand() % (maximum - minimum) + minimum;
+	}
 }
 
