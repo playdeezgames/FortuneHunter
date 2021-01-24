@@ -33,6 +33,9 @@
     <ClCompile Include="Common\Graphics\Sprite.cpp" />
     <ClCompile Include="Common\Managers\SpriteManager.cpp" />
     <ClCompile Include="Game\GameData.cpp" />
+    <ClCompile Include="Game\Maze.cpp" />
+    <ClCompile Include="Game\MazeCell.cpp" />
+    <ClCompile Include="Game\MazeDoor.cpp" />
     <ClCompile Include="Game\Room.cpp" />
     <ClCompile Include="Game\RoomCell.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
@@ -68,6 +71,9 @@
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
     <ClInclude Include="Game\GameData.h" />
+    <ClInclude Include="Game\Maze.h" />
+    <ClInclude Include="Game\MazeCell.h" />
+    <ClInclude Include="Game\MazeDoor.h" />
     <ClInclude Include="Game\Room.h" />
     <ClInclude Include="Game\RoomCell.h" />
     <ClInclude Include="Game\Terrain.h" />
