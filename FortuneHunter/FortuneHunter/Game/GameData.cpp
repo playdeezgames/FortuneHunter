@@ -1,6 +1,7 @@
 #include "GameData.h"
 #include "..\Constants\Room.h"
 #include "Maze.h"
+#include "..\Common\Utility.h"
 GameData::GameData()
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS)
 {
@@ -73,6 +74,16 @@ GameData::GameData()
 				}
 			}
 			cell.SetTerrain(flagMap[flags]);
+		}
+	}
+	Creature* creature = new Creature(CreatureType::HUNTER);
+	while (creature->GetRoomCell() == nullptr)
+	{
+		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
+		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
+		if (room.GetCell(column, row).GetTerrain() == Terrain::FLOOR)
+		{
+			room.GetCell(column, row).SetCreature(creature);
 		}
 	}
 }
