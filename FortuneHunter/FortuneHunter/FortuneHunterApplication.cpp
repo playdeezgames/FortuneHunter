@@ -31,6 +31,9 @@ FortuneHunterApplication::FortuneHunterApplication()
 
 void FortuneHunterApplication::Start()
 {
+	tggd::common::Utility::SeedRandomNumberGenerator();
+
+	gameData.Start();
 	controllerManager.Start();
 
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
