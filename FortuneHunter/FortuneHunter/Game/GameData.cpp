@@ -9,9 +9,10 @@ GameData::GameData()
 	{
 		for (int row = 0; row < room.GetRows(); ++row)
 		{
-			room.GetCell(column, row).SetTerrain((column % 2 == 1 && row % 2 == 1) ? (Terrain::FLOOR) : (Terrain::WALL_NESW));
+			room.GetCell(column, row)->SetTerrain((column % 2 == 1 && row % 2 == 1) ? (Terrain::FLOOR) : (Terrain::WALL_NESW));
 		}
 	}
+	tggd::common::Utility::SeedRandomNumberGenerator();
 	Maze maze(Constants::Maze::COLUMNS, Constants::Maze::ROWS);
 	maze.Generate();
 	for (int column = 0; column < maze.GetColumns(); ++column)
@@ -21,11 +22,11 @@ GameData::GameData()
 			MazeCell* cell = maze.GetCell(column, row);
 			if (cell->HasDoor(MazeDirection::EAST) && cell->GetDoor(MazeDirection::EAST)->IsOpen())
 			{
-				room.GetCell((size_t)column * 2 + 2, (size_t)row * 2 + 1).SetTerrain(Terrain::FLOOR);
+				room.GetCell((size_t)column * 2 + 2, (size_t)row * 2 + 1)->SetTerrain(Terrain::FLOOR);
 			}
 			if (cell->HasDoor(MazeDirection::SOUTH) && cell->GetDoor(MazeDirection::SOUTH)->IsOpen())
 			{
-				room.GetCell((size_t)column * 2 + 1, (size_t)row * 2 + 2).SetTerrain(Terrain::FLOOR);
+				room.GetCell((size_t)column * 2 + 1, (size_t)row * 2 + 2)->SetTerrain(Terrain::FLOOR);
 			}
 		}
 	}
@@ -52,28 +53,28 @@ GameData::GameData()
 	{
 		for (int row = 0; row < room.GetRows(); ++row)
 		{
-			RoomCell& cell = room.GetCell(column, row);
+			RoomCell* cell = room.GetCell(column, row);
 			int flags = 0;
-			if (cell.GetTerrain() != Terrain::FLOOR)
+			if (cell->GetTerrain() != Terrain::FLOOR)
 			{
-				if (row == 0 || room.GetCell(column, (size_t)row - 1).GetTerrain() != Terrain::FLOOR)
+				if (row == 0 || room.GetCell(column, (size_t)row - 1)->GetTerrain() != Terrain::FLOOR)
 				{
 					flags |= 1;
 				}
-				if (row == Constants::Room::ROWS - 1 || room.GetCell(column, (size_t)row + 1).GetTerrain() != Terrain::FLOOR)
+				if (row == Constants::Room::ROWS - 1 || room.GetCell(column, (size_t)row + 1)->GetTerrain() != Terrain::FLOOR)
 				{
 					flags |= 4;
 				}
-				if (column == 0 || room.GetCell((size_t)column - 1, row).GetTerrain() != Terrain::FLOOR)
+				if (column == 0 || room.GetCell((size_t)column - 1, row)->GetTerrain() != Terrain::FLOOR)
 				{
 					flags |= 8;
 				}
-				if (column == Constants::Room::COLUMNS - 1 || room.GetCell((size_t)column+1, row).GetTerrain() != Terrain::FLOOR)
+				if (column == Constants::Room::COLUMNS - 1 || room.GetCell((size_t)column+1, row)->GetTerrain() != Terrain::FLOOR)
 				{
 					flags |= 2;
 				}
 			}
-			cell.SetTerrain(flagMap[flags]);
+			cell->SetTerrain(flagMap[flags]);
 		}
 	}
 	Creature* creature = new Creature(CreatureType::HUNTER);
@@ -81,9 +82,9 @@ GameData::GameData()
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
-		if (room.GetCell(column, row).GetTerrain() == Terrain::FLOOR)
+		if (room.GetCell(column, row)->GetTerrain() == Terrain::FLOOR)
 		{
-			room.GetCell(column, row).SetCreature(creature);
+			room.GetCell(column, row)->SetCreature(creature);
 		}
 	}
 }

@@ -2,20 +2,36 @@
 Room::Room(size_t columns, size_t rows)
 	: columns(columns)
 	, rows(rows)
-	, cells(columns * rows)
+	, cells()
 {
-	while (cells.size() < columns * rows)
+	for (size_t row = 0; row < rows; ++row)
 	{
-		cells.push_back(RoomCell());
+		for (size_t column = 0; column < columns; ++column)
+		{
+			cells.push_back(new RoomCell(column, row));
+		}
 	}
 }
 
-const RoomCell& Room::GetCell(size_t column, size_t row) const
+Room::~Room()
+{
+	for (auto& item : cells)
+	{
+		if (item)
+		{
+			delete item;
+			item = nullptr;
+		}
+	}
+}
+
+
+const RoomCell* Room::GetCell(size_t column, size_t row) const
 {
 	return cells[column + row * columns];
 }
 
-RoomCell& Room::GetCell(size_t column, size_t row)
+RoomCell* Room::GetCell(size_t column, size_t row)
 {
 	return cells[column + row * columns];
 }

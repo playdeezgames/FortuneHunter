@@ -1,7 +1,9 @@
 #include "RoomCell.h"
-RoomCell::RoomCell()
+RoomCell::RoomCell(size_t column, size_t row)
 	: terrain(Terrain::FLOOR)
 	, creature(nullptr)
+	, column(column)
+	, row(row)
 {
 
 }
@@ -37,4 +39,23 @@ const Creature* RoomCell::GetCreature() const
 Creature* RoomCell::GetCreature()
 {
 	return creature;
+}
+
+size_t RoomCell::GetColumn() const
+{
+	return column;
+}
+
+size_t RoomCell::GetRow() const
+{
+	return row;
+}
+
+RoomCell::~RoomCell()
+{
+	if (creature)
+	{
+		delete creature;
+		creature = nullptr;
+	}
 }

@@ -8,6 +8,7 @@
 #include "Renderers\MainMenuRenderer.h"
 #include "Renderers\ConfirmQuitRenderer.h"
 #include "Renderers\InPlayRenderer.h"
+#include "Common\Utility.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
