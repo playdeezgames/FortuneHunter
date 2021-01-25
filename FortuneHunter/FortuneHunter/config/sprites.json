@@ -1790,5 +1790,117 @@
     "y": 240,
     "w": 16,
     "h": 16
+  },
+  "FloorTile": {
+    "texture": "tiles",
+    "x": 0,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileN": {
+    "texture": "tiles",
+    "x": 16,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileE": {
+    "texture": "tiles",
+    "x": 32,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNE": {
+    "texture": "tiles",
+    "x": 48,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileS": {
+    "texture": "tiles",
+    "x": 64,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNS": {
+    "texture": "tiles",
+    "x": 80,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileES": {
+    "texture": "tiles",
+    "x": 96,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNES": {
+    "texture": "tiles",
+    "x": 112,
+    "y": 0,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileW": {
+    "texture": "tiles",
+    "x": 0,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNW": {
+    "texture": "tiles",
+    "x": 16,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileEW": {
+    "texture": "tiles",
+    "x": 32,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNEW": {
+    "texture": "tiles",
+    "x": 48,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileSW": {
+    "texture": "tiles",
+    "x": 64,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNSW": {
+    "texture": "tiles",
+    "x": 80,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileESW": {
+    "texture": "tiles",
+    "x": 96,
+    "y": 16,
+    "w": 16,
+    "h": 16
+  },
+  "WallTileNESW": {
+    "texture": "tiles",
+    "x": 112,
+    "y": 16,
+    "w": 16,
+    "h": 16
   }
 }
