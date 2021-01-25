@@ -6,7 +6,10 @@ private:
 	Room room;
 	Creature* hunter;
 	void ClearRoom();
+	void ScaffoldMaze();
+	void SmootheTerrain();
 	void GenerateRoom();
+	void FlagifyCell(int, int);
 public:
 	GameData();
 	const Room& GetRoom() const;

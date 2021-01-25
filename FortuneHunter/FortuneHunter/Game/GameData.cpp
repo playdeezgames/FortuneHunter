@@ -59,7 +59,7 @@ static Terrain flagMap[16] =
 	Terrain::WALL_NESW
 };
 
-void GameData::GenerateRoom()
+void GameData::ScaffoldMaze()
 {
 	ClearRoom();
 	Maze maze(Constants::Maze::COLUMNS, Constants::Maze::ROWS);
@@ -79,34 +79,50 @@ void GameData::GenerateRoom()
 			}
 		}
 	}
+}	
+
+void GameData::FlagifyCell(int column, int row)
+{
+	RoomCell* cell = room.GetCell(column, row);
+	int flags = 0;
+	if (cell->GetTerrain() != Terrain::FLOOR)
+	{
+		if (row == 0 || room.GetCell(column, (size_t)row - 1)->GetTerrain() != Terrain::FLOOR)
+		{
+			flags |= 1;
+		}
+		if (column == Constants::Room::COLUMNS - 1 || room.GetCell((size_t)column + 1, row)->GetTerrain() != Terrain::FLOOR)
+		{
+			flags |= 2;
+		}
+		if (row == Constants::Room::ROWS - 1 || room.GetCell(column, (size_t)row + 1)->GetTerrain() != Terrain::FLOOR)
+		{
+			flags |= 4;
+		}
+		if (column == 0 || room.GetCell((size_t)column - 1, row)->GetTerrain() != Terrain::FLOOR)
+		{
+			flags |= 8;
+		}
+	}
+	cell->SetTerrain(flagMap[flags]);
+}
+
+
+void GameData::SmootheTerrain()
+{
 	for (int column = 0; column < room.GetColumns(); ++column)
 	{
 		for (int row = 0; row < room.GetRows(); ++row)
 		{
-			RoomCell* cell = room.GetCell(column, row);
-			int flags = 0;
-			if (cell->GetTerrain() != Terrain::FLOOR)
-			{
-				if (row == 0 || room.GetCell(column, (size_t)row - 1)->GetTerrain() != Terrain::FLOOR)
-				{
-					flags |= 1;
-				}
-				if (row == Constants::Room::ROWS - 1 || room.GetCell(column, (size_t)row + 1)->GetTerrain() != Terrain::FLOOR)
-				{
-					flags |= 4;
-				}
-				if (column == 0 || room.GetCell((size_t)column - 1, row)->GetTerrain() != Terrain::FLOOR)
-				{
-					flags |= 8;
-				}
-				if (column == Constants::Room::COLUMNS - 1 || room.GetCell((size_t)column + 1, row)->GetTerrain() != Terrain::FLOOR)
-				{
-					flags |= 2;
-				}
-			}
-			cell->SetTerrain(flagMap[flags]);
+			FlagifyCell(column, row);
 		}
 	}
+}
+
+void GameData::GenerateRoom()
+{
+	ScaffoldMaze();
+	SmootheTerrain();
 }
 
 
