@@ -16,12 +16,12 @@ Maze::Maze(size_t columns, size_t rows)
 		for(int row = 0; row<rows; ++row)
 		{ 
 			MazeCell* cell = GetCell(column, row);
-			for (auto direction : GetAllDirections())
+			for (auto direction : MazeDirectionHelper::GetAll())
 			{
 				if (!cell->HasNeighbor(direction))
 				{
-					int nextColumn = GetNextColumn(column, row, direction);
-					int nextRow = GetNextRow(column, row, direction);
+					int nextColumn = MazeDirectionHelper::GetNextColumn(column, row, direction);
+					int nextRow = MazeDirectionHelper::GetNextRow(column, row, direction);
 					if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < rows)
 					{
 						MazeCell* neighbor = GetCell(nextColumn, nextRow);
@@ -29,8 +29,8 @@ Maze::Maze(size_t columns, size_t rows)
 						doors.push_back(door);
 						cell->SetNeighbor(direction, neighbor);
 						cell->SetDoor(direction, door);
-						neighbor->SetNeighbor(GetOppositeMazeDirection(direction), cell);
-						neighbor->SetDoor(GetOppositeMazeDirection(direction), door);
+						neighbor->SetNeighbor(MazeDirectionHelper::GetOpposite(direction), cell);
+						neighbor->SetDoor(MazeDirectionHelper::GetOpposite(direction), door);
 					}
 				}
 			}
@@ -85,7 +85,7 @@ void Maze::Generate()
 	MazeCell* cell = cells[tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)cells.size())];
 	outside.erase(cell);
 	inside.insert(cell);
-	for (auto direction : GetAllDirections())
+	for (auto direction : MazeDirectionHelper::GetAll())
 	{
 		if (cell->HasNeighbor(direction))
 		{
@@ -101,7 +101,7 @@ void Maze::Generate()
 		frontier[index] = frontier[frontier.size() - 1];
 		frontier.pop_back();
 		std::vector<MazeDirection> candidates;
-		for (auto direction : GetAllDirections())
+		for (auto direction : MazeDirectionHelper::GetAll())
 		{
 			if (cell->HasNeighbor(direction))
 			{
@@ -115,7 +115,7 @@ void Maze::Generate()
 		MazeDirection direction = candidates[tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)candidates.size())];
 		cell->GetDoor(direction)->SetOpen(true);
 		inside.insert(cell);
-		for (auto direction : GetAllDirections())
+		for (auto direction : MazeDirectionHelper::GetAll())
 		{
 			if (cell->HasNeighbor(direction))
 			{

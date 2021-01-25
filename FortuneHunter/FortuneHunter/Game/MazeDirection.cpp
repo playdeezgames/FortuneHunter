@@ -1,7 +1,7 @@
 #include "MazeDirection.h"
 #include <string>
 std::vector<MazeDirection> allDirections;
-const std::vector<MazeDirection>& GetAllDirections()
+const std::vector<MazeDirection>& MazeDirectionHelper::GetAll()
 {
 	if (allDirections.empty())
 	{
@@ -12,7 +12,7 @@ const std::vector<MazeDirection>& GetAllDirections()
 	}
 	return allDirections;
 }
-MazeDirection GetOppositeMazeDirection(MazeDirection direction)
+MazeDirection MazeDirectionHelper::GetOpposite(MazeDirection direction)
 {
 	switch (direction)
 	{
@@ -29,7 +29,7 @@ MazeDirection GetOppositeMazeDirection(MazeDirection direction)
 	}
 }
 
-int GetNextColumn(int column, int row, MazeDirection direction)
+int MazeDirectionHelper::GetNextColumn(int column, int row, MazeDirection direction)
 {
 	switch (direction)
 	{
@@ -46,7 +46,7 @@ int GetNextColumn(int column, int row, MazeDirection direction)
 	}
 }
 
-int GetNextRow(int column, int row, MazeDirection direction)
+int MazeDirectionHelper::GetNextRow(int column, int row, MazeDirection direction)
 {
 	switch (direction)
 	{

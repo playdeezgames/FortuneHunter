@@ -7,7 +7,11 @@ enum class MazeDirection
 	SOUTH,
 	WEST
 };
-MazeDirection GetOppositeMazeDirection(MazeDirection);
-const std::vector<MazeDirection>& GetAllDirections();
-int GetNextColumn(int, int, MazeDirection);
-int GetNextRow(int, int, MazeDirection);
+class MazeDirectionHelper
+{
+public:
+	static MazeDirection GetOpposite(MazeDirection);
+	static const std::vector<MazeDirection>& GetAll();
+	static int GetNextColumn(int, int, MazeDirection);
+	static int GetNextRow(int, int, MazeDirection);
+};
