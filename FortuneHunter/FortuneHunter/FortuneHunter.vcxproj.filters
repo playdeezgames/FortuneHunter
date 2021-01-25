@@ -99,6 +99,9 @@
     <ClCompile Include="Game\Room\RoomDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CommandProcessors\BaseCommandProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\Application.h">
@@ -237,6 +240,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\Room\Terrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandProcessors\BaseCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

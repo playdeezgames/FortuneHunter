@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandProcessors\BaseCommandProcessor.cpp" />
     <ClCompile Include="CommandProcessors\ConfirmQuitCommandProcessor.cpp" />
     <ClCompile Include="CommandProcessors\InPlayCommandProcessor.cpp" />
     <ClCompile Include="CommandProcessors\MainMenuCommandProcessor.cpp" />
@@ -49,6 +50,7 @@
     <ClCompile Include="Common\Graphics\SpriteFont.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommandProcessors\BaseCommandProcessor.h" />
     <ClInclude Include="CommandProcessors\ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="CommandProcessors\InPlayCommandProcessor.h" />
     <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h" />

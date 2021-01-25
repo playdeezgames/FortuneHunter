@@ -11,10 +11,10 @@ void ConfirmQuitCommandProcessor::OnCommand(const Command& command)
 		switch (confirmState)
 		{
 		case ConfirmState::YES:
-			uiState = UIState::QUIT;
+			SetUIState(UIState::QUIT);
 			return;
 		case ConfirmState::NO:
-			uiState = UIState::MAIN_MENU;
+			SetUIState(UIState::MAIN_MENU);
 			return;
 		default:
 			return;
@@ -27,7 +27,7 @@ ConfirmQuitCommandProcessor::ConfirmQuitCommandProcessor
 		UIState& uiState,
 		ConfirmState& confirmState
 	)
-	: uiState(uiState)
+	: BaseCommandProcessor(uiState)
 	, confirmState(confirmState)
 {
 

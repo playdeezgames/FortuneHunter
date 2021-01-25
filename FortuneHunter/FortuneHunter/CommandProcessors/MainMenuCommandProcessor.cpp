@@ -21,8 +21,8 @@ MainMenuCommandProcessor::MainMenuCommandProcessor
 		MainMenuState& mainMenuState,
 		GameData& gameData
 	)
-	: mainMenuState(mainMenuState)
-	, uiState(uiState)
+	: BaseCommandProcessor(uiState)
+	, mainMenuState(mainMenuState)
 	, gameData(gameData)
 {
 
@@ -33,10 +33,10 @@ void MainMenuCommandProcessor::DoGreenAction()
 	switch (mainMenuState)
 	{
 	case MainMenuState::QUIT:
-		uiState = UIState::CONFIRM_QUIT;
+		SetUIState(UIState::CONFIRM_QUIT);
 		return;
 	case MainMenuState::START:
-		uiState = UIState::IN_PLAY;
+		SetUIState(UIState::IN_PLAY);
 		return;
 	}
 }
