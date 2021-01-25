@@ -20,11 +20,11 @@ GameData::GameData()
 			MazeCell* cell = maze.GetCell(column, row);
 			if (cell->HasDoor(MazeDirection::EAST) && cell->GetDoor(MazeDirection::EAST)->IsOpen())
 			{
-				room.GetCell(column * 2 + 2, row * 2 + 1).SetTerrain(Terrain::FLOOR);
+				room.GetCell((size_t)column * 2 + 2, (size_t)row * 2 + 1).SetTerrain(Terrain::FLOOR);
 			}
 			if (cell->HasDoor(MazeDirection::SOUTH) && cell->GetDoor(MazeDirection::SOUTH)->IsOpen())
 			{
-				room.GetCell(column * 2 + 1, row * 2 + 2).SetTerrain(Terrain::FLOOR);
+				room.GetCell((size_t)column * 2 + 1, (size_t)row * 2 + 2).SetTerrain(Terrain::FLOOR);
 			}
 		}
 	}
