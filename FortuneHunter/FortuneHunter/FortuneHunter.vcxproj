@@ -32,6 +32,7 @@
     <ClCompile Include="Common\Managers\TextureManager.cpp" />
     <ClCompile Include="Common\Graphics\Sprite.cpp" />
     <ClCompile Include="Common\Managers\SpriteManager.cpp" />
+    <ClCompile Include="Game\Creature.cpp" />
     <ClCompile Include="Game\GameData.cpp" />
     <ClCompile Include="Game\Maze.cpp" />
     <ClCompile Include="Game\MazeCell.cpp" />
@@ -72,6 +73,8 @@
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
+    <ClInclude Include="Game\Creature.h" />
+    <ClInclude Include="Game\CreatureType.h" />
     <ClInclude Include="Game\GameData.h" />
     <ClInclude Include="Game\MazeDirection.h" />
     <ClInclude Include="Game\Maze.h" />
