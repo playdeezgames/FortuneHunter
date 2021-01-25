@@ -66,12 +66,6 @@
     <ClCompile Include="UI\MainMenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\RoomCell.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game\GameData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -79,12 +73,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Renderers\InPlayRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Creature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\RoomDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Maze\Maze.cpp">
@@ -97,6 +85,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\Maze\MazeDoor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Room\Creature.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Room\Room.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Room\RoomCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Room\RoomDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -191,16 +191,7 @@
     <ClInclude Include="UI\UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Constants\Room.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\RoomCell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Terrain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\GameData.h">
@@ -218,15 +209,6 @@
     <ClInclude Include="Constants\Maze.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Creature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\CreatureType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\RoomDirection.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Maze\Maze.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -237,6 +219,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\Maze\MazeDoor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Room\Creature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Room\CreatureType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Room\Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Room\RoomCell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Room\RoomDirection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Room\Terrain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

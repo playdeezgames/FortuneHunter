@@ -3,7 +3,7 @@
 #include "Command.h"
 #include "..\UI\UIState.h"
 #include "..\Game\GameData.h"
-#include "..\Game\RoomDirection.h"
+#include "..\Game\Room\RoomDirection.h"
 class InPlayCommandProcessor : public tggd::common::CommandProcessor<Command>
 {
 private:

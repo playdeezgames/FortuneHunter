@@ -31,8 +31,8 @@ void InPlayCommandProcessor::MoveHunter(RoomDirection direction)
 {
 	Creature* hunter = gameData.GetHunter();
 	RoomCell* cell = hunter->GetRoomCell();
-	int column = cell->GetColumn();
-	int row = cell->GetRow();
+	int column = (int)cell->GetColumn();
+	int row = (int)cell->GetRow();
 	int nextColumn = RoomDirectionHelper::GetNextColumn(column, row, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(column, row, direction);
 	RoomCell* nextCell = gameData.GetRoom().GetCell(nextColumn, nextRow);
