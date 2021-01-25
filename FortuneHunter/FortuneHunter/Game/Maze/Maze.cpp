@@ -1,6 +1,6 @@
 #include "Maze.h"
 #include <set>
-#include "..\Common\Utility.h"
+#include "..\..\Common\Utility.h"
 Maze::Maze(size_t columns, size_t rows)
 	: cells()
 	, doors()

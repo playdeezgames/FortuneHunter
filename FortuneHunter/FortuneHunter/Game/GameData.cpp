@@ -1,6 +1,6 @@
 #include "GameData.h"
 #include "..\Constants\Room.h"
-#include "Maze.h"
+#include "Maze\Maze.h"
 #include "..\Common\Utility.h"
 GameData::GameData()
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS)

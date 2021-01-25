@@ -81,22 +81,22 @@
     <ClCompile Include="Renderers\InPlayRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Maze.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\MazeDoor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\MazeCell.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\MazeDirection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Creature.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game\RoomDirection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Maze\Maze.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Maze\MazeCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Maze\MazeDirection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Maze\MazeDoor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -215,19 +215,7 @@
     <ClInclude Include="Constants\Cell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Maze.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\MazeDoor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\MazeCell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Constants\Maze.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\MazeDirection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\Creature.h">
@@ -237,6 +225,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\RoomDirection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Maze\Maze.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Maze\MazeCell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Maze\MazeDirection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Maze\MazeDoor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
