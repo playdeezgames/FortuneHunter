@@ -28,22 +28,22 @@ GameData::~GameData()
 }
 
 
-const Room& GameData::GetRoom() const
+const Room<CreatureType>& GameData::GetRoom() const
 {
 	return room;
 }
 
-Room& GameData::GetRoom()
+Room<CreatureType>& GameData::GetRoom()
 {
 	return room;
 }
 
-const Creature* GameData::GetHunter() const
+const Creature<CreatureType>* GameData::GetHunter() const
 {
 	return hunter;
 }
 
-Creature* GameData::GetHunter()
+Creature<CreatureType>* GameData::GetHunter()
 {
 	return hunter;
 }
@@ -104,7 +104,7 @@ void GameData::ScaffoldMaze()
 
 void GameData::FlagifyCell(int column, int row)
 {
-	RoomCell* cell = room.GetCell(column, row);
+	RoomCell<CreatureType>* cell = room.GetCell(column, row);
 	int flags = 0;
 	if (cell->GetTerrain() != Terrain::FLOOR)
 	{

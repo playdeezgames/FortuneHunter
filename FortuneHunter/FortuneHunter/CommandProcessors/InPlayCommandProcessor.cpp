@@ -29,13 +29,13 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 
 void InPlayCommandProcessor::MoveHunter(RoomDirection direction)
 {
-	Creature* hunter = gameData.GetHunter();
-	RoomCell* cell = hunter->GetRoomCell();
+	Creature<CreatureType>* hunter = gameData.GetHunter();
+	RoomCell<CreatureType>* cell = hunter->GetRoomCell();
 	int column = (int)cell->GetColumn();
 	int row = (int)cell->GetRow();
 	int nextColumn = RoomDirectionHelper::GetNextColumn(column, row, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(column, row, direction);
-	RoomCell* nextCell = gameData.GetRoom().GetCell(nextColumn, nextRow);
+	RoomCell<CreatureType>* nextCell = gameData.GetRoom().GetCell(nextColumn, nextRow);
 	if(nextCell->GetTerrain()==Terrain::FLOOR)
 	{
 		cell->SetCreature(nullptr);

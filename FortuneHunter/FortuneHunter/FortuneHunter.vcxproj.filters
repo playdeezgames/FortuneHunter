@@ -87,15 +87,6 @@
     <ClCompile Include="Game\Maze\MazeDoor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Creature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Room\Room.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Room\RoomCell.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Room\RoomDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

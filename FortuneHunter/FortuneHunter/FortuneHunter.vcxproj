@@ -33,14 +33,11 @@
     <ClCompile Include="Common\Managers\TextureManager.cpp" />
     <ClCompile Include="Common\Graphics\Sprite.cpp" />
     <ClCompile Include="Common\Managers\SpriteManager.cpp" />
-    <ClCompile Include="Game\Room\Creature.cpp" />
     <ClCompile Include="Game\GameData.cpp" />
     <ClCompile Include="Game\Maze\Maze.cpp" />
     <ClCompile Include="Game\Maze\MazeCell.cpp" />
     <ClCompile Include="Game\Maze\MazeDirection.cpp" />
     <ClCompile Include="Game\Maze\MazeDoor.cpp" />
-    <ClCompile Include="Game\Room\Room.cpp" />
-    <ClCompile Include="Game\Room\RoomCell.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
     <ClCompile Include="UI\MainMenuState.cpp" />
