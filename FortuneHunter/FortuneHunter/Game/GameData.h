@@ -2,10 +2,11 @@
 #include "Room\Room.h"
 #include "TerrainType.h"
 #include "CreatureType.h"
+#include "ItemType.h"
 class GameData
 {
 private:
-	Room<TerrainType, CreatureType> room;
+	Room<TerrainType, ItemType, CreatureType> room;
 	Creature<TerrainType, CreatureType>* hunter;
 	void ClearRoom();
 	void ClearHunter();
@@ -16,8 +17,8 @@ private:
 public:
 	GameData();
 	~GameData();
-	const Room<TerrainType, CreatureType>& GetRoom() const;
-	Room<TerrainType, CreatureType>& GetRoom();
+	const Room<TerrainType, ItemType, CreatureType>& GetRoom() const;
+	Room<TerrainType, ItemType, CreatureType>& GetRoom();
 	const Creature<TerrainType, CreatureType>* GetHunter() const;
 	Creature<TerrainType, CreatureType>* GetHunter();
 	void UpdateRoom();

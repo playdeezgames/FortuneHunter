@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "RoomCell.h"
-template<typename TTerrain, typename TCreatureData>
+template<typename TTerrain, typename TItem, typename TCreatureData>
 class Room
 {
 private:

@@ -73,6 +73,7 @@
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
+    <ClInclude Include="Game\ItemType.h" />
     <ClInclude Include="Game\Room\Creature.h" />
     <ClInclude Include="Game\CreatureType.h" />
     <ClInclude Include="Game\GameData.h" />

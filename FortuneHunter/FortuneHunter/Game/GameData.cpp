@@ -28,12 +28,12 @@ GameData::~GameData()
 }
 
 
-const Room<TerrainType, CreatureType>& GameData::GetRoom() const
+const Room<TerrainType, ItemType, CreatureType>& GameData::GetRoom() const
 {
 	return room;
 }
 
-Room<TerrainType, CreatureType>& GameData::GetRoom()
+Room<TerrainType, ItemType, CreatureType>& GameData::GetRoom()
 {
 	return room;
 }
