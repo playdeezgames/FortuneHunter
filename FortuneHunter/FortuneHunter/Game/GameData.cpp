@@ -160,4 +160,33 @@ void GameData::Start()
 			room.GetCell(column, row)->SetCreature(hunter);
 		}
 	}
+	UpdateRoom();
+}
+
+void GameData::UpdateRoom()
+{
+	for (size_t column = 0; column < room.GetColumns(); ++column)
+	{
+		for (size_t row = 0; row < room.GetRows(); ++row)
+		{
+			room.GetCell(column, row)->SetLit(false);
+		}
+	}
+	if (hunter && hunter->GetRoomCell())
+	{
+		int column = (int)hunter->GetRoomCell()->GetColumn();
+		int row = (int)hunter->GetRoomCell()->GetRow();
+		for (int c = column - 1; c <= column + 1; ++c)
+		{
+			for (int r = row - 1; r <= row + 1; ++r)
+			{
+				auto cell = room.GetCell(c, r);
+				if (cell)
+				{
+					cell->SetLit(true);
+					cell->SetExplored(true);
+				}
+			}
+		}
+	}
 }

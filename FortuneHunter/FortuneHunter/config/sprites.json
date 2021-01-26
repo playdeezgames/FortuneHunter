@@ -1909,5 +1909,33 @@
     "y": 32,
     "w": 16,
     "h": 16
+  },
+  "KeyItem": {
+    "texture": "tiles",
+    "x": 16,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "NSDoor": {
+    "texture": "tiles",
+    "x": 32,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "EWDoor": {
+    "texture": "tiles",
+    "x": 48,
+    "y": 32,
+    "w": 16,
+    "h": 16
+  },
+  "Dither": {
+    "texture": "tiles",
+    "x": 64,
+    "y": 32,
+    "w": 16,
+    "h": 16
   }
 }

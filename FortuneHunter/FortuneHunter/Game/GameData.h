@@ -20,5 +20,6 @@ public:
 	Room<Terrain, CreatureType>& GetRoom();
 	const Creature<Terrain, CreatureType>* GetHunter() const;
 	Creature<Terrain, CreatureType>* GetHunter();
+	void UpdateRoom();
 	void Start();
 };
