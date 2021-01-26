@@ -11,12 +11,12 @@ MainMenuRenderer::MainMenuRenderer(SDL_Renderer* renderer, const tggd::common::S
 
 void MainMenuRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "Welcome to Fortune Hunter!", Constants::Color::GREEN);
-	DrawMenuItem(0, "Start", MainMenuState::START);
-	DrawMenuItem(1, "Instructions", MainMenuState::INSTRUCTIONS);
-	DrawMenuItem(2, "About", MainMenuState::ABOUT);
-	DrawMenuItem(3, "Options", MainMenuState::OPTIONS);
-	DrawMenuItem(4, "Quit", MainMenuState::QUIT);
+	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "Welcome to Fortune Hunter!", Constants::Color::GREEN);//TODO magic string
+	DrawMenuItem(0, "Start", MainMenuState::START);//TODO magic string
+	DrawMenuItem(1, "Instructions", MainMenuState::INSTRUCTIONS);//TODO magic string
+	DrawMenuItem(2, "About", MainMenuState::ABOUT);//TODO magic string
+	DrawMenuItem(3, "Options", MainMenuState::OPTIONS);//TODO magic string
+	DrawMenuItem(4, "Quit", MainMenuState::QUIT);//TODO magic string
 }
 
 void MainMenuRenderer::DrawMenuItem(int line, const std::string& text, const MainMenuState& state) const
