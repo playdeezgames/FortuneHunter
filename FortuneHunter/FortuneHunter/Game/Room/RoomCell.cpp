@@ -4,6 +4,8 @@ RoomCell::RoomCell(size_t column, size_t row)
 	, creature(nullptr)
 	, column(column)
 	, row(row)
+	, explored(false)
+	, lit(false)
 {
 
 }
@@ -58,4 +60,24 @@ RoomCell::~RoomCell()
 		delete creature;
 		creature = nullptr;
 	}
+}
+
+bool RoomCell::IsLit() const
+{
+	return lit;
+}
+
+bool RoomCell::IsExplored() const
+{
+	return explored;
+}
+
+void RoomCell::SetLit(bool state)
+{
+	lit = state;
+}
+
+void RoomCell::SetExplored(bool state)
+{
+	explored = state;
 }
