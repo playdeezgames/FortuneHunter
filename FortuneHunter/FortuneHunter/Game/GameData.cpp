@@ -8,6 +8,26 @@ GameData::GameData()
 {
 }
 
+void GameData::ClearHunter()
+{
+	if (hunter)
+	{
+		if (hunter->GetRoomCell())
+		{
+			hunter->GetRoomCell()->SetCreature(nullptr);
+		}
+		delete hunter;
+	}
+	hunter = nullptr;
+}
+
+
+GameData::~GameData()
+{
+	ClearHunter();
+}
+
+
 const Room& GameData::GetRoom() const
 {
 	return room;
@@ -30,6 +50,7 @@ Creature* GameData::GetHunter()
 
 void GameData::ClearRoom()
 {
+	ClearHunter();
 	for (int column = 0; column < room.GetColumns(); ++column)
 	{
 		for (int row = 0; row < room.GetRows(); ++row)
