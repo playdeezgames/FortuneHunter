@@ -14,7 +14,7 @@ void GameData::ClearHunter()
 	{
 		if (hunter->GetRoomCell())
 		{
-			hunter->GetRoomCell()->SetCreature(nullptr);
+			hunter->GetRoomCell()->SetObject(nullptr);
 		}
 		delete hunter;
 	}
@@ -38,12 +38,12 @@ Room<TerrainType, ObjectType>& GameData::GetRoom()
 	return room;
 }
 
-const Creature<TerrainType, ObjectType>* GameData::GetHunter() const
+const RoomCellObject<TerrainType, ObjectType>* GameData::GetHunter() const
 {
 	return hunter;
 }
 
-Creature<TerrainType, ObjectType>* GameData::GetHunter()
+RoomCellObject<TerrainType, ObjectType>* GameData::GetHunter()
 {
 	return hunter;
 }
@@ -150,14 +150,14 @@ void GameData::GenerateRoom()
 void GameData::Start()
 {
 	GenerateRoom();
-	hunter = new Creature<TerrainType, ObjectType>(ObjectType::HUNTER);
+	hunter = new RoomCellObject<TerrainType, ObjectType>(ObjectType::HUNTER);
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
 		if (room.GetCell(column, row)->GetTerrain() == TerrainType::FLOOR)
 		{
-			room.GetCell(column, row)->SetCreature(hunter);
+			room.GetCell(column, row)->SetObject(hunter);
 		}
 	}
 	UpdateRoom();

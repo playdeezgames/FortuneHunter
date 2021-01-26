@@ -73,7 +73,7 @@
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
-    <ClInclude Include="Game\Room\Creature.h" />
+    <ClInclude Include="Game\Room\RoomCellObject.h" />
     <ClInclude Include="Game\ObjectType.h" />
     <ClInclude Include="Game\GameData.h" />
     <ClInclude Include="Game\Maze\MazeDirection.h" />
@@ -83,7 +83,6 @@
     <ClInclude Include="Game\Room\Room.h" />
     <ClInclude Include="Game\Room\RoomCell.h" />
     <ClInclude Include="Game\Room\RoomDirection.h" />
-    <ClInclude Include="Game\Room\RoomItem.h" />
     <ClInclude Include="Game\TerrainType.h" />
     <ClInclude Include="Renderers\InPlayRenderer.h" />
     <ClInclude Include="UI\ConfirmState.h" />

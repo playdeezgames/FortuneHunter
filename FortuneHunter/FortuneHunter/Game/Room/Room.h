@@ -1,13 +1,13 @@
 #pragma once
 #include <vector>
 #include "RoomCell.h"
-template<typename TTerrain, typename TCreatureData>
+template<typename TTerrain, typename TObjectData>
 class Room
 {
 private:
 	size_t columns;
 	size_t rows;
-	std::vector<RoomCell<TTerrain, TCreatureData>*> cells;
+	std::vector<RoomCell<TTerrain, TObjectData>*> cells;
 public:
 	Room(size_t columns, size_t rows, const TTerrain& terrain)
 		: columns(columns)
@@ -18,7 +18,7 @@ public:
 		{
 			for (size_t column = 0; column < columns; ++column)
 			{
-				cells.push_back(new RoomCell<TTerrain, TCreatureData>(column, row, terrain));
+				cells.push_back(new RoomCell<TTerrain, TObjectData>(column, row, terrain));
 			}
 		}
 	}
@@ -34,7 +34,7 @@ public:
 			}
 		}
 	}
-	const RoomCell<TTerrain, TCreatureData>* GetCell(size_t column, size_t row) const
+	const RoomCell<TTerrain, TObjectData>* GetCell(size_t column, size_t row) const
 	{
 		if (column < columns && row < rows)
 		{
@@ -42,7 +42,7 @@ public:
 		}
 		return nullptr;
 	}
-	RoomCell<TTerrain, TCreatureData>* GetCell(size_t column, size_t row)
+	RoomCell<TTerrain, TObjectData>* GetCell(size_t column, size_t row)
 	{
 		if (column < columns && row < rows)
 		{

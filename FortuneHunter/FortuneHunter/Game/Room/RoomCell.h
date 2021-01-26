@@ -1,11 +1,11 @@
 #pragma once
-#include "Creature.h"
-template<typename TTerrain, typename TCreatureData>
+#include "RoomCellObject.h"
+template<typename TTerrain, typename TObjectData>
 class RoomCell
 {
 private:
 	TTerrain terrain;
-	Creature<TTerrain, TCreatureData>* creature;
+	RoomCellObject<TTerrain, TObjectData>* object;
 	bool explored;
 	bool lit;
 	size_t column;
@@ -13,7 +13,7 @@ private:
 public:
 	RoomCell(size_t column, size_t row, const TTerrain& terrain)
 		: terrain(terrain)
-		, creature(nullptr)
+		, object(nullptr)
 		, column(column)
 		, row(row)
 		, explored(false)
@@ -21,28 +21,28 @@ public:
 	{}
 	~RoomCell()
 	{
-		if (creature)
+		if (object)
 		{
-			delete creature;
-			creature = nullptr;
+			delete object;
+			object = nullptr;
 		}
 	}
 	const TTerrain& GetTerrain() const { return terrain; }
 	void SetTerrain(const TTerrain& newTerrain) { terrain = newTerrain; }
-	void SetCreature(Creature<TTerrain, TCreatureData>* newCreature)
+	void SetObject(RoomCellObject<TTerrain, TObjectData>* newCreature)
 	{
-		if (creature)
+		if (object)
 		{
-			creature->roomCell = nullptr;
+			object->roomCell = nullptr;
 		}
-		creature = newCreature;
-		if (creature)
+		object = newCreature;
+		if (object)
 		{
-			creature->roomCell = this;
+			object->roomCell = this;
 		}
 	}
-	const Creature<TTerrain, TCreatureData>* GetCreature() const { return creature; }
-	Creature<TTerrain, TCreatureData>* GetCreature() { return creature; }
+	const RoomCellObject<TTerrain, TObjectData>* GetObject() const { return object; }
+	RoomCellObject<TTerrain, TObjectData>* GetObject() { return object; }
 	size_t GetColumn() const { return column; }
 	size_t GetRow() const { return row; }
 	bool IsLit() const { return lit; }

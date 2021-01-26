@@ -57,7 +57,7 @@ void InPlayRenderer::DrawRoomPanel() const
 				int y = row * 16 - 8;
 				TerrainType terrain = cell->GetTerrain();
 				terrainSprites.find(terrain)->second->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
-				const Creature<TerrainType, ObjectType>* creature = cell->GetCreature();
+				const RoomCellObject<TerrainType, ObjectType>* creature = cell->GetObject();
 				if (creature != nullptr)
 				{
 					spriteManager.GetSprite("HunterCreature")->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);

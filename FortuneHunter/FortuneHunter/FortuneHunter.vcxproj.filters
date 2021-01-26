@@ -215,9 +215,6 @@
     <ClInclude Include="Game\Maze\MazeDoor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Creature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Room\Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -233,10 +230,10 @@
     <ClInclude Include="Game\TerrainType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\RoomItem.h">
+    <ClInclude Include="Game\ObjectType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\ObjectType.h">
+    <ClInclude Include="Game\Room\RoomCellObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

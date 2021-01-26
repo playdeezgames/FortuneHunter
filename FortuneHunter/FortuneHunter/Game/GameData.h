@@ -6,7 +6,7 @@ class GameData
 {
 private:
 	Room<TerrainType, ObjectType> room;
-	Creature<TerrainType, ObjectType>* hunter;
+	RoomCellObject<TerrainType, ObjectType>* hunter;
 	void ClearRoom();
 	void ClearHunter();
 	void ScaffoldMaze();
@@ -18,8 +18,8 @@ public:
 	~GameData();
 	const Room<TerrainType, ObjectType>& GetRoom() const;
 	Room<TerrainType, ObjectType>& GetRoom();
-	const Creature<TerrainType, ObjectType>* GetHunter() const;
-	Creature<TerrainType, ObjectType>* GetHunter();
+	const RoomCellObject<TerrainType, ObjectType>* GetHunter() const;
+	RoomCellObject<TerrainType, ObjectType>* GetHunter();
 	void UpdateRoom();
 	void Start();
 };
