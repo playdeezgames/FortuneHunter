@@ -218,9 +218,6 @@
     <ClInclude Include="Game\Room\Creature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\CreatureType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Room\Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -230,10 +227,13 @@
     <ClInclude Include="Game\Room\RoomDirection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Terrain.h">
+    <ClInclude Include="CommandProcessors\BaseCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommandProcessors\BaseCommandProcessor.h">
+    <ClInclude Include="Game\CreatureType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Terrain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,11 +1,12 @@
 #pragma once
 #include "Room\Room.h"
-#include "Room\CreatureType.h"
+#include "Terrain.h"
+#include "CreatureType.h"
 class GameData
 {
 private:
-	Room<CreatureType> room;
-	Creature<CreatureType>* hunter;
+	Room<Terrain, CreatureType> room;
+	Creature<Terrain, CreatureType>* hunter;
 	void ClearRoom();
 	void ClearHunter();
 	void ScaffoldMaze();
@@ -15,9 +16,9 @@ private:
 public:
 	GameData();
 	~GameData();
-	const Room<CreatureType>& GetRoom() const;
-	Room<CreatureType>& GetRoom();
-	const Creature<CreatureType>* GetHunter() const;
-	Creature<CreatureType>* GetHunter();
+	const Room<Terrain, CreatureType>& GetRoom() const;
+	Room<Terrain, CreatureType>& GetRoom();
+	const Creature<Terrain, CreatureType>* GetHunter() const;
+	Creature<Terrain, CreatureType>* GetHunter();
 	void Start();
 };

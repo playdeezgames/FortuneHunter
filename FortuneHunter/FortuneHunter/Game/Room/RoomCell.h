@@ -1,19 +1,18 @@
 #pragma once
-#include "Terrain.h"
 #include "Creature.h"
-template<typename TCreatureData>
+template<typename TTerrain, typename TCreatureData>
 class RoomCell
 {
 private:
-	Terrain terrain;
-	Creature<TCreatureData>* creature;
+	TTerrain terrain;
+	Creature<TTerrain, TCreatureData>* creature;
 	bool explored;
 	bool lit;
 	size_t column;
 	size_t row;
 public:
-	RoomCell(size_t column, size_t row)
-		: terrain(Terrain::FLOOR)
+	RoomCell(size_t column, size_t row, const TTerrain& terrain)
+		: terrain(terrain)
 		, creature(nullptr)
 		, column(column)
 		, row(row)
@@ -28,9 +27,9 @@ public:
 			creature = nullptr;
 		}
 	}
-	Terrain GetTerrain() const { return terrain; }
-	void SetTerrain(Terrain newTerrain) { terrain = newTerrain; }
-	void SetCreature(Creature<TCreatureData>* newCreature)
+	const TTerrain& GetTerrain() const { return terrain; }
+	void SetTerrain(const TTerrain& newTerrain) { terrain = newTerrain; }
+	void SetCreature(Creature<TTerrain, TCreatureData>* newCreature)
 	{
 		if (creature)
 		{
@@ -42,8 +41,8 @@ public:
 			creature->roomCell = this;
 		}
 	}
-	const Creature<TCreatureData>* GetCreature() const { return creature; }
-	Creature<TCreatureData>* GetCreature() { return creature; }
+	const Creature<TTerrain, TCreatureData>* GetCreature() const { return creature; }
+	Creature<TTerrain, TCreatureData>* GetCreature() { return creature; }
 	size_t GetColumn() const { return column; }
 	size_t GetRow() const { return row; }
 	bool IsLit() const { return lit; }

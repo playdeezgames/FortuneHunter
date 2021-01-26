@@ -1,16 +1,16 @@
 #pragma once
-template<typename TCreatureData>
+template<typename TTerrain, typename TCreatureData>
 class RoomCell;
-template<typename TCreatureData>
+template<typename TTerrain, typename TCreatureData>
 class Creature
 {
 private:
-	friend class RoomCell<TCreatureData>;
-	RoomCell<TCreatureData>* roomCell;
+	friend class RoomCell<TTerrain, TCreatureData>;
+	RoomCell<TTerrain, TCreatureData>* roomCell;
 	TCreatureData creatureData;
 public:
 	Creature(TCreatureData creatureData) :roomCell(nullptr), creatureData(creatureData) {}
-	const RoomCell<TCreatureData>* GetRoomCell() const { return roomCell; }
-	RoomCell<TCreatureData>* GetRoomCell() { return roomCell; }
+	const RoomCell<TTerrain, TCreatureData>* GetRoomCell() const { return roomCell; }
+	RoomCell<TTerrain, TCreatureData>* GetRoomCell() { return roomCell; }
 	TCreatureData GetCreatureData() { return creatureData; }
 };

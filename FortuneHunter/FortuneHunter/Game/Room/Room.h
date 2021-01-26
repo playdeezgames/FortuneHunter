@@ -1,15 +1,15 @@
 #pragma once
 #include <vector>
 #include "RoomCell.h"
-template<typename TCreatureData>
+template<typename TTerrain, typename TCreatureData>
 class Room
 {
 private:
 	size_t columns;
 	size_t rows;
-	std::vector<RoomCell<TCreatureData>*> cells;
+	std::vector<RoomCell<TTerrain, TCreatureData>*> cells;
 public:
-	Room(size_t columns, size_t rows)
+	Room(size_t columns, size_t rows, const TTerrain& terrain)
 		: columns(columns)
 		, rows(rows)
 		, cells()
@@ -18,7 +18,7 @@ public:
 		{
 			for (size_t column = 0; column < columns; ++column)
 			{
-				cells.push_back(new RoomCell<TCreatureData>(column, row));
+				cells.push_back(new RoomCell<TTerrain, TCreatureData>(column, row, terrain));
 			}
 		}
 	}
@@ -34,7 +34,7 @@ public:
 			}
 		}
 	}
-	const RoomCell<TCreatureData>* GetCell(size_t column, size_t row) const
+	const RoomCell<TTerrain, TCreatureData>* GetCell(size_t column, size_t row) const
 	{
 		if (column < columns && row < rows)
 		{
@@ -42,7 +42,7 @@ public:
 		}
 		return nullptr;
 	}
-	RoomCell<TCreatureData>* GetCell(size_t column, size_t row)
+	RoomCell<TTerrain, TCreatureData>* GetCell(size_t column, size_t row)
 	{
 		if (column < columns && row < rows)
 		{
