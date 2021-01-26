@@ -8,7 +8,7 @@ class InPlayRenderer : public BaseRenderer
 private:
 	const tggd::common::SpriteManager& spriteManager;
 	const GameData& gameData;
-	std::map<Terrain, tggd::common::Sprite*> terrainSprites;
+	std::map<TerrainType, tggd::common::Sprite*> terrainSprites;
 	void DrawRoomPanel() const;
 public:
 	InPlayRenderer(

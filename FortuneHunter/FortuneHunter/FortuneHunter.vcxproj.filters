@@ -233,7 +233,7 @@
     <ClInclude Include="Game\CreatureType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Terrain.h">
+    <ClInclude Include="Game\TerrainType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
 #pragma once
-enum class Terrain
+enum class TerrainType
 {
 	WALL_N,
 	WALL_E,

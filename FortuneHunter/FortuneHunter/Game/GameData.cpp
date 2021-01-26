@@ -3,7 +3,7 @@
 #include "Maze\Maze.h"
 #include "..\Common\Utility.h"
 GameData::GameData()
-	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, Terrain::FLOOR)
+	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, hunter(nullptr)
 {
 }
@@ -28,22 +28,22 @@ GameData::~GameData()
 }
 
 
-const Room<Terrain, CreatureType>& GameData::GetRoom() const
+const Room<TerrainType, CreatureType>& GameData::GetRoom() const
 {
 	return room;
 }
 
-Room<Terrain, CreatureType>& GameData::GetRoom()
+Room<TerrainType, CreatureType>& GameData::GetRoom()
 {
 	return room;
 }
 
-const Creature<Terrain, CreatureType>* GameData::GetHunter() const
+const Creature<TerrainType, CreatureType>* GameData::GetHunter() const
 {
 	return hunter;
 }
 
-Creature<Terrain, CreatureType>* GameData::GetHunter()
+Creature<TerrainType, CreatureType>* GameData::GetHunter()
 {
 	return hunter;
 }
@@ -55,29 +55,29 @@ void GameData::ClearRoom()
 	{
 		for (int row = 0; row < room.GetRows(); ++row)
 		{
-			room.GetCell(column, row)->SetTerrain((column % 2 == 1 && row % 2 == 1) ? (Terrain::FLOOR) : (Terrain::WALL_NESW));
+			room.GetCell(column, row)->SetTerrain((column % 2 == 1 && row % 2 == 1) ? (TerrainType::FLOOR) : (TerrainType::WALL_NESW));
 		}
 	}
 }
 
-static Terrain flagMap[16] =
+static TerrainType flagMap[16] =
 {
-	Terrain::FLOOR,
-	Terrain::WALL_N,
-	Terrain::WALL_E,
-	Terrain::WALL_NE,
-	Terrain::WALL_S,
-	Terrain::WALL_NS,
-	Terrain::WALL_ES,
-	Terrain::WALL_NES,
-	Terrain::WALL_W,
-	Terrain::WALL_NW,
-	Terrain::WALL_EW,
-	Terrain::WALL_NEW,
-	Terrain::WALL_SW,
-	Terrain::WALL_NSW,
-	Terrain::WALL_ESW,
-	Terrain::WALL_NESW
+	TerrainType::FLOOR,
+	TerrainType::WALL_N,
+	TerrainType::WALL_E,
+	TerrainType::WALL_NE,
+	TerrainType::WALL_S,
+	TerrainType::WALL_NS,
+	TerrainType::WALL_ES,
+	TerrainType::WALL_NES,
+	TerrainType::WALL_W,
+	TerrainType::WALL_NW,
+	TerrainType::WALL_EW,
+	TerrainType::WALL_NEW,
+	TerrainType::WALL_SW,
+	TerrainType::WALL_NSW,
+	TerrainType::WALL_ESW,
+	TerrainType::WALL_NESW
 };
 
 void GameData::ScaffoldMaze()
@@ -92,11 +92,11 @@ void GameData::ScaffoldMaze()
 			MazeCell* cell = maze.GetCell(column, row);
 			if (cell->HasDoor(MazeDirection::EAST) && cell->GetDoor(MazeDirection::EAST)->IsOpen())
 			{
-				room.GetCell((size_t)column * 2 + 2, (size_t)row * 2 + 1)->SetTerrain(Terrain::FLOOR);
+				room.GetCell((size_t)column * 2 + 2, (size_t)row * 2 + 1)->SetTerrain(TerrainType::FLOOR);
 			}
 			if (cell->HasDoor(MazeDirection::SOUTH) && cell->GetDoor(MazeDirection::SOUTH)->IsOpen())
 			{
-				room.GetCell((size_t)column * 2 + 1, (size_t)row * 2 + 2)->SetTerrain(Terrain::FLOOR);
+				room.GetCell((size_t)column * 2 + 1, (size_t)row * 2 + 2)->SetTerrain(TerrainType::FLOOR);
 			}
 		}
 	}
@@ -104,23 +104,23 @@ void GameData::ScaffoldMaze()
 
 void GameData::FlagifyCell(int column, int row)
 {
-	RoomCell<Terrain, CreatureType>* cell = room.GetCell(column, row);
+	RoomCell<TerrainType, CreatureType>* cell = room.GetCell(column, row);
 	int flags = 0;
-	if (cell->GetTerrain() != Terrain::FLOOR)
+	if (cell->GetTerrain() != TerrainType::FLOOR)
 	{
-		if (row == 0 || room.GetCell(column, (size_t)row - 1)->GetTerrain() != Terrain::FLOOR)
+		if (row == 0 || room.GetCell(column, (size_t)row - 1)->GetTerrain() != TerrainType::FLOOR)
 		{
 			flags |= 1;
 		}
-		if (column == Constants::Room::COLUMNS - 1 || room.GetCell((size_t)column + 1, row)->GetTerrain() != Terrain::FLOOR)
+		if (column == Constants::Room::COLUMNS - 1 || room.GetCell((size_t)column + 1, row)->GetTerrain() != TerrainType::FLOOR)
 		{
 			flags |= 2;
 		}
-		if (row == Constants::Room::ROWS - 1 || room.GetCell(column, (size_t)row + 1)->GetTerrain() != Terrain::FLOOR)
+		if (row == Constants::Room::ROWS - 1 || room.GetCell(column, (size_t)row + 1)->GetTerrain() != TerrainType::FLOOR)
 		{
 			flags |= 4;
 		}
-		if (column == 0 || room.GetCell((size_t)column - 1, row)->GetTerrain() != Terrain::FLOOR)
+		if (column == 0 || room.GetCell((size_t)column - 1, row)->GetTerrain() != TerrainType::FLOOR)
 		{
 			flags |= 8;
 		}
@@ -150,12 +150,12 @@ void GameData::GenerateRoom()
 void GameData::Start()
 {
 	GenerateRoom();
-	hunter = new Creature<Terrain, CreatureType>(CreatureType::HUNTER);
+	hunter = new Creature<TerrainType, CreatureType>(CreatureType::HUNTER);
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
-		if (room.GetCell(column, row)->GetTerrain() == Terrain::FLOOR)
+		if (room.GetCell(column, row)->GetTerrain() == TerrainType::FLOOR)
 		{
 			room.GetCell(column, row)->SetCreature(hunter);
 		}

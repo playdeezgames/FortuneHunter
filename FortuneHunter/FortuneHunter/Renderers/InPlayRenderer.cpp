@@ -12,22 +12,22 @@ InPlayRenderer::InPlayRenderer(
 	, spriteManager(spriteManager)
 	, terrainSprites()
 {
-	terrainSprites[Terrain::FLOOR] = spriteManager.GetSprite("FloorTile");
-	terrainSprites[Terrain::WALL_N] = spriteManager.GetSprite("WallTileN");
-	terrainSprites[Terrain::WALL_E] = spriteManager.GetSprite("WallTileE");
-	terrainSprites[Terrain::WALL_NE] = spriteManager.GetSprite("WallTileNE");
-	terrainSprites[Terrain::WALL_S] = spriteManager.GetSprite("WallTileS");
-	terrainSprites[Terrain::WALL_NS] = spriteManager.GetSprite("WallTileNS");
-	terrainSprites[Terrain::WALL_ES] = spriteManager.GetSprite("WallTileES");
-	terrainSprites[Terrain::WALL_NES] = spriteManager.GetSprite("WallTileNES");
-	terrainSprites[Terrain::WALL_W] = spriteManager.GetSprite("WallTileW");
-	terrainSprites[Terrain::WALL_NW] = spriteManager.GetSprite("WallTileNW");
-	terrainSprites[Terrain::WALL_EW] = spriteManager.GetSprite("WallTileEW");
-	terrainSprites[Terrain::WALL_NEW] = spriteManager.GetSprite("WallTileNEW");
-	terrainSprites[Terrain::WALL_SW] = spriteManager.GetSprite("WallTileSW");
-	terrainSprites[Terrain::WALL_NSW] = spriteManager.GetSprite("WallTileNSW");
-	terrainSprites[Terrain::WALL_ESW] = spriteManager.GetSprite("WallTileESW");
-	terrainSprites[Terrain::WALL_NESW] = spriteManager.GetSprite("WallTileNESW");
+	terrainSprites[TerrainType::FLOOR] = spriteManager.GetSprite("FloorTile");
+	terrainSprites[TerrainType::WALL_N] = spriteManager.GetSprite("WallTileN");
+	terrainSprites[TerrainType::WALL_E] = spriteManager.GetSprite("WallTileE");
+	terrainSprites[TerrainType::WALL_NE] = spriteManager.GetSprite("WallTileNE");
+	terrainSprites[TerrainType::WALL_S] = spriteManager.GetSprite("WallTileS");
+	terrainSprites[TerrainType::WALL_NS] = spriteManager.GetSprite("WallTileNS");
+	terrainSprites[TerrainType::WALL_ES] = spriteManager.GetSprite("WallTileES");
+	terrainSprites[TerrainType::WALL_NES] = spriteManager.GetSprite("WallTileNES");
+	terrainSprites[TerrainType::WALL_W] = spriteManager.GetSprite("WallTileW");
+	terrainSprites[TerrainType::WALL_NW] = spriteManager.GetSprite("WallTileNW");
+	terrainSprites[TerrainType::WALL_EW] = spriteManager.GetSprite("WallTileEW");
+	terrainSprites[TerrainType::WALL_NEW] = spriteManager.GetSprite("WallTileNEW");
+	terrainSprites[TerrainType::WALL_SW] = spriteManager.GetSprite("WallTileSW");
+	terrainSprites[TerrainType::WALL_NSW] = spriteManager.GetSprite("WallTileNSW");
+	terrainSprites[TerrainType::WALL_ESW] = spriteManager.GetSprite("WallTileESW");
+	terrainSprites[TerrainType::WALL_NESW] = spriteManager.GetSprite("WallTileNESW");
 
 }
 
@@ -50,14 +50,14 @@ void InPlayRenderer::DrawRoomPanel() const
 	{
 		for (int row = 0; row < Constants::Room::ROWS; ++row)
 		{
-			const RoomCell<Terrain, CreatureType>* cell = gameData.GetRoom().GetCell(column, row);
+			const RoomCell<TerrainType, CreatureType>* cell = gameData.GetRoom().GetCell(column, row);
 			if (cell->IsExplored())
 			{
 				int x = column * 16 - 8;
 				int y = row * 16 - 8;
-				Terrain terrain = cell->GetTerrain();
+				TerrainType terrain = cell->GetTerrain();
 				terrainSprites.find(terrain)->second->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
-				const Creature<Terrain, CreatureType>* creature = cell->GetCreature();
+				const Creature<TerrainType, CreatureType>* creature = cell->GetCreature();
 				if (creature != nullptr)
 				{
 					spriteManager.GetSprite("HunterCreature")->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
