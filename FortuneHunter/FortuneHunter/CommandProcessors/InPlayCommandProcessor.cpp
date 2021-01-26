@@ -41,5 +41,6 @@ void InPlayCommandProcessor::MoveHunter(RoomDirection direction)
 		cell->SetObject(nullptr);
 		nextCell->SetObject(hunter);
 	}
+	gameData.IncrementMove();
 	gameData.UpdateRoom();
 }

@@ -24,7 +24,7 @@ namespace Constants::UI
 		}
 		namespace StatusPanel
 		{
-			const int CLIP_X = 480;
+			const int CLIP_X = Constants::UI::InPlay::RoomPanel::CLIP_X + Constants::UI::InPlay::RoomPanel::CLIP_WIDTH;
 			const int CLIP_Y = 0;
 			const int CLIP_WIDTH = 160;
 			const int CLIP_HEIGHT = 480;

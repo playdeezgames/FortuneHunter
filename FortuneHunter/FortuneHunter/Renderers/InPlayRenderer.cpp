@@ -2,6 +2,7 @@
 #include "..\Constants\Room.h"
 #include "..\Constants\Color.h"
 #include "..\Constants\UI.h"
+#include <sstream>
 InPlayRenderer::InPlayRenderer(
 	SDL_Renderer* renderer,
 	const tggd::common::SpriteFont& romFont,
@@ -34,9 +35,30 @@ InPlayRenderer::InPlayRenderer(
 void InPlayRenderer::Draw() const
 {
 	DrawRoomPanel();
+	DrawStatusPanel();
 }
 
-void InPlayRenderer::DrawRoomPanel() const
+void InPlayRenderer::DrawStatusPanel() const
+{
+	SDL_Rect clipRect =
+	{
+		Constants::UI::InPlay::StatusPanel::CLIP_X,
+		Constants::UI::InPlay::StatusPanel::CLIP_Y,
+		Constants::UI::InPlay::StatusPanel::CLIP_WIDTH,
+		Constants::UI::InPlay::StatusPanel::CLIP_HEIGHT,
+	};
+	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
+	std::stringstream ss;
+	ss << "Moves: " << gameData.GetMoves();
+	GetRomFont().WriteText(
+		GetMainRenderer(), 
+		Constants::UI::InPlay::StatusPanel::CLIP_X, 
+		Constants::UI::InPlay::StatusPanel::CLIP_Y,
+		ss.str(),
+		Constants::Color::WHITE);
+}
+
+void InPlayRenderer::DrawRoomPanel() const//TODO: split this into its own renderer
 {
 	SDL_Rect clipRect =
 	{

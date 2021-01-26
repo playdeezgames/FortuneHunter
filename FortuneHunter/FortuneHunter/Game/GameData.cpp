@@ -5,11 +5,24 @@
 GameData::GameData()
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, hunter(nullptr)
+	, moves(0)
 {
 }
 
+void GameData::IncrementMove()
+{
+	moves++;
+}
+
+size_t GameData::GetMoves() const
+{
+	return moves;
+}
+
+
 void GameData::ClearHunter()
 {
+	moves = 0;
 	if (hunter)
 	{
 		if (hunter->GetRoomCell())

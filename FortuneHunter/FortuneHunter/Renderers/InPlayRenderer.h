@@ -9,7 +9,8 @@ private:
 	const tggd::common::SpriteManager& spriteManager;
 	const GameData& gameData;
 	std::map<TerrainType, tggd::common::Sprite*> terrainSprites;
-	void DrawRoomPanel() const;
+	void DrawRoomPanel() const;//TODO: make this a renderer
+	void DrawStatusPanel() const;//TODO: make this a renderer
 public:
 	InPlayRenderer(
 		SDL_Renderer*, 

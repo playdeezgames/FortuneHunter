@@ -8,6 +8,7 @@ Placeholder Screens:
         control sfx volume
         control mux volume
 Gameplay:
+    ☐ limited inventory space
     ☐ treasures
     ☐ traps
     ☐ secret doors

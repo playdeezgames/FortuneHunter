@@ -13,6 +13,7 @@ private:
 	void SmootheTerrain();
 	void GenerateRoom();
 	void FlagifyCell(int, int);
+	size_t moves;
 public:
 	GameData();
 	~GameData();
@@ -22,4 +23,6 @@ public:
 	RoomCellObject<TerrainType, ObjectType>* GetHunter();
 	void UpdateRoom();
 	void Start();
+	void IncrementMove();
+	size_t GetMoves() const;
 };
