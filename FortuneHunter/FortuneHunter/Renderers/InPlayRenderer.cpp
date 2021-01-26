@@ -50,14 +50,14 @@ void InPlayRenderer::DrawRoomPanel() const
 	{
 		for (int row = 0; row < Constants::Room::ROWS; ++row)
 		{
-			const RoomCell<TerrainType, CreatureType>* cell = gameData.GetRoom().GetCell(column, row);
+			const RoomCell<TerrainType, ObjectType>* cell = gameData.GetRoom().GetCell(column, row);
 			if (cell->IsExplored())
 			{
 				int x = column * 16 - 8;
 				int y = row * 16 - 8;
 				TerrainType terrain = cell->GetTerrain();
 				terrainSprites.find(terrain)->second->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
-				const Creature<TerrainType, CreatureType>* creature = cell->GetCreature();
+				const Creature<TerrainType, ObjectType>* creature = cell->GetCreature();
 				if (creature != nullptr)
 				{
 					spriteManager.GetSprite("HunterCreature")->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);

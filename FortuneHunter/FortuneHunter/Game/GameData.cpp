@@ -28,22 +28,22 @@ GameData::~GameData()
 }
 
 
-const Room<TerrainType, ItemType, CreatureType>& GameData::GetRoom() const
+const Room<TerrainType, ObjectType>& GameData::GetRoom() const
 {
 	return room;
 }
 
-Room<TerrainType, ItemType, CreatureType>& GameData::GetRoom()
+Room<TerrainType, ObjectType>& GameData::GetRoom()
 {
 	return room;
 }
 
-const Creature<TerrainType, CreatureType>* GameData::GetHunter() const
+const Creature<TerrainType, ObjectType>* GameData::GetHunter() const
 {
 	return hunter;
 }
 
-Creature<TerrainType, CreatureType>* GameData::GetHunter()
+Creature<TerrainType, ObjectType>* GameData::GetHunter()
 {
 	return hunter;
 }
@@ -104,7 +104,7 @@ void GameData::ScaffoldMaze()
 
 void GameData::FlagifyCell(int column, int row)
 {
-	RoomCell<TerrainType, CreatureType>* cell = room.GetCell(column, row);
+	RoomCell<TerrainType, ObjectType>* cell = room.GetCell(column, row);
 	int flags = 0;
 	if (cell->GetTerrain() != TerrainType::FLOOR)
 	{
@@ -150,7 +150,7 @@ void GameData::GenerateRoom()
 void GameData::Start()
 {
 	GenerateRoom();
-	hunter = new Creature<TerrainType, CreatureType>(CreatureType::HUNTER);
+	hunter = new Creature<TerrainType, ObjectType>(ObjectType::HUNTER);
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);

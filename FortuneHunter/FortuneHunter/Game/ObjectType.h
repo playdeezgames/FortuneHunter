@@ -1,5 +1,5 @@
 #pragma once
-enum class CreatureType
+enum class ObjectType
 {
 	HUNTER
 };

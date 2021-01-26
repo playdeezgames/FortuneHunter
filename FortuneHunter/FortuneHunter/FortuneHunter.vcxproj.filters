@@ -230,13 +230,13 @@
     <ClInclude Include="CommandProcessors\BaseCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\CreatureType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\TerrainType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\ItemType.h">
+    <ClInclude Include="Game\Room\RoomItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\ObjectType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
