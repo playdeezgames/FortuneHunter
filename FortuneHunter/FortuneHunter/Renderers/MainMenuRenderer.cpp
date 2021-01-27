@@ -1,6 +1,6 @@
 #include "MainMenuRenderer.h"
 #include "..\Constants\Color.h"
-#include "..\Constants\UI.h"
+#include "..\Constants\UI\MainMenu.h"
 
 MainMenuRenderer::MainMenuRenderer(SDL_Renderer* renderer, const tggd::common::SpriteFont& romFont, const MainMenuState& mainMenuState)
 	: BaseRenderer(renderer, romFont)

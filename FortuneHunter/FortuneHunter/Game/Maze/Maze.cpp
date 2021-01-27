@@ -7,36 +7,54 @@ Maze::Maze(size_t columns, size_t rows)
 	, columns(columns)
 	, rows(rows)
 {
+	PopulateCells();
+	InitializeCells();
+}
+
+void Maze::PopulateCells()
+{
 	while (cells.size() < columns * rows)
 	{
 		cells.push_back(new MazeCell());
 	}
+}
+
+
+void Maze::InitializeCells()
+{
 	for (int column = 0; column < columns; ++column)
 	{
-		for(int row = 0; row<rows; ++row)
-		{ 
-			MazeCell* cell = GetCell(column, row);
-			for (auto direction : MazeDirectionHelper::GetAll())
+		for (int row = 0; row < rows; ++row)
+		{
+			InitializeCell(column, row);
+		}
+	}
+}
+
+
+void Maze::InitializeCell(int column, int row)
+{
+	MazeCell* cell = GetCell(column, row);
+	for (auto direction : MazeDirectionHelper::GetAll())
+	{
+		if (!cell->HasNeighbor(direction))
+		{
+			int nextColumn = MazeDirectionHelper::GetNextColumn(column, row, direction);
+			int nextRow = MazeDirectionHelper::GetNextRow(column, row, direction);
+			if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < rows)
 			{
-				if (!cell->HasNeighbor(direction))
-				{
-					int nextColumn = MazeDirectionHelper::GetNextColumn(column, row, direction);
-					int nextRow = MazeDirectionHelper::GetNextRow(column, row, direction);
-					if (nextColumn >= 0 && nextColumn < columns && nextRow >= 0 && nextRow < rows)
-					{
-						MazeCell* neighbor = GetCell(nextColumn, nextRow);
-						MazeDoor* door = new MazeDoor();
-						doors.push_back(door);
-						cell->SetNeighbor(direction, neighbor);
-						cell->SetDoor(direction, door);
-						neighbor->SetNeighbor(MazeDirectionHelper::GetOpposite(direction), cell);
-						neighbor->SetDoor(MazeDirectionHelper::GetOpposite(direction), door);
-					}
-				}
+				MazeCell* neighbor = GetCell(nextColumn, nextRow);
+				MazeDoor* door = new MazeDoor();
+				doors.push_back(door);
+				cell->SetNeighbor(direction, neighbor);
+				cell->SetDoor(direction, door);
+				neighbor->SetNeighbor(MazeDirectionHelper::GetOpposite(direction), cell);
+				neighbor->SetDoor(MazeDirectionHelper::GetOpposite(direction), door);
 			}
 		}
 	}
 }
+
 
 Maze::~Maze()
 {

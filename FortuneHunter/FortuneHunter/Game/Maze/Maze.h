@@ -10,6 +10,9 @@ private:
 	std::vector<MazeCell*> cells;
 	std::vector<MazeDoor*> doors;
 	void Clear();
+	void PopulateCells();
+	void InitializeCells();
+	void InitializeCell(int, int);
 public:
 	Maze(size_t, size_t);
 	~Maze();

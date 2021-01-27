@@ -1,6 +1,6 @@
 #include "ConfirmQuitRenderer.h"
 #include "..\Constants\Color.h"
-#include "..\Constants\UI.h"
+#include "..\Constants\UI\ConfirmQuit.h"
 ConfirmQuitRenderer::ConfirmQuitRenderer
 	(
 		SDL_Renderer* renderer,

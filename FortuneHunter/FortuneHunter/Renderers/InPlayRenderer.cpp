@@ -1,7 +1,7 @@
 #include "InPlayRenderer.h"
 #include "..\Constants\Room.h"
 #include "..\Constants\Color.h"
-#include "..\Constants\UI.h"
+#include "..\Constants\UI\StatusPanel.h"
 #include <sstream>
 InPlayRenderer::InPlayRenderer(
 	SDL_Renderer* renderer,
@@ -42,18 +42,18 @@ void InPlayRenderer::DrawStatusPanel() const
 {
 	SDL_Rect clipRect =
 	{
-		Constants::UI::InPlay::StatusPanel::CLIP_X,
-		Constants::UI::InPlay::StatusPanel::CLIP_Y,
-		Constants::UI::InPlay::StatusPanel::CLIP_WIDTH,
-		Constants::UI::InPlay::StatusPanel::CLIP_HEIGHT,
+		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_Y,
+		Constants::UI::StatusPanel::CLIP_WIDTH,
+		Constants::UI::StatusPanel::CLIP_HEIGHT,
 	};
 	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
 	std::stringstream ss;
 	ss << "Moves: " << gameData.GetMoves();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(), 
-		Constants::UI::InPlay::StatusPanel::CLIP_X, 
-		Constants::UI::InPlay::StatusPanel::CLIP_Y,
+		Constants::UI::StatusPanel::CLIP_X, 
+		Constants::UI::StatusPanel::CLIP_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 }
@@ -62,10 +62,10 @@ void InPlayRenderer::DrawRoomPanel() const//TODO: split this into its own render
 {
 	SDL_Rect clipRect =
 	{
-		Constants::UI::InPlay::RoomPanel::CLIP_X,
-		Constants::UI::InPlay::RoomPanel::CLIP_Y,
-		Constants::UI::InPlay::RoomPanel::CLIP_WIDTH,
-		Constants::UI::InPlay::RoomPanel::CLIP_HEIGHT,
+		Constants::UI::RoomPanel::CLIP_X,
+		Constants::UI::RoomPanel::CLIP_Y,
+		Constants::UI::RoomPanel::CLIP_WIDTH,
+		Constants::UI::RoomPanel::CLIP_HEIGHT,
 	};
 	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
 	for (int column = 0; column < Constants::Room::COLUMNS; ++column)
