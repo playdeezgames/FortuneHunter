@@ -1,5 +1,6 @@
 #pragma once
 #include "Room\Room.h"
+#include "Room\RoomDirection.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
 class GameData
@@ -14,15 +15,16 @@ private:
 	void GenerateRoom();
 	void FlagifyCell(int, int);
 	size_t moves;
+	void IncrementMove();
+	void UpdateRoom();
+	const RoomCellObject<TerrainType, ObjectType>* GetHunter() const;
+	RoomCellObject<TerrainType, ObjectType>* GetHunter();
 public:
 	GameData();
 	~GameData();
 	const Room<TerrainType, ObjectType>& GetRoom() const;
 	Room<TerrainType, ObjectType>& GetRoom();
-	const RoomCellObject<TerrainType, ObjectType>* GetHunter() const;
-	RoomCellObject<TerrainType, ObjectType>* GetHunter();
-	void UpdateRoom();
 	void Start();
-	void IncrementMove();
 	size_t GetMoves() const;
+	void MoveHunter(RoomDirection);
 };

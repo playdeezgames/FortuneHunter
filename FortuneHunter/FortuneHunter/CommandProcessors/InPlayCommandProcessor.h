@@ -8,7 +8,6 @@ class InPlayCommandProcessor : public BaseCommandProcessor
 {
 private:
 	GameData& gameData;
-	void MoveHunter(RoomDirection);
 public:
 	InPlayCommandProcessor(UIState&, GameData&);
 	void OnCommand(const Command&);

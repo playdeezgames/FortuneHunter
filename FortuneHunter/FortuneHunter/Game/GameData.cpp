@@ -141,7 +141,6 @@ void GameData::FlagifyCell(int column, int row)
 	cell->SetTerrain(flagMap[flags]);
 }
 
-
 void GameData::SmootheTerrain()
 {
 	for (int column = 0; column < room.GetColumns(); ++column)
@@ -158,7 +157,6 @@ void GameData::GenerateRoom()
 	ScaffoldMaze();
 	SmootheTerrain();
 }
-
 
 void GameData::Start()
 {
@@ -202,4 +200,22 @@ void GameData::UpdateRoom()
 			}
 		}
 	}
+}
+
+void GameData::MoveHunter(RoomDirection direction)
+{
+	RoomCellObject<TerrainType, ObjectType>* hunter = GetHunter();
+	RoomCell<TerrainType, ObjectType>* cell = hunter->GetRoomCell();
+	int column = (int)cell->GetColumn();
+	int row = (int)cell->GetRow();
+	int nextColumn = RoomDirectionHelper::GetNextColumn(column, row, direction);
+	int nextRow = RoomDirectionHelper::GetNextRow(column, row, direction);
+	RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
+	if (nextCell->GetTerrain() == TerrainType::FLOOR)
+	{
+		cell->SetObject(nullptr);
+		nextCell->SetObject(hunter);
+	}
+	IncrementMove();
+	UpdateRoom();
 }

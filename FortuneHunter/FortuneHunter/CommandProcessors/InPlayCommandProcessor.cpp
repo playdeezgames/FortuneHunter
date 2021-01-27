@@ -13,34 +13,17 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 		SetUIState(UIState::MAIN_MENU);
 		return;
 	case Command::UP:
-		MoveHunter(RoomDirection::NORTH);
+		gameData.MoveHunter(RoomDirection::NORTH);
 		return;
 	case Command::DOWN:
-		MoveHunter(RoomDirection::SOUTH);
+		gameData.MoveHunter(RoomDirection::SOUTH);
 		return;
 	case Command::LEFT:
-		MoveHunter(RoomDirection::WEST);
+		gameData.MoveHunter(RoomDirection::WEST);
 		return;
 	case Command::RIGHT:
-		MoveHunter(RoomDirection::EAST);
+		gameData.MoveHunter(RoomDirection::EAST);
 		return;
 	}
 }
 
-void InPlayCommandProcessor::MoveHunter(RoomDirection direction)
-{
-	RoomCellObject<TerrainType, ObjectType>* hunter = gameData.GetHunter();
-	RoomCell<TerrainType, ObjectType>* cell = hunter->GetRoomCell();
-	int column = (int)cell->GetColumn();
-	int row = (int)cell->GetRow();
-	int nextColumn = RoomDirectionHelper::GetNextColumn(column, row, direction);
-	int nextRow = RoomDirectionHelper::GetNextRow(column, row, direction);
-	RoomCell<TerrainType, ObjectType>* nextCell = gameData.GetRoom().GetCell(nextColumn, nextRow);
-	if(nextCell->GetTerrain()==TerrainType::FLOOR)
-	{
-		cell->SetObject(nullptr);
-		nextCell->SetObject(hunter);
-	}
-	gameData.IncrementMove();
-	gameData.UpdateRoom();
-}
