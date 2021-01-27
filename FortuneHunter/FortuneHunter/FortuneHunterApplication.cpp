@@ -61,17 +61,8 @@ void FortuneHunterApplication::Finish()
 	textureManager.Finish();
 	controllerManager.Finish();
 	renderers.Finish();
-
-	if (statusPanelRenderer)
-	{
-		delete statusPanelRenderer;
-		statusPanelRenderer = nullptr;
-	}
-	if (roomPanelRenderer)
-	{
-		delete roomPanelRenderer;
-		roomPanelRenderer = nullptr;
-	}
+	tggd::common::Utility::SafeDelete(statusPanelRenderer);
+	tggd::common::Utility::SafeDelete(roomPanelRenderer);
 }
 
 void FortuneHunterApplication::Update(int milliSeconds)

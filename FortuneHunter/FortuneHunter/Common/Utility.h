@@ -14,6 +14,15 @@ namespace tggd::common
 		static nlohmann::json LoadJSON(const std::string&);
 		static std::vector<std::string> Tokenize(const std::string&, char);
 		static int StringToInt(const std::string&);
+		template<typename TDelete>
+		static void SafeDelete(TDelete*& ptr)
+		{
+			if (ptr)
+			{
+				delete ptr;
+				ptr = nullptr;
+			}
+		}
 	};
 }
 
