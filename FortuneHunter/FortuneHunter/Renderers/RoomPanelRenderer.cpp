@@ -2,6 +2,7 @@
 #include "..\Constants\UI\RoomPanel.h"
 #include "..\Constants\Room.h"
 #include "..\Constants\Color.h"
+#include "..\Constants\Cell.h"
 RoomPanelRenderer::RoomPanelRenderer
 (
 	SDL_Renderer* renderer,
@@ -33,6 +34,55 @@ RoomPanelRenderer::RoomPanelRenderer
 	terrainSprites[TerrainType::WALL_NESW] = spriteManager.GetSprite("WallTileNESW");//TODO magic strings
 }
 
+const std::string SPRITE_HUNTER = "HunterCreature";
+const std::string SPRITE_DITHER = "Dither";
+
+void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
+{
+	terrainSprites.find(terrain)->second->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+}
+
+void RoomPanelRenderer::DrawDither(int x, int y, const RoomCell<TerrainType, ObjectType>* cell) const
+{
+	if (!cell->IsLit())
+	{
+		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+	}
+}
+
+void RoomPanelRenderer::DrawObject(int x, int y, const RoomCellObject<TerrainType, ObjectType>* object) const
+{
+	if (object != nullptr)
+	{
+		spriteManager.GetSprite(SPRITE_HUNTER)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+	}
+}
+
+void RoomPanelRenderer::DrawCell(int column, int row) const
+{
+	const RoomCell<TerrainType, ObjectType>* cell = gameData.GetRoom().GetCell(column, row);
+	if (cell->IsExplored())
+	{
+		int x = PlotColumn(column, row);
+		int y = PlotRow(column, row);
+
+		DrawTerrain(x, y, cell->GetTerrain());
+		DrawObject(x, y, cell->GetObject());
+		DrawDither(x, y, cell);
+	}
+}
+
+void RoomPanelRenderer::DrawCells() const
+{
+	for (int column = 0; column < Constants::Room::COLUMNS; ++column)
+	{
+		for (int row = 0; row < Constants::Room::ROWS; ++row)
+		{
+			DrawCell(column, row);
+		}
+	}
+}
+
 void RoomPanelRenderer::Draw() const
 {
 	SDL_Rect clipRect =
@@ -43,29 +93,17 @@ void RoomPanelRenderer::Draw() const
 		Constants::UI::RoomPanel::CLIP_HEIGHT,
 	};
 	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
-	for (int column = 0; column < Constants::Room::COLUMNS; ++column)
-	{
-		for (int row = 0; row < Constants::Room::ROWS; ++row)
-		{
-			const RoomCell<TerrainType, ObjectType>* cell = gameData.GetRoom().GetCell(column, row);
-			if (cell->IsExplored())
-			{
-				int x = column * 16 - 8;//TODO magic number
-				int y = row * 16 - 8;//TODO magic number
-				TerrainType terrain = cell->GetTerrain();
-				terrainSprites.find(terrain)->second->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
-				const RoomCellObject<TerrainType, ObjectType>* creature = cell->GetObject();
-				if (creature != nullptr)
-				{
-					spriteManager.GetSprite("HunterCreature")->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);//TODO magic string
-				}
-				if (!cell->IsLit())
-				{
-					spriteManager.GetSprite("Dither")->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);//TODO magic string
-				}
-			}
-		}
-	}
+	DrawCells();
 	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
 
+}
+
+int RoomPanelRenderer::PlotColumn(int column, int row)
+{
+	return column * Constants::Cell::WIDTH - (Constants::Cell::WIDTH / 2);
+}
+
+int RoomPanelRenderer::PlotRow(int column, int row)
+{
+	return row * Constants::Cell::HEIGHT - (Constants::Cell::HEIGHT / 2);
 }
