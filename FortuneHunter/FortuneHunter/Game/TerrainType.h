@@ -1,6 +1,7 @@
 #pragma once
 enum class TerrainType
 {
+	FLOOR,
 	WALL_N,
 	WALL_E,
 	WALL_NE,
@@ -15,6 +16,5 @@ enum class TerrainType
 	WALL_SW,
 	WALL_NSW,
 	WALL_ESW,
-	WALL_NESW,
-	FLOOR
+	WALL_NESW
 };
