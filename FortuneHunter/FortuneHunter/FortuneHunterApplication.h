@@ -14,6 +14,7 @@
 #include "EventHandlers\FortuneHunterEventHandler.h"
 #include "UI\ConfirmState.h"
 #include "Game\GameData.h"
+#include "Renderers\StatusPanelRenderer.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -25,6 +26,7 @@ private:
 	tggd::common::RenderManager<UIState> renderers;
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
+	StatusPanelRenderer* statusPanelRenderer;
 
 	FortuneHunterEventHandler eventHandler;
 

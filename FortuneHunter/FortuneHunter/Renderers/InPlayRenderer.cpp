@@ -7,8 +7,10 @@ InPlayRenderer::InPlayRenderer(
 	SDL_Renderer* renderer,
 	const tggd::common::SpriteFont& romFont,
 	tggd::common::SpriteManager& spriteManager,
+	const StatusPanelRenderer* statusPanelRenderer,
 	const GameData& gameData)
 	: BaseRenderer(renderer, romFont)
+	, statusPanelRenderer(statusPanelRenderer)
 	, gameData(gameData)
 	, spriteManager(spriteManager)
 	, terrainSprites()
@@ -35,27 +37,7 @@ InPlayRenderer::InPlayRenderer(
 void InPlayRenderer::Draw() const
 {
 	DrawRoomPanel();
-	DrawStatusPanel();
-}
-
-void InPlayRenderer::DrawStatusPanel() const
-{
-	SDL_Rect clipRect =
-	{
-		Constants::UI::StatusPanel::CLIP_X,
-		Constants::UI::StatusPanel::CLIP_Y,
-		Constants::UI::StatusPanel::CLIP_WIDTH,
-		Constants::UI::StatusPanel::CLIP_HEIGHT,
-	};
-	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
-	std::stringstream ss;
-	ss << "Moves: " << gameData.GetMoves();//TODO magic string
-	GetRomFont().WriteText(
-		GetMainRenderer(), 
-		Constants::UI::StatusPanel::CLIP_X, 
-		Constants::UI::StatusPanel::CLIP_Y,
-		ss.str(),
-		Constants::Color::WHITE);
+	statusPanelRenderer->Draw();
 }
 
 void InPlayRenderer::DrawRoomPanel() const//TODO: split this into its own renderer

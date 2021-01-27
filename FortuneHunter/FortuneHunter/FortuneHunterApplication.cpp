@@ -25,6 +25,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
 	, gameData()
+	, statusPanelRenderer(nullptr)
 {
 
 }
@@ -44,9 +45,11 @@ void FortuneHunterApplication::Start()
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
 	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
 
+	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, gameData);
+
 	renderers.AddRenderer(UIState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
 	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
-	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, spriteManager, gameData));
+	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, spriteManager, statusPanelRenderer, gameData));
 }
 
 void FortuneHunterApplication::Finish()
@@ -56,6 +59,12 @@ void FortuneHunterApplication::Finish()
 	spriteManager.Finish();
 	textureManager.Finish();
 	controllerManager.Finish();
+
+	if (statusPanelRenderer)
+	{
+		delete statusPanelRenderer;
+		statusPanelRenderer = nullptr;
+	}
 }
 
 void FortuneHunterApplication::Update(int milliSeconds)
