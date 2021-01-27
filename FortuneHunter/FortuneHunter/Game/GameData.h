@@ -25,6 +25,8 @@ private:
 	RoomCellObject<TerrainType, ObjectType>* GetHunter();
 	static size_t PlotColumn(size_t, size_t);
 	static size_t PlotRow(size_t, size_t);
+	void ClearLights();
+	void LightAndExploreAroundHunter();
 public:
 	GameData();
 	~GameData();

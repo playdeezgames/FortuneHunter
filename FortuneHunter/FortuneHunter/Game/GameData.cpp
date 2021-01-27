@@ -198,7 +198,7 @@ void GameData::Start()
 {
 	GenerateRoom();
 	hunter = new RoomCellObject<TerrainType, ObjectType>(ObjectType::HUNTER);
-	while (hunter->GetRoomCell() == nullptr)
+	while (hunter->GetRoomCell() == nullptr)//TODO: need a "entry point"
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
@@ -210,7 +210,7 @@ void GameData::Start()
 	UpdateRoom();
 }
 
-void GameData::UpdateRoom()
+void GameData::ClearLights()
 {
 	for (size_t column = 0; column < room.GetColumns(); ++column)
 	{
@@ -219,15 +219,19 @@ void GameData::UpdateRoom()
 			room.GetCell(column, row)->SetLit(false);
 		}
 	}
+}
+
+void GameData::LightAndExploreAroundHunter()
+{
 	if (hunter && hunter->GetRoomCell())
 	{
-		int column = (int)hunter->GetRoomCell()->GetColumn();
-		int row = (int)hunter->GetRoomCell()->GetRow();
-		for (int c = column - 1; c <= column + 1; ++c)
+		int roomColumn = (int)hunter->GetRoomCell()->GetColumn();
+		int roomRow = (int)hunter->GetRoomCell()->GetRow();
+		for (int column = roomColumn - 1; column <= roomColumn + 1; ++column)
 		{
-			for (int r = row - 1; r <= row + 1; ++r)
+			for (int row = roomRow - 1; row <= roomRow + 1; ++row)
 			{
-				auto cell = room.GetCell(c, r);
+				auto cell = room.GetCell(column, row);
 				if (cell)
 				{
 					cell->SetLit(true);
@@ -238,14 +242,20 @@ void GameData::UpdateRoom()
 	}
 }
 
+void GameData::UpdateRoom()
+{
+	ClearLights();
+	LightAndExploreAroundHunter();
+}
+
 void GameData::MoveHunter(RoomDirection direction)
 {
 	RoomCellObject<TerrainType, ObjectType>* hunter = GetHunter();
 	RoomCell<TerrainType, ObjectType>* cell = hunter->GetRoomCell();
-	int column = (int)cell->GetColumn();
-	int row = (int)cell->GetRow();
-	int nextColumn = RoomDirectionHelper::GetNextColumn(column, row, direction);
-	int nextRow = RoomDirectionHelper::GetNextRow(column, row, direction);
+	int roomColumn = (int)cell->GetColumn();
+	int roomRow = (int)cell->GetRow();
+	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
+	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
 	RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
 	if (nextCell->GetTerrain() == TerrainType::FLOOR)
 	{
