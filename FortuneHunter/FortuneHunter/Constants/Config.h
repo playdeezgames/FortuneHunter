@@ -9,5 +9,6 @@ namespace Constants::Config
 		const std::string TEXTURES = "config/textures.json";
 		const std::string SPRITES = "config/sprites.json";
 		const std::string ROMFONT = "config/romfont.json";
+		const std::string TERRAINSPRITES = "config/terrainsprites.json";
 	}
 }

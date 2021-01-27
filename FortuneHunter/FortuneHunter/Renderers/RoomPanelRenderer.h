@@ -2,12 +2,13 @@
 #include "BaseRenderer.h"
 #include "..\Game\GameData.h"
 #include "..\Game\TerrainType.h"
+#include "..\Game\TerrainSpriteManager.h"
 class RoomPanelRenderer : public BaseRenderer
 {
 private:
 	const GameData& gameData;
-	std::map<TerrainType, tggd::common::Sprite*> terrainSprites;
 	const tggd::common::SpriteManager& spriteManager;
+	const TerrainSpriteManager& terrainSprites;
 	static int PlotColumn(int, int);
 	static int PlotRow(int, int);
 	void DrawCells() const;
@@ -21,6 +22,7 @@ public:
 		SDL_Renderer*, 
 		const tggd::common::SpriteFont&, 
 		const tggd::common::SpriteManager&,
+		const TerrainSpriteManager&,
 		const GameData&
 	);
 	void Draw() const;

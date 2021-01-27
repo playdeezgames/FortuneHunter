@@ -26,6 +26,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, confirmState(ConfirmState::NO)
 	, gameData()
 	, statusPanelRenderer(nullptr)
+	, terrainSprites()
 {
 
 }
@@ -40,13 +41,14 @@ void FortuneHunterApplication::Start()
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
+	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
 
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
 	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
 
 	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, gameData);
-	roomPanelRenderer = new RoomPanelRenderer(GetMainRenderer(), romFont, spriteManager, gameData);
+	roomPanelRenderer = new RoomPanelRenderer(GetMainRenderer(), romFont, spriteManager, terrainSprites, gameData);
 
 	renderers.AddRenderer(UIState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
 	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
