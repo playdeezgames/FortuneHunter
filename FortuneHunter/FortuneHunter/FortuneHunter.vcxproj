@@ -40,6 +40,7 @@
     <ClCompile Include="Game\Maze\MazeDoor.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
+    <ClCompile Include="Renderers\RoomPanelRenderer.cpp" />
     <ClCompile Include="Renderers\StatusPanelRenderer.cpp" />
     <ClCompile Include="UI\MainMenuState.cpp" />
     <ClCompile Include="Renderers\BaseRenderer.cpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="Game\Room\RoomDirection.h" />
     <ClInclude Include="Game\TerrainType.h" />
     <ClInclude Include="Renderers\InPlayRenderer.h" />
+    <ClInclude Include="Renderers\RoomPanelRenderer.h" />
     <ClInclude Include="Renderers\StatusPanelRenderer.h" />
     <ClInclude Include="UI\ConfirmState.h" />
     <ClInclude Include="UI\UIState.h" />
