@@ -15,9 +15,9 @@ ConfirmQuitRenderer::ConfirmQuitRenderer
 
 void ConfirmQuitRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "Are you sure you want to quit?", Constants::Color::RED);//TODO magic string
-	DrawConfirmItem(0, "No", ConfirmState::NO);//TODO magic string
-	DrawConfirmItem(1, "Yes", ConfirmState::YES);//TODO magic string
+	GetRomFont().WriteText(GetMainRenderer(), 0, 0, Constants::UI::ConfirmQuit::TITLE, Constants::Color::RED);
+	DrawConfirmItem(0, Constants::UI::ConfirmQuit::OPTION_NO, ConfirmState::NO);
+	DrawConfirmItem(1, Constants::UI::ConfirmQuit::OPTION_YES, ConfirmState::YES);
 }
 
 void ConfirmQuitRenderer::DrawConfirmItem(int line, const std::string& text, const ConfirmState& state) const
