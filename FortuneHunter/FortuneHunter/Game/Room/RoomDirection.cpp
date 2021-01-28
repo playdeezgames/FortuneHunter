@@ -1,5 +1,19 @@
 #include "RoomDirection.h"
 #include <string>
+std::vector<RoomDirection> allDirections;
+const std::vector<RoomDirection>& RoomDirectionHelper::GetAll()
+{
+	if (allDirections.empty())
+	{
+		allDirections.push_back(RoomDirection::NORTH);
+		allDirections.push_back(RoomDirection::EAST);
+		allDirections.push_back(RoomDirection::SOUTH);
+		allDirections.push_back(RoomDirection::WEST);
+	}
+	return allDirections;
+}
+
+
 int RoomDirectionHelper::GetNextColumn(int column, int row, RoomDirection direction)
 {
 	switch (direction)

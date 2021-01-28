@@ -12,5 +12,5 @@ public:
 	RoomCellObject(TObjectData creatureData) :roomCell(nullptr), objectData(creatureData) {}
 	const RoomCell<TTerrain, TObjectData>* GetRoomCell() const { return roomCell; }
 	RoomCell<TTerrain, TObjectData>* GetRoomCell() { return roomCell; }
-	TObjectData GetObjectData() { return objectData; }
+	const TObjectData& GetObjectData() const { return objectData; }
 };

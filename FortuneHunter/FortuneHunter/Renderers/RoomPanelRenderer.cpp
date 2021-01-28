@@ -20,6 +20,8 @@ RoomPanelRenderer::RoomPanelRenderer
 
 const std::string SPRITE_HUNTER = "HunterCreature";
 const std::string SPRITE_DITHER = "Dither";
+const std::string SPRITE_DOOR_NS = "NSDoor";
+const std::string SPRITE_DOOR_EW = "EWDoor";
 
 void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
 {
@@ -38,7 +40,12 @@ void RoomPanelRenderer::DrawObject(int x, int y, const RoomCellObject<TerrainTyp
 {
 	if (object != nullptr)
 	{
-		spriteManager.GetSprite(SPRITE_HUNTER)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+		ObjectType objectType = object->GetObjectData();
+		std::string spriteName =
+			(objectType == ObjectType::HUNTER) ? (SPRITE_HUNTER) :
+			(objectType == ObjectType::DOOR_EW) ? (SPRITE_DOOR_EW) :
+			(SPRITE_DOOR_NS);
+		spriteManager.GetSprite(spriteName)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 	}
 }
 

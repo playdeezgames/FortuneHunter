@@ -4,7 +4,7 @@ enum class ObjectType
 	HUNTER,
 	KEY,
 	DOOR_NS,
-	DOOR_ES,
+	DOOR_EW,
 	EXIT,
 	DIAMOND
 };

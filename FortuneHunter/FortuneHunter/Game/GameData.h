@@ -28,7 +28,7 @@ private:
 	static size_t PlotRow(size_t, size_t);
 	void ClearLights();
 	void LightAndExploreAroundHunter();
-	void PopulateKeysAndLocks();
+	void PopulateKeysAndLocks(RoomGenerationContext&);
 public:
 	GameData();
 	~GameData();

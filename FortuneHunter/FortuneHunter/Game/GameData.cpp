@@ -197,6 +197,7 @@ void GameData::GenerateRoom()
 {
 	RoomGenerationContext context;
 	ScaffoldMaze(context);
+	PopulateKeysAndLocks(context);
 	SmootheTerrain();
 }
 
@@ -208,9 +209,10 @@ void GameData::Start()
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
-		if (room.GetCell(column, row)->GetTerrain() == TerrainType::FLOOR)
+		auto roomCell = room.GetCell(column, row);
+		if (roomCell->GetTerrain() == TerrainType::FLOOR && roomCell->GetObject()==nullptr)
 		{
-			room.GetCell(column, row)->SetObject(hunter);
+			roomCell->SetObject(hunter);
 		}
 	}
 	UpdateRoom();
@@ -263,7 +265,7 @@ void GameData::MoveHunter(RoomDirection direction)
 	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
 	RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
-	if (nextCell->GetTerrain() == TerrainType::FLOOR)
+	if (nextCell->GetTerrain() == TerrainType::FLOOR && nextCell->GetObject()==nullptr)
 	{
 		cell->SetObject(nullptr);
 		nextCell->SetObject(hunter);
@@ -272,7 +274,27 @@ void GameData::MoveHunter(RoomDirection direction)
 	UpdateRoom();
 }
 
-void GameData::PopulateKeysAndLocks()
+void GameData::PopulateKeysAndLocks(RoomGenerationContext& context)
 {
-
+	for (auto& xy : context.GetDeadEnds())
+	{
+		size_t roomColumn = xy.GetX();
+		size_t roomRow = xy.GetY();
+		for (auto direction : RoomDirectionHelper::GetAll())
+		{
+			size_t nextRoomColumn = RoomDirectionHelper::GetNextColumn((int)roomColumn, (int)roomRow, direction);
+			size_t nextRoomRow = RoomDirectionHelper::GetNextRow((int)roomColumn, (int)roomRow, direction);
+			auto roomCell = room.GetCell(nextRoomColumn, nextRoomRow);
+			if (roomCell->GetTerrain() == TerrainType::FLOOR && roomCell->GetObject()==nullptr)
+			{
+				ObjectType objectType = 
+					(direction==RoomDirection::EAST || direction==RoomDirection::WEST) ? 
+					(ObjectType::DOOR_NS) : 
+					(ObjectType::DOOR_EW);
+				RoomCellObject<TerrainType, ObjectType>* object = new RoomCellObject<TerrainType, ObjectType>(objectType);
+				roomCell->SetObject(object);
+				break;
+			}
+		}
+	}
 }
