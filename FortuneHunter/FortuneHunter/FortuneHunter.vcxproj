@@ -72,6 +72,7 @@
     <ClInclude Include="Constants\Config.h" />
     <ClInclude Include="Constants\Maze.h" />
     <ClInclude Include="Constants\Room.h" />
+    <ClInclude Include="Constants\Sounds.h" />
     <ClInclude Include="Constants\UI\ConfirmQuit.h" />
     <ClInclude Include="Constants\UI\MainMenu.h" />
     <ClInclude Include="Constants\UI\RoomPanel.h" />

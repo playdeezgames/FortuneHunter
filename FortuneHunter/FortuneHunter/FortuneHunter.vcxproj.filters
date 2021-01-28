@@ -284,5 +284,8 @@
     <ClInclude Include="Game\Hunter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Constants\Sounds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,5 +6,6 @@ namespace Constants::UI::StatusPanel
 	const int CLIP_Y = 0;
 	const int CLIP_WIDTH = 160;
 	const int CLIP_HEIGHT = 480;
+
 }
 

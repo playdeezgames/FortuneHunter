@@ -20,7 +20,8 @@ Gameplay:
     ✔ keys @done(21-01-28 05:38)
     ☐ the exit
 Refactor:
-    ☐ maze cell flagifier
+    ☐ maze cell flagifier for rendering
+    ☐ maze cell has a set of flags instead of "lit" and "explored"
 Sound Effects:
     ✔ get key @done(21-01-28 05:57)
     ☐ bump wall
