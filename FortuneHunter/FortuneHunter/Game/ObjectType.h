@@ -1,5 +1,10 @@
 #pragma once
 enum class ObjectType
 {
-	HUNTER
+	HUNTER,
+	KEY,
+	DOOR_NS,
+	DOOR_ES,
+	EXIT,
+	DIAMOND
 };

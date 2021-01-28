@@ -38,6 +38,7 @@
     <ClCompile Include="Game\Maze\MazeCell.cpp" />
     <ClCompile Include="Game\Maze\MazeDirection.cpp" />
     <ClCompile Include="Game\Maze\MazeDoor.cpp" />
+    <ClCompile Include="Game\RoomGenerationContext.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
     <ClCompile Include="Game\TerrainSpriteManager.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
@@ -56,6 +57,7 @@
     <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h" />
     <ClInclude Include="Common\Application.h" />
     <ClInclude Include="Common\Interfaces\CommandProcessor.h" />
+    <ClInclude Include="Common\XY.h" />
     <ClInclude Include="Common\Managers\CommandProcessorManager.h" />
     <ClInclude Include="Common\Managers\ControllerManager.h" />
     <ClInclude Include="Common\Interfaces\EventHandler.h" />
@@ -80,6 +82,7 @@
     <ClInclude Include="Common\Graphics\Sprite.h" />
     <ClInclude Include="Common\Managers\SpriteManager.h" />
     <ClInclude Include="CommandProcessors\Command.h" />
+    <ClInclude Include="Game\RoomGenerationContext.h" />
     <ClInclude Include="Game\Room\RoomCellObject.h" />
     <ClInclude Include="Game\ObjectType.h" />
     <ClInclude Include="Game\GameData.h" />

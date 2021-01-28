@@ -49,4 +49,16 @@ bool MazeCell::HasNeighbor(MazeDirection direction) const
 	return neighbors.find(direction) != neighbors.end();
 }
 
+bool MazeCell::IsDeadEnd() const
+{
+	int count = 0;
+	for (auto& entry : exits)
+	{
+		if (entry.second->IsOpen())
+		{
+			count++;
+		}
+	}
+	return count==1;
+}
 

@@ -4,6 +4,7 @@
 #include "TerrainType.h"
 #include "ObjectType.h"
 #include "Maze\Maze.h"
+#include "RoomGenerationContext.h"
 class GameData
 {
 private:
@@ -11,9 +12,9 @@ private:
 	RoomCellObject<TerrainType, ObjectType>* hunter;
 	void ClearRoom();
 	void ClearHunter();
-	void ScaffoldMazeCell(int, int, const MazeCell*);
-	void ScaffoldMazeCells(const Maze&);
-	void ScaffoldMaze();
+	void ScaffoldMazeCell(int, int, const MazeCell*, RoomGenerationContext&);
+	void ScaffoldMazeCells(const Maze&, RoomGenerationContext&);
+	void ScaffoldMaze(RoomGenerationContext&);
 	void SmootheTerrain();
 	void GenerateRoom();
 	int FlagifyDirection(int, int, RoomDirection, int);
@@ -27,6 +28,7 @@ private:
 	static size_t PlotRow(size_t, size_t);
 	void ClearLights();
 	void LightAndExploreAroundHunter();
+	void PopulateKeysAndLocks();
 public:
 	GameData();
 	~GameData();

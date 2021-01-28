@@ -108,12 +108,17 @@ size_t GameData::PlotRow(size_t columne, size_t row)
 	return row * 2 + 1;
 }
 
-void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* cell)
+void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* mazeCell, RoomGenerationContext& context)
 {
 	size_t roomColumn = PlotColumn(mazeColumn, mazeRow);
 	size_t roomRow = PlotRow(mazeColumn, mazeRow);
+
+	if (mazeCell->IsDeadEnd())
+	{
+		context.AddDeadEnd({ roomColumn, roomRow });
+	}
 	
-	if (cell->HasDoor(MazeDirection::EAST) && cell->GetDoor(MazeDirection::EAST)->IsOpen())
+	if (mazeCell->HasDoor(MazeDirection::EAST) && mazeCell->GetDoor(MazeDirection::EAST)->IsOpen())
 	{
 		room.GetCell
 		(
@@ -121,7 +126,7 @@ void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* cel
 			roomRow
 		)->SetTerrain(TerrainType::FLOOR);
 	}
-	if (cell->HasDoor(MazeDirection::SOUTH) && cell->GetDoor(MazeDirection::SOUTH)->IsOpen())
+	if (mazeCell->HasDoor(MazeDirection::SOUTH) && mazeCell->GetDoor(MazeDirection::SOUTH)->IsOpen())
 	{
 		room.GetCell
 		(
@@ -131,23 +136,23 @@ void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* cel
 	}
 }
 
-void GameData::ScaffoldMazeCells(const Maze& maze)
+void GameData::ScaffoldMazeCells(const Maze& maze, RoomGenerationContext& context)
 {
 	for (int column = 0; column < maze.GetColumns(); ++column)
 	{
 		for (int row = 0; row < maze.GetRows(); ++row)
 		{
-			ScaffoldMazeCell(column, row, maze.GetCell(column, row));
+			ScaffoldMazeCell(column, row, maze.GetCell(column, row), context);
 		}
 	}
 }
 
-void GameData::ScaffoldMaze()
+void GameData::ScaffoldMaze(RoomGenerationContext& context)
 {
 	ClearRoom();
 	Maze maze(Constants::Maze::COLUMNS, Constants::Maze::ROWS);
 	maze.Generate();
-	ScaffoldMazeCells(maze);
+	ScaffoldMazeCells(maze, context);
 }	
 
 int GameData::FlagifyDirection(int column, int row, RoomDirection direction, int flag)
@@ -190,7 +195,8 @@ void GameData::SmootheTerrain()
 
 void GameData::GenerateRoom()
 {
-	ScaffoldMaze();
+	RoomGenerationContext context;
+	ScaffoldMaze(context);
 	SmootheTerrain();
 }
 
@@ -264,4 +270,9 @@ void GameData::MoveHunter(RoomDirection direction)
 	}
 	IncrementMove();
 	UpdateRoom();
+}
+
+void GameData::PopulateKeysAndLocks()
+{
+
 }

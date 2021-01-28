@@ -18,4 +18,5 @@ public:
 	MazeDoor* GetDoor(MazeDirection);
 	bool HasDoor(MazeDirection) const;
 	bool HasNeighbor(MazeDirection) const;
+	bool IsDeadEnd() const;
 };
