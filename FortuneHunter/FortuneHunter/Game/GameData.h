@@ -5,11 +5,12 @@
 #include "ObjectType.h"
 #include "Maze\Maze.h"
 #include "RoomGenerationContext.h"
+#include "Hunter.h"
 class GameData
 {
 private:
 	Room<TerrainType, ObjectType> room;
-	RoomCellObject<TerrainType, ObjectType>* hunter;
+	Hunter* hunter;
 	void ClearRoom();
 	void ClearHunter();
 	void ScaffoldMazeCell(int, int, const MazeCell*, RoomGenerationContext&);

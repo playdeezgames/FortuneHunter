@@ -205,7 +205,7 @@ void GameData::GenerateRoom()
 
 void GameData::PlaceHunter()
 {
-	hunter = new RoomCellObject<TerrainType, ObjectType>(ObjectType::HUNTER);
+	hunter = new Hunter();
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
