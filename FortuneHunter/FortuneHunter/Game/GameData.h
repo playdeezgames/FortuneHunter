@@ -30,6 +30,7 @@ private:
 	void LightAndExploreAroundHunter();
 	void PopulateLocks(RoomGenerationContext&);
 	void PopulateKeys(RoomGenerationContext&);
+	void PlaceHunter();
 public:
 	GameData();
 	~GameData();

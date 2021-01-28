@@ -203,20 +203,26 @@ void GameData::GenerateRoom()
 	SmootheTerrain();
 }
 
-void GameData::Start()
+void GameData::PlaceHunter()
 {
-	GenerateRoom();
 	hunter = new RoomCellObject<TerrainType, ObjectType>(ObjectType::HUNTER);
-	while (hunter->GetRoomCell() == nullptr)//TODO: need a "entry point"
+	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
 		auto roomCell = room.GetCell(column, row);
-		if (roomCell->GetTerrain()==TerrainType::FLOOR && roomCell->GetObject()==nullptr)
+		if (roomCell->GetTerrain() == TerrainType::FLOOR && !roomCell->HasObject())
 		{
 			roomCell->SetObject(hunter);
 		}
 	}
+}
+
+
+void GameData::Start()
+{
+	GenerateRoom();
+	PlaceHunter();
 	UpdateRoom();
 }
 
@@ -267,7 +273,7 @@ void GameData::MoveHunter(RoomDirection direction)
 	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
 	RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
-	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()) && nextCell->GetObject()==nullptr)
+	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()) && !nextCell->HasObject())
 	{
 		cell->SetObject(nullptr);
 		nextCell->SetObject(hunter);
@@ -287,7 +293,7 @@ void GameData::PopulateLocks(RoomGenerationContext& context)
 			size_t nextRoomColumn = RoomDirectionHelper::GetNextColumn((int)roomColumn, (int)roomRow, direction);
 			size_t nextRoomRow = RoomDirectionHelper::GetNextRow((int)roomColumn, (int)roomRow, direction);
 			auto roomCell = room.GetCell(nextRoomColumn, nextRoomRow);
-			if (TerrainTypeHelper::IsFloor(roomCell->GetTerrain()) && roomCell->GetObject()==nullptr)
+			if (TerrainTypeHelper::IsFloor(roomCell->GetTerrain()) && !roomCell->HasObject())
 			{
 				ObjectType objectType = 
 					(direction==RoomDirection::EAST || direction==RoomDirection::WEST) ? 
@@ -309,7 +315,7 @@ void GameData::PopulateKeys(RoomGenerationContext& context)
 		size_t roomColumn = tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)room.GetColumns());
 		size_t roomRow = tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)room.GetRows());
 		auto roomCell = room.GetCell(roomColumn, roomRow);
-		if (roomCell->GetObject() == nullptr && roomCell->GetTerrain() == TerrainType::FLOOR)
+		if (!roomCell->HasObject() && roomCell->GetTerrain() == TerrainType::FLOOR)
 		{
 			RoomCellObject<TerrainType, ObjectType>* object = new RoomCellObject<TerrainType, ObjectType>(ObjectType::KEY);
 			roomCell->SetObject(object);

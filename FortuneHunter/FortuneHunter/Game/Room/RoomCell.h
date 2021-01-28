@@ -43,6 +43,7 @@ public:
 	}
 	const RoomCellObject<TTerrain, TObjectData>* GetObject() const { return object; }
 	RoomCellObject<TTerrain, TObjectData>* GetObject() { return object; }
+	bool HasObject() const { return object != nullptr; }
 	size_t GetColumn() const { return column; }
 	size_t GetRow() const { return row; }
 	bool IsLit() const { return lit; }
