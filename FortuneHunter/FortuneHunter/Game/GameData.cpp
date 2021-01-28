@@ -51,12 +51,12 @@ Room<TerrainType, ObjectType>& GameData::GetRoom()
 	return room;
 }
 
-const RoomCellObject<TerrainType, ObjectType>* GameData::GetHunter() const
+const Hunter* GameData::GetHunter() const
 {
 	return hunter;
 }
 
-RoomCellObject<TerrainType, ObjectType>* GameData::GetHunter()
+Hunter* GameData::GetHunter()
 {
 	return hunter;
 }
@@ -179,8 +179,8 @@ void GameData::FlagifyCell(int column, int row)
 		flags += FlagifyDirection(column, row, RoomDirection::EAST, FLAG_EAST);
 		flags += FlagifyDirection(column, row, RoomDirection::SOUTH, FLAG_SOUTH);
 		flags += FlagifyDirection(column, row, RoomDirection::WEST, FLAG_WEST);
+		cell->SetTerrain(flagMap[flags]);
 	}
-	cell->SetTerrain(flagMap[flags]);
 }
 
 void GameData::SmootheTerrain()
@@ -266,17 +266,46 @@ void GameData::UpdateRoom()
 
 void GameData::MoveHunter(RoomDirection direction)
 {
-	RoomCellObject<TerrainType, ObjectType>* hunter = GetHunter();
+	Hunter* hunter = GetHunter();
 	RoomCell<TerrainType, ObjectType>* cell = hunter->GetRoomCell();
 	int roomColumn = (int)cell->GetColumn();
 	int roomRow = (int)cell->GetRow();
 	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
 	RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
-	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()) && !nextCell->HasObject())
+	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()))
 	{
-		cell->SetObject(nullptr);
-		nextCell->SetObject(hunter);
+		bool completeMove = true;
+		if (nextCell->HasObject())
+		{
+			auto object = nextCell->GetObject();
+			switch(object->GetObjectData())
+			{
+			case ObjectType::KEY:
+				hunter->AddKey();
+				nextCell->RemoveObject();
+				break;
+			case ObjectType::DOOR_EW:
+			case ObjectType::DOOR_NS:
+				if (hunter->HasKey())
+				{
+					hunter->RemoveKey();
+					nextCell->RemoveObject();
+				}
+				else
+				{
+					completeMove = false;
+				}
+				break;
+			default:
+				completeMove = false;
+			}
+		}
+		if (completeMove)
+		{
+			cell->SetObject(nullptr);
+			nextCell->SetObject(hunter);
+		}
 	}
 	IncrementMove();
 	UpdateRoom();

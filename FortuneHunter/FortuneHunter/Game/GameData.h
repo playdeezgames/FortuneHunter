@@ -23,8 +23,7 @@ private:
 	size_t moves;
 	void IncrementMove();
 	void UpdateRoom();
-	const RoomCellObject<TerrainType, ObjectType>* GetHunter() const;
-	RoomCellObject<TerrainType, ObjectType>* GetHunter();
+	Hunter* GetHunter();
 	static size_t PlotColumn(size_t, size_t);
 	static size_t PlotRow(size_t, size_t);
 	void ClearLights();
@@ -35,6 +34,7 @@ private:
 public:
 	GameData();
 	~GameData();
+	const Hunter* GetHunter() const;
 	const Room<TerrainType, ObjectType>& GetRoom() const;
 	Room<TerrainType, ObjectType>& GetRoom();
 	void Start();

@@ -23,12 +23,31 @@ void StatusPanelRenderer::Draw() const
 		Constants::UI::StatusPanel::CLIP_HEIGHT,
 	};
 	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
+	DrawMoves();
+	DrawKeys();
+	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
+}
+
+void StatusPanelRenderer::DrawMoves() const
+{
 	std::stringstream ss;
 	ss << "Moves: " << gameData.GetMoves();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,
 		Constants::UI::StatusPanel::CLIP_Y,
+		ss.str(),
+		Constants::Color::WHITE);
+}
+
+void StatusPanelRenderer::DrawKeys() const
+{
+	std::stringstream ss;
+	ss << "Keys: " << gameData.GetHunter()->GetKeys();//TODO magic string
+	GetRomFont().WriteText(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_Y + 16,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
 }

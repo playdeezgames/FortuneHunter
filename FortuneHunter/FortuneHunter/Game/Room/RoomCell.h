@@ -50,4 +50,12 @@ public:
 	bool IsExplored() const { return explored; }
 	void SetLit(bool state) { lit = state; }
 	void SetExplored(bool state) { explored = state; }
+	void RemoveObject()
+	{
+		if (object)
+		{
+			SetObject(nullptr);
+			delete object;
+		}
+	}
 };

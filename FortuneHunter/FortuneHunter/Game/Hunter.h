@@ -11,4 +11,5 @@ public:
 	size_t GetKeys() const;
 	bool HasKey() const;
 	void AddKey();
+	void RemoveKey();
 };

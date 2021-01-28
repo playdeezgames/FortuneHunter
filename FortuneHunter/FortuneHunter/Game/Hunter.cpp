@@ -20,3 +20,9 @@ bool Hunter::HasKey() const
 {
 	return keys > 0;
 }
+
+void Hunter::RemoveKey()
+{
+	keys = (keys > 0) ? (keys - 1) : (keys);
+}
+
