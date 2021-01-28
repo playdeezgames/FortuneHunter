@@ -16,11 +16,17 @@ Gameplay:
     ☐ weapons
     ☐ armor
     ☐ potions
-    ☐ locks
-    ☐ keys
+    ✔ locks @done(21-01-28 05:37)
+    ✔ keys @done(21-01-28 05:38)
     ☐ the exit
 Refactor:
     ☐ maze cell flagifier
+Sound Effects:
+    ✔ get key @done(21-01-28 05:57)
+    ☐ bump wall
+    ☐ bump door/no key
+    ✔ unlock door @done(21-01-28 05:57)
+    ☐ step
 Bug:
-    ☐ I keep spawning in a locked room!
+    ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
 

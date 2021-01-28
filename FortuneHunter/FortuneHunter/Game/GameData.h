@@ -6,9 +6,11 @@
 #include "Maze\Maze.h"
 #include "RoomGenerationContext.h"
 #include "Hunter.h"
+#include "..\Common\Managers\SoundManager.h"
 class GameData
 {
 private:
+	const tggd::common::SoundManager& soundManager;
 	Room<TerrainType, ObjectType> room;
 	Hunter* hunter;
 	void ClearRoom();
@@ -32,7 +34,7 @@ private:
 	void PopulateKeys(RoomGenerationContext&);
 	void PlaceHunter();
 public:
-	GameData();
+	GameData(const tggd::common::SoundManager&);
 	~GameData();
 	const Hunter* GetHunter() const;
 	const Room<TerrainType, ObjectType>& GetRoom() const;

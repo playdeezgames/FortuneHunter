@@ -2,8 +2,9 @@
 #include "..\Constants\Room.h"
 #include "Maze\Maze.h"
 #include "..\Common\Utility.h"
-GameData::GameData()
+GameData::GameData(const tggd::common::SoundManager& soundManager)
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
+	, soundManager(soundManager)
 	, hunter(nullptr)
 	, moves(0)
 {
@@ -282,6 +283,7 @@ void GameData::MoveHunter(RoomDirection direction)
 			switch(object->GetObjectData())
 			{
 			case ObjectType::KEY:
+				soundManager.PlaySound("getkey");//TODO: magic string
 				hunter->AddKey();
 				nextCell->RemoveObject();
 				break;
@@ -289,13 +291,11 @@ void GameData::MoveHunter(RoomDirection direction)
 			case ObjectType::DOOR_NS:
 				if (hunter->HasKey())
 				{
+					soundManager.PlaySound("unlock");//TODO: magic string
 					hunter->RemoveKey();
 					nextCell->RemoveObject();
 				}
-				else
-				{
-					completeMove = false;
-				}
+				completeMove = false;
 				break;
 			default:
 				completeMove = false;

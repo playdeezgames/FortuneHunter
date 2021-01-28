@@ -1,3 +1,5 @@
 {
-    "ting":"assets/audio/sfx/ting.wav"
+  "ting": "assets/audio/sfx/ting.wav",
+  "unlock": "assets/audio/sfx/unlock.wav",
+  "getkey": "assets/audio/sfx/getkey.wav"
 }
