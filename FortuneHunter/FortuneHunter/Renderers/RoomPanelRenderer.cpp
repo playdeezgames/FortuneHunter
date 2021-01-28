@@ -15,7 +15,6 @@ RoomPanelRenderer::RoomPanelRenderer
 	, gameData(gameData)
 	, terrainSprites(terrainSprites)
 	, spriteManager(spriteManager)
-
 {
 }
 
