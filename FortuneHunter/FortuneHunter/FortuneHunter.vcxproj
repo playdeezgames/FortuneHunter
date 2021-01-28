@@ -41,6 +41,7 @@
     <ClCompile Include="Game\RoomGenerationContext.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
     <ClCompile Include="Game\TerrainSpriteManager.cpp" />
+    <ClCompile Include="Game\TerrainType.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
     <ClCompile Include="Renderers\RoomPanelRenderer.cpp" />
     <ClCompile Include="Renderers\StatusPanelRenderer.cpp" />

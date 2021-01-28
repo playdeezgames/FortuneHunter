@@ -16,5 +16,11 @@ enum class TerrainType
 	WALL_SW,
 	WALL_NSW,
 	WALL_ESW,
-	WALL_NESW
+	WALL_NESW,
+	FLOOR_DEAD_END
+};
+class TerrainTypeHelper
+{
+public:
+	static bool IsFloor(TerrainType);
 };
