@@ -8,5 +8,5 @@ private:
 	ObjectType objectType;
 public:
 	SimpleObject(ObjectType);
-	const ObjectType& GetObjectData() const;
+	const ObjectType& GetData() const;
 };

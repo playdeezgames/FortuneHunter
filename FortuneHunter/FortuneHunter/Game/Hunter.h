@@ -12,5 +12,5 @@ public:
 	bool HasKey() const;
 	void AddKey();
 	void RemoveKey();
-	const ObjectType& GetObjectData() const;
+	const ObjectType& GetData() const;
 };

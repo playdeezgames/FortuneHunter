@@ -26,8 +26,9 @@ void Hunter::RemoveKey()
 	keys = (keys > 0) ? (keys - 1) : (keys);
 }
 
-const ObjectType& Hunter::GetObjectData() const
+const ObjectType& Hunter::GetData() const
 {
-	return ObjectType::HUNTER;
+	static ObjectType dummy = ObjectType::HUNTER;
+	return dummy;
 }
 

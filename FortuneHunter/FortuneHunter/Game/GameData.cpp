@@ -344,7 +344,7 @@ void GameData::MoveHunter(RoomDirection direction)
 		if (nextCell->HasObject())
 		{
 			auto object = nextCell->GetObject();
-			switch(object->GetObjectData())
+			switch(object->GetData())
 			{
 			case ObjectType::KEY:
 				soundManager.PlaySound(Constants::Sounds::GET_KEY);

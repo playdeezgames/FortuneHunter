@@ -6,7 +6,7 @@ SimpleObject::SimpleObject(ObjectType objectType)
 
 }
 
-const ObjectType& SimpleObject::GetObjectData() const
+const ObjectType& SimpleObject::GetData() const
 {
 	return objectType;
 }

@@ -42,7 +42,7 @@ void RoomPanelRenderer::DrawObject(int x, int y, const RoomCellObject<TerrainTyp
 {
 	if (object != nullptr)
 	{
-		ObjectType objectType = object->GetObjectData();
+		ObjectType objectType = object->GetData();
 		std::string spriteName =
 			(objectType == ObjectType::HUNTER) ? (SPRITE_HUNTER) :
 			(objectType == ObjectType::DOOR_EW) ? (SPRITE_DOOR_EW) :

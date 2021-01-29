@@ -6,7 +6,7 @@ Creature::Creature(const CreatureDescriptor* creatureDescriptor)
 
 }
 
-const ObjectType& Creature::GetObjectData() const
+const ObjectType& Creature::GetData() const
 {
 	return creatureDescriptor->GetObjectType();
 }
