@@ -19,15 +19,19 @@ Gameplay:
     ✔ locks @done(21-01-28 05:37)
     ✔ keys @done(21-01-28 05:38)
     ☐ the exit
+    ☐ more "loopy" mazes
+    ☐ more than one kind of lock
+        three types for "normal" doors
+        a fourth type for "special" doors where the key is only behind a different door
 Refactor:
     ☐ maze cell flagifier for rendering
     ☐ maze cell has a set of flags instead of "lit" and "explored"
 Sound Effects:
     ✔ get key @done(21-01-28 05:57)
-    ☐ bump wall
-    ☐ bump door/no key
+    ✔ bump wall @done(21-01-29 04:19)
+    ✔ bump door/no key @done(21-01-29 04:13)
     ✔ unlock door @done(21-01-28 05:57)
-    ☐ step
+    ✘ step @cancelled(21-01-29 04:07)
     ☐ get diamond
 Bug:
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)

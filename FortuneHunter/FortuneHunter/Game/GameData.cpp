@@ -296,6 +296,10 @@ void GameData::MoveHunter(RoomDirection direction)
 					hunter->RemoveKey();
 					nextCell->RemoveObject();
 				}
+				else
+				{
+					soundManager.PlaySound(Constants::Sounds::DOOR_LOCKED);
+				}
 				completeMove = false;
 				break;
 			default:
@@ -307,6 +311,10 @@ void GameData::MoveHunter(RoomDirection direction)
 			cell->SetObject(nullptr);
 			nextCell->SetObject(hunter);
 		}
+	}
+	else
+	{
+		soundManager.PlaySound(Constants::Sounds::BUMP_WALL);
 	}
 	IncrementMove();
 	UpdateRoom();
