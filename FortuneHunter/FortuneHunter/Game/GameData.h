@@ -4,7 +4,7 @@
 #include "TerrainType.h"
 #include "ObjectType.h"
 #include "Maze\Maze.h"
-#include "RoomGenerationContext.h"
+#include "Room\RoomGenerationContext.h"
 #include "Hunter.h"
 #include "..\Common\Managers\SoundManager.h"
 #include "CreatureDescriptorManager.h"

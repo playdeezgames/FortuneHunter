@@ -42,7 +42,7 @@
     <ClCompile Include="Game\Maze\MazeCell.cpp" />
     <ClCompile Include="Game\Maze\MazeDirection.cpp" />
     <ClCompile Include="Game\Maze\MazeDoor.cpp" />
-    <ClCompile Include="Game\RoomGenerationContext.cpp" />
+    <ClCompile Include="Game\Room\RoomGenerationContext.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
     <ClCompile Include="Game\SimpleObject.cpp" />
     <ClCompile Include="Game\TerrainSpriteManager.cpp" />
@@ -94,7 +94,7 @@
     <ClInclude Include="Game\CreatureDescriptorManager.h" />
     <ClInclude Include="Game\CreatureType.h" />
     <ClInclude Include="Game\Hunter.h" />
-    <ClInclude Include="Game\RoomGenerationContext.h" />
+    <ClInclude Include="Game\Room\RoomGenerationContext.h" />
     <ClInclude Include="Common\Room\RoomCellObject.h" />
     <ClInclude Include="Game\ObjectType.h" />
     <ClInclude Include="Game\GameData.h" />
