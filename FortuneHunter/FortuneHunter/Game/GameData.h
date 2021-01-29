@@ -1,5 +1,5 @@
 #pragma once
-#include "Room\Room.h"
+#include "..\Common\Room\Room.h"
 #include "Room\RoomDirection.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
@@ -13,7 +13,7 @@ class GameData
 private:
 	const tggd::common::SoundManager& soundManager;
 	const CreatureDescriptorManager& creatureDescriptors;
-	Room<TerrainType, ObjectType> room;
+	tggd::common::Room<TerrainType, ObjectType> room;
 	Hunter* hunter;
 	void ClearRoom();
 	void ClearHunter();
@@ -42,8 +42,8 @@ public:
 	GameData(const tggd::common::SoundManager&, const CreatureDescriptorManager&);
 	~GameData();
 	const Hunter* GetHunter() const;
-	const Room<TerrainType, ObjectType>& GetRoom() const;
-	Room<TerrainType, ObjectType>& GetRoom();
+	const tggd::common::Room<TerrainType, ObjectType>& GetRoom() const;
+	tggd::common::Room<TerrainType, ObjectType>& GetRoom();
 	void Start();
 	size_t GetMoves() const;
 	void MoveHunter(RoomDirection);

@@ -242,12 +242,6 @@
     <ClInclude Include="Game\Maze\MazeDoor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Room.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Room\RoomCell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Room\RoomDirection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -258,9 +252,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\ObjectType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Room\RoomCellObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Constants\UI\UI.h">
@@ -312,6 +303,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\SimpleObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Room\Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Room\RoomCell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Room\RoomCellObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,9 +1,9 @@
 #pragma once
-#include "Room\RoomCellObject.h"
+#include "..\Common\Room\RoomCellObject.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
 #include "CreatureDescriptor.h"
-class Creature : public RoomCellObject<TerrainType, ObjectType>
+class Creature : public tggd::common::RoomCellObject<TerrainType, ObjectType>
 {
 private:
 	const CreatureDescriptor* creatureDescriptor;

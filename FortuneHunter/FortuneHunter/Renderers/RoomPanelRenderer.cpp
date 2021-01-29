@@ -30,7 +30,7 @@ void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
 	terrainSprites.Get(terrain)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 }
 
-void RoomPanelRenderer::DrawDither(int x, int y, const RoomCell<TerrainType, ObjectType>* cell) const
+void RoomPanelRenderer::DrawDither(int x, int y, const tggd::common::RoomCell<TerrainType, ObjectType>* cell) const
 {
 	if (!cell->IsLit())
 	{
@@ -38,7 +38,7 @@ void RoomPanelRenderer::DrawDither(int x, int y, const RoomCell<TerrainType, Obj
 	}
 }
 
-void RoomPanelRenderer::DrawObject(int x, int y, const RoomCellObject<TerrainType, ObjectType>* object) const
+void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObject<TerrainType, ObjectType>* object) const
 {
 	if (object != nullptr)
 	{
@@ -55,7 +55,7 @@ void RoomPanelRenderer::DrawObject(int x, int y, const RoomCellObject<TerrainTyp
 
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
-	const RoomCell<TerrainType, ObjectType>* cell = gameData.GetRoom().GetCell(column, row);
+	const tggd::common::RoomCell<TerrainType, ObjectType>* cell = gameData.GetRoom().GetCell(column, row);
 	if (cell->IsExplored())
 	{
 		int x = PlotColumn(column, row);

@@ -1,8 +1,8 @@
 #pragma once
-#include "Room\RoomCellObject.h"
+#include "..\Common\Room\RoomCellObject.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
-class Hunter : public RoomCellObject<TerrainType, ObjectType>
+class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType>
 {
 private:
 	size_t keys;

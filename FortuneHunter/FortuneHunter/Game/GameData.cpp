@@ -50,12 +50,12 @@ GameData::~GameData()
 }
 
 
-const Room<TerrainType, ObjectType>& GameData::GetRoom() const
+const tggd::common::Room<TerrainType, ObjectType>& GameData::GetRoom() const
 {
 	return room;
 }
 
-Room<TerrainType, ObjectType>& GameData::GetRoom()
+tggd::common::Room<TerrainType, ObjectType>& GameData::GetRoom()
 {
 	return room;
 }
@@ -203,7 +203,7 @@ int GameData::FlagifyDirection(int column, int row, RoomDirection direction, int
 
 void GameData::FlagifyCell(int column, int row)
 {
-	RoomCell<TerrainType, ObjectType>* cell = room.GetCell(column, row);
+	tggd::common::RoomCell<TerrainType, ObjectType>* cell = room.GetCell(column, row);
 	int flags = 0;
 	if (!TerrainTypeHelper::IsFloor(cell->GetTerrain()))//TODO: a "need to be flagified" function in a helper?
 	{
@@ -332,12 +332,12 @@ void GameData::UpdateRoom()
 void GameData::MoveHunter(RoomDirection direction)
 {
 	Hunter* hunter = GetHunter();
-	RoomCell<TerrainType, ObjectType>* cell = hunter->GetRoomCell();
+	tggd::common::RoomCell<TerrainType, ObjectType>* cell = hunter->GetRoomCell();
 	int roomColumn = (int)cell->GetColumn();
 	int roomRow = (int)cell->GetRow();
 	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
-	RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
+	tggd::common::RoomCell<TerrainType, ObjectType>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
 	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()))
 	{
 		bool completeMove = true;
@@ -400,7 +400,7 @@ void GameData::PopulateLocks(RoomGenerationContext& context)
 					(direction==RoomDirection::EAST || direction==RoomDirection::WEST) ? 
 					(ObjectType::DOOR_NS) : 
 					(ObjectType::DOOR_EW);
-				RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(objectType);
+				tggd::common::RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(objectType);
 				roomCell->SetObject(object);
 				break;
 			}
@@ -418,7 +418,7 @@ void GameData::PopulateKeys(RoomGenerationContext& context)
 		auto roomCell = room.GetCell(roomColumn, roomRow);
 		if (!roomCell->HasObject() && roomCell->GetTerrain() == TerrainType::FLOOR)
 		{
-			RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(ObjectType::KEY);
+			tggd::common::RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(ObjectType::KEY);
 			roomCell->SetObject(object);
 			keyCount--;
 		}

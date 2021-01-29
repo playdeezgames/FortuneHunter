@@ -1,8 +1,8 @@
 #pragma once
-#include "Room\RoomCellObject.h"
+#include "..\Common\Room\RoomCellObject.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
-class SimpleObject : public RoomCellObject<TerrainType, ObjectType>
+class SimpleObject : public tggd::common::RoomCellObject<TerrainType, ObjectType>
 {
 private:
 	ObjectType objectType;
