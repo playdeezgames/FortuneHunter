@@ -1952,7 +1952,7 @@
     "w": 16,
     "h": 16
   },
-  "Zombie": {
+  "ZombieCreature": {
     "texture": "tiles",
     "x": 112,
     "y": 32,

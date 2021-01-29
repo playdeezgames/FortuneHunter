@@ -3,6 +3,7 @@
 #include "Maze\Maze.h"
 #include "..\Common\Utility.h"
 #include "..\Constants\Sounds.h"
+#include "Creature.h"
 GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,
@@ -224,13 +225,46 @@ void GameData::SmootheTerrain()
 	}
 }
 
+void GameData::SpawnCreature(const CreatureDescriptor* descriptor)
+{
+	bool done = false;
+	while (!done)
+	{
+		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
+		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
+		auto cell = room.GetCell(column, row);
+		if (TerrainTypeHelper::IsFloor(cell->GetTerrain()) && !cell->GetObject())
+		{
+			cell->SetObject(new Creature(descriptor));
+			done = true;
+		}
+	}
+}
+
+void GameData::PopulateCreatures()
+{
+	auto creatureTypes = creatureDescriptors.GetCreatureTypes();
+	for (auto creatureType : creatureTypes)
+	{
+		auto descriptor = creatureDescriptors.GetDescriptor(creatureType);
+		auto counter = descriptor->GetNumberAppearing();
+		while (counter > 0)
+		{
+			SpawnCreature(descriptor);
+			counter--;
+		}
+	}
+}
+
+
 void GameData::GenerateRoom()
 {
 	RoomGenerationContext context;
 	ScaffoldMaze(context);
+	SmootheTerrain();
 	PopulateLocks(context);
 	PopulateKeys(context);
-	SmootheTerrain();
+	PopulateCreatures();
 }
 
 void GameData::PlaceHunter()

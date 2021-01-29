@@ -17,8 +17,8 @@ void CreatureDescriptorManager::Start(const std::string& fileName)
 	{
 		CreatureType creatureType = (CreatureType)tggd::common::Utility::StringToInt(item.key());
 		auto& properties = item.value();
-		ObjectType objectType = (ObjectType)tggd::common::Utility::StringToInt(properties[PROPERTY_OBJECT_TYPE]);
-		size_t numberAppearing = (size_t)tggd::common::Utility::StringToInt(properties[PROPERTY_NUMBER_APPEARING]);
+		ObjectType objectType = (ObjectType)properties[PROPERTY_OBJECT_TYPE];
+		size_t numberAppearing = (size_t)properties[PROPERTY_NUMBER_APPEARING];
 		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType, numberAppearing);
 	}
 }
@@ -35,3 +35,22 @@ void CreatureDescriptorManager::Finish()
 	}
 }
 
+std::vector<CreatureType> CreatureDescriptorManager::GetCreatureTypes() const
+{
+	std::vector<CreatureType> result;
+	for (auto& entry : creatureDescriptors)
+	{
+		result.push_back(entry.first);
+	}
+	return result;
+}
+
+const CreatureDescriptor* CreatureDescriptorManager::GetDescriptor(CreatureType creatureType) const
+{
+	auto iter = creatureDescriptors.find(creatureType);
+	if (iter != creatureDescriptors.end())
+	{
+		return iter->second;
+	}
+	return nullptr;
+}

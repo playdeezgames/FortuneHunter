@@ -6,8 +6,8 @@
 class Creature : public RoomCellObject<TerrainType, ObjectType>
 {
 private:
-	const CreatureDescriptor& creatureDescriptor;
+	const CreatureDescriptor* creatureDescriptor;
 public:
-	Creature(const CreatureDescriptor&);
+	Creature(const CreatureDescriptor*);
 };
 

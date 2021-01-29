@@ -36,6 +36,8 @@ private:
 	void PopulateKeys(RoomGenerationContext&);
 	void PlaceHunter();
 	void LoopifyMaze(Maze&);
+	void SpawnCreature(const CreatureDescriptor*);
+	void PopulateCreatures();
 public:
 	GameData(const tggd::common::SoundManager&, const CreatureDescriptorManager&);
 	~GameData();

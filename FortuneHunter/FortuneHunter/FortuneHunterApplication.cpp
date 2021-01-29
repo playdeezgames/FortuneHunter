@@ -36,6 +36,7 @@ void FortuneHunterApplication::Start()
 {
 	tggd::common::Utility::SeedRandomNumberGenerator();
 
+	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
 	gameData.Start();
 	controllerManager.Start();
 
@@ -43,7 +44,6 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
-	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
 
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
