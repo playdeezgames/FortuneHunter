@@ -126,14 +126,14 @@ void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* maz
 		room.GetCell
 		(
 			RoomDirectionHelper::GetNextColumn((int)roomColumn, (int)roomRow, RoomDirection::EAST),
-			roomRow
+			RoomDirectionHelper::GetNextRow((int)roomColumn, (int)roomRow, RoomDirection::EAST)
 		)->SetTerrain(TerrainType::FLOOR);
 	}
 	if (mazeCell->HasDoor(MazeDirection::SOUTH) && mazeCell->GetDoor(MazeDirection::SOUTH)->IsOpen())
 	{
 		room.GetCell
 		(
-			roomColumn, 
+			RoomDirectionHelper::GetNextColumn((int)roomColumn, (int)roomRow, RoomDirection::SOUTH),
 			RoomDirectionHelper::GetNextRow((int)roomColumn, (int)roomRow, RoomDirection::SOUTH)
 		)->SetTerrain(TerrainType::FLOOR);
 	}
