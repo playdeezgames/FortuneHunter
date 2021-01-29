@@ -3,8 +3,8 @@
 #include "Maze\Maze.h"
 #include "..\Common\Utility.h"
 #include "..\Constants\Sounds.h"
-#include "Creature.h"
-#include "SimpleObject.h"
+#include "Room\Object\Creature.h"
+#include "Room\Object\SimpleObject.h"
 GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,

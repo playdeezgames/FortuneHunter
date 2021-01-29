@@ -1,6 +1,6 @@
 #pragma once
-#include "..\Common\Room\RoomCellObject.h"
-#include "Room\Terrain\TerrainType.h"
+#include "..\..\..\Common\Room\RoomCellObject.h"
+#include "..\Terrain\TerrainType.h"
 #include "ObjectType.h"
 #include "CreatureDescriptor.h"
 class Creature : public tggd::common::RoomCellObject<TerrainType, ObjectType>

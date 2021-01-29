@@ -2,12 +2,12 @@
 #include "..\Common\Room\Room.h"
 #include "Room\RoomDirection.h"
 #include "Room\Terrain\TerrainType.h"
-#include "ObjectType.h"
+#include "Room\Object\ObjectType.h"
 #include "Maze\Maze.h"
 #include "Room\RoomGenerationContext.h"
-#include "Hunter.h"
+#include "Room\Object\Hunter.h"
 #include "..\Common\Managers\SoundManager.h"
-#include "CreatureDescriptorManager.h"
+#include "Room\Object\CreatureDescriptorManager.h"
 class GameData
 {
 private:
