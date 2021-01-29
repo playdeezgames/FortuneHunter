@@ -3,11 +3,16 @@
 #include "Maze\Maze.h"
 #include "..\Common\Utility.h"
 #include "..\Constants\Sounds.h"
-GameData::GameData(const tggd::common::SoundManager& soundManager)
+GameData::GameData
+(
+	const tggd::common::SoundManager& soundManager,
+	const CreatureDescriptorManager& creatureDescriptors
+)
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, soundManager(soundManager)
 	, hunter(nullptr)
 	, moves(0)
+	, creatureDescriptors(creatureDescriptors)
 {
 }
 
@@ -150,11 +155,34 @@ void GameData::ScaffoldMazeCells(const Maze& maze, RoomGenerationContext& contex
 	}
 }
 
+void GameData::LoopifyMaze(Maze& maze)
+{
+	size_t counter = Constants::Maze::LOOPIFICATIONS;
+	auto directions = MazeDirectionHelper::GetAll();
+	while (counter > 0)
+	{
+		size_t column = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)maze.GetColumns());
+		size_t row = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)maze.GetRows());
+		MazeDirection direction = directions[tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)directions.size())];
+		auto mazeCell = maze.GetCell((int)column, (int)row);
+		if(mazeCell->HasDoor(direction))
+		{
+			auto mazeDoor = mazeCell->GetDoor(direction);
+			if (!mazeDoor->IsOpen())
+			{
+				mazeDoor->SetOpen(true);
+				counter--;
+			}
+		}
+	}
+}
+
 void GameData::ScaffoldMaze(RoomGenerationContext& context)
 {
 	ClearRoom();
 	Maze maze(Constants::Maze::COLUMNS, Constants::Maze::ROWS);
 	maze.Generate();
+	LoopifyMaze(maze);
 	ScaffoldMazeCells(maze, context);
 }	
 

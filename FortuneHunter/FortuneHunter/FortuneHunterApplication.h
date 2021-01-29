@@ -17,6 +17,7 @@
 #include "Renderers\StatusPanelRenderer.h"
 #include "Renderers\RoomPanelRenderer.h"
 #include "Game\TerrainSpriteManager.h"
+#include "Game\CreatureDescriptorManager.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -28,6 +29,7 @@ private:
 	tggd::common::RenderManager<UIState> renderers;
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
+	CreatureDescriptorManager creatureDescriptors;
 	TerrainSpriteManager terrainSprites;
 	StatusPanelRenderer* statusPanelRenderer;
 	RoomPanelRenderer* roomPanelRenderer;

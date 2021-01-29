@@ -24,7 +24,8 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, commandProcessors(uiState)
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
-	, gameData(soundManager)
+	, creatureDescriptors()
+	, gameData(soundManager, creatureDescriptors)
 	, statusPanelRenderer(nullptr)
 	, terrainSprites()
 {
@@ -42,6 +43,7 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
+	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
 
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
@@ -63,6 +65,7 @@ void FortuneHunterApplication::Finish()
 	textureManager.Finish();
 	controllerManager.Finish();
 	renderers.Finish();
+	creatureDescriptors.Finish();
 	tggd::common::Utility::SafeDelete(statusPanelRenderer);
 	tggd::common::Utility::SafeDelete(roomPanelRenderer);
 }

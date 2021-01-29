@@ -6,5 +6,6 @@ enum class ObjectType
 	DOOR_NS,
 	DOOR_EW,
 	EXIT,
-	DIAMOND
+	DIAMOND,
+	ZOMBIE
 };
