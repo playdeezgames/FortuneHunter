@@ -4,6 +4,7 @@
 #include "..\Common\Utility.h"
 #include "..\Constants\Sounds.h"
 #include "Creature.h"
+#include "SimpleObject.h"
 GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,
@@ -399,7 +400,7 @@ void GameData::PopulateLocks(RoomGenerationContext& context)
 					(direction==RoomDirection::EAST || direction==RoomDirection::WEST) ? 
 					(ObjectType::DOOR_NS) : 
 					(ObjectType::DOOR_EW);
-				RoomCellObject<TerrainType, ObjectType>* object = new RoomCellObject<TerrainType, ObjectType>(objectType);
+				RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(objectType);
 				roomCell->SetObject(object);
 				break;
 			}
@@ -417,7 +418,7 @@ void GameData::PopulateKeys(RoomGenerationContext& context)
 		auto roomCell = room.GetCell(roomColumn, roomRow);
 		if (!roomCell->HasObject() && roomCell->GetTerrain() == TerrainType::FLOOR)
 		{
-			RoomCellObject<TerrainType, ObjectType>* object = new RoomCellObject<TerrainType, ObjectType>(ObjectType::KEY);
+			RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(ObjectType::KEY);
 			roomCell->SetObject(object);
 			keyCount--;
 		}

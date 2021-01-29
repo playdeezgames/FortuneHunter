@@ -7,10 +7,9 @@ class RoomCellObject
 private:
 	friend class RoomCell<TTerrain, TObjectData>;
 	RoomCell<TTerrain, TObjectData>* roomCell;
-	TObjectData objectData;
 public:
-	RoomCellObject(TObjectData creatureData) :roomCell(nullptr), objectData(creatureData) {}
+	RoomCellObject() :roomCell(nullptr) {}
 	const RoomCell<TTerrain, TObjectData>* GetRoomCell() const { return roomCell; }
 	RoomCell<TTerrain, TObjectData>* GetRoomCell() { return roomCell; }
-	const TObjectData& GetObjectData() const { return objectData; }
+	virtual const TObjectData& GetObjectData() const = 0;
 };

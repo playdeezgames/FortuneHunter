@@ -44,6 +44,7 @@
     <ClCompile Include="Game\Maze\MazeDoor.cpp" />
     <ClCompile Include="Game\RoomGenerationContext.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
+    <ClCompile Include="Game\SimpleObject.cpp" />
     <ClCompile Include="Game\TerrainSpriteManager.cpp" />
     <ClCompile Include="Game\TerrainType.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
@@ -104,6 +105,7 @@
     <ClInclude Include="Game\Room\Room.h" />
     <ClInclude Include="Game\Room\RoomCell.h" />
     <ClInclude Include="Game\Room\RoomDirection.h" />
+    <ClInclude Include="Game\SimpleObject.h" />
     <ClInclude Include="Game\TerrainSpriteManager.h" />
     <ClInclude Include="Game\TerrainType.h" />
     <ClInclude Include="Renderers\InPlayRenderer.h" />

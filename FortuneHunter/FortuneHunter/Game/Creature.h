@@ -9,5 +9,6 @@ private:
 	const CreatureDescriptor* creatureDescriptor;
 public:
 	Creature(const CreatureDescriptor*);
+	const ObjectType& GetObjectData() const;
 };
 

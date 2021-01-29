@@ -1,6 +1,6 @@
 #include "Hunter.h"
 Hunter::Hunter()
-	: RoomCellObject<TerrainType, ObjectType>(ObjectType::HUNTER)
+	: RoomCellObject<TerrainType, ObjectType>()
 	, keys(0)
 {
 
@@ -24,5 +24,10 @@ bool Hunter::HasKey() const
 void Hunter::RemoveKey()
 {
 	keys = (keys > 0) ? (keys - 1) : (keys);
+}
+
+const ObjectType& Hunter::GetObjectData() const
+{
+	return ObjectType::HUNTER;
 }
 
