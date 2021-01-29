@@ -1,8 +1,8 @@
 #pragma once
 #include "BaseRenderer.h"
 #include "..\Game\GameData.h"
-#include "..\Game\TerrainType.h"
-#include "..\Game\TerrainSpriteManager.h"
+#include "..\Game\Room\Terrain\TerrainType.h"
+#include "..\Game\Room\Terrain\TerrainSpriteManager.h"
 class RoomPanelRenderer : public BaseRenderer
 {
 private:

@@ -1,6 +1,5 @@
 #include "TerrainSpriteManager.h"
-#include "..\Common\Utility.h"
-#include "..\Common\Utility.h"
+#include "..\..\..\Common\Utility.h"
 TerrainSpriteManager::TerrainSpriteManager()
 	: table()
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "..\Common\Room\RoomCellObject.h"
-#include "TerrainType.h"
+#include "Room\Terrain\TerrainType.h"
 #include "ObjectType.h"
 class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType>
 {

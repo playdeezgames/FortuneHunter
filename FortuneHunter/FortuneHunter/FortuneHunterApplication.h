@@ -16,7 +16,7 @@
 #include "Game\GameData.h"
 #include "Renderers\StatusPanelRenderer.h"
 #include "Renderers\RoomPanelRenderer.h"
-#include "Game\TerrainSpriteManager.h"
+#include "Game\Room\Terrain\TerrainSpriteManager.h"
 #include "Game\CreatureDescriptorManager.h"
 class FortuneHunterApplication : public tggd::common::Application
 {

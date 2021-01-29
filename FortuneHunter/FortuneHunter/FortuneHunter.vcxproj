@@ -45,8 +45,8 @@
     <ClCompile Include="Game\Room\RoomGenerationContext.cpp" />
     <ClCompile Include="Game\Room\RoomDirection.cpp" />
     <ClCompile Include="Game\SimpleObject.cpp" />
-    <ClCompile Include="Game\TerrainSpriteManager.cpp" />
-    <ClCompile Include="Game\TerrainType.cpp" />
+    <ClCompile Include="Game\Room\Terrain\TerrainSpriteManager.cpp" />
+    <ClCompile Include="Game\Room\Terrain\TerrainType.cpp" />
     <ClCompile Include="Renderers\InPlayRenderer.cpp" />
     <ClCompile Include="Renderers\RoomPanelRenderer.cpp" />
     <ClCompile Include="Renderers\StatusPanelRenderer.cpp" />
@@ -106,8 +106,8 @@
     <ClInclude Include="Common\Room\RoomCell.h" />
     <ClInclude Include="Game\Room\RoomDirection.h" />
     <ClInclude Include="Game\SimpleObject.h" />
-    <ClInclude Include="Game\TerrainSpriteManager.h" />
-    <ClInclude Include="Game\TerrainType.h" />
+    <ClInclude Include="Game\Room\Terrain\TerrainSpriteManager.h" />
+    <ClInclude Include="Game\Room\Terrain\TerrainType.h" />
     <ClInclude Include="Renderers\InPlayRenderer.h" />
     <ClInclude Include="Renderers\RoomPanelRenderer.h" />
     <ClInclude Include="Renderers\StatusPanelRenderer.h" />

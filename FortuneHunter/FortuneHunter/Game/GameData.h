@@ -1,7 +1,7 @@
 #pragma once
 #include "..\Common\Room\Room.h"
 #include "Room\RoomDirection.h"
-#include "TerrainType.h"
+#include "Room\Terrain\TerrainType.h"
 #include "ObjectType.h"
 #include "Maze\Maze.h"
 #include "Room\RoomGenerationContext.h"

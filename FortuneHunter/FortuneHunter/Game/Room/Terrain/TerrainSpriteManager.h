@@ -1,8 +1,8 @@
 #pragma once
 #include <map>
 #include <string>
-#include "..\Game\TerrainType.h"
-#include "..\Common\Managers\SpriteManager.h"
+#include "TerrainType.h"
+#include "..\..\..\Common\Managers\SpriteManager.h"
 class TerrainSpriteManager
 {
 private:
