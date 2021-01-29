@@ -8,6 +8,7 @@ CreatureDescriptorManager::CreatureDescriptorManager()
 }
 
 const std::string PROPERTY_OBJECT_TYPE = "objectType";
+const std::string PROPERTY_NUMBER_APPEARING = "numberAppearing";
 
 void CreatureDescriptorManager::Start(const std::string& fileName)
 {
@@ -17,7 +18,8 @@ void CreatureDescriptorManager::Start(const std::string& fileName)
 		CreatureType creatureType = (CreatureType)tggd::common::Utility::StringToInt(item.key());
 		auto& properties = item.value();
 		ObjectType objectType = (ObjectType)tggd::common::Utility::StringToInt(properties[PROPERTY_OBJECT_TYPE]);
-		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType);
+		size_t numberAppearing = (size_t)tggd::common::Utility::StringToInt(properties[PROPERTY_NUMBER_APPEARING]);
+		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType, numberAppearing);
 	}
 }
 

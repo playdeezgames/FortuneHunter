@@ -1,6 +1,11 @@
 #include "CreatureDescriptor.h"
-CreatureDescriptor::CreatureDescriptor(ObjectType objectType)
+CreatureDescriptor::CreatureDescriptor
+(
+	ObjectType objectType,
+	size_t numberAppearing
+)
 	: objectType(objectType)
+	, numberAppearing(numberAppearing)
 {
 
 }
@@ -8,4 +13,9 @@ CreatureDescriptor::CreatureDescriptor(ObjectType objectType)
 ObjectType CreatureDescriptor::GetObjectType() const
 {
 	return objectType;
+}
+
+size_t CreatureDescriptor::GetNumberAppearing() const
+{
+	return numberAppearing;
 }
