@@ -8,5 +8,6 @@ Creature::Creature(const CreatureDescriptor* creatureDescriptor)
 
 const ObjectType& Creature::GetData() const
 {
-	return creatureDescriptor->GetObjectType();
+	objectType = creatureDescriptor->GetObjectType();//mutable is a cheezy way to get rid of a warning
+	return objectType;
 }

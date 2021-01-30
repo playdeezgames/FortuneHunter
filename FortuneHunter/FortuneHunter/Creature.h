@@ -6,6 +6,7 @@
 class Creature : public tggd::common::RoomCellObject<TerrainType, ObjectType>
 {
 private:
+	mutable ObjectType objectType;//this is a cache variable
 	const CreatureDescriptor* creatureDescriptor;
 public:
 	Creature(const CreatureDescriptor*);
