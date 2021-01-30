@@ -37,7 +37,7 @@ void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
 
 void RoomPanelRenderer::DrawDither(int x, int y, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell) const
 {
-	if (!cell->IsLit())
+	if (!cell->IsFlagSet(RoomCellFlags::LIT))
 	{
 		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 	}

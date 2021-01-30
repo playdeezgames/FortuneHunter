@@ -305,7 +305,7 @@ void GameData::ClearLights()
 	{
 		for (size_t row = 0; row < room.GetRows(); ++row)
 		{
-			room.GetCell(column, row)->SetLit(false);
+			room.GetCell(column, row)->ClearFlag(RoomCellFlags::LIT);
 		}
 	}
 }
@@ -323,7 +323,7 @@ void GameData::LightAndExploreAroundHunter()
 				auto cell = room.GetCell(column, row);
 				if (cell)
 				{
-					cell->SetLit(true);
+					cell->SetFlag(RoomCellFlags::LIT);
 					cell->SetExplored(true);
 				}
 			}
