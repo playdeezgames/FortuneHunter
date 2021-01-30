@@ -3,9 +3,9 @@
 Creature::Creature
 (
 	const CreatureDescriptor* creatureDescriptor,
-	tggd::common::RoomCellObject<TerrainType, ObjectType>* drop
+	tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* drop
 )
- : RoomCellObject<TerrainType, ObjectType>()
+ : RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
  , creatureDescriptor(creatureDescriptor)
  , drop(drop)
 {
@@ -18,7 +18,7 @@ const ObjectType& Creature::GetData() const
 	return objectType;
 }
 
-tggd::common::RoomCellObject<TerrainType, ObjectType>* Creature::GetDrop() const
+tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* Creature::GetDrop() const
 {
 	return drop;
 }

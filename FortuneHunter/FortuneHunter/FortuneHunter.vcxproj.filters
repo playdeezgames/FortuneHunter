@@ -388,5 +388,8 @@
     <ClInclude Include="XY.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="RoomCellFlags.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

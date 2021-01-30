@@ -2,7 +2,8 @@
 #include "RoomCellObject.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
-class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType>
+#include "RoomCellFlags.h"
+class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>
 {
 private:
 	size_t keys;

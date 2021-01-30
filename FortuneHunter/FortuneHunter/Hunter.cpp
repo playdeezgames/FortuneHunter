@@ -1,6 +1,6 @@
 #include "Hunter.h"
 Hunter::Hunter()
-	: RoomCellObject<TerrainType, ObjectType>()
+	: RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
 	, keys(0)
 	, moves(0)
 {

@@ -3,6 +3,7 @@
 #include "RoomDirection.h"
 #include "TerrainType.h"
 #include "ObjectType.h"
+#include "RoomCellFlags.h"
 #include "Maze.h"
 #include "RoomGenerationContext.h"
 #include "Hunter.h"
@@ -13,7 +14,7 @@ class GameData
 private:
 	const tggd::common::SoundManager& soundManager;
 	const CreatureDescriptorManager& creatureDescriptors;
-	tggd::common::Room<TerrainType, ObjectType> room;
+	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags> room;
 	Hunter* hunter;
 	void ClearRoom();
 	void ClearHunter();
@@ -43,8 +44,8 @@ public:
 	GameData(const tggd::common::SoundManager&, const CreatureDescriptorManager&);
 	~GameData();
 	const Hunter* GetHunter() const;
-	const tggd::common::Room<TerrainType, ObjectType>& GetRoom() const;
-	tggd::common::Room<TerrainType, ObjectType>& GetRoom();
+	const tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& GetRoom() const;
+	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& GetRoom();
 	void Start();
 	size_t GetMoves() const;
 	void MoveHunter(RoomDirection);

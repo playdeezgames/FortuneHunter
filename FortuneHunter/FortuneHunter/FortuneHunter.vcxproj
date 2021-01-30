@@ -62,6 +62,7 @@
     <ClInclude Include="MainMenuCommandProcessor.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="CommandProcessor.h" />
+    <ClInclude Include="RoomCellFlags.h" />
     <ClInclude Include="XY.h" />
     <ClInclude Include="CommandProcessorManager.h" />
     <ClInclude Include="ControllerManager.h" />

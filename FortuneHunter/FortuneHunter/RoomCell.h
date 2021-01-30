@@ -2,12 +2,12 @@
 #include "RoomCellObject.h"
 namespace tggd::common
 {
-	template<typename TTerrain, typename TObjectData>
+	template<typename TTerrain, typename TObjectData, typename TCellFlags>
 	class RoomCell
 	{
 	private:
 		TTerrain terrain;
-		RoomCellObject<TTerrain, TObjectData>* object;
+		RoomCellObject<TTerrain, TObjectData, TCellFlags>* object;
 		bool explored;
 		bool lit;
 		size_t column;
@@ -32,7 +32,7 @@ namespace tggd::common
 		}
 		const TTerrain& GetTerrain() const { return terrain; }
 		void SetTerrain(const TTerrain& newTerrain) { terrain = newTerrain; }
-		void SetObject(RoomCellObject<TTerrain, TObjectData>* newCreature)
+		void SetObject(RoomCellObject<TTerrain, TObjectData, TCellFlags>* newCreature)
 		{
 			if (object)
 			{
@@ -44,8 +44,8 @@ namespace tggd::common
 				object->roomCell = this;
 			}
 		}
-		const RoomCellObject<TTerrain, TObjectData>* GetObject() const { return object; }
-		RoomCellObject<TTerrain, TObjectData>* GetObject() { return object; }
+		const RoomCellObject<TTerrain, TObjectData, TCellFlags>* GetObject() const { return object; }
+		RoomCellObject<TTerrain, TObjectData, TCellFlags>* GetObject() { return object; }
 		bool HasObject() const { return object != nullptr; }
 		size_t GetColumn() const { return column; }
 		size_t GetRow() const { return row; }

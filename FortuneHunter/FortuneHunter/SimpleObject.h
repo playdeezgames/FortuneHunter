@@ -2,8 +2,8 @@
 #include "RoomCellObject.h"
 namespace tggd::common
 {
-	template<typename TTerrain, typename TObjectData>
-	class SimpleObject : public tggd::common::RoomCellObject<TTerrain, TObjectData>
+	template<typename TTerrain, typename TObjectData, typename TCellFlags>
+	class SimpleObject : public tggd::common::RoomCellObject<TTerrain, TObjectData, TCellFlags>
 	{
 	private:
 		TObjectData data;
