@@ -3,6 +3,7 @@
 #include "RoomConstants.h"
 #include "ColorConstants.h"
 #include "CellConstants.h"
+#include "Creature.h"
 RoomPanelRenderer::RoomPanelRenderer
 (
 	SDL_Renderer* renderer,

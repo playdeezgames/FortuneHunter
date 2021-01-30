@@ -228,18 +228,24 @@ void GameData::SmootheTerrain()
 
 void GameData::SpawnCreature(const CreatureDescriptor* descriptor)
 {
-	bool done = false;
-	while (!done)
+	do
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
 		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
 		auto cell = room.GetCell(column, row);
-		if (TerrainTypeHelper::IsFloor(cell->GetTerrain()) && !cell->GetObject())
+		auto terrainType = cell->GetTerrain();
+		if (!descriptor->CanSpawnOnTerrain(terrainType))
 		{
-			cell->SetObject(new Creature(descriptor, nullptr));
-			done = true;
+			continue;
 		}
-	}
+		auto object = cell->GetObject();
+		if (object && !descriptor->CanSpawnOnObject(object->GetData()))
+		{
+			continue;
+		}
+		cell->SetObject(new Creature(descriptor, object));
+		break;
+	} while (true);
 }
 
 void GameData::PopulateCreatures()

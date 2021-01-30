@@ -19,6 +19,7 @@ namespace tggd::common
 			, column(column)
 			, row(row)
 			, explored(false)
+			//, explored(true)
 			, lit(false)
 		{}
 		~RoomCell()

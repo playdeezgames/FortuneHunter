@@ -9,6 +9,8 @@ CreatureDescriptorManager::CreatureDescriptorManager()
 
 const std::string PROPERTY_OBJECT_TYPE = "objectType";
 const std::string PROPERTY_NUMBER_APPEARING = "numberAppearing";
+const std::string PROPERTY_SPAWN_TERRAIN = "canSpawnOnTerrain";
+const std::string PROPERTY_SPAWN_OBJECT = "canSpawnOnObject";
 
 void CreatureDescriptorManager::Start(const std::string& fileName)
 {
@@ -19,7 +21,19 @@ void CreatureDescriptorManager::Start(const std::string& fileName)
 		auto& properties = item.value();
 		ObjectType objectType = (ObjectType)properties[PROPERTY_OBJECT_TYPE];
 		size_t numberAppearing = (size_t)properties[PROPERTY_NUMBER_APPEARING];
-		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType, numberAppearing);
+		std::set<TerrainType> spawnTerrains;
+		auto& terrains = properties[PROPERTY_SPAWN_TERRAIN];
+		for (auto& terrain : terrains)
+		{
+			spawnTerrains.insert((TerrainType)terrain);
+		}
+		std::set<ObjectType> spawnObjects;
+		auto& objects = properties[PROPERTY_SPAWN_OBJECT];
+		for (auto& object : objects)
+		{
+			spawnObjects.insert((ObjectType)object);
+		}
+		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType, numberAppearing, spawnTerrains, spawnObjects);
 	}
 }
 
