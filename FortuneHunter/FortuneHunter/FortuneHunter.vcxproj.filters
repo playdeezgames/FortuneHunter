@@ -13,306 +13,321 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\CommandProcessors">
+      <UniqueIdentifier>{97af9679-e244-4aa0-bcbd-65f71f924d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Constants">
+      <UniqueIdentifier>{42159e1b-ca74-4ac6-886a-26212f415496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderers">
+      <UniqueIdentifier>{11d1eedf-b78f-4e16-8fa3-2274e46ae253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{719dd7a9-72e9-40c5-8fe7-b7a4e11defa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Creatures">
+      <UniqueIdentifier>{54d3bbfd-c147-48fc-912e-01b829b2a0bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Common\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Utility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FortuneHunterApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\MainMenuRenderer.cpp">
+    <ClCompile Include="BaseCommandProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommandProcessors\MainMenuCommandProcessor.cpp">
+    <ClCompile Include="ConfirmQuitCommandProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EventHandlers\FortuneHunterEventHandler.cpp">
+    <ClCompile Include="InPlayCommandProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommandProcessors\ConfirmQuitCommandProcessor.cpp">
+    <ClCompile Include="MainMenuCommandProcessor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\ConfirmQuitRenderer.cpp">
+    <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\BaseRenderer.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Managers\SoundManager.cpp">
+    <ClCompile Include="Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Managers\ControllerManager.cpp">
+    <ClCompile Include="Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Managers\SpriteManager.cpp">
+    <ClCompile Include="SpriteFont.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Managers\TextureManager.cpp">
+    <ClCompile Include="ControllerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Graphics\Sprite.cpp">
+    <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Graphics\SpriteFont.cpp">
+    <ClCompile Include="SpriteManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UI\MainMenuState.cpp">
+    <ClCompile Include="TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\GameData.cpp">
+    <ClCompile Include="BaseRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommandProcessors\InPlayCommandProcessor.cpp">
+    <ClCompile Include="ConfirmQuitRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\InPlayRenderer.cpp">
+    <ClCompile Include="InPlayRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Maze\Maze.cpp">
+    <ClCompile Include="MainMenuRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Maze\MazeCell.cpp">
+    <ClCompile Include="RoomPanelRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Maze\MazeDirection.cpp">
+    <ClCompile Include="StatusPanelRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Maze\MazeDoor.cpp">
+    <ClCompile Include="FortuneHunterEventHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\RoomDirection.cpp">
+    <ClCompile Include="GameData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommandProcessors\BaseCommandProcessor.cpp">
+    <ClCompile Include="Maze.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\StatusPanelRenderer.cpp">
+    <ClCompile Include="MazeCell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderers\RoomPanelRenderer.cpp">
+    <ClCompile Include="MazeDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\RoomGenerationContext.cpp">
+    <ClCompile Include="MazeDoor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Terrain\TerrainSpriteManager.cpp">
+    <ClCompile Include="RoomDirection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Terrain\TerrainType.cpp">
+    <ClCompile Include="RoomGenerationContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Object\Creature.cpp">
+    <ClCompile Include="Creature.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Object\CreatureDescriptor.cpp">
+    <ClCompile Include="CreatureDescriptor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Object\CreatureDescriptorManager.cpp">
+    <ClCompile Include="CreatureDescriptorManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Object\Hunter.cpp">
+    <ClCompile Include="Hunter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Room\Object\SimpleObject.cpp">
+    <ClCompile Include="SimpleObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSpriteManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Common\Utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FortuneHunterApplication.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants\Config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants\Color.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderers\MainMenuRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandProcessors\MainMenuCommandProcessor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EventHandlers\FortuneHunterEventHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandProcessors\ConfirmQuitCommandProcessor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderers\ConfirmQuitRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderers\BaseRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Managers\SoundManager.h">
+    <ClInclude Include="InPlayCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Managers\CommandProcessorManager.h">
+    <ClInclude Include="MainMenuCommandProcessor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Managers\ControllerManager.h">
+    <ClInclude Include="Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Managers\RenderManager.h">
+    <ClInclude Include="Utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Managers\SpriteManager.h">
+    <ClInclude Include="XY.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Managers\TextureManager.h">
+    <ClInclude Include="Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Interfaces\CommandProcessor.h">
+    <ClInclude Include="SpriteFont.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Interfaces\EventHandler.h">
+    <ClInclude Include="EventHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Interfaces\Renderer.h">
+    <ClInclude Include="Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Interfaces\Updater.h">
+    <ClInclude Include="Updater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Graphics\Sprite.h">
+    <ClInclude Include="RenderManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Graphics\SpriteFont.h">
+    <ClInclude Include="SoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommandProcessors\Command.h">
+    <ClInclude Include="SpriteManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UI\ConfirmState.h">
+    <ClInclude Include="TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UI\MainMenuState.h">
+    <ClInclude Include="Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UI\UIState.h">
+    <ClInclude Include="RoomCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\Room.h">
+    <ClInclude Include="RoomCellObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\GameData.h">
+    <ClInclude Include="InPlayRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommandProcessors\InPlayCommandProcessor.h">
+    <ClInclude Include="MainMenuRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\InPlayRenderer.h">
+    <ClInclude Include="RoomPanelRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\Cell.h">
+    <ClInclude Include="StatusPanelRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\Maze.h">
+    <ClInclude Include="MainMenuConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Maze\Maze.h">
+    <ClInclude Include="RoomPanelConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Maze\MazeCell.h">
+    <ClInclude Include="StatusPanelConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Maze\MazeDirection.h">
+    <ClInclude Include="UIConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Maze\MazeDoor.h">
+    <ClInclude Include="MazeConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\RoomDirection.h">
+    <ClInclude Include="RoomConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommandProcessors\BaseCommandProcessor.h">
+    <ClInclude Include="SoundsConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\UI\UI.h">
+    <ClInclude Include="WindowConstants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\UI\MainMenu.h">
+    <ClInclude Include="FortuneHunterEventHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\UI\ConfirmQuit.h">
+    <ClInclude Include="GameData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\UI\RoomPanel.h">
+    <ClInclude Include="Maze.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\UI\StatusPanel.h">
+    <ClInclude Include="MazeCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\StatusPanelRenderer.h">
+    <ClInclude Include="MazeDirection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderers\RoomPanelRenderer.h">
+    <ClInclude Include="MazeDoor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\XY.h">
+    <ClInclude Include="RoomDirection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants\Sounds.h">
+    <ClInclude Include="RoomGenerationContext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Room\Room.h">
+    <ClInclude Include="Hunter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Room\RoomCell.h">
+    <ClInclude Include="ObjectType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Room\RoomCellObject.h">
+    <ClInclude Include="SimpleObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\RoomGenerationContext.h">
+    <ClInclude Include="TerrainSpriteManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Terrain\TerrainType.h">
+    <ClInclude Include="TerrainType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Terrain\TerrainSpriteManager.h">
+    <ClInclude Include="ConfirmState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\Creature.h">
+    <ClInclude Include="MainMenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\CreatureDescriptor.h">
+    <ClInclude Include="UIState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\CreatureDescriptorManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="BaseCommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\CreatureType.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\Hunter.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CommandProcessorManager.h">
+      <Filter>Header Files\CommandProcessors</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\ObjectType.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="ConfirmQuitCommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Room\Object\SimpleObject.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CellConstants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorConstants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\CommandProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigConstants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfirmQuitConstants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfirmQuitRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerManager.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureType.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureDescriptorManager.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureDescriptor.h">
+      <Filter>Header Files\Creatures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
