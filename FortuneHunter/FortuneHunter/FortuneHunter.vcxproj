@@ -44,7 +44,6 @@
     <ClCompile Include="MazeDoor.cpp" />
     <ClCompile Include="RoomGenerationContext.cpp" />
     <ClCompile Include="RoomDirection.cpp" />
-    <ClCompile Include="SimpleObject.cpp" />
     <ClCompile Include="TerrainSpriteManager.cpp" />
     <ClCompile Include="TerrainType.cpp" />
     <ClCompile Include="InPlayRenderer.cpp" />

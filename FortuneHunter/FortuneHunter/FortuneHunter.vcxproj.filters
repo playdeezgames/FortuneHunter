@@ -9,44 +9,44 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{aa8655fb-219e-4b25-9685-e9d1ef323299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Audio">
+      <UniqueIdentifier>{373b26f8-503e-437d-a875-8a9a080d4b6c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\CommandProcessors">
       <UniqueIdentifier>{97af9679-e244-4aa0-bcbd-65f71f924d41}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Constants">
       <UniqueIdentifier>{42159e1b-ca74-4ac6-886a-26212f415496}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Renderers">
-      <UniqueIdentifier>{11d1eedf-b78f-4e16-8fa3-2274e46ae253}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Input">
-      <UniqueIdentifier>{719dd7a9-72e9-40c5-8fe7-b7a4e11defa6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Creatures">
       <UniqueIdentifier>{54d3bbfd-c147-48fc-912e-01b829b2a0bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\UI">
-      <UniqueIdentifier>{cf6fc6a5-d1d2-4eaf-955a-9c95f8b6082d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Application">
-      <UniqueIdentifier>{aa8655fb-219e-4b25-9685-e9d1ef323299}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game">
-      <UniqueIdentifier>{5c90b9aa-64b4-484f-9052-0f3d3080a6bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Dependencies">
       <UniqueIdentifier>{42224086-b2e5-4ef1-aab3-f012d984e40f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Maze">
-      <UniqueIdentifier>{10669de3-5b53-433c-9a9b-ca238229f521}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Room">
-      <UniqueIdentifier>{a6aab381-1eac-4302-a22a-ae4a29051ca4}</UniqueIdentifier>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{5c90b9aa-64b4-484f-9052-0f3d3080a6bf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Graphics">
       <UniqueIdentifier>{398c4a7d-0a73-4662-8645-3a72e0c6c0f8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Audio">
-      <UniqueIdentifier>{373b26f8-503e-437d-a875-8a9a080d4b6c}</UniqueIdentifier>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{719dd7a9-72e9-40c5-8fe7-b7a4e11defa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maze">
+      <UniqueIdentifier>{10669de3-5b53-433c-9a9b-ca238229f521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderers">
+      <UniqueIdentifier>{11d1eedf-b78f-4e16-8fa3-2274e46ae253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Room">
+      <UniqueIdentifier>{a6aab381-1eac-4302-a22a-ae4a29051ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{cf6fc6a5-d1d2-4eaf-955a-9c95f8b6082d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Updaters">
       <UniqueIdentifier>{5bdf3a39-e927-4d04-ac1f-4b8f47824871}</UniqueIdentifier>
@@ -57,14 +57,11 @@
     <Filter Include="Source Files\Application">
       <UniqueIdentifier>{a93c904e-ea7e-4d26-a202-a2509f441159}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Audio">
+      <UniqueIdentifier>{46332f76-9997-4fb5-956b-cbfebc89265e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\CommandProcessors">
       <UniqueIdentifier>{498664b2-f82c-427a-95c8-46cff4f68180}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Renderers">
-      <UniqueIdentifier>{d8c2d4e0-0090-4668-87e0-b6706e665825}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Input">
-      <UniqueIdentifier>{cb5719c7-6fe1-4bba-9702-7258dfbaca54}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Creatures">
       <UniqueIdentifier>{61b33046-831c-45c4-a568-c10e20127a11}</UniqueIdentifier>
@@ -72,20 +69,23 @@
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{02b89650-d899-4dd1-ac61-7361f3cc6367}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UI">
-      <UniqueIdentifier>{451a17bd-b119-454d-bf91-8bf69a2cf525}</UniqueIdentifier>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{8c8b8ad8-b096-4e0c-9c8d-7acf65a24e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{cb5719c7-6fe1-4bba-9702-7258dfbaca54}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Maze">
       <UniqueIdentifier>{4512e273-606d-42dc-a794-4bd619af671c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Renderers">
+      <UniqueIdentifier>{d8c2d4e0-0090-4668-87e0-b6706e665825}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Room">
       <UniqueIdentifier>{563816a8-c72d-4d33-9b49-84b34811a1c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Audio">
-      <UniqueIdentifier>{46332f76-9997-4fb5-956b-cbfebc89265e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Graphics">
-      <UniqueIdentifier>{8c8b8ad8-b096-4e0c-9c8d-7acf65a24e0c}</UniqueIdentifier>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{451a17bd-b119-454d-bf91-8bf69a2cf525}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Utility">
       <UniqueIdentifier>{de768342-e12b-49d9-b683-b3eb56b07bee}</UniqueIdentifier>
@@ -169,9 +169,6 @@
     </ClCompile>
     <ClCompile Include="RoomPanelRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleObject.cpp">
-      <Filter>Source Files\Room</Filter>
     </ClCompile>
     <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files\Audio</Filter>

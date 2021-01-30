@@ -400,7 +400,7 @@ void GameData::PopulateLocks(RoomGenerationContext& context)
 					(direction==RoomDirection::EAST || direction==RoomDirection::WEST) ? 
 					(ObjectType::DOOR_NS) : 
 					(ObjectType::DOOR_EW);
-				tggd::common::RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(objectType);
+				tggd::common::RoomCellObject<TerrainType, ObjectType>* object = new tggd::common::SimpleObject<TerrainType, ObjectType>(objectType);
 				roomCell->SetObject(object);
 				break;
 			}
@@ -418,7 +418,7 @@ void GameData::PopulateKeys(RoomGenerationContext& context)
 		auto roomCell = room.GetCell(roomColumn, roomRow);
 		if (!roomCell->HasObject() && roomCell->GetTerrain() == TerrainType::FLOOR)
 		{
-			tggd::common::RoomCellObject<TerrainType, ObjectType>* object = new SimpleObject(ObjectType::KEY);
+			tggd::common::RoomCellObject<TerrainType, ObjectType>* object = new tggd::common::SimpleObject<TerrainType, ObjectType>(ObjectType::KEY);
 			roomCell->SetObject(object);
 			keyCount--;
 		}

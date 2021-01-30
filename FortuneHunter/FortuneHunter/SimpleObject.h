@@ -1,12 +1,21 @@
 #pragma once
 #include "RoomCellObject.h"
-#include "TerrainType.h"
-#include "ObjectType.h"
-class SimpleObject : public tggd::common::RoomCellObject<TerrainType, ObjectType>
+namespace tggd::common
 {
-private:
-	ObjectType objectType;
-public:
-	SimpleObject(ObjectType);
-	const ObjectType& GetData() const;
-};
+	template<typename TTerrain, typename TObjectData>
+	class SimpleObject : public tggd::common::RoomCellObject<TTerrain, TObjectData>
+	{
+	private:
+		TObjectData data;
+	public:
+		SimpleObject(const TObjectData& data)
+			: data(data)
+		{
+
+		}
+		const TObjectData& GetData() const
+		{
+			return data;
+		}
+	};
+}
