@@ -2,6 +2,7 @@
 Hunter::Hunter()
 	: RoomCellObject<TerrainType, ObjectType>()
 	, keys(0)
+	, moves(0)
 {
 
 }
