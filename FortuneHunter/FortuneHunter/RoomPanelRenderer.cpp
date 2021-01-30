@@ -19,12 +19,15 @@ RoomPanelRenderer::RoomPanelRenderer
 {
 }
 
+//TODO: load table from config
 const std::string SPRITE_HUNTER = "HunterCreature";
 const std::string SPRITE_DITHER = "Dither";
 const std::string SPRITE_DOOR_NS = "NSDoor";
 const std::string SPRITE_DOOR_EW = "EWDoor";
 const std::string SPRITE_KEY = "KeyItem";
 const std::string SPRITE_ZOMBIE= "ZombieCreature";
+const std::string SPRITE_EXIT = "Exit";
+const std::string SPRITE_EXIT_KEY = "ExitKeyItem";
 
 void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
 {
@@ -44,11 +47,14 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 	if (object != nullptr)
 	{
 		ObjectType objectType = object->GetData();
+		//TODO: load table from config
 		std::string spriteName =
 			(objectType == ObjectType::HUNTER) ? (SPRITE_HUNTER) :
 			(objectType == ObjectType::DOOR_EW) ? (SPRITE_DOOR_EW) :
 			(objectType == ObjectType::DOOR_NS) ? (SPRITE_DOOR_NS) :
 			(objectType == ObjectType::ZOMBIE) ? (SPRITE_ZOMBIE) :
+			(objectType == ObjectType::EXIT) ? (SPRITE_EXIT) :
+			(objectType == ObjectType::EXIT_KEY) ? (SPRITE_EXIT_KEY) :
 			(SPRITE_KEY);
 		spriteManager.GetSprite(spriteName)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 	}

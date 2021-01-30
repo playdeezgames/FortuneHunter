@@ -271,6 +271,7 @@ void GameData::GenerateRoom()
 	SmootheTerrain();
 	PopulateLocks(context);
 	PopulateKeys(context);
+	PopulateDeadEnds(context);
 	PopulateCreatures();
 }
 
@@ -430,4 +431,28 @@ void GameData::PopulateKeys(RoomGenerationContext& context)
 		}
 	}
 }
+
+void GameData::PopulateDeadEndObject(RoomGenerationContext& context, ObjectType objectType)
+{
+	do
+	{
+		size_t index = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)context.GetDeadEnds().size());
+		auto &xy = context.GetDeadEnds()[index];
+		auto cell = room.GetCell(xy.GetX(), xy.GetY());
+		if (cell->GetObject())
+		{
+			continue;
+		}
+		cell->SetObject(new tggd::common::SimpleObject<TerrainType, ObjectType>(objectType));
+		break;
+	} while (true);
+}
+
+
+void GameData::PopulateDeadEnds(RoomGenerationContext& context)
+{
+	PopulateDeadEndObject(context, ObjectType::EXIT);
+	PopulateDeadEndObject(context, ObjectType::EXIT_KEY);
+}
+
 

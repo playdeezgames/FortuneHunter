@@ -34,6 +34,8 @@ private:
 	void LightAndExploreAroundHunter();
 	void PopulateLocks(RoomGenerationContext&);
 	void PopulateKeys(RoomGenerationContext&);
+	void PopulateDeadEndObject(RoomGenerationContext&, ObjectType);
+	void PopulateDeadEnds(RoomGenerationContext&);
 	void PlaceHunter();
 	void LoopifyMaze(Maze&);
 	void SpawnCreature(const CreatureDescriptor*);
