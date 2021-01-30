@@ -11,6 +11,7 @@ namespace tggd::common
 		RoomCell<TTerrain, TObjectData>* roomCell;
 	public:
 		RoomCellObject() :roomCell(nullptr) {}
+		virtual ~RoomCellObject() {}
 		const RoomCell<TTerrain, TObjectData>* GetRoomCell() const { return roomCell; }
 		RoomCell<TTerrain, TObjectData>* GetRoomCell() { return roomCell; }
 		virtual const TObjectData& GetData() const = 0;

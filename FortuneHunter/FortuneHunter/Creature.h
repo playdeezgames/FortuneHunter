@@ -8,8 +8,11 @@ class Creature : public tggd::common::RoomCellObject<TerrainType, ObjectType>
 private:
 	mutable ObjectType objectType;//this is a cache variable
 	const CreatureDescriptor* creatureDescriptor;
+	tggd::common::RoomCellObject<TerrainType, ObjectType>* drop;
 public:
-	Creature(const CreatureDescriptor*);
+	Creature(const CreatureDescriptor*, tggd::common::RoomCellObject<TerrainType, ObjectType>*);
+	~Creature();
 	const ObjectType& GetData() const;
+	tggd::common::RoomCellObject<TerrainType, ObjectType>* GetDrop() const;
 };
 

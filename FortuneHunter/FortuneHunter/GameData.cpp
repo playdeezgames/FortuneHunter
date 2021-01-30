@@ -236,7 +236,7 @@ void GameData::SpawnCreature(const CreatureDescriptor* descriptor)
 		auto cell = room.GetCell(column, row);
 		if (TerrainTypeHelper::IsFloor(cell->GetTerrain()) && !cell->GetObject())
 		{
-			cell->SetObject(new Creature(descriptor));
+			cell->SetObject(new Creature(descriptor, nullptr));
 			done = true;
 		}
 	}
