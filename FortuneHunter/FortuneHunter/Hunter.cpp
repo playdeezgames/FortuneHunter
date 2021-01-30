@@ -32,3 +32,13 @@ const ObjectType& Hunter::GetData() const
 	return dummy;
 }
 
+size_t Hunter::GetMoves() const
+{
+	return moves;
+}
+
+void Hunter::IncrementMoves()
+{
+	moves++;
+}
+

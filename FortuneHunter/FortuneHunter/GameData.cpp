@@ -13,25 +13,26 @@ GameData::GameData
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, soundManager(soundManager)
 	, hunter(nullptr)
-	, moves(0)
 	, creatureDescriptors(creatureDescriptors)
 {
 }
 
 void GameData::IncrementMove()
 {
-	moves++;
+	if (hunter)
+	{
+		hunter->IncrementMoves();
+	}
 }
 
 size_t GameData::GetMoves() const
 {
-	return moves;
+	return hunter->GetMoves();
 }
 
 
 void GameData::ClearHunter()
 {
-	moves = 0;
 	if (hunter)
 	{
 		if (hunter->GetRoomCell())

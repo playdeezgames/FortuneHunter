@@ -24,7 +24,6 @@ private:
 	void GenerateRoom();
 	int FlagifyDirection(int, int, RoomDirection, int);
 	void FlagifyCell(int, int);
-	size_t moves;
 	void IncrementMove();
 	void UpdateRoom();
 	Hunter* GetHunter();
