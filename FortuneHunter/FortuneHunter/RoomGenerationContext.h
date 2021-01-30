@@ -9,4 +9,5 @@ public:
 	RoomGenerationContext();
 	const std::vector<tggd::common::XY<size_t>>& GetDeadEnds() const;
 	void AddDeadEnd(const tggd::common::XY<size_t>&);
+	void RemoveDeadEndAtIndex(size_t);
 };

@@ -1945,7 +1945,7 @@
     "w": 16,
     "h": 16
   },
-  "Diamond": {
+  "DiamondItem": {
     "texture": "tiles",
     "x": 96,
     "y": 32,

@@ -444,6 +444,7 @@ void GameData::PopulateDeadEndObject(RoomGenerationContext& context, ObjectType 
 			continue;
 		}
 		cell->SetObject(new tggd::common::SimpleObject<TerrainType, ObjectType>(objectType));
+		context.RemoveDeadEndAtIndex(index);
 		break;
 	} while (true);
 }
@@ -453,6 +454,10 @@ void GameData::PopulateDeadEnds(RoomGenerationContext& context)
 {
 	PopulateDeadEndObject(context, ObjectType::EXIT);
 	PopulateDeadEndObject(context, ObjectType::EXIT_KEY);
+	while (!context.GetDeadEnds().empty())
+	{
+		PopulateDeadEndObject(context, ObjectType::DIAMOND);
+	}
 }
 
 

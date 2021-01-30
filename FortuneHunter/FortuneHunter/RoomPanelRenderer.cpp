@@ -28,6 +28,7 @@ const std::string SPRITE_KEY = "KeyItem";
 const std::string SPRITE_ZOMBIE= "ZombieCreature";
 const std::string SPRITE_EXIT = "Exit";
 const std::string SPRITE_EXIT_KEY = "ExitKeyItem";
+const std::string SPRITE_DIAMOND = "DiamondItem";
 
 void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
 {
@@ -55,6 +56,7 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 			(objectType == ObjectType::ZOMBIE) ? (SPRITE_ZOMBIE) :
 			(objectType == ObjectType::EXIT) ? (SPRITE_EXIT) :
 			(objectType == ObjectType::EXIT_KEY) ? (SPRITE_EXIT_KEY) :
+			(objectType == ObjectType::DIAMOND) ? (SPRITE_DIAMOND) :
 			(SPRITE_KEY);
 		spriteManager.GetSprite(spriteName)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 	}

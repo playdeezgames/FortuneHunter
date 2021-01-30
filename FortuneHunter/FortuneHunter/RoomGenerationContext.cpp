@@ -14,3 +14,8 @@ void RoomGenerationContext::AddDeadEnd(const tggd::common::XY<size_t>& xy)
 {
 	deadEnds.push_back(xy);
 }
+
+void RoomGenerationContext::RemoveDeadEndAtIndex(size_t index)
+{
+	deadEnds.erase(deadEnds.begin() + index);
+}
