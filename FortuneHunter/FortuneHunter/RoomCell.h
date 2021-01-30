@@ -1,5 +1,6 @@
 #pragma once
 #include "RoomCellObject.h"
+#include <set>
 namespace tggd::common
 {
 	template<typename TTerrain, typename TObjectData, typename TCellFlags>
@@ -12,6 +13,7 @@ namespace tggd::common
 		bool lit;
 		size_t column;
 		size_t row;
+		std::set<TCellFlags> cellFlags;
 	public:
 		RoomCell(size_t column, size_t row, const TTerrain& terrain)
 			: terrain(terrain)
@@ -21,6 +23,7 @@ namespace tggd::common
 			, explored(false)
 			//, explored(true)
 			, lit(false)
+			, cellFlags()
 		{}
 		~RoomCell()
 		{
@@ -53,6 +56,18 @@ namespace tggd::common
 		bool IsExplored() const { return explored; }
 		void SetLit(bool state) { lit = state; }
 		void SetExplored(bool state) { explored = state; }
+		void SetFlag(const TCellFlags& flag)
+		{
+			cellFlags.insert(flag);
+		}
+		void ClearFlag(const TCellFlags& flag)
+		{
+			cellFlags.erase(flag);
+		}
+		bool IsFlagSet(const TCellFlags& flag)
+		{
+			return cellFlags.contains(flag);
+		}
 		void RemoveObject()
 		{
 			if (object)
