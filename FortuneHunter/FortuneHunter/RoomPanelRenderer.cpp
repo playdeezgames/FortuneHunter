@@ -65,7 +65,7 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
 	const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = gameData.GetRoom().GetCell(column, row);
-	if (cell->IsExplored())
+	if (cell->IsFlagSet(RoomCellFlags::EXPLORED))
 	{
 		int x = PlotColumn(column, row);
 		int y = PlotRow(column, row);

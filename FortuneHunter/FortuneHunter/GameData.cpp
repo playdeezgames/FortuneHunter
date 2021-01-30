@@ -324,7 +324,7 @@ void GameData::LightAndExploreAroundHunter()
 				if (cell)
 				{
 					cell->SetFlag(RoomCellFlags::LIT);
-					cell->SetExplored(true);
+					cell->SetFlag(RoomCellFlags::EXPLORED);
 				}
 			}
 		}

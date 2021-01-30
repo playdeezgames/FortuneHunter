@@ -9,7 +9,6 @@ namespace tggd::common
 	private:
 		TTerrain terrain;
 		RoomCellObject<TTerrain, TObjectData, TCellFlags>* object;
-		bool explored;
 		size_t column;
 		size_t row;
 		std::set<TCellFlags> cellFlags;
@@ -19,8 +18,6 @@ namespace tggd::common
 			, object(nullptr)
 			, column(column)
 			, row(row)
-			, explored(false)
-			//, explored(true)
 			, cellFlags()
 		{}
 		~RoomCell()
@@ -50,8 +47,6 @@ namespace tggd::common
 		bool HasObject() const { return object != nullptr; }
 		size_t GetColumn() const { return column; }
 		size_t GetRow() const { return row; }
-		bool IsExplored() const { return explored; }
-		void SetExplored(bool state) { explored = state; }
 		void SetFlag(const TCellFlags& flag)
 		{
 			cellFlags.insert(flag);
