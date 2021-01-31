@@ -19,6 +19,7 @@
 #include "TerrainSprites.h"
 #include "CreatureDescriptorManager.h"
 #include "HealthLevelSprites.h"
+#include "ObjectSprites.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -33,6 +34,7 @@ private:
 	CreatureDescriptorManager creatureDescriptors;
 	TerrainSpriteManager terrainSprites;
 	HealthLevelSprites healthLevelSprites;
+	ObjectSprites objectSprites;
 	StatusPanelRenderer* statusPanelRenderer;
 	RoomPanelRenderer* roomPanelRenderer;
 

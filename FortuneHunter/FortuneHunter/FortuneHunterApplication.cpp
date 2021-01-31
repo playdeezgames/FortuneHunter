@@ -29,6 +29,8 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, statusPanelRenderer(nullptr)
 	, terrainSprites()
 	, healthLevelSprites()
+	, objectSprites()
+	, roomPanelRenderer(nullptr)
 {
 
 }
@@ -46,6 +48,7 @@ void FortuneHunterApplication::Start()
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
 	healthLevelSprites.Start(spriteManager, Constants::Config::Files::HEALTHLEVELSPRITES);
+	objectSprites.Start(spriteManager, Constants::Config::Files::OBJECTSPRITES);
 
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
@@ -72,6 +75,7 @@ void FortuneHunterApplication::Finish()
 {
 	healthLevelSprites.Finish();
 	terrainSprites.Finish();
+	objectSprites.Finish();
 	commandProcessors.Finish();
 	soundManager.Finish();
 	spriteManager.Finish();
