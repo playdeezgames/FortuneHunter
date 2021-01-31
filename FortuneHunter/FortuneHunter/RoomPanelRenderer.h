@@ -3,12 +3,14 @@
 #include "GameData.h"
 #include "TerrainType.h"
 #include "TerrainSpriteManager.h"
+#include "HealthLevelSprites.h"
 class RoomPanelRenderer : public BaseRenderer
 {
 private:
 	const GameData& gameData;
 	const tggd::common::SpriteManager& spriteManager;
 	const TerrainSpriteManager& terrainSprites;
+	const HealthLevelSprites& healthLevelSprites;
 	static int PlotColumn(int, int);
 	static int PlotRow(int, int);
 	void DrawCells() const;
@@ -23,6 +25,7 @@ public:
 		const tggd::common::SpriteFont&, 
 		const tggd::common::SpriteManager&,
 		const TerrainSpriteManager&,
+		const HealthLevelSprites&,
 		const GameData&
 	);
 	void Draw() const;

@@ -18,6 +18,7 @@
 #include "RoomPanelRenderer.h"
 #include "TerrainSpriteManager.h"
 #include "CreatureDescriptorManager.h"
+#include "HealthLevelSprites.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -31,6 +32,7 @@ private:
 	tggd::common::SpriteFont romFont;
 	CreatureDescriptorManager creatureDescriptors;
 	TerrainSpriteManager terrainSprites;
+	HealthLevelSprites healthLevelSprites;
 	StatusPanelRenderer* statusPanelRenderer;
 	RoomPanelRenderer* roomPanelRenderer;
 

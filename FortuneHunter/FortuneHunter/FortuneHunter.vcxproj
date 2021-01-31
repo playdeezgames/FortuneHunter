@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="BaseCommandProcessor.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
+    <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="InPlayCommandProcessor.cpp" />
     <ClCompile Include="MainMenuCommandProcessor.cpp" />
     <ClCompile Include="Application.cpp" />
@@ -59,6 +60,7 @@
     <ClInclude Include="BaseCommandProcessor.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="HealthLevel.h" />
+    <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
     <ClInclude Include="MainMenuCommandProcessor.h" />
     <ClInclude Include="Application.h" />

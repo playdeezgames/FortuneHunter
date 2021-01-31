@@ -10,11 +10,13 @@ RoomPanelRenderer::RoomPanelRenderer
 	const tggd::common::SpriteFont& romFont,
 	const tggd::common::SpriteManager& spriteManager,
 	const TerrainSpriteManager& terrainSprites,
+	const HealthLevelSprites& healthLevelSprites,
 	const GameData& gameData
 )
 	: BaseRenderer(renderer, romFont)
 	, gameData(gameData)
 	, terrainSprites(terrainSprites)
+	, healthLevelSprites(healthLevelSprites)
 	, spriteManager(spriteManager)
 {
 }
@@ -59,6 +61,16 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 			(objectType == ObjectType::DIAMOND) ? (SPRITE_DIAMOND) :
 			(SPRITE_KEY);
 		spriteManager.GetSprite(spriteName)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+		const Creature* creature = dynamic_cast<const Creature*>(object);
+		if (creature && creature->GetRoomCell() && creature->GetRoomCell()->IsFlagSet(RoomCellFlags::LIT))
+		{
+			auto level = creature->GetHealthLevel();
+			auto sprite = healthLevelSprites.GetSprite(level);
+			if (sprite)
+			{
+				sprite->Draw(GetMainRenderer(), x + Constants::UI::RoomPanel::HEALTH_LEVEL_OFFSET_X, y+Constants::UI::RoomPanel::HEALTH_LEVEL_OFFSET_Y, Constants::Color::WHITE);
+			}
+		}
 	}
 }
 

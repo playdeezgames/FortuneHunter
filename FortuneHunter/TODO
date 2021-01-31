@@ -31,6 +31,7 @@ Refactor:
     ☐ maze cell flagifier for rendering
     ☐ maze cell has a set of flags instead of "lit" and "explored"
     ☐ way for room panel to look up the sprite for an object type
+    ☐ terrain sprite manager and health level sprite manager are the same except for key types
 Whimsy:
     ☐ burn the zombies
         they can attack you and you might burn

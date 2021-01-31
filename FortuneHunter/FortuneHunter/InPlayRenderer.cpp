@@ -18,6 +18,7 @@ InPlayRenderer::InPlayRenderer(
 
 void InPlayRenderer::Draw() const
 {
+	SDL_RenderClear(GetMainRenderer());
 	roomPanelRenderer->Draw();
 	statusPanelRenderer->Draw();
 }
