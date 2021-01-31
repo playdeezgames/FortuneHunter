@@ -58,6 +58,7 @@
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
+    <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
     <ClInclude Include="MainMenuCommandProcessor.h" />
     <ClInclude Include="Application.h" />

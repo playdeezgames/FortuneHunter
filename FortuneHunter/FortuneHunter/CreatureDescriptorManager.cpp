@@ -11,6 +11,7 @@ const std::string PROPERTY_OBJECT_TYPE = "objectType";
 const std::string PROPERTY_NUMBER_APPEARING = "numberAppearing";
 const std::string PROPERTY_SPAWN_TERRAIN = "canSpawnOnTerrain";
 const std::string PROPERTY_SPAWN_OBJECT = "canSpawnOnObject";
+const std::string PROPERTY_HEALTH = "health";
 
 void CreatureDescriptorManager::Start(const std::string& fileName)
 {
@@ -33,7 +34,8 @@ void CreatureDescriptorManager::Start(const std::string& fileName)
 		{
 			spawnObjects.insert((ObjectType)object);
 		}
-		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType, numberAppearing, spawnTerrains, spawnObjects);
+		int health = properties[PROPERTY_HEALTH];
+		creatureDescriptors[creatureType] = new CreatureDescriptor(objectType, numberAppearing, spawnTerrains, spawnObjects, health);
 	}
 }
 

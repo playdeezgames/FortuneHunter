@@ -3,6 +3,7 @@
     "objectType": 6,
     "numberAppearing": 64,
     "canSpawnOnTerrain": [0, 16],
-    "canSpawnOnObject": [1, 5]
+    "canSpawnOnObject": [1, 5],
+    "health": 2
   }
 }

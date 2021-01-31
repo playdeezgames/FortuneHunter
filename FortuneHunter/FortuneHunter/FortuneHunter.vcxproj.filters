@@ -391,5 +391,8 @@
     <ClInclude Include="RoomCellFlags.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
+    <ClInclude Include="HealthLevel.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

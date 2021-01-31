@@ -9,10 +9,12 @@ private:
 	size_t numberAppearing;
 	std::set<TerrainType> spawnTerrains;
 	std::set<ObjectType> spawnObjects;
+	int health;
 public:
-	CreatureDescriptor(ObjectType, size_t, const std::set<TerrainType>&, const std::set<ObjectType>&);
+	CreatureDescriptor(ObjectType, size_t, const std::set<TerrainType>&, const std::set<ObjectType>&, int);
 	ObjectType GetObjectType() const;
 	size_t GetNumberAppearing() const;
 	bool CanSpawnOnTerrain(TerrainType) const;
 	bool CanSpawnOnObject(ObjectType) const;
+	int GetHealth() const;
 };

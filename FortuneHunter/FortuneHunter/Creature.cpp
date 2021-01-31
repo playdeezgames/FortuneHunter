@@ -28,3 +28,15 @@ Creature::~Creature()
 	tggd::common::Utility::SafeDelete(drop);
 }
 
+int Creature::GetWounds() const
+{
+	return wounds;
+}
+
+HealthLevel Creature::GetHealthLevel() const
+{
+	int healthLeft = creatureDescriptor->GetHealth() - GetWounds();
+	return (HealthLevel)(healthLeft * (int)(HealthLevel::TEN) / creatureDescriptor->GetHealth());
+}
+
+

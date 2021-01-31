@@ -16,6 +16,8 @@ Gameplay:
     ☐ monsters
         ☐ zombies
     ☐ weapons
+        ☐ a big stick
+        ☐ yer fists
     ☐ armor
     ☐ potions
     ✔ locks @done(21-01-28 05:37)
@@ -29,6 +31,9 @@ Refactor:
     ☐ maze cell flagifier for rendering
     ☐ maze cell has a set of flags instead of "lit" and "explored"
     ☐ way for room panel to look up the sprite for an object type
+Whimsy:
+    ☐ burn the zombies
+        they can attack you and you might burn
 Sound Effects:
     ✔ get key @done(21-01-28 05:57)
     ✔ bump wall @done(21-01-29 04:19)
