@@ -21,5 +21,6 @@ public:
 	HealthLevel GetHealthLevel() const;
 	void AddWounds(int);
 	bool IsDead() const;
+	int GetAttackStrength() const;
 };
 

@@ -47,3 +47,8 @@ int Hunter::GetAttackStrength() const
 {
 	return 1;//TODO: magic string
 }
+
+void Hunter::AddWounds(int amount)
+{
+	//TODO: implement me!
+}

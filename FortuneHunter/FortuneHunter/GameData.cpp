@@ -409,6 +409,29 @@ void GameData::AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType
 
 }
 
+std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> GameData::DetermineAdjacentCells
+(
+	tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* startingCell
+)
+{
+	std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> result;
+	if (startingCell)
+	{
+		auto cellColumn = startingCell->GetColumn();
+		auto cellRow = startingCell->GetRow();
+		for (auto direction : RoomDirectionHelper::GetAll())
+		{
+			auto nextColumn = RoomDirectionHelper::GetNextColumn(cellColumn, cellRow, direction);
+			auto nextRow = RoomDirectionHelper::GetNextRow(cellColumn, cellRow, direction);
+			auto nextCell = room.GetCell(nextColumn, nextRow);
+			if (nextCell)
+			{
+				result.push_back(nextCell);
+			}
+		}
+	}
+	return result;
+}
 
 void GameData::MoveHunter(RoomDirection direction)
 {
@@ -419,6 +442,7 @@ void GameData::MoveHunter(RoomDirection direction)
 	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
 	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
 	tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
+	auto adjacentCells = DetermineAdjacentCells(cell);
 	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()))
 	{
 		AttemptToEnterCell(cell, nextCell);
@@ -426,6 +450,18 @@ void GameData::MoveHunter(RoomDirection direction)
 	else
 	{
 		soundManager.PlaySound(Constants::Sounds::BUMP_WALL);
+	}
+	for (auto adjacentCell : adjacentCells)
+	{
+		if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
+		{
+			Creature* creature = dynamic_cast<Creature*>(adjacentCell->GetObject());
+			if (creature)
+			{
+				hunter->AddWounds(creature->GetAttackStrength());
+				//TODO: sound for hunter hit or dead!
+			}
+		}
 	}
 	IncrementMove();
 	UpdateRoom();

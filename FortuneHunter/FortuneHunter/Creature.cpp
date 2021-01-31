@@ -50,5 +50,9 @@ bool Creature::IsDead() const
 	return wounds >= creatureDescriptor->GetHealth();
 }
 
+int Creature::GetAttackStrength() const
+{
+	return 1;//TODO: magic number
+}
 
 

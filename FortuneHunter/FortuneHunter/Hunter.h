@@ -18,4 +18,5 @@ public:
 	void RemoveKey();
 	const ObjectType& GetData() const;
 	int GetAttackStrength() const;
+	void AddWounds(int);
 };
