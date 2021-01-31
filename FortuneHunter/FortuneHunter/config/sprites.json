@@ -1968,73 +1968,83 @@
   },
   "HealthBar10": {
     "texture": "tiles",
+    "offset-y": -4,
     "x": 16,
     "y": 48,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar20": {
     "texture": "tiles",
-    "x": 32,
-    "y": 48,
+    "offset-y": -4,
+    "x": 16,
+    "y": 52,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar30": {
     "texture": "tiles",
-    "x": 48,
-    "y": 48,
+    "offset-y": -4,
+    "x": 16,
+    "y": 56,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar40": {
     "texture": "tiles",
-    "x": 64,
+    "offset-y": -4,
+    "x": 32,
     "y": 48,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar50": {
     "texture": "tiles",
-    "x": 80,
-    "y": 48,
+    "offset-y": -4,
+    "x": 32,
+    "y": 52,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar60": {
     "texture": "tiles",
-    "x": 96,
-    "y": 48,
+    "offset-y": -4,
+    "x": 32,
+    "y": 56,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar70": {
     "texture": "tiles",
-    "x": 112,
-    "y": 48,
+    "offset-y": -4,
+    "x": 32,
+    "y": 60,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar80": {
     "texture": "tiles",
-    "x": 0,
-    "y": 64,
+    "offset-y": -4,
+    "x": 48,
+    "y": 48,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar90": {
     "texture": "tiles",
-    "x": 16,
-    "y": 64,
+    "offset-y": -4,
+    "x": 48,
+    "y": 52,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "HealthBar100": {
     "texture": "tiles",
-    "x": 32,
-    "y": 64,
+    "offset-y": -4,
+    "x": 48,
+    "y": 56,
     "w": 16,
-    "h": 16
+    "h": 4
   },
   "PotionItem": {
     "texture": "tiles",

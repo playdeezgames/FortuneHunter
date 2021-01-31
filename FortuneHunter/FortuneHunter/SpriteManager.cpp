@@ -24,6 +24,8 @@ namespace tggd::common
 	}
 
 	const std::string PROPERTY_TEXTURE = "texture";
+	const std::string PROPERTY_OFFSET_X = "offset-x";
+	const std::string PROPERTY_OFFSET_Y = "offset-y";
 	const std::string PROPERTY_X = "x";
 	const std::string PROPERTY_Y = "y";
 	const std::string PROPERTY_W = "w";
@@ -41,7 +43,10 @@ namespace tggd::common
 			source.y = properties[PROPERTY_Y];
 			source.w = properties[PROPERTY_W];
 			source.h = properties[PROPERTY_H];
-			Sprite* sprite = new Sprite(texture, source);
+			int offsetX = (properties.count(PROPERTY_OFFSET_X) > 0) ? ((int)properties[PROPERTY_OFFSET_X]) : (0);
+			int offsetY = (properties.count(PROPERTY_OFFSET_Y) > 0) ? ((int)properties[PROPERTY_OFFSET_Y]) : (0);
+			XY<int> offset(offsetX, offsetY);
+			Sprite* sprite = new Sprite(texture, source, offset);
 			AddSprite(item.key(), sprite);
 		}
 	}

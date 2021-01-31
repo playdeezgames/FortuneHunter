@@ -1,9 +1,15 @@
 #include "Sprite.h"
 namespace tggd::common
 {
-	Sprite::Sprite(SDL_Texture* texture, const SDL_Rect& source)
+	Sprite::Sprite
+	(
+		SDL_Texture* texture,
+		const SDL_Rect& source,
+		const XY<int>& offset
+	)
 		: texture(texture)
 		, source(source)
+		, offset(offset)
 	{
 
 	}
@@ -13,8 +19,8 @@ namespace tggd::common
 		SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
 		SDL_Rect rcDst =
 		{
-			x,
-			y,
+			x + offset.GetX(),
+			y + offset.GetY(),
 			source.w,
 			source.h
 		};

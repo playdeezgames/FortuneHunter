@@ -68,7 +68,7 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 			auto sprite = healthLevelSprites.GetSprite(level);
 			if (sprite)
 			{
-				sprite->Draw(GetMainRenderer(), x + Constants::UI::RoomPanel::HEALTH_LEVEL_OFFSET_X, y+Constants::UI::RoomPanel::HEALTH_LEVEL_OFFSET_Y, Constants::Color::WHITE);
+				sprite->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 			}
 		}
 	}

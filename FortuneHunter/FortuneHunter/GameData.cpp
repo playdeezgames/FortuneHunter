@@ -421,8 +421,8 @@ std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> Gam
 		auto cellRow = startingCell->GetRow();
 		for (auto direction : RoomDirectionHelper::GetAll())
 		{
-			auto nextColumn = RoomDirectionHelper::GetNextColumn(cellColumn, cellRow, direction);
-			auto nextRow = RoomDirectionHelper::GetNextRow(cellColumn, cellRow, direction);
+			auto nextColumn = RoomDirectionHelper::GetNextColumn((int)cellColumn, (int)cellRow, direction);
+			auto nextRow = RoomDirectionHelper::GetNextRow((int)cellColumn, (int)cellRow, direction);
 			auto nextCell = room.GetCell(nextColumn, nextRow);
 			if (nextCell)
 			{
