@@ -36,7 +36,19 @@ int Creature::GetWounds() const
 HealthLevel Creature::GetHealthLevel() const
 {
 	int healthLeft = creatureDescriptor->GetHealth() - GetWounds();
+	healthLeft = (healthLeft < 0) ? (0) : (healthLeft);
 	return (HealthLevel)(healthLeft * (int)(HealthLevel::TEN) / creatureDescriptor->GetHealth());
 }
+
+void Creature::AddWounds(int amount)
+{
+	wounds += amount;
+}
+
+bool Creature::IsDead() const
+{
+	return wounds >= creatureDescriptor->GetHealth();
+}
+
 
 

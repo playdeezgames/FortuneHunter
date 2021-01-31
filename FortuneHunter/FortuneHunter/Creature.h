@@ -19,5 +19,7 @@ public:
 	tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* GetDrop() const;
 	int GetWounds() const;
 	HealthLevel GetHealthLevel() const;
+	void AddWounds(int);
+	bool IsDead() const;
 };
 

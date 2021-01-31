@@ -40,6 +40,11 @@ private:
 	void LoopifyMaze(Maze&);
 	void SpawnCreature(const CreatureDescriptor*);
 	void PopulateCreatures();
+	void AcquireKey();
+	void AttemptToOpenDoor(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
+	void AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
+	bool InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
+	void AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*);
 public:
 	GameData(const tggd::common::SoundManager&, const CreatureDescriptorManager&);
 	~GameData();

@@ -128,7 +128,7 @@ void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* maz
 		context.AddDeadEnd({ roomColumn, roomRow });
 		room.GetCell(roomColumn, roomRow)->SetTerrain(TerrainType::FLOOR_DEAD_END);
 	}
-	
+
 	if (mazeCell->HasDoor(MazeDirection::EAST) && mazeCell->GetDoor(MazeDirection::EAST)->IsOpen())
 	{
 		room.GetCell
@@ -168,7 +168,7 @@ void GameData::LoopifyMaze(Maze& maze)
 		size_t row = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)maze.GetRows());
 		MazeDirection direction = directions[tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)directions.size())];
 		auto mazeCell = maze.GetCell((int)column, (int)row);
-		if(mazeCell->HasDoor(direction))
+		if (mazeCell->HasDoor(direction))
 		{
 			auto mazeDoor = mazeCell->GetDoor(direction);
 			if (!mazeDoor->IsOpen())
@@ -187,7 +187,7 @@ void GameData::ScaffoldMaze(RoomGenerationContext& context)
 	maze.Generate();
 	LoopifyMaze(maze);
 	ScaffoldMazeCells(maze, context);
-}	
+}
 
 int GameData::FlagifyDirection(int column, int row, RoomDirection direction, int flag)
 {
@@ -337,6 +337,79 @@ void GameData::UpdateRoom()
 	LightAndExploreAroundHunter();
 }
 
+void GameData::AcquireKey()
+{
+	soundManager.PlaySound(Constants::Sounds::GET_KEY);
+	hunter->AddKey();
+}
+
+void GameData::AttemptToOpenDoor(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+{
+		if (hunter->HasKey())
+		{
+			soundManager.PlaySound(Constants::Sounds::UNLOCK);
+			hunter->RemoveKey();
+			object->GetRoomCell()->RemoveObject();
+		}
+		else
+		{
+			soundManager.PlaySound(Constants::Sounds::DOOR_LOCKED);
+		}
+}
+
+void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+{
+	Creature* creature = dynamic_cast<Creature*>(object);
+	if (creature)
+	{
+		creature->AddWounds(1);//TODO: magic number
+		//TODO: play "hit" or "death" sounds for creature
+		if (creature->IsDead())
+		{
+			auto creatureCell = creature->GetRoomCell();
+			auto drop = creature->GetDrop();
+			creatureCell->RemoveObject();
+			creatureCell->SetObject(drop);
+		}
+	}
+}
+
+bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+{
+	switch (object->GetData())
+	{
+	case ObjectType::KEY:
+		AcquireKey();
+		object->GetRoomCell()->RemoveObject();
+		return true;
+	case ObjectType::DOOR_EW:
+	case ObjectType::DOOR_NS:
+		AttemptToOpenDoor(object);
+		return false;
+	case ObjectType::ZOMBIE:
+		AttackCreature(object);
+		return false;
+	default:
+		return false;
+	}
+}
+
+void GameData::AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* nextCell)
+{
+	bool completeMove = true;
+	if (nextCell->HasObject())
+	{
+		completeMove = InteractWithCellObject(nextCell->GetObject());
+	}
+	if (completeMove)
+	{
+		cell->SetObject(nullptr);
+		nextCell->SetObject(hunter);
+	}
+
+}
+
+
 void GameData::MoveHunter(RoomDirection direction)
 {
 	Hunter* hunter = GetHunter();
@@ -348,40 +421,7 @@ void GameData::MoveHunter(RoomDirection direction)
 	tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
 	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()))
 	{
-		bool completeMove = true;
-		if (nextCell->HasObject())
-		{
-			auto object = nextCell->GetObject();
-			switch(object->GetData())
-			{
-			case ObjectType::KEY:
-				soundManager.PlaySound(Constants::Sounds::GET_KEY);
-				hunter->AddKey();
-				nextCell->RemoveObject();
-				break;
-			case ObjectType::DOOR_EW:
-			case ObjectType::DOOR_NS:
-				if (hunter->HasKey())
-				{
-					soundManager.PlaySound(Constants::Sounds::UNLOCK);
-					hunter->RemoveKey();
-					nextCell->RemoveObject();
-				}
-				else
-				{
-					soundManager.PlaySound(Constants::Sounds::DOOR_LOCKED);
-				}
-				completeMove = false;
-				break;
-			default:
-				completeMove = false;
-			}
-		}
-		if (completeMove)
-		{
-			cell->SetObject(nullptr);
-			nextCell->SetObject(hunter);
-		}
+		AttemptToEnterCell(cell, nextCell);
 	}
 	else
 	{
@@ -404,9 +444,9 @@ void GameData::PopulateLocks(RoomGenerationContext& context)
 			auto roomCell = room.GetCell(nextRoomColumn, nextRoomRow);
 			if (TerrainTypeHelper::IsFloor(roomCell->GetTerrain()) && !roomCell->HasObject())
 			{
-				ObjectType objectType = 
-					(direction==RoomDirection::EAST || direction==RoomDirection::WEST) ? 
-					(ObjectType::DOOR_NS) : 
+				ObjectType objectType =
+					(direction == RoomDirection::EAST || direction == RoomDirection::WEST) ?
+					(ObjectType::DOOR_NS) :
 					(ObjectType::DOOR_EW);
 				tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object = new tggd::common::SimpleObject<TerrainType, ObjectType, RoomCellFlags>(objectType);
 				roomCell->SetObject(object);
@@ -438,7 +478,7 @@ void GameData::PopulateDeadEndObject(RoomGenerationContext& context, ObjectType 
 	do
 	{
 		size_t index = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)context.GetDeadEnds().size());
-		auto &xy = context.GetDeadEnds()[index];
+		auto& xy = context.GetDeadEnds()[index];
 		auto cell = room.GetCell(xy.GetX(), xy.GetY());
 		if (cell->GetObject())
 		{

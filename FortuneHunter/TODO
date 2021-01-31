@@ -42,6 +42,9 @@ Sound Effects:
     ✔ unlock door @done(21-01-28 05:57)
     ✘ step @cancelled(21-01-29 04:07)
     ☐ get diamond
+    ☐ hit zombie
+    ☐ kill zombie
 Bug:
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
+    ☐ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map
 
