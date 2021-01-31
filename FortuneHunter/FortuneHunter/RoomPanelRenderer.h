@@ -9,7 +9,7 @@ class RoomPanelRenderer : public BaseRenderer
 private:
 	const GameData& gameData;
 	const tggd::common::SpriteManager& spriteManager;
-	const TerrainSpriteManager& terrainSprites;
+	const TerrainSprites& terrainSprites;
 	const HealthLevelSprites& healthLevelSprites;
 	static int PlotColumn(int, int);
 	static int PlotRow(int, int);
@@ -24,7 +24,7 @@ public:
 		SDL_Renderer*, 
 		const tggd::common::SpriteFont&, 
 		const tggd::common::SpriteManager&,
-		const TerrainSpriteManager&,
+		const TerrainSprites&,
 		const HealthLevelSprites&,
 		const GameData&
 	);

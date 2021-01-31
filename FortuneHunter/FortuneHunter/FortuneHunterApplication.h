@@ -32,7 +32,7 @@ private:
 	tggd::common::ControllerManager controllerManager;
 	tggd::common::SpriteFont romFont;
 	CreatureDescriptorManager creatureDescriptors;
-	TerrainSpriteManager terrainSprites;
+	TerrainSprites terrainSprites;
 	HealthLevelSprites healthLevelSprites;
 	ObjectSprites objectSprites;
 	StatusPanelRenderer* statusPanelRenderer;

@@ -9,7 +9,7 @@ RoomPanelRenderer::RoomPanelRenderer
 	SDL_Renderer* renderer,
 	const tggd::common::SpriteFont& romFont,
 	const tggd::common::SpriteManager& spriteManager,
-	const TerrainSpriteManager& terrainSprites,
+	const TerrainSprites& terrainSprites,
 	const HealthLevelSprites& healthLevelSprites,
 	const GameData& gameData
 )
