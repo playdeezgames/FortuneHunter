@@ -70,6 +70,8 @@ void FortuneHunterApplication::Start()
 
 void FortuneHunterApplication::Finish()
 {
+	healthLevelSprites.Finish();
+	terrainSprites.Finish();
 	commandProcessors.Finish();
 	soundManager.Finish();
 	spriteManager.Finish();
