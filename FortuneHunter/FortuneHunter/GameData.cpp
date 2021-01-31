@@ -110,7 +110,7 @@ size_t GameData::PlotRow(size_t columne, size_t row)
 	return row * 2 + 1;
 }
 
-void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* mazeCell, RoomGenerationContext& context)
+void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* mazeCell, RoomGenerator& context)
 {
 	size_t roomColumn = PlotColumn(mazeColumn, mazeRow);
 	size_t roomRow = PlotRow(mazeColumn, mazeRow);
@@ -139,7 +139,7 @@ void GameData::ScaffoldMazeCell(int mazeColumn, int mazeRow, const MazeCell* maz
 	}
 }
 
-void GameData::ScaffoldMazeCells(const Maze& maze, RoomGenerationContext& context)
+void GameData::ScaffoldMazeCells(const Maze& maze, RoomGenerator& context)
 {
 	for (int column = 0; column < maze.GetColumns(); ++column)
 	{
@@ -172,7 +172,7 @@ void GameData::LoopifyMaze(Maze& maze)
 	}
 }
 
-void GameData::ScaffoldMaze(RoomGenerationContext& context)
+void GameData::ScaffoldMaze(RoomGenerator& context)
 {
 	ClearRoom();
 	Maze maze(Constants::Maze::COLUMNS, Constants::Maze::ROWS);
@@ -259,7 +259,7 @@ void GameData::PopulateCreatures()
 
 void GameData::GenerateRoom()
 {
-	RoomGenerationContext context;
+	RoomGenerator context;
 	ScaffoldMaze(context);
 	SmootheTerrain();
 	PopulateLocks(context);
@@ -459,7 +459,7 @@ void GameData::MoveHunter(RoomDirection direction)
 	UpdateRoom();
 }
 
-void GameData::PopulateLocks(RoomGenerationContext& context)
+void GameData::PopulateLocks(RoomGenerator& context)
 {
 	for (auto& xy : context.GetDeadEnds())
 	{
@@ -484,7 +484,7 @@ void GameData::PopulateLocks(RoomGenerationContext& context)
 	}
 }
 
-void GameData::PopulateKeys(RoomGenerationContext& context)
+void GameData::PopulateKeys(RoomGenerator& context)
 {
 	size_t keyCount = context.GetDeadEnds().size();
 	while (keyCount > 0)
@@ -501,7 +501,7 @@ void GameData::PopulateKeys(RoomGenerationContext& context)
 	}
 }
 
-void GameData::PopulateDeadEndObject(RoomGenerationContext& context, ObjectType objectType)
+void GameData::PopulateDeadEndObject(RoomGenerator& context, ObjectType objectType)
 {
 	do
 	{
@@ -519,7 +519,7 @@ void GameData::PopulateDeadEndObject(RoomGenerationContext& context, ObjectType 
 }
 
 
-void GameData::PopulateDeadEnds(RoomGenerationContext& context)
+void GameData::PopulateDeadEnds(RoomGenerator& context)
 {
 	PopulateDeadEndObject(context, ObjectType::EXIT);
 	PopulateDeadEndObject(context, ObjectType::EXIT_KEY);

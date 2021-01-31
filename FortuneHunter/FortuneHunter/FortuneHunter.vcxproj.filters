@@ -173,9 +173,6 @@
     <ClCompile Include="MazeDoor.cpp">
       <Filter>Source Files\Maze</Filter>
     </ClCompile>
-    <ClCompile Include="RoomGenerationContext.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="RoomPanelRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
@@ -214,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="TerrainType.cpp">
       <Filter>Source Files\Game\Enums</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomGenerator.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -355,9 +355,6 @@
     <ClInclude Include="RoomCellObject.h">
       <Filter>Header Files\Room</Filter>
     </ClInclude>
-    <ClInclude Include="RoomGenerationContext.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="SimpleObject.h">
       <Filter>Header Files\Room</Filter>
     </ClInclude>
@@ -420,6 +417,9 @@
     </ClInclude>
     <ClInclude Include="TerrainType.h">
       <Filter>Header Files\Game\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomGenerator.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

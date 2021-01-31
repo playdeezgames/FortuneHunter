@@ -44,7 +44,7 @@
     <ClCompile Include="MazeCell.cpp" />
     <ClCompile Include="MazeDirection.cpp" />
     <ClCompile Include="MazeDoor.cpp" />
-    <ClCompile Include="RoomGenerationContext.cpp" />
+    <ClCompile Include="RoomGenerator.cpp" />
     <ClCompile Include="RoomDirection.cpp" />
     <ClCompile Include="TerrainSprites.cpp" />
     <ClCompile Include="TerrainType.cpp" />
@@ -100,7 +100,7 @@
     <ClInclude Include="CreatureDescriptorManager.h" />
     <ClInclude Include="CreatureType.h" />
     <ClInclude Include="Hunter.h" />
-    <ClInclude Include="RoomGenerationContext.h" />
+    <ClInclude Include="RoomGenerator.h" />
     <ClInclude Include="RoomCellObject.h" />
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="GameData.h" />
