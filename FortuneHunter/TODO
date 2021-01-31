@@ -32,6 +32,11 @@ Refactor:
     ☐ maze cell has a set of flags instead of "lit" and "explored"
     ☐ way for room panel to look up the sprite for an object type
     ☐ terrain sprite manager and health level sprite manager are the same except for key types
+Things To Add:
+    ☐ creature descriptor
+        ☐ get hit sound
+        ☐ die sound
+        ☐ hit hunter sound
 Whimsy:
     ☐ burn the zombies
         they can attack you and you might burn

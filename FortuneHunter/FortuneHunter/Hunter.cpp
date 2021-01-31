@@ -43,3 +43,7 @@ void Hunter::IncrementMoves()
 	moves++;
 }
 
+int Hunter::GetAttackStrength() const
+{
+	return 1;//TODO: magic string
+}

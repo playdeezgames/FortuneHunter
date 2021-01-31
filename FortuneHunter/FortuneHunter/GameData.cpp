@@ -362,7 +362,7 @@ void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectTy
 	Creature* creature = dynamic_cast<Creature*>(object);
 	if (creature)
 	{
-		creature->AddWounds(1);//TODO: magic number
+		creature->AddWounds(hunter->GetAttackStrength());
 		//TODO: play "hit" or "death" sounds for creature
 		if (creature->IsDead())
 		{
