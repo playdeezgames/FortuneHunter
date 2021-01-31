@@ -90,6 +90,18 @@
     <Filter Include="Source Files\Utility">
       <UniqueIdentifier>{de768342-e12b-49d9-b683-b3eb56b07bee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game\SpriteTables">
+      <UniqueIdentifier>{92620416-d78b-4d6d-908c-04a7bf5d1e2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Enums">
+      <UniqueIdentifier>{aa2f8961-6785-4835-99ad-5f84bd8fca5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\SpriteTables">
+      <UniqueIdentifier>{d4582a1d-0d8f-425a-8b5f-d5b4bef7d189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Enums">
+      <UniqueIdentifier>{195e392a-1c9a-4020-bc6f-450727f3e8dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -161,9 +173,6 @@
     <ClCompile Include="MazeDoor.cpp">
       <Filter>Source Files\Maze</Filter>
     </ClCompile>
-    <ClCompile Include="RoomDirection.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="RoomGenerationContext.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
@@ -185,9 +194,6 @@
     <ClCompile Include="StatusPanelRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainType.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
@@ -195,13 +201,19 @@
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
     <ClCompile Include="HealthLevelSprites.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="TerrainSprites.cpp">
-      <Filter>Source Files\Game</Filter>
+      <Filter>Source Files\Game\SpriteTables</Filter>
     </ClCompile>
     <ClCompile Include="ObjectSprites.cpp">
-      <Filter>Source Files\Game</Filter>
+      <Filter>Source Files\Game\SpriteTables</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSprites.cpp">
+      <Filter>Source Files\Game\SpriteTables</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomDirection.cpp">
+      <Filter>Source Files\Game\Enums</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainType.cpp">
+      <Filter>Source Files\Game\Enums</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -316,9 +328,6 @@
     <ClInclude Include="RenderManager.h">
       <Filter>Header Files\Renderers</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectType.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="RoomPanelConstants.h">
       <Filter>Header Files\Constants</Filter>
     </ClInclude>
@@ -336,9 +345,6 @@
     </ClInclude>
     <ClInclude Include="WindowConstants.h">
       <Filter>Header Files\Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomDirection.h">
-      <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>Header Files\Room</Filter>
@@ -373,9 +379,6 @@
     <ClInclude Include="StatusPanelRenderer.h">
       <Filter>Header Files\Renderers</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainType.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
@@ -391,23 +394,32 @@
     <ClInclude Include="XY.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="RoomCellFlags.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="HealthLevel.h">
       <Filter>Header Files\Creatures</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthLevelSprites.h">
-      <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="SpriteTable.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainSprites.h">
-      <Filter>Header Files\Game</Filter>
+    <ClInclude Include="HealthLevelSprites.h">
+      <Filter>Header Files\Game\SpriteTables</Filter>
     </ClInclude>
     <ClInclude Include="ObjectSprites.h">
-      <Filter>Header Files\Game</Filter>
+      <Filter>Header Files\Game\SpriteTables</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainSprites.h">
+      <Filter>Header Files\Game\SpriteTables</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectType.h">
+      <Filter>Header Files\Game\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomCellFlags.h">
+      <Filter>Header Files\Game\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomDirection.h">
+      <Filter>Header Files\Game\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainType.h">
+      <Filter>Header Files\Game\Enums</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
