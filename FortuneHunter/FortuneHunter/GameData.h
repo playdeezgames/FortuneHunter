@@ -25,7 +25,6 @@ private:
 	void GenerateRoom();
 	int FlagifyDirection(int, int, RoomDirection, int);
 	void FlagifyCell(int, int);
-	void IncrementMove();
 	void UpdateRoom();
 	Hunter* GetHunter();
 	static size_t PlotColumn(size_t, size_t);

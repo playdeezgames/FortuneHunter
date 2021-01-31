@@ -17,14 +17,6 @@ GameData::GameData
 {
 }
 
-void GameData::IncrementMove()
-{
-	if (hunter)
-	{
-		hunter->IncrementMoves();
-	}
-}
-
 size_t GameData::GetMoves() const
 {
 	return hunter->GetMoves();
@@ -463,7 +455,7 @@ void GameData::MoveHunter(RoomDirection direction)
 			}
 		}
 	}
-	IncrementMove();
+	hunter->IncrementMoves();
 	UpdateRoom();
 }
 
