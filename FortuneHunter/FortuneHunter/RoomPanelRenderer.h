@@ -2,7 +2,7 @@
 #include "BaseRenderer.h"
 #include "GameData.h"
 #include "TerrainType.h"
-#include "TerrainSpriteManager.h"
+#include "TerrainSprites.h"
 #include "HealthLevelSprites.h"
 class RoomPanelRenderer : public BaseRenderer
 {

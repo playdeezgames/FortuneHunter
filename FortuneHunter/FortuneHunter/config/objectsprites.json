@@ -1,0 +1,10 @@
+{
+    "0": "HunterCreature",
+    "1": "KeyItem",
+    "2": "NSDoor",
+    "3": "EWDoor",
+    "4": "Exit",
+    "5": "DiamondItem",
+    "6": "ZombieCreature",
+    "7": "ExitKeyItem"
+}

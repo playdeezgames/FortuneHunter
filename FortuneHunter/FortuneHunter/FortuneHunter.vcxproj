@@ -45,7 +45,7 @@
     <ClCompile Include="MazeDoor.cpp" />
     <ClCompile Include="RoomGenerationContext.cpp" />
     <ClCompile Include="RoomDirection.cpp" />
-    <ClCompile Include="TerrainSpriteManager.cpp" />
+    <ClCompile Include="TerrainSprites.cpp" />
     <ClCompile Include="TerrainType.cpp" />
     <ClCompile Include="InPlayRenderer.cpp" />
     <ClCompile Include="RoomPanelRenderer.cpp" />
@@ -66,6 +66,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="CommandProcessor.h" />
     <ClInclude Include="RoomCellFlags.h" />
+    <ClInclude Include="SpriteTable.h" />
     <ClInclude Include="XY.h" />
     <ClInclude Include="CommandProcessorManager.h" />
     <ClInclude Include="ControllerManager.h" />
@@ -109,7 +110,7 @@
     <ClInclude Include="RoomCell.h" />
     <ClInclude Include="RoomDirection.h" />
     <ClInclude Include="SimpleObject.h" />
-    <ClInclude Include="TerrainSpriteManager.h" />
+    <ClInclude Include="TerrainSprites.h" />
     <ClInclude Include="TerrainType.h" />
     <ClInclude Include="InPlayRenderer.h" />
     <ClInclude Include="RoomPanelRenderer.h" />

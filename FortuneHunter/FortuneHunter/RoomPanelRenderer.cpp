@@ -65,7 +65,7 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 		if (creature && creature->GetRoomCell() && creature->GetRoomCell()->IsFlagSet(RoomCellFlags::LIT))
 		{
 			auto level = creature->GetHealthLevel();
-			auto sprite = healthLevelSprites.GetSprite(level);
+			auto sprite = healthLevelSprites.Get(level);
 			if (sprite)
 			{
 				sprite->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);

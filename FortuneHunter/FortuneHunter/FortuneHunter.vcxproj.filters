@@ -185,9 +185,6 @@
     <ClCompile Include="StatusPanelRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainSpriteManager.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="TerrainType.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
@@ -198,6 +195,9 @@
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
     <ClCompile Include="HealthLevelSprites.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSprites.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -367,9 +367,6 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Header Files\Audio</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainSpriteManager.h">
-      <Filter>Header Files\Game</Filter>
-    </ClInclude>
     <ClInclude Include="StatusPanelRenderer.h">
       <Filter>Header Files\Renderers</Filter>
     </ClInclude>
@@ -398,6 +395,12 @@
       <Filter>Header Files\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="HealthLevelSprites.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteTable.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainSprites.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>

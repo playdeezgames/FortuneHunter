@@ -1,4 +1,4 @@
-#include "TerrainSpriteManager.h"
+#include "TerrainSprites.h"
 #include "Utility.h"
 TerrainSpriteManager::TerrainSpriteManager()
 	: table()
