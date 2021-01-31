@@ -451,7 +451,7 @@ void GameData::MoveHunter(RoomDirection direction)
 	{
 		soundManager.PlaySound(Constants::Sounds::BUMP_WALL);
 	}
-	for (auto adjacentCell : adjacentCells)
+	for (auto adjacentCell : adjacentCells)//TODO: this loop goes into its own function
 	{
 		if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
 		{

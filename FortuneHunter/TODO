@@ -8,10 +8,11 @@ Placeholder Screens:
         control sfx volume
         control mux volume
 Gameplay:
+    ☐ torches?
     ☐ limited inventory space
     ☐ treasures
         ☐ diamonds
-    ☐ traps
+    ☐ traps?
     ☐ secret doors
     ☐ monsters
         ☐ zombies
@@ -19,17 +20,17 @@ Gameplay:
         ☐ a big stick
         ☐ yer fists
     ☐ armor
-    ☐ potions
+    ☐ potions/food
     ✔ locks @done(21-01-28 05:37)
     ✔ keys @done(21-01-28 05:38)
     ☐ the exit
     ✔ more "loopy" mazes @done(21-01-30 06:44)
-    ☐ more than one kind of lock
-        ☐ three types for "normal" doors
-        ☐ a fourth type for "special" doors where the key is only behind a different door
+    ✘ more than one kind of lock @cancelled(21-01-31 05:41)
+        ✘ three types for "normal" doors @cancelled(21-01-31 05:41)
+        ✘ a fourth type for "special" doors where the key is only behind a different door @cancelled(21-01-31 05:41)
 Refactor:
     ☐ maze cell flagifier for rendering
-    ☐ maze cell has a set of flags instead of "lit" and "explored"
+    ✔ maze cell has a set of flags instead of "lit" and "explored" @done(21-01-31 05:41)
     ☐ way for room panel to look up the sprite for an object type
     ☐ terrain sprite manager and health level sprite manager are the same except for key types
 Things To Add:
@@ -49,6 +50,8 @@ Sound Effects:
     ☐ get diamond
     ☐ hit zombie
     ☐ kill zombie
+    ☐ hunter hit
+    ☐ hunter killed
 Bug:
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
     ☐ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map
