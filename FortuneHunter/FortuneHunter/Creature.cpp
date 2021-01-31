@@ -5,9 +5,11 @@ Creature::Creature
 	const CreatureDescriptor* creatureDescriptor,
 	tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* drop
 )
- : RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
- , creatureDescriptor(creatureDescriptor)
- , drop(drop)
+	: RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
+	, creatureDescriptor(creatureDescriptor)
+	, drop(drop)
+	, objectType(creatureDescriptor->GetObjectType())
+	, wounds(0)
 {
 
 }
@@ -52,7 +54,7 @@ bool Creature::IsDead() const
 
 int Creature::GetAttackStrength() const
 {
-	return 1;//TODO: magic number
+	return creatureDescriptor->GetAttackStrength();
 }
 
 

@@ -4,6 +4,7 @@
     "numberAppearing": 100,
     "canSpawnOnTerrain": [0, 16],
     "canSpawnOnObject": [1, 5],
-    "health": 10
+    "health": 10,
+    "attackStrength": 1
   }
 }

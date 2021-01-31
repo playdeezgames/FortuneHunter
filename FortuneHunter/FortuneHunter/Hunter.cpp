@@ -1,8 +1,10 @@
 #include "Hunter.h"
+#include "Utility.h"
 Hunter::Hunter()
 	: RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
 	, keys(0)
 	, moves(0)
+	, wounds(0)
 {
 
 }
@@ -45,10 +47,15 @@ void Hunter::IncrementMoves()
 
 int Hunter::GetAttackStrength() const
 {
-	return 1;//TODO: magic string
+	return tggd::common::Utility::GenerateRandomNumberFromRange(1,5);//TODO: magic numbers
 }
 
 void Hunter::AddWounds(int amount)
 {
-	//TODO: implement me!
+	wounds += amount;
+}
+
+int Hunter::GetWounds() const
+{
+	return wounds;
 }

@@ -25,6 +25,7 @@ void StatusPanelRenderer::Draw() const
 	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
 	DrawMoves();
 	DrawKeys();
+	DrawWounds();
 	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
 }
 
@@ -48,6 +49,18 @@ void StatusPanelRenderer::DrawKeys() const
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,
 		Constants::UI::StatusPanel::CLIP_Y + 16,//TODO: magic number
+		ss.str(),
+		Constants::Color::WHITE);
+}
+
+void StatusPanelRenderer::DrawWounds() const
+{
+	std::stringstream ss;
+	ss << "Wounds: " << gameData.GetHunter()->GetWounds();//TODO magic string
+	GetRomFont().WriteText(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_Y + 32,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
 }

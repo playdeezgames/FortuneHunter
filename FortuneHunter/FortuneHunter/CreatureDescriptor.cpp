@@ -5,13 +5,15 @@ CreatureDescriptor::CreatureDescriptor
 	size_t numberAppearing,
 	const std::set<TerrainType>& spawnTerrains,
 	const std::set<ObjectType>& spawnObjects,
-	int health
+	int health,
+	int attackStrength
 )
 	: objectType(objectType)
 	, numberAppearing(numberAppearing)
 	, spawnTerrains(spawnTerrains)
 	, spawnObjects(spawnObjects)
 	, health(health)
+	, attackStrength(attackStrength)
 {
 
 }
@@ -39,4 +41,9 @@ bool CreatureDescriptor::CanSpawnOnObject(ObjectType objectType) const
 int CreatureDescriptor::GetHealth() const
 {
 	return health;
+}
+
+int CreatureDescriptor::GetAttackStrength() const
+{
+	return attackStrength;
 }
