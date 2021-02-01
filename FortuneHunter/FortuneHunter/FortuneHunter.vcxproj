@@ -20,9 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseCommandProcessor.cpp" />
+    <ClCompile Include="BaseDescriptor.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
     <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="InPlayCommandProcessor.cpp" />
+    <ClCompile Include="ItemDescriptor.cpp" />
     <ClCompile Include="MainMenuCommandProcessor.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="ControllerManager.cpp" />
@@ -59,10 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h" />
+    <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
+    <ClInclude Include="ItemDescriptor.h" />
+    <ClInclude Include="ItemType.h" />
     <ClInclude Include="MainMenuCommandProcessor.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="CommandProcessor.h" />

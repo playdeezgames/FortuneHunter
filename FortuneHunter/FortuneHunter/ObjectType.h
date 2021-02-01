@@ -8,5 +8,7 @@ enum class ObjectType
 	EXIT,
 	DIAMOND,
 	ZOMBIE,
-	EXIT_KEY
+	EXIT_KEY,
+	SHIELD,
+	POTION
 };

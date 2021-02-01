@@ -102,6 +102,12 @@
     <Filter Include="Source Files\Game\Enums">
       <UniqueIdentifier>{195e392a-1c9a-4020-bc6f-450727f3e8dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{92009cf5-a625-4070-9a30-1b23c0385b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{77150c4c-56cb-41cf-9005-cc1f26ece17c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -214,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="RoomGenerator.cpp">
       <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemDescriptor.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDescriptor.cpp">
+      <Filter>Source Files\Items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -420,6 +432,15 @@
     </ClInclude>
     <ClInclude Include="RoomGenerator.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemType.h">
+      <Filter>Header Files\Game\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDescriptor.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDescriptor.h">
+      <Filter>Header Files\Items</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

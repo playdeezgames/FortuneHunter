@@ -8,29 +8,12 @@ CreatureDescriptor::CreatureDescriptor
 	int health,
 	int attackStrength
 )
-	: objectType(objectType)
-	, numberAppearing(numberAppearing)
-	, spawnTerrains(spawnTerrains)
+	: BaseDescriptor(objectType, numberAppearing, spawnTerrains)
 	, spawnObjects(spawnObjects)
 	, health(health)
 	, attackStrength(attackStrength)
 {
 
-}
-
-ObjectType CreatureDescriptor::GetObjectType() const
-{
-	return objectType;
-}
-
-size_t CreatureDescriptor::GetNumberAppearing() const
-{
-	return numberAppearing;
-}
-
-bool CreatureDescriptor::CanSpawnOnTerrain(TerrainType terrainType) const
-{
-	return spawnTerrains.contains(terrainType);
 }
 
 bool CreatureDescriptor::CanSpawnOnObject(ObjectType objectType) const
