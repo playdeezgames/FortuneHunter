@@ -233,6 +233,9 @@
     <ClCompile Include="BaseDescriptor.cpp">
       <Filter>Source Files\BaseClasses</Filter>
     </ClCompile>
+    <ClCompile Include="ItemDescriptorManager.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -450,6 +453,9 @@
     </ClInclude>
     <ClInclude Include="BaseDescriptorManager.h">
       <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDescriptorManager.h">
+      <Filter>Header Files\Items</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

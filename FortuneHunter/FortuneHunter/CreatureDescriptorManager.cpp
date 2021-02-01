@@ -13,9 +13,8 @@ CreatureType CreatureDescriptorManager::ParseKey(const std::string& key)
 	return (CreatureType)tggd::common::Utility::StringToInt(key);
 }
 
-CreatureDescriptor* CreatureDescriptorManager::ParseDescriptor(const nlohmann::json& value)
+CreatureDescriptor* CreatureDescriptorManager::ParseDescriptor(const nlohmann::json& properties)
 {
-	auto& properties = value;
 	ObjectType objectType = (ObjectType)properties[PROPERTY_OBJECT_TYPE];
 	size_t numberAppearing = (size_t)properties[PROPERTY_NUMBER_APPEARING];
 	std::set<TerrainType> spawnTerrains;
