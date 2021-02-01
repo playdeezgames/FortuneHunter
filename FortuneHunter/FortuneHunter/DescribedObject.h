@@ -1,5 +1,8 @@
 #pragma once
 #include "RoomCellObject.h"
+#include "TerrainType.h"
+#include "ObjectType.h"
+#include "RoomCellFlags.h"
 template <typename TDescriptor>
 class DescribedObject : public tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>
 {

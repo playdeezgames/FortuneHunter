@@ -1,8 +1,5 @@
 #pragma once
-#include "TerrainType.h"
-#include "ObjectType.h"
 #include "CreatureDescriptor.h"
-#include "RoomCellFlags.h"
 #include "HealthLevel.h"
 #include "DescribedObject.h"
 class Creature : public DescribedObject<CreatureDescriptor>

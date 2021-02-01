@@ -31,6 +31,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, healthLevelSprites()
 	, objectSprites()
 	, roomPanelRenderer(nullptr)
+	, itemDescriptors()
 {
 
 }
@@ -40,6 +41,7 @@ void FortuneHunterApplication::Start()
 	tggd::common::Utility::SeedRandomNumberGenerator();
 
 	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
+	itemDescriptors.Start(Constants::Config::Files::ITEMDESCRIPTORS);
 	gameData.Start();
 	controllerManager.Start();
 
@@ -83,6 +85,7 @@ void FortuneHunterApplication::Finish()
 	controllerManager.Finish();
 	renderers.Finish();
 	creatureDescriptors.Finish();
+	itemDescriptors.Finish();
 	tggd::common::Utility::SafeDelete(statusPanelRenderer);
 	tggd::common::Utility::SafeDelete(roomPanelRenderer);
 }

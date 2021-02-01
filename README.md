@@ -1,48 +1,14 @@
 # FortuneHunter
-Seeking fotune! And fame!
+Seeking fortune! And fame!
 
-# Screen
+# Building in VS2019
 
-* 640x480 screen
-* 16x16 cell
-* 40x30 cells on screen
-
-* 30x30 game area (on left) "Room"
-  * actually 31 x 31, with "half tiles" on the edges.
-* 10x30 statistics area (on right)
-* rooms:
-  * cells
-    * terrain
-      * floor
-      * wall
-      * door
-        * red
-        * green
-        * blue
-        * yellow
-    * creature
-      * protagonist
-      * skeleton
-      * zombie
-      * mummy
-    * item
-      * treasure
-      * key
-        * red
-        * green
-        * blue
-        * yellow
-
-
-
-
-# RPG System
-
-## Ability Scores
-
-* Sinew(Strength)
-* Fleetness(Dexterity)
-* Firmness(Constitution)
-* Slyness(Intelligence)
-* ???(Wisdom)
-* Charm(Charisma)
+* Dependencies
+  * SDL2 https://www.libsdl.org/download-2.0.php
+  * SDL2_mixer https://www.libsdl.org/projects/SDL_mixer/
+  * SDL2_image https://www.libsdl.org/projects/SDL_image/
+  * json.hpp https://github.com/nlohmann/json (its in the source, but provided here for reference)
+* Project Settings To Check:
+  * Configuration Properties/VC++ Directories/Include Directories
+  * Configuration Properties/VC++ Directories/Library Directories
+  * Configuration Properties/Debugging/Environment
