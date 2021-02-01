@@ -108,6 +108,12 @@
     <Filter Include="Source Files\Items">
       <UniqueIdentifier>{77150c4c-56cb-41cf-9005-cc1f26ece17c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\BaseClasses">
+      <UniqueIdentifier>{f4c98dd7-fb78-4df7-80cf-10a140b709ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BaseClasses">
+      <UniqueIdentifier>{7d893873-3504-4773-8c85-7e0a0ac765c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -225,7 +231,7 @@
       <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="BaseDescriptor.cpp">
-      <Filter>Source Files\Items</Filter>
+      <Filter>Source Files\BaseClasses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -440,10 +446,10 @@
       <Filter>Header Files\Items</Filter>
     </ClInclude>
     <ClInclude Include="BaseDescriptor.h">
-      <Filter>Header Files\Items</Filter>
+      <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="BaseDescriptorManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
