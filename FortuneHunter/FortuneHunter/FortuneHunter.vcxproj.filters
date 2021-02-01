@@ -442,5 +442,8 @@
     <ClInclude Include="BaseDescriptor.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
+    <ClInclude Include="BaseDescriptorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

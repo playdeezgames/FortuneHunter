@@ -243,7 +243,7 @@ void GameData::SpawnCreature(const CreatureDescriptor* descriptor)
 
 void GameData::PopulateCreatures()
 {
-	auto creatureTypes = creatureDescriptors.GetCreatureTypes();
+	auto creatureTypes = creatureDescriptors.GetTypes();
 	for (auto creatureType : creatureTypes)
 	{
 		auto descriptor = creatureDescriptors.GetDescriptor(creatureType);

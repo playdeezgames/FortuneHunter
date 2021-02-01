@@ -62,6 +62,7 @@
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h" />
     <ClInclude Include="BaseDescriptor.h" />
+    <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="HealthLevelSprites.h" />

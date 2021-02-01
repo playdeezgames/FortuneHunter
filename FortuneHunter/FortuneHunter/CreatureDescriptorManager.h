@@ -1,17 +1,10 @@
 #pragma once
 #include "CreatureDescriptor.h"
 #include "CreatureType.h"
-#include <string>
-#include <map>
-#include <vector>
-class CreatureDescriptorManager
+#include "BaseDescriptorManager.h"
+class CreatureDescriptorManager: public BaseDescriptorManager<CreatureType, CreatureDescriptor>
 {
-private:
-	std::map<CreatureType, CreatureDescriptor*> creatureDescriptors;
-public:
-	CreatureDescriptorManager();
-	void Start(const std::string&);
-	void Finish();
-	std::vector<CreatureType> GetCreatureTypes() const;
-	const CreatureDescriptor* GetDescriptor(CreatureType) const;
+protected:
+	CreatureType ParseKey(const std::string&);
+	CreatureDescriptor* ParseDescriptor(const nlohmann::json&);
 };
