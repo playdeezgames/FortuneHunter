@@ -65,6 +65,7 @@
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
+    <ClInclude Include="DescribedObject.h" />
     <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />

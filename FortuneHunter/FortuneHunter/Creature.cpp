@@ -5,8 +5,7 @@ Creature::Creature
 	const CreatureDescriptor* creatureDescriptor,
 	tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* drop
 )
-	: RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
-	, creatureDescriptor(creatureDescriptor)
+	: DescribedObject<CreatureDescriptor>(creatureDescriptor)
 	, drop(drop)
 	, objectType(creatureDescriptor->GetObjectType())
 	, wounds(0)
@@ -16,7 +15,7 @@ Creature::Creature
 
 const ObjectType& Creature::GetData() const
 {
-	objectType = creatureDescriptor->GetObjectType();//mutable is a cheezy way to get rid of a warning
+	objectType = descriptor->GetObjectType();//mutable is a cheezy way to get rid of a warning
 	return objectType;
 }
 
@@ -37,9 +36,9 @@ int Creature::GetWounds() const
 
 HealthLevel Creature::GetHealthLevel() const
 {
-	int healthLeft = creatureDescriptor->GetHealth() - GetWounds();
+	int healthLeft = descriptor->GetHealth() - GetWounds();
 	healthLeft = (healthLeft < 0) ? (0) : (healthLeft);
-	return (HealthLevel)(healthLeft * (int)(HealthLevel::TEN) / creatureDescriptor->GetHealth());
+	return (HealthLevel)(healthLeft * (int)(HealthLevel::TEN) / descriptor->GetHealth());
 }
 
 void Creature::AddWounds(int amount)
@@ -49,12 +48,12 @@ void Creature::AddWounds(int amount)
 
 bool Creature::IsDead() const
 {
-	return wounds >= creatureDescriptor->GetHealth();
+	return wounds >= descriptor->GetHealth();
 }
 
 int Creature::GetAttackStrength() const
 {
-	return creatureDescriptor->GetAttackStrength();
+	return descriptor->GetAttackStrength();
 }
 
 

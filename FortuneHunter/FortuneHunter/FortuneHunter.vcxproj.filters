@@ -457,5 +457,8 @@
     <ClInclude Include="ItemDescriptorManager.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
+    <ClInclude Include="DescribedObject.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
