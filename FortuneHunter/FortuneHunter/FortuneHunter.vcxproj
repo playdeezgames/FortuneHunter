@@ -24,6 +24,7 @@
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
     <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="InPlayCommandProcessor.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemDescriptor.cpp" />
     <ClCompile Include="ItemDescriptorManager.cpp" />
     <ClCompile Include="MainMenuCommandProcessor.cpp" />
@@ -69,6 +70,7 @@
     <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="ItemDescriptor.h" />
     <ClInclude Include="ItemDescriptorManager.h" />
     <ClInclude Include="ItemType.h" />
