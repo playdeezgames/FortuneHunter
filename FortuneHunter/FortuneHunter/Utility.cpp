@@ -20,28 +20,6 @@ namespace tggd::common
 		srand((unsigned int)time(nullptr));
 	}
 
-	std::vector<std::string> Utility::Tokenize(const std::string& original, char separator)
-	{
-		std::string input = original;
-		std::vector<std::string> result;
-		auto position = input.find(separator);
-		while (position != std::string::npos)
-		{
-			auto token = input.substr(0, position);
-			if (!token.empty())
-			{
-				result.push_back(token);
-			}
-			input = input.substr(position + 1);
-			position = input.find(separator);
-		}
-		if (!input.empty())
-		{
-			result.push_back(input);
-		}
-		return result;
-	}
-
 	int Utility::StringToInt(const std::string& text)
 	{
 		std::stringstream ss;

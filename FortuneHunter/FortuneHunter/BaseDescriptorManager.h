@@ -6,6 +6,7 @@
 #include "Utility.h"
 #include "Finisher.h"
 #include "FinishManager.h"
+#include "Utility.h"
 template<typename TIdentifer, typename TDescriptor>
 class BaseDescriptorManager: public tggd::common::Finisher
 {
@@ -34,8 +35,7 @@ public:
 		{
 			if (entry.second)
 			{
-				delete entry.second;
-				entry.second = nullptr;
+				tggd::common::Utility::SafeDelete(entry.second);
 			}
 		}
 	}

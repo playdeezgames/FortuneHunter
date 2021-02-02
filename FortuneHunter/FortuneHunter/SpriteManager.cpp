@@ -57,8 +57,7 @@ namespace tggd::common
 		{
 			if (entry.second)
 			{
-				delete entry.second;
-				entry.second = nullptr;
+				tggd::common::Utility::SafeDelete(entry.second);
 			}
 		}
 		sprites.clear();

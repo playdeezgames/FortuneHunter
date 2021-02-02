@@ -2,6 +2,7 @@
 #include "Renderer.h"
 #include <map>
 #include "FinishManager.h"
+#include "Utility.h"
 namespace tggd::common
 {
 	template<typename TIdentifier>
@@ -32,8 +33,7 @@ namespace tggd::common
 			{
 				if (entry.second)
 				{
-					delete entry.second;
-					entry.second = nullptr;
+					tggd::common::Utility::SafeDelete(entry.second);
 				}
 			}
 			renderers.clear();

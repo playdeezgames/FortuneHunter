@@ -2,6 +2,7 @@
 #include "CommandProcessor.h"
 #include <map>
 #include "FinishManager.h"
+#include "Utility.h"
 namespace tggd::common
 {
 	template<typename TIdentifier, typename TCommand>
@@ -37,8 +38,7 @@ namespace tggd::common
 			{
 				if (entry.second)
 				{
-					delete entry.second;
-					entry.second = nullptr;
+					Utility::SafeDelete(entry.second);
 				}
 			}
 			commandProcessors.clear();

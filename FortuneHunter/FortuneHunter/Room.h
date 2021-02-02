@@ -31,8 +31,7 @@ namespace tggd::common
 			{
 				if (item)
 				{
-					delete item;
-					item = nullptr;
+					tggd::common::Utility::SafeDelete(item);
 				}
 			}
 		}

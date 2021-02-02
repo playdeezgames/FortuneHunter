@@ -1,6 +1,7 @@
 #pragma once
 #include "RoomCellObject.h"
 #include <set>
+#include "Utility.h"
 namespace tggd::common
 {
 	template<typename TTerrain, typename TObjectData, typename TCellFlags>
@@ -24,8 +25,7 @@ namespace tggd::common
 		{
 			if (object)
 			{
-				delete object;
-				object = nullptr;
+				Utility::SafeDelete(object);
 			}
 		}
 		const TTerrain& GetTerrain() const { return terrain; }

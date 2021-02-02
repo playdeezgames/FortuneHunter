@@ -33,9 +33,8 @@ void GameData::ClearHunter()
 		{
 			hunter->GetRoomCell()->SetObject(nullptr);
 		}
-		delete hunter;
+		tggd::common::Utility::SafeDelete(hunter);
 	}
-	hunter = nullptr;
 }
 
 GameData::~GameData()

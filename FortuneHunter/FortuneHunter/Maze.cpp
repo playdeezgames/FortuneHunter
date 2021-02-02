@@ -60,11 +60,11 @@ Maze::~Maze()
 {
 	for (auto& ptr : cells)
 	{
-		delete ptr;
+		tggd::common::Utility::SafeDelete(ptr);
 	}
 	for (auto& ptr : doors)
 	{
-		delete ptr;
+		tggd::common::Utility::SafeDelete(ptr);
 	}
 }
 
