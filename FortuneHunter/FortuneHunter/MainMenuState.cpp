@@ -1,36 +1,29 @@
 #include "MainMenuState.h"
-MainMenuState NextMainMenuState(const MainMenuState& state)
+
+static MainMenuState nextStates[] =
 {
-	switch (state)
-	{
-	case MainMenuState::START:
-		return MainMenuState::INSTRUCTIONS;
-	case MainMenuState::INSTRUCTIONS:
-		return MainMenuState::ABOUT;
-	case MainMenuState::ABOUT:
-		return MainMenuState::OPTIONS;
-	case MainMenuState::OPTIONS:
-		return MainMenuState::QUIT;
-	case MainMenuState::QUIT:
-		return MainMenuState::START;
-	}
-	throw "nope!";
+	MainMenuState::INSTRUCTIONS,
+	MainMenuState::ABOUT,
+	MainMenuState::OPTIONS,
+	MainMenuState::QUIT,
+	MainMenuState::START
+};
+
+MainMenuState MainMenuStateHelper::Next(MainMenuState state)
+{
+	return nextStates[(int)state];
 }
 
-MainMenuState PreviousMainMenuState(const MainMenuState& state)
+static MainMenuState previousStates[] =
 {
-	switch (state)
-	{
-	case MainMenuState::START:
-		return MainMenuState::QUIT;
-	case MainMenuState::INSTRUCTIONS:
-		return MainMenuState::START;
-	case MainMenuState::ABOUT:
-		return MainMenuState::INSTRUCTIONS;
-	case MainMenuState::OPTIONS:
-		return MainMenuState::ABOUT;
-	case MainMenuState::QUIT:
-		return MainMenuState::OPTIONS;
-	}
-	throw "nope!";
+	MainMenuState::QUIT,
+	MainMenuState::START,
+	MainMenuState::INSTRUCTIONS,
+	MainMenuState::ABOUT,
+	MainMenuState::OPTIONS
+};
+
+MainMenuState MainMenuStateHelper::Previous(MainMenuState state)
+{
+	return previousStates[(int)state];
 }

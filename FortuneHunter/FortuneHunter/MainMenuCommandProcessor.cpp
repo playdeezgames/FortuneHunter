@@ -4,10 +4,10 @@ void MainMenuCommandProcessor::OnCommand(const Command& command)
 	switch (command)
 	{
 	case Command::UP:
-		mainMenuState = PreviousMainMenuState(mainMenuState);
+		mainMenuState = MainMenuStateHelper::Previous(mainMenuState);
 		break;
 	case Command::DOWN:
-		mainMenuState = NextMainMenuState(mainMenuState);
+		mainMenuState = MainMenuStateHelper::Next(mainMenuState);
 		break;
 	case Command::GREEN:
 		DoGreenAction();

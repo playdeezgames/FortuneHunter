@@ -7,5 +7,9 @@ enum class MainMenuState
 	OPTIONS,
 	QUIT
 };
-MainMenuState NextMainMenuState(const MainMenuState&);
-MainMenuState PreviousMainMenuState(const MainMenuState&);
+class MainMenuStateHelper
+{
+public:
+	static MainMenuState Next(MainMenuState);
+	static MainMenuState Previous(MainMenuState);
+};
