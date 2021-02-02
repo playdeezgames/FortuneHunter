@@ -76,9 +76,6 @@ void FortuneHunterApplication::Start()
 
 void FortuneHunterApplication::Finish()
 {
-	healthLevelSprites.Finish();
-	terrainSprites.Finish();
-	objectSprites.Finish();
 	commandProcessors.Finish();
 	soundManager.Finish();
 	spriteManager.Finish();
