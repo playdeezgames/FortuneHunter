@@ -4,8 +4,10 @@
 #include <string>
 #include "json.hpp"
 #include "Utility.h"
+#include "Finisher.h"
+#include "FinishManager.h"
 template<typename TIdentifer, typename TDescriptor>
-class BaseDescriptorManager
+class BaseDescriptorManager: public tggd::common::Finisher
 {
 private:
 	std::map<TIdentifer, TDescriptor*> descriptors;
@@ -13,9 +15,9 @@ protected:
 	virtual TIdentifer ParseKey(const std::string&) = 0;
 	virtual TDescriptor* ParseDescriptor(const nlohmann::json&) = 0;
 public:
-	BaseDescriptorManager()
+	BaseDescriptorManager(tggd::common::FinishManager& finishManager)
 	{
-
+		finishManager.Add(this);
 	}
 	void Start(const std::string& fileName)
 	{

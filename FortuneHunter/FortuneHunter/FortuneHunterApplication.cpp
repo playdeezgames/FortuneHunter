@@ -24,15 +24,15 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, commandProcessors(uiState)
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
-	, creatureDescriptors()
+	, finishManager()
+	, creatureDescriptors(finishManager)
 	, gameData(soundManager, creatureDescriptors)
 	, statusPanelRenderer(nullptr)
 	, terrainSprites()
 	, healthLevelSprites()
 	, objectSprites()
 	, roomPanelRenderer(nullptr)
-	, itemDescriptors()
-	, finishManager()
+	, itemDescriptors(finishManager)
 {
 
 }
@@ -85,8 +85,6 @@ void FortuneHunterApplication::Finish()
 	textureManager.Finish();
 	controllerManager.Finish();
 	renderers.Finish();
-	creatureDescriptors.Finish();
-	itemDescriptors.Finish();
 
 	finishManager.Finish();
 	tggd::common::Utility::SafeDelete(statusPanelRenderer);

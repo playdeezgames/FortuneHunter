@@ -8,6 +8,13 @@ const std::string PROPERTY_SPAWN_OBJECT = "canSpawnOnObject";
 const std::string PROPERTY_HEALTH = "health";
 const std::string PROPERTY_ATTACK_STRENGTH = "attackStrength";
 
+CreatureDescriptorManager::CreatureDescriptorManager(tggd::common::FinishManager& finishManager)
+	: BaseDescriptorManager<CreatureType, CreatureDescriptor>(finishManager)
+{
+
+}
+
+
 CreatureType CreatureDescriptorManager::ParseKey(const std::string& key)
 {
 	return (CreatureType)tggd::common::Utility::StringToInt(key);

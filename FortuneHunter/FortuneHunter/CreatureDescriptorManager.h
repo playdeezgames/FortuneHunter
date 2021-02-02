@@ -7,4 +7,6 @@ class CreatureDescriptorManager: public BaseDescriptorManager<CreatureType, Crea
 protected:
 	CreatureType ParseKey(const std::string&);
 	CreatureDescriptor* ParseDescriptor(const nlohmann::json&);
+public:
+	CreatureDescriptorManager(tggd::common::FinishManager&);
 };
