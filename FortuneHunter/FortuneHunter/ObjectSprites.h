@@ -5,5 +5,7 @@ class ObjectSprites: public tggd::common::SpriteTable<ObjectType>
 {
 protected:
 	ObjectType StringToIdentifier(const std::string&);
+public:
+	ObjectSprites(tggd::common::FinishManager&);
 };
 
