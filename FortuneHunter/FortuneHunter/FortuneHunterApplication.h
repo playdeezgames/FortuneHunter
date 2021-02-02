@@ -21,10 +21,13 @@
 #include "HealthLevelSprites.h"
 #include "ObjectSprites.h"
 #include "ItemDescriptorManager.h"
+#include "FinishManager.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
 	static FortuneHunterApplication application;
+
+	tggd::common::FinishManager finishManager;
 
 	tggd::common::SoundManager soundManager;
 	tggd::common::TextureManager textureManager;

@@ -114,6 +114,12 @@
     <Filter Include="Source Files\BaseClasses">
       <UniqueIdentifier>{7d893873-3504-4773-8c85-7e0a0ac765c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Finishers">
+      <UniqueIdentifier>{fa422cad-ee21-4622-a98e-6c951c0f1192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Finishers">
+      <UniqueIdentifier>{c54b52f2-0dce-425c-9e44-ec9c3106b946}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -238,6 +244,9 @@
     </ClCompile>
     <ClCompile Include="Item.cpp">
       <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="FinishManager.cpp">
+      <Filter>Source Files\Finishers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -465,6 +474,12 @@
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Finisher.h">
+      <Filter>Header Files\Finishers</Filter>
+    </ClInclude>
+    <ClInclude Include="FinishManager.h">
+      <Filter>Header Files\Finishers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -22,6 +22,7 @@
     <ClCompile Include="BaseCommandProcessor.cpp" />
     <ClCompile Include="BaseDescriptor.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
+    <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="InPlayCommandProcessor.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -67,6 +68,8 @@
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="DescribedObject.h" />
+    <ClInclude Include="Finisher.h" />
+    <ClInclude Include="FinishManager.h" />
     <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />

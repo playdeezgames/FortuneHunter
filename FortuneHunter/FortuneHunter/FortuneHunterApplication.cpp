@@ -32,6 +32,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, objectSprites()
 	, roomPanelRenderer(nullptr)
 	, itemDescriptors()
+	, finishManager()
 {
 
 }
@@ -86,6 +87,8 @@ void FortuneHunterApplication::Finish()
 	renderers.Finish();
 	creatureDescriptors.Finish();
 	itemDescriptors.Finish();
+
+	finishManager.Finish();
 	tggd::common::Utility::SafeDelete(statusPanelRenderer);
 	tggd::common::Utility::SafeDelete(roomPanelRenderer);
 }
