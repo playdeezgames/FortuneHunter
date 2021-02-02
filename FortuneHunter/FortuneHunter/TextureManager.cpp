@@ -3,10 +3,10 @@
 #include <SDL_image.h>
 namespace tggd::common
 {
-	TextureManager::TextureManager()
+	TextureManager::TextureManager(FinishManager& finishManager)
 		: textures()
 	{
-
+		finishManager.Add(this);
 	}
 
 	void TextureManager::Start(SDL_Renderer* renderer, const std::string& fileName)

@@ -13,18 +13,18 @@ FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
 	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
+	, finishManager()
 	, soundManager()
-	, textureManager()
+	, textureManager(finishManager)
 	, uiState(UIState::MAIN_MENU)
 	, mainMenuState(MainMenuState::START)
 	, renderers(uiState)
-	, spriteManager()
+	, spriteManager(finishManager)
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
 	, controllerManager()
 	, commandProcessors(uiState)
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
-	, finishManager()
 	, creatureDescriptors(finishManager)
 	, gameData(soundManager, creatureDescriptors)
 	, statusPanelRenderer(nullptr)
@@ -78,8 +78,6 @@ void FortuneHunterApplication::Finish()
 {
 	commandProcessors.Finish();
 	soundManager.Finish();
-	spriteManager.Finish();
-	textureManager.Finish();
 	controllerManager.Finish();
 	renderers.Finish();
 

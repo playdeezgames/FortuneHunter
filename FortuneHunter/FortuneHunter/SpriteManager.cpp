@@ -7,10 +7,10 @@ namespace tggd::common
 		sprites[name] = sprite;
 	}
 
-	SpriteManager::SpriteManager()
+	SpriteManager::SpriteManager(FinishManager& finishManager)
 		: sprites()
 	{
-
+		finishManager.Add(this);
 	}
 
 	Sprite* SpriteManager::GetSprite(const std::string& name) const
