@@ -8,12 +8,14 @@
 GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,
-	const CreatureDescriptorManager& creatureDescriptors
+	const CreatureDescriptorManager& creatureDescriptors,
+	const ItemDescriptorManager& itemDescriptors
 )
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, soundManager(soundManager)
 	, hunter(nullptr)
 	, creatureDescriptors(creatureDescriptors)
+	, itemDescriptors(itemDescriptors)
 {
 }
 
@@ -78,7 +80,7 @@ void GameData::PlaceHunter()
 void GameData::Start()
 {
 	ClearHunter();
-	RoomGenerator generator(room, creatureDescriptors);
+	RoomGenerator generator(room, creatureDescriptors, itemDescriptors);
 	generator.GenerateRoom();
 	PlaceHunter();
 	UpdateRoom();

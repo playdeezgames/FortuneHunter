@@ -4,14 +4,17 @@
 #include "SimpleObject.h"
 #include "Creature.h"
 #include "RoomConstants.h"
+#include "Item.h"
 RoomGenerator::RoomGenerator
 (
 	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& room,
-	const CreatureDescriptorManager& creatureDescriptors
+	const CreatureDescriptorManager& creatureDescriptors,
+	const ItemDescriptorManager& itemDescriptors
 )
 	: deadEnds()
 	, room(room)
 	, creatureDescriptors(creatureDescriptors)
+	, itemDescriptors(itemDescriptors)
 {
 
 }
@@ -211,6 +214,39 @@ void RoomGenerator::PopulateCreatures()
 	}
 }
 
+void RoomGenerator::SpawnItem(const ItemDescriptor* descriptor)
+{
+	do
+	{
+		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
+		int row = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::ROWS);
+		auto cell = room.GetCell(column, row);
+		auto terrainType = cell->GetTerrain();
+		if (cell->GetObject() || !descriptor->CanSpawnOnTerrain(terrainType))
+		{
+			continue;
+		}
+		cell->SetObject(new Item(descriptor));
+		break;
+	} while (true);
+}
+
+
+void RoomGenerator::PopulateLooseItems()
+{
+	auto itemTypes = itemDescriptors.GetTypes();
+	for (auto itemType : itemTypes)
+	{
+		auto descriptor = itemDescriptors.GetDescriptor(itemType);
+		auto counter = descriptor->GetNumberAppearing();
+		while (counter > 0)
+		{
+			SpawnItem(descriptor);
+			counter--;
+		}
+	}
+}
+
 void RoomGenerator::GenerateRoom()
 {
 	ScaffoldMaze();
@@ -218,6 +254,7 @@ void RoomGenerator::GenerateRoom()
 	PopulateLocks();
 	PopulateKeys();
 	PopulateDeadEnds();
+	PopulateLooseItems();
 	PopulateCreatures();
 }
 

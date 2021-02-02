@@ -9,11 +9,13 @@
 #include "RoomDirection.h"
 #include "CreatureDescriptor.h"
 #include "CreatureDescriptorManager.h"
+#include "ItemDescriptorManager.h"
 class RoomGenerator
 {
 private:
 	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& room;
 	const CreatureDescriptorManager& creatureDescriptors;
+	const ItemDescriptorManager& itemDescriptors;
 	std::vector<tggd::common::XY<size_t>> deadEnds;
 	const std::vector<tggd::common::XY<size_t>>& GetDeadEnds() const;
 	void AddDeadEnd(const tggd::common::XY<size_t>&);
@@ -32,11 +34,14 @@ private:
 	void LoopifyMaze(Maze&);
 	void SpawnCreature(const CreatureDescriptor*);
 	void PopulateCreatures();
+	void PopulateLooseItems();
+	void SpawnItem(const ItemDescriptor*);
 public:
 	RoomGenerator
 	(
 		tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>&,
-		const CreatureDescriptorManager&
+		const CreatureDescriptorManager&,
+		const ItemDescriptorManager&
 	);
 	void GenerateRoom();
 };

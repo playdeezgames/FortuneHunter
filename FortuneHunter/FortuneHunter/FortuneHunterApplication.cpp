@@ -26,13 +26,13 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
 	, creatureDescriptors(finishManager)
-	, gameData(soundManager, creatureDescriptors)
+	, itemDescriptors(finishManager)
+	, gameData(soundManager, creatureDescriptors, itemDescriptors)
 	, statusPanelRenderer(nullptr)
 	, terrainSprites(finishManager)
 	, healthLevelSprites(finishManager)
 	, objectSprites(finishManager)
 	, roomPanelRenderer(nullptr)
-	, itemDescriptors(finishManager)
 {
 
 }

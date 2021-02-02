@@ -1,12 +1,12 @@
 {
     "0": {
         "objectType": 8,
-        "numberAppearing": 0,
-        "canSpawnOnTerrain": []
+        "numberAppearing": 50,
+        "canSpawnOnTerrain": [0]
     },
     "1": {
         "objectType": 9,
-        "numberAppearing": 0,
-        "canSpawnOnTerrain": []
+        "numberAppearing": 25,
+        "canSpawnOnTerrain": [0]
     }
 }
