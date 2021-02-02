@@ -1,10 +1,13 @@
 #pragma once
 #include "Renderer.h"
 #include <map>
+#include "FinishManager.h"
 namespace tggd::common
 {
 	template<typename TIdentifier>
-	class RenderManager : Renderer
+	class RenderManager 
+		: public Renderer
+		, public Finisher
 	{
 	private:
 		std::map<TIdentifier, Renderer*> renderers;
@@ -12,11 +15,15 @@ namespace tggd::common
 	protected:
 		SDL_Renderer* GetMainRenderer() const { return nullptr; }
 	public:
-		RenderManager(const TIdentifier& current)
+		RenderManager
+		(
+			const TIdentifier& current,
+			FinishManager& finishManager
+		)
 			: current(current)
 			, renderers()
 		{
-
+			finishManager.Add(this);
 		}
 
 		void Finish()

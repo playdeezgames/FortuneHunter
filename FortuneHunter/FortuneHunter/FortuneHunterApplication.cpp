@@ -18,11 +18,11 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, textureManager(finishManager)
 	, uiState(UIState::MAIN_MENU)
 	, mainMenuState(MainMenuState::START)
-	, renderers(uiState)
+	, renderers(uiState, finishManager)
 	, spriteManager(finishManager)
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
 	, controllerManager(finishManager)
-	, commandProcessors(uiState)
+	, commandProcessors(uiState, finishManager)
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
 	, creatureDescriptors(finishManager)
@@ -76,9 +76,6 @@ void FortuneHunterApplication::Start()
 
 void FortuneHunterApplication::Finish()
 {
-	commandProcessors.Finish();
-	renderers.Finish();
-
 	finishManager.Finish();
 	tggd::common::Utility::SafeDelete(statusPanelRenderer);
 	tggd::common::Utility::SafeDelete(roomPanelRenderer);
