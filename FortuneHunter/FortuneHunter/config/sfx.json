@@ -3,5 +3,7 @@
   "unlock": "assets/audio/sfx/unlock.wav",
   "getkey": "assets/audio/sfx/getkey.wav",
   "doorlocked": "assets/audio/sfx/doorlocked.wav",
-  "bumpwall": "assets/audio/sfx/bumpwall.wav"
+  "bumpwall": "assets/audio/sfx/bumpwall.wav",
+  "getshield": "assets/audio/sfx/getshield.wav",
+  "getpotion": "assets/audio/sfx/getpotion.wav"
 }

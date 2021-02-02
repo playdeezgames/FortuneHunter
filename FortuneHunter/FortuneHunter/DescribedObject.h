@@ -10,5 +10,6 @@ protected:
 	const TDescriptor* descriptor;
 public:
 	DescribedObject(const TDescriptor* descriptor) : descriptor(descriptor) {}
+	const TDescriptor* GetDescriptor() const { return descriptor; }
 };
 

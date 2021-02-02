@@ -44,7 +44,6 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 	if (object != nullptr)
 	{
 		ObjectType objectType = object->GetData();
-		//TODO: load table from config
 		auto sprite= objectSprites.Get(objectType);
 		sprite->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 		const Creature* creature = dynamic_cast<const Creature*>(object);

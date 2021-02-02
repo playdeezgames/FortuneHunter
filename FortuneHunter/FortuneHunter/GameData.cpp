@@ -167,10 +167,11 @@ void GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, Obj
 	Item* item = dynamic_cast<Item*>(object);
 	if (item)
 	{
-		if (hunter->CanPickUp(item->GetItemType()))
+		auto itemType = item->GetDescriptor()->GetItemType();
+		if (hunter->CanPickUp(itemType))
 		{
-			hunter->PickUp(item->GetItemType());
-			//TODO: sound effect for picking up the item
+			hunter->PickUp(itemType);
+			soundManager.PlaySound(item->GetDescriptor()->GetPickUpSfx());
 			item->GetRoomCell()->RemoveObject();//leave on bottom, because deletes item!
 		}
 		else

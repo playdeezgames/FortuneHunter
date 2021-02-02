@@ -16,6 +16,7 @@ const std::string PROPERTY_OBJECT_TYPE = "objectType";
 const std::string PROPERTY_ITEM_TYPE = "itemType";
 const std::string PROPERTY_NUMBER_APPEARING = "numberAppearing";
 const std::string PROPERTY_SPAWN_TERRAIN = "canSpawnOnTerrain";
+const std::string PROPERTY_PICK_UP_SFX = "pickUpSfx";
 
 ItemDescriptor* ItemDescriptorManager::ParseDescriptor(const nlohmann::json& properties)
 {
@@ -28,5 +29,5 @@ ItemDescriptor* ItemDescriptorManager::ParseDescriptor(const nlohmann::json& pro
 	{
 		spawnTerrains.insert((TerrainType)terrain);
 	}
-	return new ItemDescriptor(itemType, objectType, numberAppearing, spawnTerrains);
+	return new ItemDescriptor(itemType, objectType, numberAppearing, spawnTerrains, properties[PROPERTY_PICK_UP_SFX]);
 }
