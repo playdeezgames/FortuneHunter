@@ -10,3 +10,8 @@ const ObjectType& Item::GetData() const
 {
 	return objectType;
 }
+
+ItemType Item::GetItemType() const
+{
+	return descriptor->GetItemType();
+}

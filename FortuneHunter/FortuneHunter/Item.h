@@ -8,6 +8,6 @@ private:
 public:
 	Item(const ItemDescriptor*);
 	const ObjectType& GetData() const;
-
+	ItemType GetItemType() const;
 };
 

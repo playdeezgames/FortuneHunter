@@ -7,5 +7,6 @@
     "5": "DiamondItem",
     "6": "ZombieCreature",
     "7": "ExitKeyItem",
-    "8": "ShieldItem"
+    "8": "ShieldItem",
+    "9": "PotionItem"
 }

@@ -3,6 +3,7 @@
 #include "TerrainType.h"
 #include "ObjectType.h"
 #include "RoomCellFlags.h"
+#include "ItemType.h"
 class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>
 {
 private:
@@ -21,4 +22,6 @@ public:
 	int GetAttackStrength() const;
 	void AddWounds(int);
 	int GetWounds() const;
+	bool CanPickUp(ItemType) const;
+	void PickUp(ItemType) const;
 };

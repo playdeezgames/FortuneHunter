@@ -5,6 +5,7 @@
 #include "SoundsConstants.h"
 #include "Creature.h"
 #include "SimpleObject.h"
+#include "Item.h"
 GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,
@@ -161,6 +162,25 @@ void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectTy
 	}
 }
 
+void GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+{
+	Item* item = dynamic_cast<Item*>(object);
+	if (item)
+	{
+		if (hunter->CanPickUp(item->GetItemType()))
+		{
+			hunter->PickUp(item->GetItemType());
+			//TODO: sound effect for picking up the item
+			item->GetRoomCell()->RemoveObject();//leave on bottom, because deletes item!
+		}
+		else
+		{
+			//TODO: sound effect for not picking up the item
+		}
+	}
+}
+
+
 bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
 {
 	switch (object->GetData())
@@ -176,6 +196,11 @@ bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, 
 	case ObjectType::ZOMBIE:
 		AttackCreature(object);
 		return false;
+	case ObjectType::DIAMOND:
+	case ObjectType::POTION:
+	case ObjectType::SHIELD:
+		AttemptToPickUpItem(object);
+		return true;
 	default:
 		return false;
 	}

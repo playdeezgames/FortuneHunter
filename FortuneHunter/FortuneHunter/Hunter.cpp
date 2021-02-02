@@ -59,3 +59,14 @@ int Hunter::GetWounds() const
 {
 	return wounds;
 }
+
+bool Hunter::CanPickUp(ItemType) const
+{
+	//TODO: determine if can pick up the thing
+	return true;
+}
+
+void Hunter::PickUp(ItemType) const
+{
+	//TODO: actually pick up the thing
+}
