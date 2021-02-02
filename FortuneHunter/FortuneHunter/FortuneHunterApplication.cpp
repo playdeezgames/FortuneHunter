@@ -14,7 +14,7 @@ FortuneHunterApplication FortuneHunterApplication::application;
 FortuneHunterApplication::FortuneHunterApplication()
 	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
 	, finishManager()
-	, soundManager()
+	, soundManager(finishManager)
 	, textureManager(finishManager)
 	, uiState(UIState::MAIN_MENU)
 	, mainMenuState(MainMenuState::START)
@@ -77,7 +77,6 @@ void FortuneHunterApplication::Start()
 void FortuneHunterApplication::Finish()
 {
 	commandProcessors.Finish();
-	soundManager.Finish();
 	controllerManager.Finish();
 	renderers.Finish();
 

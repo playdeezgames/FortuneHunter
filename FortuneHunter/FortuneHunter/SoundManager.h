@@ -2,9 +2,10 @@
 #include <map>
 #include <string>
 #include <SDL_Mixer.h>
+#include "FinishManager.h"
 namespace tggd::common
 {
-	class SoundManager
+	class SoundManager: Finisher
 	{
 	private:
 		std::map<std::string, Mix_Chunk*> sounds;
@@ -22,7 +23,7 @@ namespace tggd::common
 		void AddSound(const std::string&, const std::string&);
 		void AddMusic(const std::string&, const std::string&);
 	public:
-		SoundManager();
+		SoundManager(FinishManager&);
 
 		void Start(const std::string&, const std::string&);
 		void Finish();

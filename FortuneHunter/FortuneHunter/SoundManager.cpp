@@ -115,11 +115,12 @@ namespace tggd::common
 		return muxVolume;
 	}
 
-	SoundManager::SoundManager()
+	SoundManager::SoundManager(FinishManager& finishManager)
 		: muted(false)
 		, sfxVolume(MIX_MAX_VOLUME)
 		, muxVolume(MIX_MAX_VOLUME)
 	{
+		finishManager.Add(this);
 	}
 
 	void SoundManager::StartSound(const std::string& sfxFileName)
