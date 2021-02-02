@@ -21,7 +21,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, renderers(uiState)
 	, spriteManager(finishManager)
 	, romFont(spriteManager, Constants::Config::Files::ROMFONT)
-	, controllerManager()
+	, controllerManager(finishManager)
 	, commandProcessors(uiState)
 	, eventHandler(commandProcessors, controllerManager, uiState)
 	, confirmState(ConfirmState::NO)
@@ -77,7 +77,6 @@ void FortuneHunterApplication::Start()
 void FortuneHunterApplication::Finish()
 {
 	commandProcessors.Finish();
-	controllerManager.Finish();
 	renderers.Finish();
 
 	finishManager.Finish();

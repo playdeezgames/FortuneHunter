@@ -1,6 +1,12 @@
 #include "ControllerManager.h"
 namespace tggd::common
 {
+	ControllerManager::ControllerManager(FinishManager& finishManager)
+	{
+		finishManager.Add(this);
+	}
+
+
 	void ControllerManager::Start()
 	{
 		for (int index = 0; index < SDL_NumJoysticks(); ++index)
