@@ -17,28 +17,11 @@ private:
 	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags> room;
 	Hunter* hunter;
 
-	void ClearRoom();
 	void ClearHunter();
-	void ScaffoldMazeCell(int, int, const MazeCell*, RoomGenerator&);
-	void ScaffoldMazeCells(const Maze&, RoomGenerator&);
-	void ScaffoldMaze(RoomGenerator&);
-	void SmootheTerrain();
-	void GenerateRoom();
-	int FlagifyDirection(int, int, RoomDirection, int);
-	void FlagifyCell(int, int);
-	void PopulateLocks(RoomGenerator&);
-	void PopulateKeys(RoomGenerator&);
-	void PopulateDeadEndObject(RoomGenerator&, ObjectType);
-	void PopulateDeadEnds(RoomGenerator&);
-	void LoopifyMaze(Maze&);
 	void PlaceHunter();
-	void SpawnCreature(const CreatureDescriptor*);
-	void PopulateCreatures();
 
 	void UpdateRoom();
 	Hunter* GetHunter();
-	static size_t PlotColumn(size_t, size_t);
-	static size_t PlotRow(size_t, size_t);
 	void ClearLights();
 	void LightAndExploreAroundHunter();
 	void AcquireKey();
