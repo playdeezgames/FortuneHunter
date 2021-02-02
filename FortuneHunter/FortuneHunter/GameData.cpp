@@ -22,7 +22,6 @@ size_t GameData::GetMoves() const
 	return hunter->GetMoves();
 }
 
-
 void GameData::ClearHunter()
 {
 	if (hunter)
@@ -36,12 +35,10 @@ void GameData::ClearHunter()
 	hunter = nullptr;
 }
 
-
 GameData::~GameData()
 {
 	ClearHunter();
 }
-
 
 const tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& GameData::GetRoom() const
 {
@@ -77,7 +74,6 @@ void GameData::PlaceHunter()
 		}
 	}
 }
-
 
 void GameData::Start()
 {
