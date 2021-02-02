@@ -37,6 +37,9 @@ Refactor:
     ✔ split out the room generation stuff from gamedata into the room generation context class @done(21-02-02 03:44)
     ✔ a list of things to call "finish" on. maybe finish manager? @done(21-02-02 04:27)
     ☐ "misc" sprite table
+    ☐ move locks into item type
+    ☐ move keys into item type
+    ☐ move diamonds into item type
 Things To Add:
     ☐ creature descriptor
         ☐ get hit sound
