@@ -11,6 +11,7 @@ RoomPanelRenderer::RoomPanelRenderer
 	const tggd::common::SpriteManager& spriteManager,
 	const TerrainSprites& terrainSprites,
 	const HealthLevelSprites& healthLevelSprites,
+	const ObjectSprites& objectSprites,
 	const GameData& gameData
 )
 	: BaseRenderer(renderer, romFont)
@@ -18,19 +19,11 @@ RoomPanelRenderer::RoomPanelRenderer
 	, terrainSprites(terrainSprites)
 	, healthLevelSprites(healthLevelSprites)
 	, spriteManager(spriteManager)
+	, objectSprites(objectSprites)
 {
 }
 
-//TODO: load table from config
-const std::string SPRITE_HUNTER = "HunterCreature";
 const std::string SPRITE_DITHER = "Dither";
-const std::string SPRITE_DOOR_NS = "NSDoor";
-const std::string SPRITE_DOOR_EW = "EWDoor";
-const std::string SPRITE_KEY = "KeyItem";
-const std::string SPRITE_ZOMBIE= "ZombieCreature";
-const std::string SPRITE_EXIT = "Exit";
-const std::string SPRITE_EXIT_KEY = "ExitKeyItem";
-const std::string SPRITE_DIAMOND = "DiamondItem";
 const std::string SPRITE_UNEXPLORED = "Unexplored";
 
 void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
@@ -52,16 +45,8 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 	{
 		ObjectType objectType = object->GetData();
 		//TODO: load table from config
-		std::string spriteName =
-			(objectType == ObjectType::HUNTER) ? (SPRITE_HUNTER) :
-			(objectType == ObjectType::DOOR_EW) ? (SPRITE_DOOR_EW) :
-			(objectType == ObjectType::DOOR_NS) ? (SPRITE_DOOR_NS) :
-			(objectType == ObjectType::ZOMBIE) ? (SPRITE_ZOMBIE) :
-			(objectType == ObjectType::EXIT) ? (SPRITE_EXIT) :
-			(objectType == ObjectType::EXIT_KEY) ? (SPRITE_EXIT_KEY) :
-			(objectType == ObjectType::DIAMOND) ? (SPRITE_DIAMOND) :
-			(SPRITE_KEY);
-		spriteManager.GetSprite(spriteName)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+		auto sprite= objectSprites.Get(objectType);
+		sprite->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 		const Creature* creature = dynamic_cast<const Creature*>(object);
 		if (creature && creature->GetRoomCell() && creature->GetRoomCell()->IsFlagSet(RoomCellFlags::LIT))
 		{
@@ -74,6 +59,12 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 		}
 	}
 }
+
+void RoomPanelRenderer::DrawUnexplored(int x, int y) const
+{
+	spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+}
+
 
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
@@ -89,7 +80,7 @@ void RoomPanelRenderer::DrawCell(int column, int row) const
 	}
 	else
 	{
-		spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+		DrawUnexplored(x, y);
 	}
 }
 

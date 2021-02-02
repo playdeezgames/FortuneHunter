@@ -66,6 +66,7 @@ void FortuneHunterApplication::Start()
 			spriteManager, 
 			terrainSprites, 
 			healthLevelSprites,
+			objectSprites,
 			gameData
 		);
 
