@@ -31,6 +31,7 @@ const std::string SPRITE_ZOMBIE= "ZombieCreature";
 const std::string SPRITE_EXIT = "Exit";
 const std::string SPRITE_EXIT_KEY = "ExitKeyItem";
 const std::string SPRITE_DIAMOND = "DiamondItem";
+const std::string SPRITE_UNEXPLORED = "Unexplored";
 
 void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
 {
@@ -77,14 +78,18 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
 	const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = gameData.GetRoom().GetCell(column, row);
+	int x = PlotColumn(column, row);
+	int y = PlotRow(column, row);
 	if (cell->IsFlagSet(RoomCellFlags::EXPLORED))
 	{
-		int x = PlotColumn(column, row);
-		int y = PlotRow(column, row);
 
 		DrawTerrain(x, y, cell->GetTerrain());
 		DrawObject(x, y, cell->GetObject());
 		DrawDither(x, y, cell);
+	}
+	else
+	{
+		spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
 	}
 }
 

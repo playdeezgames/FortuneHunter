@@ -57,5 +57,5 @@ Sound Effects:
     ☐ hunter killed
 Bug:
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
-    ☐ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map
+    ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39)
 
