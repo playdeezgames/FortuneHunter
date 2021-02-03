@@ -32,7 +32,7 @@ void StatusPanelRenderer::Draw() const
 void StatusPanelRenderer::DrawMoves() const
 {
 	std::stringstream ss;
-	ss << "Moves: " << gameData.GetMoves();//TODO magic string
+	ss << "M: " << gameData.GetMoves();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,
@@ -44,7 +44,7 @@ void StatusPanelRenderer::DrawMoves() const
 void StatusPanelRenderer::DrawKeys() const
 {
 	std::stringstream ss;
-	ss << "Keys: " << gameData.GetHunter()->GetKeys();//TODO magic string
+	ss << "K: " << gameData.GetHunter()->GetKeys();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,
@@ -56,7 +56,7 @@ void StatusPanelRenderer::DrawKeys() const
 void StatusPanelRenderer::DrawWounds() const
 {
 	std::stringstream ss;
-	ss << "Wounds: " << gameData.GetHunter()->GetWounds();//TODO magic string
+	ss << "W: " << gameData.GetHunter()->GetWounds();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,
