@@ -43,5 +43,14 @@
             16
         ],
         "pickUpSfx": "ting"
+    },
+    "5": {
+        "itemType": 5,
+        "objectType": 1,
+        "numberAppearing": 0,
+        "canSpawnOnTerrain": [
+            0
+        ],
+        "pickUpSfx": "getkey"
     }
 }

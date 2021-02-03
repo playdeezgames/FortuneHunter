@@ -124,12 +124,6 @@ void GameData::UpdateRoom()
 	LightAndExploreAroundHunter();
 }
 
-void GameData::AcquireKey()
-{
-	soundManager.PlaySound(Constants::Sounds::GET_KEY);
-	hunter->AddKey();
-}
-
 void GameData::AttemptToOpenDoor(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
 {
 		if (hunter->HasKey())
@@ -183,12 +177,9 @@ void GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, Obj
 
 bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
 {
+	//TODO: attempt to dynamic cast to creature and item instead of a switch!
 	switch (object->GetData())
 	{
-	case ObjectType::KEY:
-		AcquireKey();
-		object->GetRoomCell()->RemoveObject();
-		return true;
 	case ObjectType::DOOR_EW:
 	case ObjectType::DOOR_NS:
 		AttemptToOpenDoor(object);
@@ -196,6 +187,7 @@ bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, 
 	case ObjectType::ZOMBIE:
 		AttackCreature(object);
 		return false;
+	case ObjectType::KEY:
 	case ObjectType::DIAMOND:
 	case ObjectType::POTION:
 	case ObjectType::SHIELD:

@@ -293,8 +293,9 @@ void RoomGenerator::PopulateKeys()
 		auto roomCell = room.GetCell(roomColumn, roomRow);
 		if (!roomCell->HasObject() && roomCell->GetTerrain() == TerrainType::FLOOR)
 		{
-			tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object = new tggd::common::SimpleObject<TerrainType, ObjectType, RoomCellFlags>(ObjectType::KEY);
-			roomCell->SetObject(object);
+
+			Item* item = new Item(itemDescriptors.GetDescriptor(ItemType::KEY));
+			roomCell->SetObject(item);
 			keyCount--;
 		}
 	}

@@ -19,13 +19,13 @@ private:
 	void AddPotion();
 	void AddExitKey();
 	void AddExit();
+	void AddKey();
 public:
 	Hunter();
 	size_t GetKeys() const;
 	size_t GetMoves() const;
 	void IncrementMoves();
 	bool HasKey() const;
-	void AddKey();
 	void RemoveKey();
 	const ObjectType& GetData() const;
 	int GetAttackStrength() const;

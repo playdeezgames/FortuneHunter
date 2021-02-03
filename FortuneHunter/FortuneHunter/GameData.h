@@ -26,7 +26,6 @@ private:
 	Hunter* GetHunter();
 	void ClearLights();
 	void LightAndExploreAroundHunter();
-	void AcquireKey();
 	void AttemptToOpenDoor(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
 	void AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
 	bool InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);

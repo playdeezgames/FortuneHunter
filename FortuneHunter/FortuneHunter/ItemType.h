@@ -5,5 +5,6 @@ enum class ItemType
 	POTION,
 	DIAMOND,
 	EXIT,
-	EXIT_KEY
+	EXIT_KEY,
+	KEY
 };
