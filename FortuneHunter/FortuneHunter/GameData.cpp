@@ -124,20 +124,6 @@ void GameData::UpdateRoom()
 	LightAndExploreAroundHunter();
 }
 
-void GameData::AttemptToOpenDoor(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
-{
-		if (hunter->HasKey())
-		{
-			soundManager.PlaySound(Constants::Sounds::UNLOCK);
-			hunter->RemoveKey();
-			object->GetRoomCell()->RemoveObject();
-		}
-		else
-		{
-			soundManager.PlaySound(Constants::Sounds::DOOR_LOCKED);
-		}
-}
-
 void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
 {
 	Creature* creature = dynamic_cast<Creature*>(object);

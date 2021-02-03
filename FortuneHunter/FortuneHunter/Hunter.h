@@ -20,13 +20,13 @@ private:
 	void AddExitKey();
 	void AddExit();
 	void AddKey();
+	bool HasKey() const;
+	void RemoveKey();
 public:
 	Hunter();
 	size_t GetKeys() const;
 	size_t GetMoves() const;
 	void IncrementMoves();
-	bool HasKey() const;
-	void RemoveKey();
 	const ObjectType& GetData() const;
 	int GetAttackStrength() const;
 	void AddWounds(int);

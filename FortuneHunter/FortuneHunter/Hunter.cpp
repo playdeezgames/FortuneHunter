@@ -85,6 +85,10 @@ void Hunter::PickUp(ItemType itemType)
 {
 	switch (itemType)
 	{
+	case ItemType::DOOR_EW:
+	case ItemType::DOOR_NS:
+		RemoveKey();
+		break;
 	case ItemType::KEY:
 		AddKey();
 		break;
