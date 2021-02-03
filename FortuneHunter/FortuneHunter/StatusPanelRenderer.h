@@ -8,6 +8,8 @@ private:
 	void DrawMoves() const;
 	void DrawKeys() const;
 	void DrawWounds() const;
+	void DrawArmor() const;
+	void DrawDiamonds() const;
 public:
 	StatusPanelRenderer(SDL_Renderer*, const tggd::common::SpriteFont&, const GameData&);
 	void Draw() const;

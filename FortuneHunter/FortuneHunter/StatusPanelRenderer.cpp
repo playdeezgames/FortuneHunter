@@ -26,6 +26,8 @@ void StatusPanelRenderer::Draw() const
 	DrawMoves();
 	DrawKeys();
 	DrawWounds();
+	DrawArmor();
+	DrawDiamonds();
 	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
 }
 
@@ -63,4 +65,30 @@ void StatusPanelRenderer::DrawWounds() const
 		Constants::UI::StatusPanel::CLIP_Y + 32,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
+}
+
+void StatusPanelRenderer::DrawArmor() const
+{
+	std::stringstream ss;
+	ss << "A: " << gameData.GetHunter()->GetArmor();//TODO magic string
+	GetRomFont().WriteText(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_Y + 48,//TODO: magic number
+		ss.str(),
+		Constants::Color::WHITE);
+
+}
+
+void StatusPanelRenderer::DrawDiamonds() const
+{
+	std::stringstream ss;
+	ss << "D: " << gameData.GetHunter()->GetDiamonds();//TODO magic string
+	GetRomFont().WriteText(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_Y + 64,//TODO: magic number
+		ss.str(),
+		Constants::Color::WHITE);
+
 }

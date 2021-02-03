@@ -5,6 +5,10 @@ Hunter::Hunter()
 	, keys(0)
 	, moves(0)
 	, wounds(0)
+	, armor(0)
+	, exitKey(false)
+	, exited(false)
+	, diamonds(0)
 {
 
 }
@@ -52,6 +56,9 @@ int Hunter::GetAttackStrength() const
 
 void Hunter::AddWounds(int amount)
 {
+	int absorbed = (armor > amount) ? (amount) : (armor - amount);
+	amount -= absorbed;
+	armor -= absorbed;
 	wounds += amount;
 }
 
@@ -60,13 +67,78 @@ int Hunter::GetWounds() const
 	return wounds;
 }
 
-bool Hunter::CanPickUp(ItemType) const
+bool Hunter::CanPickUp(ItemType itemType) const
 {
-	//TODO: determine if can pick up the thing
-	return true;
+	switch (itemType)
+	{
+	case ItemType::EXIT:
+		return exitKey;
+	default:
+		return true;
+	}
 }
 
-void Hunter::PickUp(ItemType) const
+void Hunter::PickUp(ItemType itemType)
 {
-	//TODO: actually pick up the thing
+	switch (itemType)
+	{
+	case ItemType::EXIT_KEY:
+		AddExitKey();
+		break;
+	case ItemType::DIAMOND:
+		AddDiamond();
+		break;
+	case ItemType::POTION:
+		AddPotion();
+		break;
+	case ItemType::SHIELD:
+		AddShield();
+		break;
+	case ItemType::EXIT:
+		AddExit();
+		break;
+	}
 }
+
+int Hunter::GetDiamonds() const
+{
+	return diamonds;
+}
+
+int Hunter::GetArmor() const
+{
+	return armor;
+}
+
+void Hunter::AddDiamond()
+{
+	diamonds++;
+}
+void Hunter::AddShield()
+{
+	armor += 10;//TODO: magic number
+	if (armor > 25)//TODO: magic number
+	{
+		armor = 25;//TODO: magic number
+	}
+}
+
+void Hunter::AddPotion()
+{
+	wounds -= 10;//TODO: magic number
+	if (wounds < 0)
+	{
+		wounds = 0;
+	}
+}
+
+void Hunter::AddExitKey()
+{
+	exitKey = true;
+}
+
+void Hunter::AddExit()
+{
+	exited = true;
+}
+
