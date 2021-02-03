@@ -73,6 +73,9 @@ bool Hunter::CanPickUp(ItemType itemType) const
 	{
 	case ItemType::EXIT:
 		return exitKey;
+	case ItemType::DOOR_EW:
+	case ItemType::DOOR_NS:
+		return GetKeys()>0;
 	default:
 		return true;
 	}

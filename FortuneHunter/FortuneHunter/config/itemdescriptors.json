@@ -52,5 +52,25 @@
             0
         ],
         "pickUpSfx": "getkey"
+    },
+    "6": {
+        "itemType": 6,
+        "objectType": 2,
+        "numberAppearing": 0,
+        "canSpawnOnTerrain": [
+            0
+        ],
+        "pickUpSfx": "unlock",
+        "stopsMovement": true
+    },
+    "7": {
+        "itemType": 7,
+        "objectType": 3,
+        "numberAppearing": 0,
+        "canSpawnOnTerrain": [
+            0
+        ],
+        "pickUpSfx": "unlock",
+        "stopsMovement": true
     }
 }

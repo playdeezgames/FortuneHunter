@@ -6,5 +6,7 @@ enum class ItemType
 	DIAMOND,
 	EXIT,
 	EXIT_KEY,
-	KEY
+	KEY,
+	DOOR_NS,
+	DOOR_EW
 };

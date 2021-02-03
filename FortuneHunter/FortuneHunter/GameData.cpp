@@ -155,9 +155,10 @@ void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectTy
 	}
 }
 
-void GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+bool GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
 {
 	Item* item = dynamic_cast<Item*>(object);
+	bool result = true;
 	if (item)
 	{
 		auto itemType = item->GetDescriptor()->GetItemType();
@@ -165,6 +166,7 @@ void GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, Obj
 		{
 			hunter->PickUp(itemType);
 			soundManager.PlaySound(item->GetDescriptor()->GetPickUpSfx());
+			result = !item->GetDescriptor()->DoesStopMovement();
 			item->GetRoomCell()->RemoveObject();//leave on bottom, because deletes item!
 		}
 		else
@@ -172,6 +174,7 @@ void GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, Obj
 			//TODO: sound effect for not picking up the item
 		}
 	}
+	return result;
 }
 
 
@@ -180,19 +183,18 @@ bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, 
 	//TODO: attempt to dynamic cast to creature and item instead of a switch!
 	switch (object->GetData())
 	{
-	case ObjectType::DOOR_EW:
-	case ObjectType::DOOR_NS:
-		AttemptToOpenDoor(object);
-		return false;
 	case ObjectType::ZOMBIE:
 		AttackCreature(object);
 		return false;
+	case ObjectType::EXIT_KEY:
+	case ObjectType::EXIT:
+	case ObjectType::DOOR_EW:
+	case ObjectType::DOOR_NS:
 	case ObjectType::KEY:
 	case ObjectType::DIAMOND:
 	case ObjectType::POTION:
 	case ObjectType::SHIELD:
-		AttemptToPickUpItem(object);
-		return true;
+		return AttemptToPickUpItem(object);
 	default:
 		return false;
 	}

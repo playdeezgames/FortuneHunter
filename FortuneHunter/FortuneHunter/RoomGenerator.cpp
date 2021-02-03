@@ -271,12 +271,12 @@ void RoomGenerator::PopulateLocks()
 			auto roomCell = room.GetCell(nextRoomColumn, nextRoomRow);
 			if (TerrainTypeHelper::IsFloor(roomCell->GetTerrain()) && !roomCell->HasObject())
 			{
-				ObjectType objectType =
+				ItemType itemType =
 					(direction == RoomDirection::EAST || direction == RoomDirection::WEST) ?
-					(ObjectType::DOOR_NS) :
-					(ObjectType::DOOR_EW);
-				tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object = new tggd::common::SimpleObject<TerrainType, ObjectType, RoomCellFlags>(objectType);
-				roomCell->SetObject(object);
+					(ItemType::DOOR_NS) :
+					(ItemType::DOOR_EW);
+				Item* item = new Item(itemDescriptors.GetDescriptor(itemType));
+				roomCell->SetObject(item);
 				break;
 			}
 		}
