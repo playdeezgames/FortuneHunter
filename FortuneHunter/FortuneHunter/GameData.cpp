@@ -1,11 +1,6 @@
 #include "GameData.h"
 #include "RoomConstants.h"
-#include "Maze.h"
-#include "Utility.h"
 #include "SoundsConstants.h"
-#include "Creature.h"
-#include "SimpleObject.h"
-#include "Item.h"
 GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,
@@ -124,9 +119,8 @@ void GameData::UpdateRoom()
 	LightAndExploreAroundHunter();
 }
 
-void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+void GameData::AttackCreature(Creature* creature)
 {
-	Creature* creature = dynamic_cast<Creature*>(object);
 	if (creature)
 	{
 		creature->AddWounds(hunter->GetAttackStrength());
@@ -141,9 +135,8 @@ void GameData::AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectTy
 	}
 }
 
-bool GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
+bool GameData::AttemptToPickUpItem(Item* item)
 {
-	Item* item = dynamic_cast<Item*>(object);
 	bool result = true;
 	if (item)
 	{
@@ -168,23 +161,18 @@ bool GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, Obj
 bool GameData::InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object)
 {
 	//TODO: attempt to dynamic cast to creature and item instead of a switch!
-	switch (object->GetData())
+	Creature* creature = dynamic_cast<Creature*>(object);
+	if (creature)
 	{
-	case ObjectType::ZOMBIE:
-		AttackCreature(object);
-		return false;
-	case ObjectType::EXIT_KEY:
-	case ObjectType::EXIT:
-	case ObjectType::DOOR_EW:
-	case ObjectType::DOOR_NS:
-	case ObjectType::KEY:
-	case ObjectType::DIAMOND:
-	case ObjectType::POTION:
-	case ObjectType::SHIELD:
-		return AttemptToPickUpItem(object);
-	default:
+		AttackCreature(creature);
 		return false;
 	}
+	Item* item = dynamic_cast<Item*>(object);
+	if (item)
+	{
+		return AttemptToPickUpItem(item);
+	}
+	return false;
 }
 
 void GameData::AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* nextCell)

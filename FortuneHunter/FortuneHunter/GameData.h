@@ -10,6 +10,8 @@
 #include "SoundManager.h"
 #include "CreatureDescriptorManager.h"
 #include "ItemDescriptorManager.h"
+#include "Creature.h"
+#include "Item.h"
 class GameData
 {
 private:
@@ -26,10 +28,10 @@ private:
 	Hunter* GetHunter();
 	void ClearLights();
 	void LightAndExploreAroundHunter();
-	void AttackCreature(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
+	void AttackCreature(Creature*);
 	bool InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
 	void AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*);
-	bool AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
+	bool AttemptToPickUpItem(Item*);
 	std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> DetermineAdjacentCells(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*);
 public:
 	GameData
