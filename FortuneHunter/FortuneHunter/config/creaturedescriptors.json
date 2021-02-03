@@ -2,8 +2,16 @@
   "0": {
     "objectType": 6,
     "numberAppearing": 100,
-    "canSpawnOnTerrain": [0, 16],
-    "canSpawnOnObject": [1, 5],
+    "canSpawnOnTerrain": [
+      0,
+      16
+    ],
+    "canSpawnOnObject": [
+      1,
+      5,
+      8,
+      9
+    ],
     "health": 10,
     "attackStrength": 1
   }

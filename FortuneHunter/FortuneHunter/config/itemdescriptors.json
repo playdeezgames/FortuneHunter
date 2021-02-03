@@ -16,5 +16,32 @@
             0
         ],
         "pickUpSfx": "getpotion"
+    },
+    "2": {
+        "itemType": 2,
+        "objectType": 5,
+        "numberAppearing": 0,
+        "canSpawnOnTerrain": [
+            16
+        ],
+        "pickUpSfx": "ting"
+    },
+    "3": {
+        "itemType": 3,
+        "objectType": 4,
+        "numberAppearing": 0,
+        "canSpawnOnTerrain": [
+            16
+        ],
+        "pickUpSfx": "ting"
+    },
+    "4": {
+        "itemType": 4,
+        "objectType": 7,
+        "numberAppearing": 0,
+        "canSpawnOnTerrain": [
+            16
+        ],
+        "pickUpSfx": "ting"
     }
 }

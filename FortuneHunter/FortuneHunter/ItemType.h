@@ -2,5 +2,8 @@
 enum class ItemType
 {
 	SHIELD,
-	POTION
+	POTION,
+	DIAMOND,
+	EXIT,
+	EXIT_KEY
 };

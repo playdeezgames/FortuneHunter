@@ -300,7 +300,7 @@ void RoomGenerator::PopulateKeys()
 	}
 }
 
-void RoomGenerator::PopulateDeadEndObject(ObjectType objectType)
+void RoomGenerator::PopulateDeadEndItem(ItemType itemType)
 {
 	do
 	{
@@ -311,7 +311,7 @@ void RoomGenerator::PopulateDeadEndObject(ObjectType objectType)
 		{
 			continue;
 		}
-		cell->SetObject(new tggd::common::SimpleObject<TerrainType, ObjectType, RoomCellFlags>(objectType));
+		cell->SetObject(new Item(itemDescriptors.GetDescriptor(itemType)));
 		RemoveDeadEndAtIndex(index);
 		break;
 	} while (true);
@@ -319,11 +319,11 @@ void RoomGenerator::PopulateDeadEndObject(ObjectType objectType)
 
 void RoomGenerator::PopulateDeadEnds()
 {
-	PopulateDeadEndObject(ObjectType::EXIT);
-	PopulateDeadEndObject(ObjectType::EXIT_KEY);
+	PopulateDeadEndItem(ItemType::EXIT);
+	PopulateDeadEndItem(ItemType::EXIT_KEY);
 	while (!GetDeadEnds().empty())
 	{
-		PopulateDeadEndObject(ObjectType::DIAMOND);
+		PopulateDeadEndItem(ItemType::DIAMOND);
 	}
 }
 

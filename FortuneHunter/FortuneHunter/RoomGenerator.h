@@ -29,7 +29,7 @@ private:
 	void FlagifyCell(int, int);
 	void PopulateLocks();
 	void PopulateKeys();
-	void PopulateDeadEndObject(ObjectType);
+	void PopulateDeadEndItem(ItemType);
 	void PopulateDeadEnds();
 	void LoopifyMaze(Maze&);
 	void SpawnCreature(const CreatureDescriptor*);
