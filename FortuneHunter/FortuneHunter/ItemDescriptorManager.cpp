@@ -18,6 +18,7 @@ const std::string PROPERTY_NUMBER_APPEARING = "numberAppearing";
 const std::string PROPERTY_SPAWN_TERRAIN = "canSpawnOnTerrain";
 const std::string PROPERTY_PICK_UP_SFX = "pickUpSfx";
 const std::string PROPERTY_STOPS_MOVEMENT = "stopsMovement";
+const std::string PROPERTY_FAILURE_SFX = "failureSfx";
 
 ItemDescriptor* ItemDescriptorManager::ParseDescriptor(const nlohmann::json& properties)
 {
@@ -31,5 +32,6 @@ ItemDescriptor* ItemDescriptorManager::ParseDescriptor(const nlohmann::json& pro
 		spawnTerrains.insert((TerrainType)terrain);
 	}
 	int stopsMovement = (properties.count(PROPERTY_STOPS_MOVEMENT) > 0) ? ((bool)properties[PROPERTY_STOPS_MOVEMENT]) : (false);
-	return new ItemDescriptor(itemType, objectType, numberAppearing, spawnTerrains, properties[PROPERTY_PICK_UP_SFX], stopsMovement);
+	std::string failureSfx = (properties.count(PROPERTY_FAILURE_SFX) > 0) ? (properties[PROPERTY_FAILURE_SFX]) : ("");
+	return new ItemDescriptor(itemType, objectType, numberAppearing, spawnTerrains, properties[PROPERTY_PICK_UP_SFX], failureSfx, stopsMovement);
 }

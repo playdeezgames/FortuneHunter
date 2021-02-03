@@ -6,11 +6,13 @@ ItemDescriptor::ItemDescriptor
 	size_t numberAppearing, 
 	const std::set<TerrainType>& spawnTerrains,
 	const std::string& pickUpSfx,
+	const std::string& failureSfx,
 	bool stopsMovement
 )
 	: BaseDescriptor(objectType, numberAppearing, spawnTerrains)
 	, itemType(itemType)
 	, pickUpSfx(pickUpSfx)
+	, failureSfx(failureSfx)
 	, stopsMovement(stopsMovement)
 {
 
@@ -29,4 +31,9 @@ const std::string& ItemDescriptor::GetPickUpSfx() const
 bool ItemDescriptor::DoesStopMovement() const
 {
 	return stopsMovement;
+}
+
+const std::string& ItemDescriptor::GetFailureSfx() const
+{
+	return failureSfx;
 }

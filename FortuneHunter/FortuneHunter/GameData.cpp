@@ -171,7 +171,8 @@ bool GameData::AttemptToPickUpItem(tggd::common::RoomCellObject<TerrainType, Obj
 		}
 		else
 		{
-			//TODO: sound effect for not picking up the item
+			soundManager.PlaySound(item->GetDescriptor()->GetFailureSfx());
+			result = false;
 		}
 	}
 	return result;
