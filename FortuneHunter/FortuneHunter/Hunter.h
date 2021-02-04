@@ -4,9 +4,11 @@
 #include "ObjectType.h"
 #include "RoomCellFlags.h"
 #include "ItemType.h"
+#include "HunterDescriptor.h"
 class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>
 {
 private:
+	const HunterDescriptor& hunterDescriptor;
 	size_t keys;
 	size_t moves;
 	int wounds;
@@ -14,6 +16,9 @@ private:
 	bool exitKey;
 	bool exited;
 	int armor;
+	size_t maximumHealthLevel;
+	size_t maximumArmorLevel;
+	size_t maximumAttackLevel;
 	void AddDiamond();
 	void AddShield();
 	void AddPotion();
@@ -23,16 +28,19 @@ private:
 	bool HasKey() const;
 	void RemoveKey();
 public:
-	Hunter();
+	Hunter(const HunterDescriptor&);
 	size_t GetKeys() const;
 	size_t GetMoves() const;
 	void IncrementMoves();
 	const ObjectType& GetData() const;
 	int GetAttackStrength() const;
+	int GetMaximumHealth() const;
+	int GetMaximumArmor() const;
 	void AddWounds(int);
-	int GetWounds() const;
+	int GetHealth() const;
 	bool CanPickUp(ItemType) const;
 	void PickUp(ItemType);
 	int GetDiamonds() const;
 	int GetArmor() const;
+	bool IsAlive() const;
 };

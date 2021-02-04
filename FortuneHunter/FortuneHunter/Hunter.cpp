@@ -1,7 +1,8 @@
 #include "Hunter.h"
 #include "Utility.h"
-Hunter::Hunter()
+Hunter::Hunter(const HunterDescriptor& hunterDescriptor)
 	: RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
+	, hunterDescriptor(hunterDescriptor)
 	, keys(0)
 	, moves(0)
 	, wounds(0)
@@ -9,6 +10,9 @@ Hunter::Hunter()
 	, exitKey(false)
 	, exited(false)
 	, diamonds(0)
+	, maximumArmorLevel(0)
+	, maximumAttackLevel(0)
+	, maximumHealthLevel(0)
 {
 
 }
@@ -51,20 +55,28 @@ void Hunter::IncrementMoves()
 
 int Hunter::GetAttackStrength() const
 {
-	return tggd::common::Utility::GenerateRandomNumberFromRange(1,5);//TODO: magic numbers
+	return tggd::common::Utility::GenerateRandomNumberFromRange
+	(
+		1,
+		hunterDescriptor.GetMaximumAttack(maximumAttackLevel)
+	);
 }
 
 void Hunter::AddWounds(int amount)
 {
-	int absorbed = (armor > amount) ? (amount) : (armor - amount);
+	int absorbed = (armor >= amount) ? (amount) : (0);
 	amount -= absorbed;
 	armor -= absorbed;
 	wounds += amount;
+	if (wounds > GetMaximumHealth())
+	{
+		wounds = GetMaximumHealth();
+	}
 }
 
-int Hunter::GetWounds() const
+int Hunter::GetHealth() const
 {
-	return wounds;
+	return GetMaximumHealth() - wounds;
 }
 
 bool Hunter::CanPickUp(ItemType itemType) const
@@ -127,9 +139,10 @@ void Hunter::AddDiamond()
 void Hunter::AddShield()
 {
 	armor += 10;//TODO: magic number
-	if (armor > 25)//TODO: magic number
+	int maximumArmor = hunterDescriptor.GetMaximumArmor(maximumArmorLevel);
+	if (armor > maximumArmor)
 	{
-		armor = 25;//TODO: magic number
+		armor = maximumArmor;
 	}
 }
 
@@ -152,3 +165,17 @@ void Hunter::AddExit()
 	exited = true;
 }
 
+int Hunter::GetMaximumHealth() const
+{
+	return hunterDescriptor.GetMaximumHealth(maximumHealthLevel);
+}
+
+bool Hunter::IsAlive() const
+{
+	return GetHealth() > 0;
+}
+
+int Hunter::GetMaximumArmor() const
+{
+	return hunterDescriptor.GetMaximumArmor(maximumArmorLevel);
+}

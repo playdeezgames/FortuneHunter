@@ -58,7 +58,7 @@ void StatusPanelRenderer::DrawKeys() const
 void StatusPanelRenderer::DrawWounds() const
 {
 	std::stringstream ss;
-	ss << "W: " << gameData.GetHunter()->GetWounds();//TODO magic string
+	ss << "H: " << gameData.GetHunter()->GetHealth() << "/" << gameData.GetHunter()->GetMaximumHealth();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,
@@ -70,7 +70,7 @@ void StatusPanelRenderer::DrawWounds() const
 void StatusPanelRenderer::DrawArmor() const
 {
 	std::stringstream ss;
-	ss << "A: " << gameData.GetHunter()->GetArmor();//TODO magic string
+	ss << "A: " << gameData.GetHunter()->GetArmor() << "/" << gameData.GetHunter()->GetMaximumArmor();//TODO magic string
 	GetRomFont().WriteText(
 		GetMainRenderer(),
 		Constants::UI::StatusPanel::CLIP_X,

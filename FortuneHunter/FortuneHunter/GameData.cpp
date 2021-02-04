@@ -61,7 +61,7 @@ Hunter* GameData::GetHunter()
 
 void GameData::PlaceHunter()
 {
-	hunter = new Hunter();
+	hunter = new Hunter(hunterDescriptor);
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
@@ -219,33 +219,36 @@ std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> Gam
 void GameData::MoveHunter(RoomDirection direction)
 {
 	Hunter* hunter = GetHunter();
-	tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = hunter->GetRoomCell();
-	int roomColumn = (int)cell->GetColumn();
-	int roomRow = (int)cell->GetRow();
-	int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
-	int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
-	tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
-	auto adjacentCells = DetermineAdjacentCells(cell);
-	if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()))
+	if (hunter && hunter->IsAlive())
 	{
-		AttemptToEnterCell(cell, nextCell);
-	}
-	else
-	{
-		soundManager.PlaySound(Constants::Sounds::BUMP_WALL);
-	}
-	for (auto adjacentCell : adjacentCells)//TODO: this loop goes into its own function
-	{
-		if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
+		tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = hunter->GetRoomCell();
+		int roomColumn = (int)cell->GetColumn();
+		int roomRow = (int)cell->GetRow();
+		int nextColumn = RoomDirectionHelper::GetNextColumn(roomColumn, roomRow, direction);
+		int nextRow = RoomDirectionHelper::GetNextRow(roomColumn, roomRow, direction);
+		tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* nextCell = GetRoom().GetCell(nextColumn, nextRow);
+		auto adjacentCells = DetermineAdjacentCells(cell);
+		if (TerrainTypeHelper::IsFloor(nextCell->GetTerrain()))
 		{
-			Creature* creature = dynamic_cast<Creature*>(adjacentCell->GetObject());
-			if (creature)
+			AttemptToEnterCell(cell, nextCell);
+		}
+		else
+		{
+			soundManager.PlaySound(Constants::Sounds::BUMP_WALL);
+		}
+		for (auto adjacentCell : adjacentCells)//TODO: this loop goes into its own function
+		{
+			if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
 			{
-				hunter->AddWounds(creature->GetAttackStrength());
-				//TODO: sound for hunter hit or dead!
+				Creature* creature = dynamic_cast<Creature*>(adjacentCell->GetObject());
+				if (creature)
+				{
+					hunter->AddWounds(creature->GetAttackStrength());
+					//TODO: sound for hunter hit or dead!
+				}
 			}
 		}
+		hunter->IncrementMoves();
+		UpdateRoom();
 	}
-	hunter->IncrementMoves();
-	UpdateRoom();
 }
