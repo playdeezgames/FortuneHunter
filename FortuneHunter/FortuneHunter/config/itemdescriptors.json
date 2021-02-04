@@ -30,6 +30,7 @@
         "itemType": 3,
         "objectType": 4,
         "numberAppearing": 0,
+        "deadEndAppearing": 1,
         "canSpawnOnTerrain": [
             16
         ],
@@ -39,6 +40,7 @@
         "itemType": 4,
         "objectType": 7,
         "numberAppearing": 0,
+        "deadEndAppearing": 1,
         "canSpawnOnTerrain": [
             16
         ],
@@ -74,5 +76,35 @@
         "pickUpSfx": "unlock",
         "failureSfx": "doorlocked",
         "stopsMovement": true
+    },
+    "8": {
+        "itemType": 8,
+        "objectType": 10,
+        "numberAppearing": 0,
+        "deadEndAppearing": 1,
+        "canSpawnOnTerrain": [
+            16
+        ],
+        "pickUpSfx": ""
+    },
+    "9": {
+        "itemType": 9,
+        "objectType": 10,
+        "numberAppearing": 0,
+        "deadEndAppearing": 1,
+        "canSpawnOnTerrain": [
+            16
+        ],
+        "pickUpSfx": ""
+    },
+    "10": {
+        "itemType": 10,
+        "objectType": 12,
+        "numberAppearing": 0,
+        "deadEndAppearing": 1,
+        "canSpawnOnTerrain": [
+            16
+        ],
+        "pickUpSfx": ""
     }
 }

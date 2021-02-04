@@ -2066,5 +2066,26 @@
     "y": 48,
     "w": 16,
     "h": 16
+  },
+  "AttackUpgrade": {
+    "texture": "tiles",
+    "x": 80,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "ArmorUpgrade": {
+    "texture": "tiles",
+    "x": 96,
+    "y": 48,
+    "w": 16,
+    "h": 16
+  },
+  "HealthUpgrade": {
+    "texture": "tiles",
+    "x": 112,
+    "y": 48,
+    "w": 16,
+    "h": 16
   }
 }

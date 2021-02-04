@@ -8,5 +8,8 @@
     "6": "ZombieCreature",
     "7": "ExitKeyItem",
     "8": "ShieldItem",
-    "9": "PotionItem"
+    "9": "PotionItem",
+    "10": "HealthUpgrade",
+    "11": "AttackUpgrade",
+    "12": "ArmorUpgrade"
 }
