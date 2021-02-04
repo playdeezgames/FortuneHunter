@@ -13,6 +13,20 @@ StatusPanelRenderer::StatusPanelRenderer
 
 }
 
+void StatusPanelRenderer::DrawGameOver() const
+{
+	if (!gameData.GetHunter()->IsAlive())
+	{
+		GetRomFont().WriteText(
+			GetMainRenderer(),
+			Constants::UI::StatusPanel::CLIP_X,
+			Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
+			"Yer dead!",//TODO: magic string
+			Constants::Color::RED);
+	}
+}
+
+
 void StatusPanelRenderer::Draw() const
 {
 	SDL_Rect clipRect =
@@ -28,6 +42,7 @@ void StatusPanelRenderer::Draw() const
 	DrawWounds();
 	DrawArmor();
 	DrawDiamonds();
+	DrawGameOver();
 	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
 }
 
