@@ -1,0 +1,14 @@
+{
+    "maximumHealths": [
+        20
+    ],
+    "minimumAttacks": [
+        1
+    ],
+    "maximumAttacks": [
+        4
+    ],
+    "maximumArmors": [
+        25
+    ]
+}

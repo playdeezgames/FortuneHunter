@@ -22,6 +22,7 @@
 #include "ObjectSprites.h"
 #include "ItemDescriptorManager.h"
 #include "FinishManager.h"
+#include "HunterDescriptor.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -47,6 +48,7 @@ private:
 
 	CreatureDescriptorManager creatureDescriptors;
 	ItemDescriptorManager itemDescriptors;
+	HunterDescriptor hunterDescriptor;
 	GameData gameData;
 
 	TerrainSprites terrainSprites;

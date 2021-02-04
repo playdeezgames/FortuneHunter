@@ -27,7 +27,8 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, confirmState(ConfirmState::NO)
 	, creatureDescriptors(finishManager)
 	, itemDescriptors(finishManager)
-	, gameData(soundManager, creatureDescriptors, itemDescriptors)
+	, hunterDescriptor()
+	, gameData(soundManager, creatureDescriptors, itemDescriptors, hunterDescriptor)
 	, statusPanelRenderer(nullptr)
 	, terrainSprites(finishManager)
 	, healthLevelSprites(finishManager)
@@ -43,6 +44,7 @@ void FortuneHunterApplication::Start()
 
 	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
 	itemDescriptors.Start(Constants::Config::Files::ITEMDESCRIPTORS);
+	hunterDescriptor.Start(Constants::Config::Files::HUNTERDESCRIPTOR);
 	gameData.Start();
 	controllerManager.Start();
 

@@ -120,6 +120,12 @@
     <Filter Include="Source Files\Finishers">
       <UniqueIdentifier>{c54b52f2-0dce-425c-9e44-ec9c3106b946}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Hunter">
+      <UniqueIdentifier>{6ce5659c-8c9d-4454-b2e6-fe7c3b5e08a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hunter">
+      <UniqueIdentifier>{e19e7141-8460-4329-a772-89c787b1806d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -157,9 +163,6 @@
     </ClCompile>
     <ClCompile Include="GameData.cpp">
       <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Hunter.cpp">
-      <Filter>Source Files\Creatures</Filter>
     </ClCompile>
     <ClCompile Include="InPlayCommandProcessor.cpp">
       <Filter>Source Files\CommandProcessors</Filter>
@@ -248,6 +251,12 @@
     <ClCompile Include="FinishManager.cpp">
       <Filter>Source Files\Finishers</Filter>
     </ClCompile>
+    <ClCompile Include="HunterDescriptor.cpp">
+      <Filter>Source Files\Hunter</Filter>
+    </ClCompile>
+    <ClCompile Include="Hunter.cpp">
+      <Filter>Source Files\Hunter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -315,9 +324,6 @@
     </ClInclude>
     <ClInclude Include="GameData.h">
       <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Hunter.h">
-      <Filter>Header Files\Creatures</Filter>
     </ClInclude>
     <ClInclude Include="InPlayCommandProcessor.h">
       <Filter>Header Files\CommandProcessors</Filter>
@@ -480,6 +486,12 @@
     </ClInclude>
     <ClInclude Include="FinishManager.h">
       <Filter>Header Files\Finishers</Filter>
+    </ClInclude>
+    <ClInclude Include="HunterDescriptor.h">
+      <Filter>Header Files\Hunter</Filter>
+    </ClInclude>
+    <ClInclude Include="Hunter.h">
+      <Filter>Header Files\Hunter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

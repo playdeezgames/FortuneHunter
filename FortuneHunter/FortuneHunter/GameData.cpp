@@ -5,13 +5,15 @@ GameData::GameData
 (
 	const tggd::common::SoundManager& soundManager,
 	const CreatureDescriptorManager& creatureDescriptors,
-	const ItemDescriptorManager& itemDescriptors
+	const ItemDescriptorManager& itemDescriptors,
+	const HunterDescriptor& hunterDescriptor
 )
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, soundManager(soundManager)
 	, hunter(nullptr)
 	, creatureDescriptors(creatureDescriptors)
 	, itemDescriptors(itemDescriptors)
+	, hunterDescriptor(hunterDescriptor)
 {
 }
 
