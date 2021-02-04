@@ -2,6 +2,7 @@
 #include "ObjectType.h"
 #include "TerrainType.h"
 #include <set>
+#include "json.hpp"
 class BaseDescriptor
 {
 private:
@@ -9,7 +10,7 @@ private:
 	size_t numberAppearing;
 	std::set<TerrainType> spawnTerrains;
 public:
-	BaseDescriptor(ObjectType, size_t, const std::set<TerrainType>&);
+	BaseDescriptor(const nlohmann::json&);
 	ObjectType GetObjectType() const;
 	size_t GetNumberAppearing() const;
 	bool CanSpawnOnTerrain(TerrainType) const;

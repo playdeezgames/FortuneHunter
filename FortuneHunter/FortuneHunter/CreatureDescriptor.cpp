@@ -1,19 +1,24 @@
 #include "CreatureDescriptor.h"
+const std::string PROPERTY_SPAWN_OBJECT = "canSpawnOnObject";
+const std::string PROPERTY_HEALTH = "health";
+const std::string PROPERTY_ATTACK_STRENGTH = "attackStrength";
+
 CreatureDescriptor::CreatureDescriptor
 (
-	ObjectType objectType,
-	size_t numberAppearing,
-	const std::set<TerrainType>& spawnTerrains,
-	const std::set<ObjectType>& spawnObjects,
-	int health,
-	int attackStrength
+	const nlohmann::json& properties
 )
-	: BaseDescriptor(objectType, numberAppearing, spawnTerrains)
-	, spawnObjects(spawnObjects)
-	, health(health)
-	, attackStrength(attackStrength)
+	: BaseDescriptor(properties)
+	, spawnObjects()
+	, health(0)
+	, attackStrength(0)
 {
-
+	auto& objects = properties[PROPERTY_SPAWN_OBJECT];
+	for (auto& object : objects)
+	{
+		spawnObjects.insert((ObjectType)object);
+	}
+	health = properties[PROPERTY_HEALTH];
+	attackStrength = properties[PROPERTY_ATTACK_STRENGTH];
 }
 
 bool CreatureDescriptor::CanSpawnOnObject(ObjectType objectType) const

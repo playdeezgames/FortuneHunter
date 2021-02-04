@@ -7,7 +7,7 @@ private:
 	int health;
 	int attackStrength;
 public:
-	CreatureDescriptor(ObjectType, size_t, const std::set<TerrainType>&, const std::set<ObjectType>&, int, int);
+	CreatureDescriptor(const nlohmann::json&);
 	bool CanSpawnOnObject(ObjectType) const;
 	int GetHealth() const;
 	int GetAttackStrength() const;

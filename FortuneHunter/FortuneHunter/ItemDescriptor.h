@@ -14,14 +14,7 @@ private:
 public:
 	ItemDescriptor
 	(
-		ItemType, 
-		ObjectType, 
-		size_t, 
-		size_t,
-		const std::set<TerrainType>&, 
-		const std::string&, 
-		const std::string&, 
-		bool
+		const nlohmann::json&
 	);
 	ItemType GetItemType() const;
 	const std::string& GetPickUpSfx() const;
