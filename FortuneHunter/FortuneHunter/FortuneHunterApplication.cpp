@@ -45,7 +45,6 @@ void FortuneHunterApplication::Start()
 	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
 	itemDescriptors.Start(Constants::Config::Files::ITEMDESCRIPTORS);
 	hunterDescriptor.Start(Constants::Config::Files::HUNTERDESCRIPTOR);
-	gameData.Start();
 	controllerManager.Start();
 
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);

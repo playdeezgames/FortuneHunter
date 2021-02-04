@@ -36,6 +36,7 @@ void MainMenuCommandProcessor::DoGreenAction()
 		SetUIState(UIState::CONFIRM_QUIT);
 		return;
 	case MainMenuState::START:
+		gameData.Start();
 		SetUIState(UIState::IN_PLAY);
 		return;
 	}

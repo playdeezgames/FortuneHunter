@@ -67,6 +67,10 @@ namespace tggd::common
 				delete object;
 			}
 		}
+		void ClearAllFlags()
+		{
+			cellFlags.clear();
+		}
 	};
 
 }
