@@ -20,7 +20,7 @@ void StatusPanelRenderer::DrawGameOver() const
 		GetRomFont().WriteText(
 			GetMainRenderer(),
 			Constants::UI::StatusPanel::CLIP_X,
-			Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
+			Constants::UI::StatusPanel::CLIP_Y + 96,//TODO: magic number
 			"Yer dead!",//TODO: magic string
 			Constants::Color::RED);
 	}
@@ -42,6 +42,7 @@ void StatusPanelRenderer::Draw() const
 	DrawWounds();
 	DrawArmor();
 	DrawDiamonds();
+	DrawAttack();
 	DrawGameOver();
 	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
 }
@@ -94,6 +95,19 @@ void StatusPanelRenderer::DrawArmor() const
 		Constants::Color::WHITE);
 
 }
+
+void StatusPanelRenderer::DrawAttack() const
+{
+	std::stringstream ss;
+	ss << "X: " << gameData.GetHunter()->GetMaximumAttack();//TODO magic string
+	GetRomFont().WriteText(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
+		ss.str(),
+		Constants::Color::WHITE);
+}
+
 
 void StatusPanelRenderer::DrawDiamonds() const
 {

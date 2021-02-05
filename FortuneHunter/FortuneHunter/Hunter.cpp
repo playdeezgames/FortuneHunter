@@ -188,3 +188,8 @@ int Hunter::GetMaximumArmor() const
 {
 	return hunterDescriptor.GetMaximumArmor(maximumArmorLevel);
 }
+
+int Hunter::GetMaximumAttack() const
+{
+	return hunterDescriptor.GetMaximumAttack(maximumAttackLevel);
+}

@@ -34,6 +34,7 @@ public:
 	void IncrementMoves();
 	const ObjectType& GetData() const;
 	int GetAttackStrength() const;
+	int GetMaximumAttack() const;
 	int GetMaximumHealth() const;
 	int GetMaximumArmor() const;
 	void AddWounds(int);

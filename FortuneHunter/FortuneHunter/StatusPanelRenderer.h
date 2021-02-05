@@ -9,6 +9,7 @@ private:
 	void DrawKeys() const;
 	void DrawWounds() const;
 	void DrawArmor() const;
+	void DrawAttack() const;
 	void DrawDiamonds() const;
 	void DrawGameOver() const;
 public:
