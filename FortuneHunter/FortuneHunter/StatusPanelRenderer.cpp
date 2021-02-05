@@ -62,18 +62,18 @@ void StatusPanelRenderer::Draw() const
 void StatusPanelRenderer::DrawMoves() const
 {
 	std::stringstream ss;
-	ss << gameData.GetMoves();//TODO magic string
-	spriteManager.GetSprite("MoveIcon")->Draw//TODO magic string
+	ss << gameData.GetMoves();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::MOVE_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y,//TODO: magic number
+		Constants::UI::StatusPanel::MOVE_ICON_X,
+		Constants::UI::StatusPanel::MOVE_ICON_Y,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y,
+		Constants::UI::StatusPanel::MOVE_TEXT_X,
+		Constants::UI::StatusPanel::MOVE_TEXT_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 }
@@ -81,18 +81,18 @@ void StatusPanelRenderer::DrawMoves() const
 void StatusPanelRenderer::DrawKeys() const
 {
 	std::stringstream ss;
-	ss << gameData.GetHunter()->GetKeys();//TODO magic string
-	spriteManager.GetSprite("KeyItem")->Draw//TODO magic string
+	ss << gameData.GetHunter()->GetKeys();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::KEYS_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 16,//TODO: magic number
+		Constants::UI::StatusPanel::KEYS_ICON_X,
+		Constants::UI::StatusPanel::KEYS_ICON_Y,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 16,//TODO: magic number
+		Constants::UI::StatusPanel::KEYS_TEXT_X,
+		Constants::UI::StatusPanel::KEYS_TEXT_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 }
@@ -100,18 +100,18 @@ void StatusPanelRenderer::DrawKeys() const
 void StatusPanelRenderer::DrawWounds() const
 {
 	std::stringstream ss;
-	ss << gameData.GetHunter()->GetHealth() << "/" << gameData.GetHunter()->GetMaximumHealth();//TODO magic string
-	spriteManager.GetSprite("PotionItem")->Draw//TODO magic string
+	ss << gameData.GetHunter()->GetHealth() << "/" << gameData.GetHunter()->GetMaximumHealth();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::HEALTH_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 32,//TODO: magic number
+		Constants::UI::StatusPanel::HEALTH_ICON_X,
+		Constants::UI::StatusPanel::HEALTH_ICON_Y,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 32,//TODO: magic number
+		Constants::UI::StatusPanel::HEALTH_TEXT_X,
+		Constants::UI::StatusPanel::HEALTH_TEXT_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 }
@@ -119,18 +119,18 @@ void StatusPanelRenderer::DrawWounds() const
 void StatusPanelRenderer::DrawArmor() const
 {
 	std::stringstream ss;
-	ss << gameData.GetHunter()->GetArmor() << "/" << gameData.GetHunter()->GetMaximumArmor();//TODO magic string
-	spriteManager.GetSprite("ShieldItem")->Draw//TODO magic string
+	ss << gameData.GetHunter()->GetArmor() << "/" << gameData.GetHunter()->GetMaximumArmor();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::ARMOR_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y+48,//TODO: magic number
+		Constants::UI::StatusPanel::ARMOR_ICON_X,
+		Constants::UI::StatusPanel::ARMOR_ICON_Y,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 48,//TODO: magic number
+		Constants::UI::StatusPanel::ARMOR_TEXT_X,
+		Constants::UI::StatusPanel::ARMOR_TEXT_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 
@@ -139,18 +139,18 @@ void StatusPanelRenderer::DrawArmor() const
 void StatusPanelRenderer::DrawAttack() const
 {
 	std::stringstream ss;
-	ss << gameData.GetHunter()->GetMaximumAttack();//TODO magic string
-	spriteManager.GetSprite("SwordItem")->Draw//TODO magic string
+	ss << "1d" << gameData.GetHunter()->GetMaximumAttack();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::ATTACK_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
+		Constants::UI::StatusPanel::ATTACK_ICON_X,
+		Constants::UI::StatusPanel::ATTACK_ICON_Y,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X + 16,
-		Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
+		Constants::UI::StatusPanel::ATTACK_TEXT_X,
+		Constants::UI::StatusPanel::ATTACK_TEXT_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 }
@@ -159,18 +159,18 @@ void StatusPanelRenderer::DrawAttack() const
 void StatusPanelRenderer::DrawDiamonds() const
 {
 	std::stringstream ss;
-	ss << gameData.GetHunter()->GetDiamonds();//TODO magic string
-	spriteManager.GetSprite("DiamondItem")->Draw//TODO magic string
+	ss << gameData.GetHunter()->GetDiamonds();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::DIAMOND_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 64,//TODO: magic number
+		Constants::UI::StatusPanel::DIAMOND_ICON_X,
+		Constants::UI::StatusPanel::DIAMOND_ICON_Y,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
-		Constants::UI::StatusPanel::CLIP_Y + 64,//TODO: magic number
+		Constants::UI::StatusPanel::DIAMOND_TEXT_X,
+		Constants::UI::StatusPanel::DIAMOND_TEXT_Y,
 		ss.str(),
 		Constants::Color::WHITE);
 
