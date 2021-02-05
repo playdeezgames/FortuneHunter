@@ -81,7 +81,7 @@
         "itemType": 8,
         "objectType": 10,
         "numberAppearing": 0,
-        "deadEndAppearing": 1,
+        "deadEndAppearing": 3,
         "canSpawnOnTerrain": [
             16
         ],
@@ -89,9 +89,9 @@
     },
     "9": {
         "itemType": 9,
-        "objectType": 10,
+        "objectType": 11,
         "numberAppearing": 0,
-        "deadEndAppearing": 1,
+        "deadEndAppearing": 3,
         "canSpawnOnTerrain": [
             16
         ],
@@ -101,7 +101,7 @@
         "itemType": 10,
         "objectType": 12,
         "numberAppearing": 0,
-        "deadEndAppearing": 1,
+        "deadEndAppearing": 3,
         "canSpawnOnTerrain": [
             16
         ],

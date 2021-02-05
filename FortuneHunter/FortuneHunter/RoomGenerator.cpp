@@ -320,8 +320,17 @@ void RoomGenerator::PopulateDeadEndItem(ItemType itemType)
 
 void RoomGenerator::PopulateDeadEnds()
 {
-	PopulateDeadEndItem(ItemType::EXIT);
-	PopulateDeadEndItem(ItemType::EXIT_KEY);
+	auto itemTypes = itemDescriptors.GetTypes();
+	for (auto& itemType : itemTypes)
+	{
+		auto descriptor = itemDescriptors.GetDescriptor(itemType);
+		auto counter = descriptor->GetDeadEndAppearing();
+		while (counter > 0)
+		{
+			PopulateDeadEndItem(itemType);
+			counter--;
+		}
+	}
 	while (!GetDeadEnds().empty())
 	{
 		PopulateDeadEndItem(ItemType::DIAMOND);
@@ -337,6 +346,7 @@ void RoomGenerator::ClearRoom()
 			auto cell = room.GetCell(column, row);
 			cell->RemoveObject();
 			cell->ClearAllFlags();
+			//cell->SetFlag(RoomCellFlags::EXPLORED);//TODO: delete line
 			bool isMazeCell = column % 2 == 1 && row % 2 == 1;//TODO: rewrite this to use PlotColumn/PlotRow
 			cell->SetTerrain((isMazeCell) ? (TerrainType::FLOOR) : (TerrainType::WALL_NESW));
 		}

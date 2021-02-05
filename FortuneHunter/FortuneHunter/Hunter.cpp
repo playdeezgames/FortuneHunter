@@ -119,6 +119,15 @@ void Hunter::PickUp(ItemType itemType)
 	case ItemType::EXIT:
 		AddExit();
 		break;
+	case ItemType::ARMOR_UPGRADE:
+		maximumArmorLevel++;
+		break;
+	case ItemType::ATTACK_UPGRADE:
+		maximumAttackLevel++;
+		break;
+	case ItemType::HEALTH_UPGRADE:
+		maximumHealthLevel++;
+		break;
 	}
 }
 
