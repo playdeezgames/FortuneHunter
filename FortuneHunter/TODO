@@ -8,19 +8,19 @@ Placeholder Screens:
         control sfx volume
         control mux volume
 Gameplay:
-    ☐ torches?
-    ☐ limited inventory space
-    ☐ treasures
-        ☐ diamonds
-    ☐ traps?
-    ☐ secret doors
-    ☐ monsters
-        ☐ zombies
+    ✘ torches? @cancelled(21-02-05 03:25)
+    ✘ limited inventory space @cancelled(21-02-05 03:25)
+    ✔ treasures @done(21-02-05 03:25)
+        ✔ diamonds @done(21-02-05 03:25)
+    ✘ traps? @cancelled(21-02-05 03:25)
+    ✘ secret doors @cancelled(21-02-05 03:25)
+    ✔ monsters @done(21-02-05 03:25)
+        ✔ zombies @done(21-02-05 03:25)
     ☐ weapons
-        ☐ a big stick
-        ☐ yer fists
-    ☐ armor
-    ☐ potions/food
+        ✔ a big stick @done(21-02-05 03:26)
+        ✘ yer fists @cancelled(21-02-05 03:26)
+    ✔ armor @done(21-02-05 03:25)
+    ✔ potions/food @done(21-02-05 03:26)
     ✔ locks @done(21-01-28 05:37)
     ✔ keys @done(21-01-28 05:38)
     ☐ the exit
@@ -33,14 +33,14 @@ Refactor:
     ✔ maze cell has a set of flags instead of "lit" and "explored" @done(21-01-31 05:41)
     ✔ way for room panel to look up the sprite for an object type @done(21-02-01 05:54)
     ✔ terrain sprite manager and health level sprite manager are the same except for key types @done(21-02-01 05:54)
-    ☐ have descriptor types take a json object!
+    ✔ have descriptor types take a json object! @done(21-02-05 03:25)
     ✔ split out the room generation stuff from gamedata into the room generation context class @done(21-02-02 03:44)
     ✔ a list of things to call "finish" on. maybe finish manager? @done(21-02-02 04:27)
     ☐ "misc" sprite table
-    ☐ move locks into item type
-    ☐ move keys into item type
+    ✔ move locks into item type @done(21-02-05 03:25)
+    ✔ move keys into item type @done(21-02-05 03:25)
     ✔ move diamonds into item type @done(21-02-03 04:19)
-    ☐ get the number appearing in dead ends into the config
+    ✔ get the number appearing in dead ends into the config @done(21-02-05 03:25)
         how to configure "the rest"?
 Things To Add:
     ☐ creature descriptor
