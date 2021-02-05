@@ -6,9 +6,12 @@ StatusPanelRenderer::StatusPanelRenderer
 	(
 		SDL_Renderer* renderer, 
 		const tggd::common::SpriteFont& romFont, 
-		const GameData& gameData)
+		const tggd::common::SpriteManager& spriteManager,
+		const GameData& gameData
+	)
 	: BaseRenderer(renderer, romFont)
 	, gameData(gameData)
+	, spriteManager(spriteManager)
 {
 
 }
@@ -23,6 +26,15 @@ void StatusPanelRenderer::DrawGameOver() const
 			Constants::UI::StatusPanel::CLIP_Y + 96,//TODO: magic number
 			"Yer dead!",//TODO: magic string
 			Constants::Color::RED);
+	}
+	else if (gameData.GetHunter()->IsWinner())
+	{
+		GetRomFont().WriteText(
+			GetMainRenderer(),
+			Constants::UI::StatusPanel::CLIP_X,
+			Constants::UI::StatusPanel::CLIP_Y + 96,//TODO: magic number
+			"You win!",//TODO: magic string
+			Constants::Color::LIGHT_GREEN);
 	}
 }
 
@@ -50,10 +62,17 @@ void StatusPanelRenderer::Draw() const
 void StatusPanelRenderer::DrawMoves() const
 {
 	std::stringstream ss;
-	ss << "M: " << gameData.GetMoves();//TODO magic string
+	ss << gameData.GetMoves();//TODO magic string
+	spriteManager.GetSprite("MoveIcon")->Draw//TODO magic string
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
+		Constants::UI::StatusPanel::CLIP_Y,//TODO: magic number
+		Constants::Color::WHITE
+	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
 		Constants::UI::StatusPanel::CLIP_Y,
 		ss.str(),
 		Constants::Color::WHITE);
@@ -62,10 +81,17 @@ void StatusPanelRenderer::DrawMoves() const
 void StatusPanelRenderer::DrawKeys() const
 {
 	std::stringstream ss;
-	ss << "K: " << gameData.GetHunter()->GetKeys();//TODO magic string
+	ss << gameData.GetHunter()->GetKeys();//TODO magic string
+	spriteManager.GetSprite("KeyItem")->Draw//TODO magic string
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
+		Constants::UI::StatusPanel::CLIP_Y + 16,//TODO: magic number
+		Constants::Color::WHITE
+	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
 		Constants::UI::StatusPanel::CLIP_Y + 16,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
@@ -74,10 +100,17 @@ void StatusPanelRenderer::DrawKeys() const
 void StatusPanelRenderer::DrawWounds() const
 {
 	std::stringstream ss;
-	ss << "H: " << gameData.GetHunter()->GetHealth() << "/" << gameData.GetHunter()->GetMaximumHealth();//TODO magic string
+	ss << gameData.GetHunter()->GetHealth() << "/" << gameData.GetHunter()->GetMaximumHealth();//TODO magic string
+	spriteManager.GetSprite("PotionItem")->Draw//TODO magic string
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
+		Constants::UI::StatusPanel::CLIP_Y + 32,//TODO: magic number
+		Constants::Color::WHITE
+	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
 		Constants::UI::StatusPanel::CLIP_Y + 32,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
@@ -86,10 +119,17 @@ void StatusPanelRenderer::DrawWounds() const
 void StatusPanelRenderer::DrawArmor() const
 {
 	std::stringstream ss;
-	ss << "A: " << gameData.GetHunter()->GetArmor() << "/" << gameData.GetHunter()->GetMaximumArmor();//TODO magic string
+	ss << gameData.GetHunter()->GetArmor() << "/" << gameData.GetHunter()->GetMaximumArmor();//TODO magic string
+	spriteManager.GetSprite("ShieldItem")->Draw//TODO magic string
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
+		Constants::UI::StatusPanel::CLIP_Y+48,//TODO: magic number
+		Constants::Color::WHITE
+	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
 		Constants::UI::StatusPanel::CLIP_Y + 48,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
@@ -99,10 +139,17 @@ void StatusPanelRenderer::DrawArmor() const
 void StatusPanelRenderer::DrawAttack() const
 {
 	std::stringstream ss;
-	ss << "X: " << gameData.GetHunter()->GetMaximumAttack();//TODO magic string
+	ss << gameData.GetHunter()->GetMaximumAttack();//TODO magic string
+	spriteManager.GetSprite("SwordItem")->Draw//TODO magic string
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
+		Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
+		Constants::Color::WHITE
+	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_X + 16,
 		Constants::UI::StatusPanel::CLIP_Y + 80,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);
@@ -112,10 +159,17 @@ void StatusPanelRenderer::DrawAttack() const
 void StatusPanelRenderer::DrawDiamonds() const
 {
 	std::stringstream ss;
-	ss << "D: " << gameData.GetHunter()->GetDiamonds();//TODO magic string
+	ss << gameData.GetHunter()->GetDiamonds();//TODO magic string
+	spriteManager.GetSprite("DiamondItem")->Draw//TODO magic string
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::CLIP_X,//TODO: magic number
+		Constants::UI::StatusPanel::CLIP_Y + 64,//TODO: magic number
+		Constants::Color::WHITE
+	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::CLIP_X,
+		Constants::UI::StatusPanel::CLIP_X + 16,//TODO: magic number
 		Constants::UI::StatusPanel::CLIP_Y + 64,//TODO: magic number
 		ss.str(),
 		Constants::Color::WHITE);

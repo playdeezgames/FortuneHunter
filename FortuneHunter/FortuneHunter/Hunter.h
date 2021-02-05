@@ -44,4 +44,5 @@ public:
 	int GetDiamonds() const;
 	int GetArmor() const;
 	bool IsAlive() const;
+	bool IsWinner() const;
 };

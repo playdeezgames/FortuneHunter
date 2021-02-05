@@ -219,7 +219,7 @@ std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> Gam
 void GameData::MoveHunter(RoomDirection direction)
 {
 	Hunter* hunter = GetHunter();
-	if (hunter && hunter->IsAlive())
+	if (hunter && hunter->IsAlive() && !hunter->IsWinner())
 	{
 		tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = hunter->GetRoomCell();
 		int roomColumn = (int)cell->GetColumn();

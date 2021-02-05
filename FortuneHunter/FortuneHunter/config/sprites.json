@@ -2053,6 +2053,20 @@
     "w": 16,
     "h": 16
   },
+  "SwordItem": {
+    "texture": "tiles",
+    "x": 0,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
+  "MoveIcon": {
+    "texture": "tiles",
+    "x": 16,
+    "y": 64,
+    "w": 16,
+    "h": 16
+  },
   "ShieldItem": {
     "texture": "tiles",
     "x": 64,

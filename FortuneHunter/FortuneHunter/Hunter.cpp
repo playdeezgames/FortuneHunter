@@ -193,3 +193,8 @@ int Hunter::GetMaximumAttack() const
 {
 	return hunterDescriptor.GetMaximumAttack(maximumAttackLevel);
 }
+
+bool Hunter::IsWinner() const
+{
+	return exited;
+}

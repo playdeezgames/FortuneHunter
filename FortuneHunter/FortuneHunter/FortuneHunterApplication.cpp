@@ -58,7 +58,7 @@ void FortuneHunterApplication::Start()
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
 	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
 
-	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, gameData);
+	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, spriteManager, gameData);
 	roomPanelRenderer = 
 		new RoomPanelRenderer
 		(
