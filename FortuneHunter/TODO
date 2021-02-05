@@ -7,6 +7,7 @@ Placeholder Screens:
     ☐ options screen
         control sfx volume
         control mux volume
+        mute
 Gameplay:
     ✘ torches? @cancelled(21-02-05 03:25)
     ✘ limited inventory space @cancelled(21-02-05 03:25)
@@ -16,14 +17,14 @@ Gameplay:
     ✘ secret doors @cancelled(21-02-05 03:25)
     ✔ monsters @done(21-02-05 03:25)
         ✔ zombies @done(21-02-05 03:25)
-    ☐ weapons
+    ✔ weapons @done(21-02-05 04:47)
         ✔ a big stick @done(21-02-05 03:26)
         ✘ yer fists @cancelled(21-02-05 03:26)
     ✔ armor @done(21-02-05 03:25)
     ✔ potions/food @done(21-02-05 03:26)
     ✔ locks @done(21-01-28 05:37)
     ✔ keys @done(21-01-28 05:38)
-    ☐ the exit
+    ✔ the exit @done(21-02-05 04:47)
     ✔ more "loopy" mazes @done(21-01-30 06:44)
     ✘ more than one kind of lock @cancelled(21-01-31 05:41)
         ✘ three types for "normal" doors @cancelled(21-01-31 05:41)
@@ -48,9 +49,9 @@ Things To Add:
         ☐ die sound
         ☐ hit hunter sound
 Whimsy:
-    ☐ burn the zombies
+    ✘ burn the zombies @cancelled(21-02-05 04:48)
         they can attack you and you might burn
-Sound Effects:
+Audio:
     ✔ get key @done(21-01-28 05:57)
     ✔ bump wall @done(21-01-29 04:19)
     ✔ bump door/no key @done(21-01-29 04:13)
@@ -63,6 +64,7 @@ Sound Effects:
     ☐ hunter killed
     ☐ exit key
     ☐ exit
+    ☐ music!
 Bug:
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
     ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39)
