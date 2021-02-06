@@ -193,7 +193,6 @@ void GameData::AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType
 		cell->SetObject(nullptr);
 		nextCell->SetObject(hunter);
 	}
-
 }
 
 std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> GameData::DetermineAdjacentCells

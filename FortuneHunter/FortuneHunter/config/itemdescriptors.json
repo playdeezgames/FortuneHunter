@@ -34,7 +34,7 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": "ting"
+        "pickUpSfx": "exit"
     },
     "4": {
         "itemType": 4,
@@ -44,7 +44,7 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": "ting"
+        "pickUpSfx": "exitkey"
     },
     "5": {
         "itemType": 5,

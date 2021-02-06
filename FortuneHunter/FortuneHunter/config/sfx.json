@@ -2,6 +2,8 @@
   "ting": "assets/audio/sfx/ting.wav",
   "unlock": "assets/audio/sfx/unlock.wav",
   "getkey": "assets/audio/sfx/getkey.wav",
+  "exitkey": "assets/audio/sfx/exitkey.wav",
+  "exit": "assets/audio/sfx/exit.wav",
   "doorlocked": "assets/audio/sfx/doorlocked.wav",
   "bumpwall": "assets/audio/sfx/bumpwall.wav",
   "getshield": "assets/audio/sfx/getshield.wav",
