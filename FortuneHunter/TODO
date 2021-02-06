@@ -45,12 +45,12 @@ Refactor:
     ✔ get the number appearing in dead ends into the config @done(21-02-05 03:25)
         how to configure "the rest"?
 Things To Add:
-    ☐ creature descriptor
-        ☐ get hit sound
-        ☐ die sound
-    ☐ hunter descriptor
-        ☐ get hit sound
-        ☐ die sound
+    ✔ creature descriptor @done(21-02-06 04:35)
+        ✔ get hit sound @done(21-02-06 04:35)
+        ✔ die sound @done(21-02-06 04:35)
+    ✔ hunter descriptor @done(21-02-06 04:35)
+        ✔ get hit sound @done(21-02-06 04:35)
+        ✔ die sound @done(21-02-06 04:35)
 Whimsy:
     ✘ burn the zombies @cancelled(21-02-05 04:48)
         they can attack you and you might burn
@@ -60,11 +60,11 @@ Audio:
     ✔ bump door/no key @done(21-01-29 04:13)
     ✔ unlock door @done(21-01-28 05:57)
     ✘ step @cancelled(21-01-29 04:07)
-    ☐ get diamond
-    ☐ hit zombie
-    ☐ kill zombie
-    ☐ hunter hit
-    ☐ hunter killed
+    ✔ get diamond @done(21-02-06 04:44)
+    ✔ hit zombie @done(21-02-06 04:35)
+    ✔ kill zombie @done(21-02-06 04:35)
+    ✔ hunter hit @done(21-02-06 04:35)
+    ✔ hunter killed @done(21-02-06 04:35)
     ☐ exit key
     ☐ exit
     ☐ music!

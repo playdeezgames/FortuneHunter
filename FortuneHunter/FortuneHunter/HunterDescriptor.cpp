@@ -5,6 +5,8 @@
 const std::string PROPERTY_MAXIMUM_HEALTHS = "maximumHealths";
 const std::string PROPERTY_MAXIMUM_ATTACKS = "maximumAttacks";
 const std::string PROPERTY_MAXIMUM_ARMOR = "maximumArmors";
+const std::string PROPERTY_DAMAGE_SFX = "damageSfx";
+const std::string PROPERTY_DEATH_SFX = "deathSfx";
 HunterDescriptor::HunterDescriptor()
 	: maximumHealths()
 	, maximumAttacks()
@@ -31,6 +33,9 @@ void HunterDescriptor::Start(const std::string& fileName)
 	{
 		maximumArmors.push_back(maxArmor);
 	}
+	deathSfx = j[PROPERTY_DEATH_SFX];
+	damageSfx = j[PROPERTY_DAMAGE_SFX];
+
 }
 
 int HunterDescriptor::GetMaximumHealth(size_t level) const
@@ -52,4 +57,12 @@ int HunterDescriptor::GetMaximumArmor(size_t level) const
 	return maximumArmors[level];
 }
 
+const std::string HunterDescriptor::GetDamageSfx() const
+{
+	return damageSfx;
+}
 
+const std::string HunterDescriptor::GetDeathSfx() const
+{
+	return deathSfx;
+}

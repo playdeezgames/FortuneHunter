@@ -220,6 +220,35 @@ std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> Gam
 	return result;
 }
 
+void GameData::ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*>& adjacentCells)
+{
+	bool wasHit = false;
+	for (auto adjacentCell : adjacentCells)
+	{
+		if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
+		{
+			Creature* creature = dynamic_cast<Creature*>(adjacentCell->GetObject());
+			if (creature)
+			{
+				hunter->AddWounds(creature->GetAttackStrength());
+				wasHit = true;
+			}
+		}
+	}
+	if (wasHit)
+	{
+		if (hunter->IsAlive())
+		{
+			soundManager.PlaySound(hunterDescriptor.GetDamageSfx());
+		}
+		else
+		{
+			soundManager.PlaySound(hunterDescriptor.GetDeathSfx());
+		}
+	}
+}
+
+
 void GameData::MoveHunter(RoomDirection direction)
 {
 	Hunter* hunter = GetHunter();
@@ -240,18 +269,7 @@ void GameData::MoveHunter(RoomDirection direction)
 		{
 			soundManager.PlaySound(Constants::Sounds::BUMP_WALL);
 		}
-		for (auto adjacentCell : adjacentCells)//TODO: this loop goes into its own function
-		{
-			if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
-			{
-				Creature* creature = dynamic_cast<Creature*>(adjacentCell->GetObject());
-				if (creature)
-				{
-					hunter->AddWounds(creature->GetAttackStrength());
-					//TODO: sound for hunter hit or dead!
-				}
-			}
-		}
+		ResolveAttacksOnHunter(adjacentCells);
 		hunter->IncrementMoves();
 		UpdateRoom();
 	}

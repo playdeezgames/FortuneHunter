@@ -31,6 +31,7 @@ private:
 	void ClearLights();
 	void LightAndExploreAroundHunter();
 	void AttackCreature(Creature*);
+	void ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*>&);
 	bool InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
 	void AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*);
 	bool AttemptToPickUpItem(Item*);

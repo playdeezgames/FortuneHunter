@@ -7,5 +7,7 @@
     ],
     "maximumArmors": [
         10, 15, 20, 25
-    ]
+    ],
+    "damageSfx": "hithunter",
+    "deathSfx": "deadhunter"
 }
