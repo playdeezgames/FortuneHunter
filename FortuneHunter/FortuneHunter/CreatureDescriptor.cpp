@@ -2,6 +2,8 @@
 const std::string PROPERTY_SPAWN_OBJECT = "canSpawnOnObject";
 const std::string PROPERTY_HEALTH = "health";
 const std::string PROPERTY_ATTACK_STRENGTH = "attackStrength";
+const std::string PROPERTY_DAMAGE_SFX = "damageSfx";
+const std::string PROPERTY_DEATH_SFX = "deathSfx";
 
 CreatureDescriptor::CreatureDescriptor
 (
@@ -19,6 +21,8 @@ CreatureDescriptor::CreatureDescriptor
 	}
 	health = properties[PROPERTY_HEALTH];
 	attackStrength = properties[PROPERTY_ATTACK_STRENGTH];
+	deathSfx = properties[PROPERTY_DEATH_SFX];
+	damageSfx = properties[PROPERTY_DAMAGE_SFX];
 }
 
 bool CreatureDescriptor::CanSpawnOnObject(ObjectType objectType) const
@@ -34,4 +38,14 @@ int CreatureDescriptor::GetHealth() const
 int CreatureDescriptor::GetAttackStrength() const
 {
 	return attackStrength;
+}
+
+const std::string CreatureDescriptor::GetDamageSfx() const
+{
+	return damageSfx;
+}
+
+const std::string CreatureDescriptor::GetDeathSfx() const
+{
+	return deathSfx;
 }

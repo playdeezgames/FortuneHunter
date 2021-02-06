@@ -13,6 +13,8 @@
       9
     ],
     "health": 10,
-    "attackStrength": 1
+    "attackStrength": 1,
+    "damageSfx": "hitzombie",
+    "deathSfx": "deadzombie"
   }
 }

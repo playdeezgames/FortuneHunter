@@ -126,13 +126,17 @@ void GameData::AttackCreature(Creature* creature)
 	if (creature)
 	{
 		creature->AddWounds(hunter->GetAttackStrength());
-		//TODO: play "hit" or "death" sounds for creature
 		if (creature->IsDead())
 		{
+			soundManager.PlaySound(creature->GetDescriptor()->GetDeathSfx());
 			auto creatureCell = creature->GetRoomCell();
 			auto drop = creature->GetDrop();
 			creatureCell->RemoveObject();
 			creatureCell->SetObject(drop);
+		}
+		else
+		{
+			soundManager.PlaySound(creature->GetDescriptor()->GetDamageSfx());
 		}
 	}
 }
