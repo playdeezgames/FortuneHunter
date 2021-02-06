@@ -85,7 +85,7 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": ""
+        "pickUpSfx": "woohoo"
     },
     "9": {
         "itemType": 9,
@@ -95,7 +95,7 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": ""
+        "pickUpSfx": "woohoo"
     },
     "10": {
         "itemType": 10,
@@ -105,6 +105,6 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": ""
+        "pickUpSfx": "woohoo"
     }
 }

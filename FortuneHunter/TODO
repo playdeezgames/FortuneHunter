@@ -68,9 +68,9 @@ Audio:
     ✔ exit key @done(21-02-06 05:08)
     ✔ exit @done(21-02-06 05:08)
     ☐ music!
-    ☐ upgrade health
-    ☐ upgrade weapon
-    ☐ upgrade armor
+    ✔ upgrade health @done(21-02-06 05:19)
+    ✔ upgrade weapon @done(21-02-06 05:19)
+    ✔ upgrade armor @done(21-02-06 05:19)
 Bug:
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
     ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39)
