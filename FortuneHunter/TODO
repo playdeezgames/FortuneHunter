@@ -4,11 +4,12 @@ Placeholder Screens:
         go back to main menu
     ☐ about screen
         go back to main menu
-    ☐ options screen
+    ✔ options screen @done(21-02-07 05:42)
         control sfx volume
         control mux volume
         mute
 Gameplay:
+    ☐ trap tiles
     ☐ mini-boss? for  each upgrade have a monster to fight in order to get it
     ☐ difficulty levels?
     ✘ torches? @cancelled(21-02-05 03:25)
@@ -53,6 +54,8 @@ Things To Add:
         ✔ get hit sound @done(21-02-06 04:35)
         ✔ die sound @done(21-02-06 04:35)
 Whimsy:
+    ☐ area effects
+    ☐ monster that move and chase you
     ✘ burn the zombies @cancelled(21-02-05 04:48)
         they can attack you and you might burn
 Audio:
