@@ -260,6 +260,9 @@
     <ClCompile Include="Options.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="OptionsState.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -497,6 +500,9 @@
       <Filter>Header Files\Hunter</Filter>
     </ClInclude>
     <ClInclude Include="Options.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsState.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
