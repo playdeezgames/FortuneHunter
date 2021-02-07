@@ -35,6 +35,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectSprites.cpp" />
     <ClCompile Include="Options.cpp" />
+    <ClCompile Include="OptionsCommandProcessor.cpp" />
     <ClCompile Include="OptionsState.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Utility.cpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="CommandProcessor.h" />
     <ClInclude Include="ObjectSprites.h" />
     <ClInclude Include="Options.h" />
+    <ClInclude Include="OptionsCommandProcessor.h" />
     <ClInclude Include="OptionsState.h" />
     <ClInclude Include="RoomCellFlags.h" />
     <ClInclude Include="SpriteTable.h" />

@@ -67,4 +67,3 @@ public:
 	void Draw() const;
 	void OnEvent(const SDL_Event&);
 };
-

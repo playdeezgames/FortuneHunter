@@ -9,5 +9,5 @@ private:
 public:
 	Options(tggd::common::SoundManager&, const std::string&);
 	void Start();
-	void Save();
+	void Save() const;
 };

@@ -90,9 +90,18 @@ namespace tggd::common
 		return muted;
 	}
 
+	int ClampVolume(int volume)
+	{
+		return
+			(volume < 0) ? (0) :
+			(volume > SDL_MIX_MAXVOLUME) ? (SDL_MIX_MAXVOLUME) :
+			(volume);
+
+	}
+
 	void SoundManager::SetSfxVolume(int volume)
 	{
-		sfxVolume = volume;
+		sfxVolume = ClampVolume(volume);
 		for (auto& entry : sounds)
 		{
 			Mix_VolumeChunk(entry.second, sfxVolume);
@@ -101,7 +110,7 @@ namespace tggd::common
 
 	void SoundManager::SetMuxVolume(int volume)
 	{
-		muxVolume = volume;
+		muxVolume = ClampVolume(volume);
 		Mix_VolumeMusic(muxVolume);
 	}
 

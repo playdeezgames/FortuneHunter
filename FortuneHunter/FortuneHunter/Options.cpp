@@ -23,7 +23,7 @@ void Options::Start()
 	soundManager.SetMuxVolume((int)properties[PROPERTY_MUX_VOLUME]);
 }
 
-void Options::Save()
+void Options::Save() const
 {
 	FILE* output = nullptr;
 	if (0 == fopen_s(&output, fileName.c_str(), "w"))
