@@ -12,5 +12,6 @@
   "deadzombie": "assets/audio/sfx/deadzombie.wav",
   "hithunter": "assets/audio/sfx/hithunter.wav",
   "deadhunter": "assets/audio/sfx/deadhunter.wav",
-  "woohoo": "assets/audio/sfx/woohoo.wav"
+  "woohoo": "assets/audio/sfx/woohoo.wav",
+  "trap": "assets/audio/sfx/trap.wav"
 }

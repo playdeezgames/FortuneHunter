@@ -114,6 +114,6 @@
         "canSpawnOnTerrain": [
             0
         ],
-        "pickUpSfx": ""
+        "pickUpSfx": "trap"
     }
 }
