@@ -16,6 +16,7 @@ private:
 	bool exitKey;
 	bool exited;
 	int armor;
+	bool hit;
 	size_t maximumHealthLevel;
 	size_t maximumArmorLevel;
 	size_t maximumAttackLevel;
@@ -27,6 +28,7 @@ private:
 	void AddKey();
 	bool HasKey() const;
 	void RemoveKey();
+	void SetOffTrap();
 public:
 	Hunter(const HunterDescriptor&);
 	size_t GetKeys() const;
@@ -43,6 +45,8 @@ public:
 	void PickUp(ItemType);
 	int GetDiamonds() const;
 	int GetArmor() const;
+	void ClearHit();
+	bool WasHit() const;
 	bool IsAlive() const;
 	bool IsWinner() const;
 };

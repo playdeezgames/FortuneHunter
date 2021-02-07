@@ -221,7 +221,6 @@ std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*> Gam
 
 void GameData::ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*>& adjacentCells)
 {
-	bool wasHit = false;
 	for (auto adjacentCell : adjacentCells)
 	{
 		if (adjacentCell != hunter->GetRoomCell() && adjacentCell->GetObject())
@@ -230,11 +229,11 @@ void GameData::ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<T
 			if (creature)
 			{
 				hunter->AddWounds(creature->GetAttackStrength());
-				wasHit = true;
 			}
 		}
 	}
-	if (wasHit)
+	//TODO: this should be its own function
+	if (hunter->WasHit())
 	{
 		if (hunter->IsAlive())
 		{
@@ -250,7 +249,7 @@ void GameData::ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<T
 
 void GameData::MoveHunter(RoomDirection direction)
 {
-	Hunter* hunter = GetHunter();
+	hunter->ClearHit();
 	if (hunter && hunter->IsAlive() && !hunter->IsWinner())
 	{
 		tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = hunter->GetRoomCell();

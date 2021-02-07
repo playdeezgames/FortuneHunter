@@ -64,6 +64,10 @@ int Hunter::GetAttackStrength() const
 
 void Hunter::AddWounds(int amount)
 {
+	if (amount > 0)
+	{
+		hit = true;
+	}
 	int absorbed = (armor >= amount) ? (amount) : (0);
 	amount -= absorbed;
 	armor -= absorbed;
@@ -118,6 +122,9 @@ void Hunter::PickUp(ItemType itemType)
 		break;
 	case ItemType::EXIT:
 		AddExit();
+		break;
+	case ItemType::TRAP:
+		SetOffTrap();
 		break;
 	case ItemType::ARMOR_UPGRADE:
 		maximumArmorLevel++;
@@ -197,4 +204,19 @@ int Hunter::GetMaximumAttack() const
 bool Hunter::IsWinner() const
 {
 	return exited;
+}
+
+void Hunter::SetOffTrap()
+{
+	AddWounds(1);
+}
+
+void Hunter::ClearHit()
+{
+	hit = false;
+}
+
+bool Hunter::WasHit() const
+{
+	return hit;
 }

@@ -106,5 +106,14 @@
             16
         ],
         "pickUpSfx": "woohoo"
+    },
+    "11": {
+        "itemType": 11,
+        "objectType": 13,
+        "numberAppearing": 60,
+        "canSpawnOnTerrain": [
+            0
+        ],
+        "pickUpSfx": ""
     }
 }
