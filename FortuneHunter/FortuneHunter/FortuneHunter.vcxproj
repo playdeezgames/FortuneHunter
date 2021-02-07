@@ -34,6 +34,7 @@
     <ClCompile Include="ControllerManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectSprites.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="FortuneHunterEventHandler.cpp" />
@@ -83,6 +84,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="CommandProcessor.h" />
     <ClInclude Include="ObjectSprites.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="RoomCellFlags.h" />
     <ClInclude Include="SpriteTable.h" />
     <ClInclude Include="XY.h" />

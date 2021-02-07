@@ -15,6 +15,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
 	, finishManager()
 	, soundManager(finishManager)
+	, options(soundManager, Constants::Config::Files::OPTIONS)
 	, textureManager(finishManager)
 	, uiState(UIState::MAIN_MENU)
 	, mainMenuState(MainMenuState::START)
@@ -50,6 +51,7 @@ void FortuneHunterApplication::Start()
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
+	options.Start();
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
 	healthLevelSprites.Start(spriteManager, Constants::Config::Files::HEALTHLEVELSPRITES);
 	objectSprites.Start(spriteManager, Constants::Config::Files::OBJECTSPRITES);

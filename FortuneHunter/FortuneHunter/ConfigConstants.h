@@ -15,5 +15,6 @@ namespace Constants::Config
 		const std::string ITEMDESCRIPTORS = "config/itemdescriptors.json";
 		const std::string HEALTHLEVELSPRITES = "config/healthlevelsprites.json";
 		const std::string OBJECTSPRITES = "config/objectsprites.json";
+		const std::string OPTIONS = "config/options.json";
 	}
 }

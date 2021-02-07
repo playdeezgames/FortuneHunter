@@ -257,6 +257,9 @@
     <ClCompile Include="Hunter.cpp">
       <Filter>Source Files\Hunter</Filter>
     </ClCompile>
+    <ClCompile Include="Options.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -492,6 +495,9 @@
     </ClInclude>
     <ClInclude Include="Hunter.h">
       <Filter>Header Files\Hunter</Filter>
+    </ClInclude>
+    <ClInclude Include="Options.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

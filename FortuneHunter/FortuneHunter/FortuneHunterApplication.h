@@ -23,6 +23,7 @@
 #include "ItemDescriptorManager.h"
 #include "FinishManager.h"
 #include "HunterDescriptor.h"
+#include "Options.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -31,6 +32,7 @@ private:
 	tggd::common::FinishManager finishManager;
 
 	tggd::common::SoundManager soundManager;
+	Options options;
 	tggd::common::TextureManager textureManager;
 	tggd::common::SpriteManager spriteManager;
 	tggd::common::SpriteFont romFont;
