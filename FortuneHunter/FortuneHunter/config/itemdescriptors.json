@@ -2,7 +2,7 @@
     "0": {
         "itemType": 0,
         "objectType": 8,
-        "numberAppearing": 50,
+        "numberAppearing": 15,
         "canSpawnOnTerrain": [
             0
         ],
@@ -11,7 +11,7 @@
     "1": {
         "itemType": 1,
         "objectType": 9,
-        "numberAppearing": 25,
+        "numberAppearing": 30,
         "canSpawnOnTerrain": [
             0
         ],

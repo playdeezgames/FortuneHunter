@@ -1,6 +1,6 @@
 {
     "maximumHealths": [
-        20, 25, 30, 35
+        10, 15, 20, 25
     ],
     "maximumAttacks": [
         4, 6, 8, 10
