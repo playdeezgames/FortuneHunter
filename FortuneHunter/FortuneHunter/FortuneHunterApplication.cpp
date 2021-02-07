@@ -9,6 +9,8 @@
 #include "ConfirmQuitRenderer.h"
 #include "InPlayRenderer.h"
 #include "Utility.h"
+#include "OptionsCommandProcessor.h"
+#include "OptionsRenderer.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -35,6 +37,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, healthLevelSprites(finishManager)
 	, objectSprites(finishManager)
 	, roomPanelRenderer(nullptr)
+	, optionsState(OptionsState::BACK)
 {
 
 }
@@ -59,6 +62,7 @@ void FortuneHunterApplication::Start()
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
 	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
+	commandProcessors.AddCommandProcessor(UIState::OPTIONS, new OptionsCommandProcessor(uiState, optionsState, soundManager, options));
 
 	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, spriteManager, gameData);
 	roomPanelRenderer = 
@@ -76,6 +80,7 @@ void FortuneHunterApplication::Start()
 	renderers.AddRenderer(UIState::MAIN_MENU, new MainMenuRenderer(GetMainRenderer(), romFont, mainMenuState));
 	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
 	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, statusPanelRenderer, roomPanelRenderer, gameData));
+	renderers.AddRenderer(UIState::OPTIONS, new OptionsRenderer(GetMainRenderer(), romFont, soundManager, optionsState));
 }
 
 void FortuneHunterApplication::Finish()

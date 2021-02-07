@@ -4,5 +4,6 @@ enum class UIState
 	MAIN_MENU,
 	CONFIRM_QUIT,
 	QUIT,
-	IN_PLAY
+	IN_PLAY,
+	OPTIONS
 };

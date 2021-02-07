@@ -77,9 +77,12 @@ void OptionsCommandProcessor::DoGreenAction()
 	}
 }
 
+const std::string SAMPLE_SOUND = "hithunter";
+
 void OptionsCommandProcessor::IncreaseSfxVolume()
 {
 	soundManager.SetSfxVolume(soundManager.GetSfxVolume() + VOLUME_DELTA);
+	soundManager.PlaySound(SAMPLE_SOUND);
 	options.Save();
 }
 
@@ -93,6 +96,7 @@ void OptionsCommandProcessor::IncreaseMuxVolume()
 void OptionsCommandProcessor::DecreaseSfxVolume()
 {
 	soundManager.SetSfxVolume(soundManager.GetSfxVolume() - VOLUME_DELTA);
+	soundManager.PlaySound(SAMPLE_SOUND);
 	options.Save();
 }
 

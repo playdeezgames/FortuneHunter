@@ -1,6 +1,7 @@
 #pragma once
 #include "CellConstants.h"
 #include "UIConstants.h"
+#include <string>
 namespace Constants::UI::MainMenu
 {
 	const int OFFSET_Y = Constants::Cell::HEIGHT * 2;
@@ -9,6 +10,6 @@ namespace Constants::UI::MainMenu
 	const std::string OPTION_START = "Start";
 	const std::string OPTION_INSTRUCTIONS = "Instructions(TODO)";
 	const std::string OPTION_ABOUT = "About(TODO)";
-	const std::string OPTION_OPTIONS = "Options(TODO)";
+	const std::string OPTION_OPTIONS = "Options";
 	const std::string OPTION_QUIT = "Quit";
 }
