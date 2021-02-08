@@ -8,7 +8,19 @@ Placeholder Screens:
         control sfx volume
         control mux volume
         mute
+    ☐ statistics screen
 Gameplay:
+    ☐ scoring
+        diamond
+        found exit key
+        exit bonus
+        health left
+    ☐ statistics tracking
+        games played
+        games won
+        games lost
+        high score
+        total score(allows calculation of average score)
     ✔ trap tiles @done(21-02-07 06:37)
     ✔ mini-boss? for  each upgrade have a monster to fight in order to get it @done(21-02-08 03:52)
     ✘ difficulty levels? @cancelled(21-02-07 06:38)
@@ -76,7 +88,7 @@ Audio:
     ✔ upgrade weapon @done(21-02-06 05:19)
     ✔ upgrade armor @done(21-02-06 05:19)
 Bug:
-    ☐ going back to main menu and then selecting start makes a new game even if one is in session
+    ✔ going back to main menu and then selecting start makes a new game even if one is in session @done(21-02-08 04:04)
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
     ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39)
     ✔ lock opening does not stop the hunter from moving @done(21-02-03 05:15)

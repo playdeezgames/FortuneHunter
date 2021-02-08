@@ -46,6 +46,7 @@ public:
 	);
 	~GameData();
 	const Hunter* GetHunter() const;
+	bool CanContinue() const;
 	const tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& GetRoom() const;
 	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags>& GetRoom();
 	void Start();

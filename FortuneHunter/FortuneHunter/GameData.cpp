@@ -272,3 +272,8 @@ void GameData::MoveHunter(RoomDirection direction)
 		UpdateRoom();
 	}
 }
+
+bool GameData::CanContinue() const
+{
+	return hunter && hunter->IsAlive() && !hunter->IsWinner();
+}

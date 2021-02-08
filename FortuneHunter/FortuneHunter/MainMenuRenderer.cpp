@@ -2,9 +2,16 @@
 #include "ColorConstants.h"
 #include "MainMenuConstants.h"
 
-MainMenuRenderer::MainMenuRenderer(SDL_Renderer* renderer, const tggd::common::SpriteFont& romFont, const MainMenuState& mainMenuState)
+MainMenuRenderer::MainMenuRenderer
+(
+	SDL_Renderer* renderer, 
+	const tggd::common::SpriteFont& romFont, 
+	const MainMenuState& mainMenuState, 
+	const GameData& gameData
+)
 	: BaseRenderer(renderer, romFont)
 	, mainMenuState(mainMenuState)
+	, gameData(gameData)
 {
 
 }
@@ -12,7 +19,14 @@ MainMenuRenderer::MainMenuRenderer(SDL_Renderer* renderer, const tggd::common::S
 void MainMenuRenderer::Draw() const
 {
 	GetRomFont().WriteText(GetMainRenderer(), 0, 0, Constants::UI::MainMenu::TITLE, Constants::Color::GREEN);
-	DrawMenuItem(0, Constants::UI::MainMenu::OPTION_START, MainMenuState::START);
+	if (gameData.CanContinue())
+	{
+		DrawMenuItem(0, Constants::UI::MainMenu::OPTION_CONTINUE, MainMenuState::START);
+	}
+	else
+	{
+		DrawMenuItem(0, Constants::UI::MainMenu::OPTION_START, MainMenuState::START);
+	}
 	DrawMenuItem(1, Constants::UI::MainMenu::OPTION_INSTRUCTIONS, MainMenuState::INSTRUCTIONS);
 	DrawMenuItem(2, Constants::UI::MainMenu::OPTION_ABOUT, MainMenuState::ABOUT);
 	DrawMenuItem(3, Constants::UI::MainMenu::OPTION_OPTIONS, MainMenuState::OPTIONS);
