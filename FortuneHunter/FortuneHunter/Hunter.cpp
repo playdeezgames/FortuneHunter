@@ -14,6 +14,7 @@ Hunter::Hunter(const HunterDescriptor& hunterDescriptor)
 	, maximumAttackLevel(0)
 	, maximumHealthLevel(0)
 	, bombsUsed(0)
+	, hit(false)
 {
 
 }
@@ -225,4 +226,12 @@ void Hunter::ClearHit()
 bool Hunter::WasHit() const
 {
 	return hit;
+}
+
+void Hunter::UseBomb()
+{
+	if (bombsUsed < hunterDescriptor.GetInitialBombs())
+	{
+		bombsUsed++;
+	}
 }

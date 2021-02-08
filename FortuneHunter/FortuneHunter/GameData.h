@@ -31,6 +31,7 @@ private:
 	void ClearLights();
 	void LightAndExploreAroundHunter();
 	void AttackCreature(Creature*);
+	void DamageCreature(Creature*, int);
 	void ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*>&);
 	bool InteractWithCellObject(tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*);
 	void AttemptToEnterCell(tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*);
@@ -52,4 +53,5 @@ public:
 	void Start();
 	size_t GetMoves() const;
 	void MoveHunter(RoomDirection);
+	void UseBomb();
 };

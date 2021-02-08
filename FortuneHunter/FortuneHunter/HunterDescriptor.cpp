@@ -80,3 +80,13 @@ size_t HunterDescriptor::GetInitialBombs() const
 {
 	return initialBombs;
 }
+
+const std::string HunterDescriptor::GetBombSfx() const
+{
+	return bombSfx;
+}
+
+const std::string HunterDescriptor::GetNoBombSfx() const
+{
+	return noBombSfx;
+}

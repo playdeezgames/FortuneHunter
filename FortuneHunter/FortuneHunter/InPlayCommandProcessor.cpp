@@ -24,6 +24,9 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 	case Command::RIGHT:
 		gameData.MoveHunter(RoomDirection::EAST);
 		return;
+	case Command::GREEN:
+		gameData.UseBomb();
+		return;
 	}
 }
 

@@ -51,4 +51,5 @@ public:
 	bool IsAlive() const;
 	bool IsWinner() const;
 	size_t GetBombs() const;
+	void UseBomb();
 };
