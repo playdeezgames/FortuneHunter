@@ -13,6 +13,7 @@ private:
 	void DrawArmor() const;
 	void DrawAttack() const;
 	void DrawDiamonds() const;
+	void DrawBombs() const;
 	void DrawGameOver() const;
 public:
 	StatusPanelRenderer

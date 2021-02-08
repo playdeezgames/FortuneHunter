@@ -10,6 +10,10 @@ Placeholder Screens:
         mute
     ☐ statistics screen
 Gameplay:
+    ☐ zombie bomb
+        does 10 damage to all zombies in lit area
+        hunter starts with 3
+        there is no way of getting any more
     ☐ scoring
         diamond
         found exit key
@@ -23,7 +27,7 @@ Gameplay:
         total score(allows calculation of average score)
     ✔ trap tiles @done(21-02-07 06:37)
     ✔ mini-boss? for  each upgrade have a monster to fight in order to get it @done(21-02-08 03:52)
-    ✘ difficulty levels? @cancelled(21-02-07 06:38)
+    ☐ difficulty levels?
     ✘ torches? @cancelled(21-02-05 03:25)
     ✘ limited inventory space @cancelled(21-02-05 03:25)
     ✔ treasures @done(21-02-05 03:25)
@@ -66,8 +70,8 @@ Things To Add:
         ✔ get hit sound @done(21-02-06 04:35)
         ✔ die sound @done(21-02-06 04:35)
 Whimsy:
-    ☐ area effects
-    ☐ monster that move and chase you
+    ✔ area effects - decided this is zombie bombs @done(21-02-08 04:12)
+    ✘ monster that move and chase you @cancelled(21-02-08 04:11)
     ✘ burn the zombies @cancelled(21-02-05 04:48)
         they can attack you and you might burn
 Audio:

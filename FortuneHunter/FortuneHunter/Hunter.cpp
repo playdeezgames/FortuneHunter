@@ -13,8 +13,14 @@ Hunter::Hunter(const HunterDescriptor& hunterDescriptor)
 	, maximumArmorLevel(0)
 	, maximumAttackLevel(0)
 	, maximumHealthLevel(0)
+	, bombsUsed(0)
 {
 
+}
+
+size_t Hunter::GetBombs() const
+{
+	return hunterDescriptor.GetInitialBombs() - bombsUsed;
 }
 
 size_t Hunter::GetKeys() const

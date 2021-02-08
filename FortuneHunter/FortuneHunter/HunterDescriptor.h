@@ -9,6 +9,7 @@ private:
 	std::vector<int> maximumArmors;
 	std::string damageSfx;
 	std::string deathSfx;
+	size_t initialBombs;
 public:
 	HunterDescriptor();
 	void Start(const std::string&);
@@ -17,5 +18,6 @@ public:
 	int GetMaximumArmor(size_t) const;
 	const std::string GetDamageSfx() const;
 	const std::string GetDeathSfx() const;
+	size_t GetInitialBombs() const;
 };
 

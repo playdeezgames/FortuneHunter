@@ -44,5 +44,11 @@ namespace Constants::UI::StatusPanel
 	const int KEYS_TEXT_Y = KEYS_ICON_Y;
 	const std::string KEYS_ICON_SPRITE_NAME = "KeyItem";
 
+	const int BOMBS_ICON_X = MOVE_ICON_X;
+	const int BOMBS_ICON_Y = KEYS_ICON_Y + Constants::Cell::HEIGHT;
+	const int BOMBS_TEXT_X = BOMBS_ICON_X + Constants::Cell::WIDTH;
+	const int BOMBS_TEXT_Y = BOMBS_ICON_Y;
+	const std::string BOMBS_ICON_SPRITE_NAME = "Bombs";
+
 }
 

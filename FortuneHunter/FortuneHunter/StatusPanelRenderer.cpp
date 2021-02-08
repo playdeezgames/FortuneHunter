@@ -23,7 +23,7 @@ void StatusPanelRenderer::DrawGameOver() const
 		GetRomFont().WriteText(
 			GetMainRenderer(),
 			Constants::UI::StatusPanel::CLIP_X,
-			Constants::UI::StatusPanel::CLIP_Y + 96,//TODO: magic number
+			Constants::UI::StatusPanel::CLIP_Y + 112,//TODO: magic number
 			"Yer dead!",//TODO: magic string
 			Constants::Color::RED);
 	}
@@ -32,10 +32,29 @@ void StatusPanelRenderer::DrawGameOver() const
 		GetRomFont().WriteText(
 			GetMainRenderer(),
 			Constants::UI::StatusPanel::CLIP_X,
-			Constants::UI::StatusPanel::CLIP_Y + 96,//TODO: magic number
+			Constants::UI::StatusPanel::CLIP_Y + 112,//TODO: magic number
 			"You win!",//TODO: magic string
 			Constants::Color::LIGHT_GREEN);
 	}
+}
+
+void StatusPanelRenderer::DrawBombs() const
+{
+	std::stringstream ss;
+	ss << gameData.GetHunter()->GetBombs();
+	spriteManager.GetSprite(Constants::UI::StatusPanel::BOMBS_ICON_SPRITE_NAME)->Draw
+	(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::BOMBS_ICON_X,
+		Constants::UI::StatusPanel::BOMBS_ICON_Y,
+		Constants::Color::WHITE
+	);
+	GetRomFont().WriteText(
+		GetMainRenderer(),
+		Constants::UI::StatusPanel::BOMBS_TEXT_X,
+		Constants::UI::StatusPanel::BOMBS_TEXT_Y,
+		ss.str(),
+		Constants::Color::WHITE);
 }
 
 
@@ -55,6 +74,7 @@ void StatusPanelRenderer::Draw() const
 	DrawArmor();
 	DrawDiamonds();
 	DrawAttack();
+	DrawBombs();
 	DrawGameOver();
 	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
 }

@@ -17,6 +17,7 @@ private:
 	bool exited;
 	int armor;
 	bool hit;
+	size_t bombsUsed;
 	size_t maximumHealthLevel;
 	size_t maximumArmorLevel;
 	size_t maximumAttackLevel;
@@ -49,4 +50,5 @@ public:
 	bool WasHit() const;
 	bool IsAlive() const;
 	bool IsWinner() const;
+	size_t GetBombs() const;
 };
