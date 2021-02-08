@@ -11,10 +11,10 @@ Placeholder Screens:
     ☐ statistics screen
 Gameplay:
     ☐ zombie bomb
-        does 10 damage to all zombies in lit area
-        hunter starts with 3
-        there is no way of getting any more
-        there is a bomb cool down?
+    there is no way of getting any more
+        ✔ does 10 damage to all zombies in lit area @done(21-02-08 05:49)
+        ✔ hunter starts with 3 @done(21-02-08 05:49)
+        ☐ there is a bomb cool down?
     ☐ scoring
         diamond
         found exit key
@@ -29,6 +29,10 @@ Gameplay:
     ✔ trap tiles @done(21-02-07 06:37)
     ✔ mini-boss? for  each upgrade have a monster to fight in order to get it @done(21-02-08 03:52)
     ☐ difficulty levels?
+        vary number of starting bombs
+        vary health upgrade levels
+        vary weapon upgrade levels
+        vary score multiplier
     ✘ torches? @cancelled(21-02-05 03:25)
     ✘ limited inventory space @cancelled(21-02-05 03:25)
     ✔ treasures @done(21-02-05 03:25)
@@ -76,8 +80,8 @@ Whimsy:
     ✘ burn the zombies @cancelled(21-02-05 04:48)
         they can attack you and you might burn
 Audio:
-    ☐ bomb
-    ☐ out of bombs
+    ✔ bomb @done(21-02-08 05:50)
+    ✔ out of bombs @done(21-02-08 05:50)
     ✔ get key @done(21-01-28 05:57)
     ✔ bump wall @done(21-01-29 04:19)
     ✔ bump door/no key @done(21-01-29 04:13)
