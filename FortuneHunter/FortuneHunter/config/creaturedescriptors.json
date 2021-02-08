@@ -17,5 +17,18 @@
     "attackStrength": 1,
     "damageSfx": "hitzombie",
     "deathSfx": "deadzombie"
+  },
+  "1": {
+    "objectType": 14,
+    "numberAppearing": 0,
+    "canSpawnOnTerrain": [
+      16
+    ],
+    "canSpawnOnObject": [
+    ],
+    "health": 20,
+    "attackStrength": 2,
+    "damageSfx": "hitzombie",
+    "deathSfx": "deadzombie"
   }
 }

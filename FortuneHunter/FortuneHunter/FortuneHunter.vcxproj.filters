@@ -310,9 +310,6 @@
     <ClInclude Include="Creature.h">
       <Filter>Header Files\Creatures</Filter>
     </ClInclude>
-    <ClInclude Include="CreatureType.h">
-      <Filter>Header Files\Creatures</Filter>
-    </ClInclude>
     <ClInclude Include="CreatureDescriptorManager.h">
       <Filter>Header Files\Creatures</Filter>
     </ClInclude>
@@ -519,6 +516,9 @@
     </ClInclude>
     <ClInclude Include="OptionsConstants.h">
       <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatureType.h">
+      <Filter>Header Files\Game\Enums</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

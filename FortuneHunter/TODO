@@ -9,9 +9,9 @@ Placeholder Screens:
         control mux volume
         mute
 Gameplay:
-    ☐ trap tiles
-    ☐ mini-boss? for  each upgrade have a monster to fight in order to get it
-    ☐ difficulty levels?
+    ✔ trap tiles @done(21-02-07 06:37)
+    ✔ mini-boss? for  each upgrade have a monster to fight in order to get it @done(21-02-08 03:52)
+    ✘ difficulty levels? @cancelled(21-02-07 06:38)
     ✘ torches? @cancelled(21-02-05 03:25)
     ✘ limited inventory space @cancelled(21-02-05 03:25)
     ✔ treasures @done(21-02-05 03:25)
@@ -33,14 +33,14 @@ Gameplay:
         ✘ three types for "normal" doors @cancelled(21-01-31 05:41)
         ✘ a fourth type for "special" doors where the key is only behind a different door @cancelled(21-01-31 05:41)
 Refactor:
-    ☐ maze cell flagifier for rendering
+    ✘ maze cell flagifier for rendering @cancelled(21-02-07 06:38)
     ✔ maze cell has a set of flags instead of "lit" and "explored" @done(21-01-31 05:41)
     ✔ way for room panel to look up the sprite for an object type @done(21-02-01 05:54)
     ✔ terrain sprite manager and health level sprite manager are the same except for key types @done(21-02-01 05:54)
     ✔ have descriptor types take a json object! @done(21-02-05 03:25)
     ✔ split out the room generation stuff from gamedata into the room generation context class @done(21-02-02 03:44)
     ✔ a list of things to call "finish" on. maybe finish manager? @done(21-02-02 04:27)
-    ☐ "misc" sprite table
+    ✘ "misc" sprite table @cancelled(21-02-07 06:38)
     ✔ move locks into item type @done(21-02-05 03:25)
     ✔ move keys into item type @done(21-02-05 03:25)
     ✔ move diamonds into item type @done(21-02-03 04:19)
@@ -76,6 +76,7 @@ Audio:
     ✔ upgrade weapon @done(21-02-06 05:19)
     ✔ upgrade armor @done(21-02-06 05:19)
 Bug:
+    ☐ going back to main menu and then selecting start makes a new game even if one is in session
     ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
     ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39)
     ✔ lock opening does not stop the hunter from moving @done(21-02-03 05:15)

@@ -85,7 +85,8 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": "woohoo"
+        "pickUpSfx": "woohoo",
+        "protectors": [ 1 ]
     },
     "9": {
         "itemType": 9,
@@ -95,7 +96,8 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": "woohoo"
+        "pickUpSfx": "woohoo",
+        "protectors": [ 1 ]
     },
     "10": {
         "itemType": 10,
@@ -105,7 +107,8 @@
         "canSpawnOnTerrain": [
             16
         ],
-        "pickUpSfx": "woohoo"
+        "pickUpSfx": "woohoo",
+        "protectors": [ 1 ]
     },
     "11": {
         "itemType": 11,

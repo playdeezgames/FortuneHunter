@@ -214,6 +214,25 @@ void RoomGenerator::PopulateCreatures()
 	}
 }
 
+void RoomGenerator::PlaceItem
+(
+	const ItemDescriptor* descriptor, 
+	tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell
+)
+{
+	if (descriptor->GetProtectors().empty())
+	{
+		cell->SetObject(new Item(descriptor));
+	}
+	else
+	{
+		int index = tggd::common::Utility::GenerateRandomNumberFromRange(0, (int)descriptor->GetProtectors().size());
+		CreatureType creatureType = descriptor->GetProtectors()[index];
+		cell->SetObject(new Creature(creatureDescriptors.GetDescriptor(creatureType), new Item(descriptor)));
+	}
+}
+
+
 void RoomGenerator::SpawnItem(const ItemDescriptor* descriptor)
 {
 	do
@@ -226,7 +245,7 @@ void RoomGenerator::SpawnItem(const ItemDescriptor* descriptor)
 		{
 			continue;
 		}
-		cell->SetObject(new Item(descriptor));
+		PlaceItem(descriptor, cell);
 		break;
 	} while (true);
 }
@@ -312,7 +331,7 @@ void RoomGenerator::PopulateDeadEndItem(ItemType itemType)
 		{
 			continue;
 		}
-		cell->SetObject(new Item(itemDescriptors.GetDescriptor(itemType)));
+		PlaceItem(itemDescriptors.GetDescriptor(itemType), cell);
 		RemoveDeadEndAtIndex(index);
 		break;
 	} while (true);

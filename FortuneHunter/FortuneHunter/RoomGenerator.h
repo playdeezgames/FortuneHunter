@@ -36,6 +36,7 @@ private:
 	void PopulateCreatures();
 	void PopulateLooseItems();
 	void SpawnItem(const ItemDescriptor*);
+	void PlaceItem(const ItemDescriptor*, tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*);
 public:
 	RoomGenerator
 	(
