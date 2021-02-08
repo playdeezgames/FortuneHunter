@@ -7,6 +7,8 @@ const std::string PROPERTY_MAXIMUM_ATTACKS = "maximumAttacks";
 const std::string PROPERTY_MAXIMUM_ARMOR = "maximumArmors";
 const std::string PROPERTY_DAMAGE_SFX = "damageSfx";
 const std::string PROPERTY_DEATH_SFX = "deathSfx";
+const std::string PROPERTY_BOMB_SFX = "bombSfx";
+const std::string PROPERTY_NO_BOMB_SFX = "noBombSfx";
 const std::string PROPERTY_INITIAL_BOMBS = "initialBombs";
 
 HunterDescriptor::HunterDescriptor()
@@ -40,6 +42,8 @@ void HunterDescriptor::Start(const std::string& fileName)
 	}
 	deathSfx = j[PROPERTY_DEATH_SFX];
 	damageSfx = j[PROPERTY_DAMAGE_SFX];
+	bombSfx = j[PROPERTY_BOMB_SFX];
+	noBombSfx = j[PROPERTY_NO_BOMB_SFX];
 	initialBombs = j[PROPERTY_INITIAL_BOMBS];
 }
 

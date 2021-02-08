@@ -13,5 +13,7 @@
   "hithunter": "assets/audio/sfx/hithunter.wav",
   "deadhunter": "assets/audio/sfx/deadhunter.wav",
   "woohoo": "assets/audio/sfx/woohoo.wav",
-  "trap": "assets/audio/sfx/trap.wav"
+  "trap": "assets/audio/sfx/trap.wav",
+  "badoosh": "assets/audio/sfx/badoosh.wav",
+  "shucks": "assets/audio/sfx/shucks.wav"
 }

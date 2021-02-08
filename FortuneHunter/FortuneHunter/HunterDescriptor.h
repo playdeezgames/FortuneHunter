@@ -10,6 +10,8 @@ private:
 	std::string damageSfx;
 	std::string deathSfx;
 	size_t initialBombs;
+	std::string bombSfx;
+	std::string noBombSfx;
 public:
 	HunterDescriptor();
 	void Start(const std::string&);
@@ -18,6 +20,8 @@ public:
 	int GetMaximumArmor(size_t) const;
 	const std::string GetDamageSfx() const;
 	const std::string GetDeathSfx() const;
+	const std::string GetBombSfx() const;
+	const std::string GetNoBombSfx() const;
 	size_t GetInitialBombs() const;
 };
 

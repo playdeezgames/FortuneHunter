@@ -1,14 +1,25 @@
 {
     "maximumHealths": [
-        10, 15, 20, 25
+        10,
+        15,
+        20,
+        25
     ],
     "maximumAttacks": [
-        4, 6, 8, 10
+        4,
+        6,
+        8,
+        10
     ],
     "maximumArmors": [
-        10, 15, 20, 25
+        10,
+        15,
+        20,
+        25
     ],
     "damageSfx": "hithunter",
     "deathSfx": "deadhunter",
-    "initialBombs" : 3
+    "bombSfx": "badoosh",
+    "noBombSfx": "shucks",
+    "initialBombs": 3
 }
