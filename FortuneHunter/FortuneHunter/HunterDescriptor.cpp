@@ -10,6 +10,7 @@ const std::string PROPERTY_DEATH_SFX = "deathSfx";
 const std::string PROPERTY_BOMB_SFX = "bombSfx";
 const std::string PROPERTY_NO_BOMB_SFX = "noBombSfx";
 const std::string PROPERTY_INITIAL_BOMBS = "initialBombs";
+const std::string PROPERTY_BOMB_DAMAGE = "bombDamage";
 
 HunterDescriptor::HunterDescriptor()
 	: maximumHealths()
@@ -18,6 +19,7 @@ HunterDescriptor::HunterDescriptor()
 	, initialBombs(0)
 	, deathSfx("")
 	, damageSfx("")
+	, bombDamage(0)
 {
 
 }
@@ -45,25 +47,28 @@ void HunterDescriptor::Start(const std::string& fileName)
 	bombSfx = j[PROPERTY_BOMB_SFX];
 	noBombSfx = j[PROPERTY_NO_BOMB_SFX];
 	initialBombs = j[PROPERTY_INITIAL_BOMBS];
+	bombDamage = j[PROPERTY_BOMB_DAMAGE];
+}
+
+static int GetLevel(size_t level, const std::vector<int>& levels)
+{
+	level = (level < levels.size()) ? (level) : (levels.size() - 1);
+	return levels[level];
 }
 
 int HunterDescriptor::GetMaximumHealth(size_t level) const
 {
-	level = (level < maximumHealths.size()) ? (level) : (maximumHealths.size() - 1);
-	return maximumHealths[level];
+	return GetLevel(level, maximumHealths);
 }
 
 int HunterDescriptor::GetMaximumAttack(size_t level) const
 {
-	level = (level < maximumAttacks.size()) ? (level) : (maximumAttacks.size() - 1);
-	return maximumAttacks[level];
-
+	return GetLevel(level, maximumAttacks);
 }
 
 int HunterDescriptor::GetMaximumArmor(size_t level) const
 {
-	level = (level < maximumArmors.size()) ? (level) : (maximumArmors.size() - 1);
-	return maximumArmors[level];
+	return GetLevel(level, maximumArmors);
 }
 
 const std::string HunterDescriptor::GetDamageSfx() const
@@ -89,4 +94,9 @@ const std::string HunterDescriptor::GetBombSfx() const
 const std::string HunterDescriptor::GetNoBombSfx() const
 {
 	return noBombSfx;
+}
+
+int HunterDescriptor::GetBombDamage() const
+{
+	return bombDamage;
 }

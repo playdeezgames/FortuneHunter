@@ -21,5 +21,6 @@
     "deathSfx": "deadhunter",
     "bombSfx": "badoosh",
     "noBombSfx": "shucks",
-    "initialBombs": 3
+    "initialBombs": 3,
+    "bombDamage": 10
 }

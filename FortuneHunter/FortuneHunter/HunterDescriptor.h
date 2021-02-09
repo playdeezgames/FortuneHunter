@@ -12,6 +12,7 @@ private:
 	size_t initialBombs;
 	std::string bombSfx;
 	std::string noBombSfx;
+	int bombDamage;
 public:
 	HunterDescriptor();
 	void Start(const std::string&);
@@ -23,5 +24,6 @@ public:
 	const std::string GetBombSfx() const;
 	const std::string GetNoBombSfx() const;
 	size_t GetInitialBombs() const;
+	int GetBombDamage() const;
 };
 

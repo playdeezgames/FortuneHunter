@@ -75,7 +75,7 @@ void Hunter::AddWounds(int amount)
 	{
 		hit = true;
 	}
-	int absorbed = (armor >= amount) ? (amount) : (0);
+	int absorbed = (armor >= amount) ? (amount) : (armor);
 	amount -= absorbed;
 	armor -= absorbed;
 	wounds += amount;
@@ -228,10 +228,12 @@ bool Hunter::WasHit() const
 	return hit;
 }
 
-void Hunter::UseBomb()
+bool Hunter::UseBomb()
 {
 	if (bombsUsed < hunterDescriptor.GetInitialBombs())
 	{
 		bombsUsed++;
+		return true;
 	}
+	return false;
 }

@@ -285,26 +285,31 @@ bool GameData::CanContinue() const
 	return hunter && hunter->IsAlive() && !hunter->IsWinner();
 }
 
+void GameData::DoBomb()
+{
+	for (size_t column = 0; column < room.GetColumns(); ++column)
+	{
+		for (size_t row = 0; row < room.GetRows(); ++row)
+		{
+			auto cell = room.GetCell(column, row);
+			if (cell->IsFlagSet(RoomCellFlags::LIT))
+			{
+				Creature* creature = dynamic_cast<Creature*>(cell->GetObject());
+				DamageCreature(creature, hunterDescriptor.GetBombDamage());
+			}
+		}
+	}
+}
+
+
 void GameData::UseBomb()
 {
 	if (CanContinue())
 	{
-		if (hunter->GetBombs() > 0)
+		if (hunter->UseBomb())
 		{
-			hunter->UseBomb();
 			soundManager.PlaySound(hunterDescriptor.GetBombSfx());
-			for (size_t column = 0; column < room.GetColumns(); ++column)
-			{
-				for (size_t row = 0; row < room.GetRows(); ++row)
-				{
-					auto cell = room.GetCell(column, row);
-					if (cell->IsFlagSet(RoomCellFlags::LIT))
-					{
-						Creature* creature = dynamic_cast<Creature*>(cell->GetObject());
-						DamageCreature(creature, 10);//TODO: magic number
-					}
-				}
-			}
+			DoBomb();
 		}
 		else
 		{
