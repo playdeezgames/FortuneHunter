@@ -1,6 +1,6 @@
 #include "Hunter.h"
 #include "Utility.h"
-Hunter::Hunter(const HunterDescriptor& hunterDescriptor)
+Hunter::Hunter(const HunterDescriptor* hunterDescriptor)
 	: RoomCellObject<TerrainType, ObjectType, RoomCellFlags>()
 	, hunterDescriptor(hunterDescriptor)
 	, keys(0)
@@ -21,7 +21,7 @@ Hunter::Hunter(const HunterDescriptor& hunterDescriptor)
 
 size_t Hunter::GetBombs() const
 {
-	return hunterDescriptor.GetInitialBombs() - bombsUsed;
+	return hunterDescriptor->GetInitialBombs() - bombsUsed;
 }
 
 size_t Hunter::GetKeys() const
@@ -65,7 +65,7 @@ int Hunter::GetAttackStrength() const
 	return tggd::common::Utility::GenerateRandomNumberFromRange
 	(
 		1,
-		hunterDescriptor.GetMaximumAttack(maximumAttackLevel)
+		hunterDescriptor->GetMaximumAttack(maximumAttackLevel)
 	);
 }
 
@@ -162,7 +162,7 @@ void Hunter::AddDiamond()
 void Hunter::AddShield()
 {
 	armor += 10;//TODO: magic number
-	int maximumArmor = hunterDescriptor.GetMaximumArmor(maximumArmorLevel);
+	int maximumArmor = hunterDescriptor->GetMaximumArmor(maximumArmorLevel);
 	if (armor > maximumArmor)
 	{
 		armor = maximumArmor;
@@ -190,7 +190,7 @@ void Hunter::AddExit()
 
 int Hunter::GetMaximumHealth() const
 {
-	return hunterDescriptor.GetMaximumHealth(maximumHealthLevel);
+	return hunterDescriptor->GetMaximumHealth(maximumHealthLevel);
 }
 
 bool Hunter::IsAlive() const
@@ -200,12 +200,12 @@ bool Hunter::IsAlive() const
 
 int Hunter::GetMaximumArmor() const
 {
-	return hunterDescriptor.GetMaximumArmor(maximumArmorLevel);
+	return hunterDescriptor->GetMaximumArmor(maximumArmorLevel);
 }
 
 int Hunter::GetMaximumAttack() const
 {
-	return hunterDescriptor.GetMaximumAttack(maximumAttackLevel);
+	return hunterDescriptor->GetMaximumAttack(maximumAttackLevel);
 }
 
 bool Hunter::IsWinner() const
@@ -230,10 +230,15 @@ bool Hunter::WasHit() const
 
 bool Hunter::UseBomb()
 {
-	if (bombsUsed < hunterDescriptor.GetInitialBombs())
+	if (bombsUsed < hunterDescriptor->GetInitialBombs())
 	{
 		bombsUsed++;
 		return true;
 	}
 	return false;
+}
+
+const HunterDescriptor* Hunter::GetDescriptor() const
+{
+	return hunterDescriptor;
 }

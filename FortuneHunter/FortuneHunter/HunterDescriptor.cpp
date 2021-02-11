@@ -12,7 +12,7 @@ const std::string PROPERTY_NO_BOMB_SFX = "noBombSfx";
 const std::string PROPERTY_INITIAL_BOMBS = "initialBombs";
 const std::string PROPERTY_BOMB_DAMAGE = "bombDamage";
 
-HunterDescriptor::HunterDescriptor()
+HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
 	: maximumHealths()
 	, maximumAttacks()
 	, maximumArmors()
@@ -21,12 +21,6 @@ HunterDescriptor::HunterDescriptor()
 	, damageSfx("")
 	, bombDamage(0)
 {
-
-}
-
-void HunterDescriptor::Start(const std::string& fileName)
-{
-	nlohmann::json j = tggd::common::Utility::LoadJSON(fileName);
 	auto& maxHealths = j[PROPERTY_MAXIMUM_HEALTHS];
 	for (auto& maxHealth : maxHealths)
 	{

@@ -26,6 +26,7 @@
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="HunterDescriptor.cpp" />
+    <ClCompile Include="HunterDescriptorManager.cpp" />
     <ClCompile Include="InPlayCommandProcessor.cpp" />
     <ClCompile Include="InstructionsCommandProcessor.cpp" />
     <ClCompile Include="InstructionsRenderer.cpp" />
@@ -83,6 +84,7 @@
     <ClInclude Include="HealthLevel.h" />
     <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="HunterDescriptor.h" />
+    <ClInclude Include="HunterDescriptorManager.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
     <ClInclude Include="InstructionsCommandProcessor.h" />
     <ClInclude Include="InstructionsRenderer.h" />

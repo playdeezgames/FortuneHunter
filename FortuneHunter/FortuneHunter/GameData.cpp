@@ -6,14 +6,14 @@ GameData::GameData
 	const tggd::common::SoundManager& soundManager,
 	const CreatureDescriptorManager& creatureDescriptors,
 	const ItemDescriptorManager& itemDescriptors,
-	const HunterDescriptor& hunterDescriptor
+	const HunterDescriptorManager& hunterDescriptors
 )
 	: room(Constants::Room::COLUMNS, Constants::Room::ROWS, TerrainType::FLOOR)
 	, soundManager(soundManager)
 	, hunter(nullptr)
 	, creatureDescriptors(creatureDescriptors)
 	, itemDescriptors(itemDescriptors)
-	, hunterDescriptor(hunterDescriptor)
+	, hunterDescriptors(hunterDescriptors)
 {
 }
 
@@ -61,7 +61,7 @@ Hunter* GameData::GetHunter()
 
 void GameData::PlaceHunter()
 {
-	hunter = new Hunter(hunterDescriptor);
+	hunter = new Hunter(hunterDescriptors.GetDescriptor(0));
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
@@ -244,11 +244,11 @@ void GameData::ResolveAttacksOnHunter(const std::vector<tggd::common::RoomCell<T
 	{
 		if (hunter->IsAlive())
 		{
-			soundManager.PlaySound(hunterDescriptor.GetDamageSfx());
+			soundManager.PlaySound(hunter->GetDescriptor()->GetDamageSfx());
 		}
 		else
 		{
-			soundManager.PlaySound(hunterDescriptor.GetDeathSfx());
+			soundManager.PlaySound(hunter->GetDescriptor()->GetDeathSfx());
 		}
 	}
 }
@@ -295,7 +295,7 @@ void GameData::DoBomb()
 			if (cell->IsFlagSet(RoomCellFlags::LIT))
 			{
 				Creature* creature = dynamic_cast<Creature*>(cell->GetObject());
-				DamageCreature(creature, hunterDescriptor.GetBombDamage());
+				DamageCreature(creature, hunter->GetDescriptor()->GetBombDamage());
 			}
 		}
 	}
@@ -308,12 +308,12 @@ void GameData::UseBomb()
 	{
 		if (hunter->UseBomb())
 		{
-			soundManager.PlaySound(hunterDescriptor.GetBombSfx());
+			soundManager.PlaySound(hunter->GetDescriptor()->GetBombSfx());
 			DoBomb();
 		}
 		else
 		{
-			soundManager.PlaySound(hunterDescriptor.GetNoBombSfx());
+			soundManager.PlaySound(hunter->GetDescriptor()->GetNoBombSfx());
 		}
 	}
 }

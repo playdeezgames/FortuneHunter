@@ -8,7 +8,7 @@
 class Hunter : public tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>
 {
 private:
-	const HunterDescriptor& hunterDescriptor;
+	const HunterDescriptor* hunterDescriptor;
 	size_t keys;
 	size_t moves;
 	int wounds;
@@ -31,7 +31,8 @@ private:
 	void RemoveKey();
 	void SetOffTrap();
 public:
-	Hunter(const HunterDescriptor&);
+	Hunter(const HunterDescriptor*);
+	const HunterDescriptor* GetDescriptor() const;
 	size_t GetKeys() const;
 	size_t GetMoves() const;
 	void IncrementMoves();

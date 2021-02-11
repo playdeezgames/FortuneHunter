@@ -12,13 +12,13 @@
 #include "ItemDescriptorManager.h"
 #include "Creature.h"
 #include "Item.h"
-#include "HunterDescriptor.h"
+#include "HunterDescriptorManager.h"
 class GameData
 {
 private:
 	const tggd::common::SoundManager& soundManager;
 	const CreatureDescriptorManager& creatureDescriptors;
-	const HunterDescriptor& hunterDescriptor;
+	const HunterDescriptorManager& hunterDescriptors;
 	const ItemDescriptorManager& itemDescriptors;
 	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags> room;
 	Hunter* hunter;
@@ -44,7 +44,7 @@ public:
 		const tggd::common::SoundManager&, 
 		const CreatureDescriptorManager&,
 		const ItemDescriptorManager&,
-		const HunterDescriptor&
+		const HunterDescriptorManager&
 	);
 	~GameData();
 	const Hunter* GetHunter() const;

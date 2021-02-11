@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "json.hpp"
 class HunterDescriptor
 {
 private:
@@ -14,8 +15,7 @@ private:
 	std::string noBombSfx;
 	int bombDamage;
 public:
-	HunterDescriptor();
-	void Start(const std::string&);
+	HunterDescriptor(const nlohmann::json&);
 	int GetMaximumHealth(size_t) const;
 	int GetMaximumAttack(size_t) const;
 	int GetMaximumArmor(size_t) const;

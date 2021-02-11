@@ -11,7 +11,7 @@ namespace Constants::Config
 		const std::string ROMFONT = "config/romfont.json";
 		const std::string TERRAINSPRITES = "config/terrainsprites.json";
 		const std::string CREATUREDESCRIPTORS = "config/creaturedescriptors.json";
-		const std::string HUNTERDESCRIPTOR = "config/hunterdescriptor.json";
+		const std::string HUNTERDESCRIPTORS = "config/hunterdescriptors.json";
 		const std::string ITEMDESCRIPTORS = "config/itemdescriptors.json";
 		const std::string HEALTHLEVELSPRITES = "config/healthlevelsprites.json";
 		const std::string OBJECTSPRITES = "config/objectsprites.json";
