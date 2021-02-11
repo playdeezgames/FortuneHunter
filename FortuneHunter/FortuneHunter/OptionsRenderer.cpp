@@ -37,7 +37,7 @@ void OptionsRenderer::Draw() const
 	}
 	else
 	{
-		DrawOptionsItem(0, Constants::UI::Options::OPTION_MUTE_ON, OptionsState::TOGGLE_MUTE);
+		DrawOptionsItem(0, Constants::UI::Options::OPTION_MUTE_OFF, OptionsState::TOGGLE_MUTE);
 	}
 	std::stringstream ss;
 	ss << Constants::UI::Options::OPTION_SFX_VOLUME << "(" << soundManager.GetSfxVolume() << ")";//TODO magic string

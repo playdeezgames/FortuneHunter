@@ -266,6 +266,18 @@
     <ClCompile Include="OptionsRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
+    <ClCompile Include="AboutCommandProcessor.cpp">
+      <Filter>Source Files\CommandProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionsCommandProcessor.cpp">
+      <Filter>Source Files\CommandProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutRenderer.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionsRenderer.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -516,6 +528,18 @@
     </ClInclude>
     <ClInclude Include="CreatureType.h">
       <Filter>Header Files\Game\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutCommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionsCommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionsRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,7 +10,8 @@ void MainMenuCommandProcessor::OnCommand(const Command& command)
 		mainMenuState = MainMenuStateHelper::Next(mainMenuState);
 		break;
 	case Command::GREEN:
-		DoGreenAction();
+	case Command::START:
+		DoMenuItemAction();
 		break;
 	}
 }
@@ -28,7 +29,7 @@ MainMenuCommandProcessor::MainMenuCommandProcessor
 
 }
 
-void MainMenuCommandProcessor::DoGreenAction()
+void MainMenuCommandProcessor::DoMenuItemAction()
 {
 	switch (mainMenuState)
 	{
@@ -44,6 +45,12 @@ void MainMenuCommandProcessor::DoGreenAction()
 		return;
 	case MainMenuState::OPTIONS:
 		SetUIState(UIState::OPTIONS);
+		return;
+	case MainMenuState::ABOUT:
+		SetUIState(UIState::ABOUT);
+		return;
+	case MainMenuState::INSTRUCTIONS:
+		SetUIState(UIState::INSTRUCTIONS);
 		return;
 	}
 }

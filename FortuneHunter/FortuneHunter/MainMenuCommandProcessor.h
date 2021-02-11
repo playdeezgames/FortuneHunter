@@ -9,7 +9,7 @@ class MainMenuCommandProcessor : public tggd::common::BaseCommandProcessor<Comma
 private:
 	GameData& gameData;
 	MainMenuState& mainMenuState;
-	void DoGreenAction();
+	void DoMenuItemAction();
 public:
 	MainMenuCommandProcessor(UIState&, MainMenuState&, GameData&);
 	void OnCommand(const Command&);

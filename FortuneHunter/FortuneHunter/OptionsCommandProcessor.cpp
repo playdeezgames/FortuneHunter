@@ -33,6 +33,10 @@ void OptionsCommandProcessor::OnCommand(const Command& command)
 	case Command::GREEN:
 		DoGreenAction();
 		break;
+	case Command::RED:
+	case Command::BACK:
+		SetUIState(UIState::MAIN_MENU);
+		break;
 	}
 }
 

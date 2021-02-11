@@ -19,12 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AboutCommandProcessor.cpp" />
+    <ClCompile Include="AboutRenderer.cpp" />
     <ClCompile Include="BaseDescriptor.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="HunterDescriptor.cpp" />
     <ClCompile Include="InPlayCommandProcessor.cpp" />
+    <ClCompile Include="InstructionsCommandProcessor.cpp" />
+    <ClCompile Include="InstructionsRenderer.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemDescriptor.cpp" />
     <ClCompile Include="ItemDescriptorManager.cpp" />
@@ -67,6 +71,8 @@
     <ClCompile Include="SpriteFont.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboutCommandProcessor.h" />
+    <ClInclude Include="AboutRenderer.h" />
     <ClInclude Include="BaseCommandProcessor.h" />
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
@@ -78,6 +84,8 @@
     <ClInclude Include="HealthLevelSprites.h" />
     <ClInclude Include="HunterDescriptor.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
+    <ClInclude Include="InstructionsCommandProcessor.h" />
+    <ClInclude Include="InstructionsRenderer.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemDescriptor.h" />
     <ClInclude Include="ItemDescriptorManager.h" />

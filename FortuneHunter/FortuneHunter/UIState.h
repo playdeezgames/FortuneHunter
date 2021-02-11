@@ -5,5 +5,7 @@ enum class UIState
 	CONFIRM_QUIT,
 	QUIT,
 	IN_PLAY,
-	OPTIONS
+	OPTIONS,
+	ABOUT,
+	INSTRUCTIONS
 };
