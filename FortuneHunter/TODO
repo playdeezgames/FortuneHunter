@@ -1,20 +1,15 @@
 Placeholder Screens:
-    ☐ instructions screen
-        move between pages (if more than one)
-        go back to main menu
-    ☐ about screen
-        go back to main menu
-    ✔ options screen @done(21-02-07 05:42)
-        control sfx volume
-        control mux volume
-        mute
     ☐ statistics screen
+    ☐ final scoring?
+Finalize Screens:
+    ☐ main menu
+    ☐ about
+    ☐ instructions
+    ☐ status panel
+    ☐ statistics
+    ☐ final scoring?
 Gameplay:
-    ✔ zombie bomb @done(21-02-11 04:13)
     there is no way of getting any more
-        ✔ does 10 damage to all zombies in lit area @done(21-02-08 05:49)
-        ✔ hunter starts with 3 @done(21-02-08 05:49)
-        ☐ there is a bomb cool down?
     ☐ scoring
         diamond
         found exit key
@@ -26,82 +21,92 @@ Gameplay:
         games lost
         high score
         total score(allows calculation of average score)
-    ✔ trap tiles @done(21-02-07 06:37)
-    ✔ mini-boss? for  each upgrade have a monster to fight in order to get it @done(21-02-08 03:52)
     ☐ difficulty levels?
         vary number of starting bombs
         vary health upgrade levels
         vary weapon upgrade levels
         vary score multiplier
-    ✘ torches? @cancelled(21-02-05 03:25)
-    ✘ limited inventory space @cancelled(21-02-05 03:25)
-    ✔ treasures @done(21-02-05 03:25)
-        ✔ diamonds @done(21-02-05 03:25)
-    ✘ traps? @cancelled(21-02-05 03:25)
-    ✘ secret doors @cancelled(21-02-05 03:25)
-    ✔ monsters @done(21-02-05 03:25)
-        ✔ zombies @done(21-02-05 03:25)
-    ✔ weapons @done(21-02-05 04:47)
-        ✔ a big stick @done(21-02-05 03:26)
-        ✘ yer fists @cancelled(21-02-05 03:26)
-    ✔ armor @done(21-02-05 03:25)
-    ✔ potions/food @done(21-02-05 03:26)
-    ✔ locks @done(21-01-28 05:37)
-    ✔ keys @done(21-01-28 05:38)
-    ✔ the exit @done(21-02-05 04:47)
-    ✔ more "loopy" mazes @done(21-01-30 06:44)
-    ✘ more than one kind of lock @cancelled(21-01-31 05:41)
-        ✘ three types for "normal" doors @cancelled(21-01-31 05:41)
-        ✘ a fourth type for "special" doors where the key is only behind a different door @cancelled(21-01-31 05:41)
-Refactor:
-    ✘ maze cell flagifier for rendering @cancelled(21-02-07 06:38)
-    ✔ maze cell has a set of flags instead of "lit" and "explored" @done(21-01-31 05:41)
-    ✔ way for room panel to look up the sprite for an object type @done(21-02-01 05:54)
-    ✔ terrain sprite manager and health level sprite manager are the same except for key types @done(21-02-01 05:54)
-    ✔ have descriptor types take a json object! @done(21-02-05 03:25)
-    ✔ split out the room generation stuff from gamedata into the room generation context class @done(21-02-02 03:44)
-    ✔ a list of things to call "finish" on. maybe finish manager? @done(21-02-02 04:27)
-    ✘ "misc" sprite table @cancelled(21-02-07 06:38)
-    ✔ move locks into item type @done(21-02-05 03:25)
-    ✔ move keys into item type @done(21-02-05 03:25)
-    ✔ move diamonds into item type @done(21-02-03 04:19)
-    ✔ get the number appearing in dead ends into the config @done(21-02-05 03:25)
-        how to configure "the rest"?
-Things To Add:
-    ✔ creature descriptor @done(21-02-06 04:35)
-        ✔ get hit sound @done(21-02-06 04:35)
-        ✔ die sound @done(21-02-06 04:35)
-    ✔ hunter descriptor @done(21-02-06 04:35)
-        ✔ get hit sound @done(21-02-06 04:35)
-        ✔ die sound @done(21-02-06 04:35)
-Whimsy:
-    ✔ area effects - decided this is zombie bombs @done(21-02-08 04:12)
-    ✘ monster that move and chase you @cancelled(21-02-08 04:11)
-    ✘ burn the zombies @cancelled(21-02-05 04:48)
-        they can attack you and you might burn
 Audio:
-    ✔ bomb @done(21-02-08 05:50)
-    ✔ out of bombs @done(21-02-08 05:50)
-    ✔ get key @done(21-01-28 05:57)
-    ✔ bump wall @done(21-01-29 04:19)
-    ✔ bump door/no key @done(21-01-29 04:13)
-    ✔ unlock door @done(21-01-28 05:57)
-    ✘ step @cancelled(21-01-29 04:07)
-    ✔ get diamond @done(21-02-06 04:44)
-    ✔ hit zombie @done(21-02-06 04:35)
-    ✔ kill zombie @done(21-02-06 04:35)
-    ✔ hunter hit @done(21-02-06 04:35)
-    ✔ hunter killed @done(21-02-06 04:35)
-    ✔ exit key @done(21-02-06 05:08)
-    ✔ exit @done(21-02-06 05:08)
     ☐ music!
-    ✔ upgrade health @done(21-02-06 05:19)
-    ✔ upgrade weapon @done(21-02-06 05:19)
-    ✔ upgrade armor @done(21-02-06 05:19)
-Bug:
-    ✔ going back to main menu and then selecting start makes a new game even if one is in session @done(21-02-08 04:04)
-    ✔ I keep spawning in a locked room! @done(21-01-28 05:37)
-    ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39)
-    ✔ lock opening does not stop the hunter from moving @done(21-02-03 05:15)
-    ✔ not having a key does not trigger sound effect @done(21-02-03 05:15)
 
+Archive:
+  ✔ instructions screen @done(21-02-11 05:09) @project(Placeholder Screens)
+    move between pages (if more than one)
+    go back to main menu
+  ✔ about screen @done(21-02-11 05:09) @project(Placeholder Screens)
+    go back to main menu
+  ✔ options screen @done(21-02-07 05:42) @project(Placeholder Screens)
+    control sfx volume
+    control mux volume
+    mute
+  ✔ zombie bomb @done(21-02-11 04:13) @project(Gameplay)
+  ✔ does 10 damage to all zombies in lit area @done(21-02-08 05:49) @project(Gameplay)
+  ✔ hunter starts with 3 @done(21-02-08 05:49) @project(Gameplay)
+  ✘ there is a bomb cool down? @cancelled(21-02-11 05:09) @project(Gameplay)
+  ✔ trap tiles @done(21-02-07 06:37) @project(Gameplay)
+  ✔ mini-boss? for  each upgrade have a monster to fight in order to get it @done(21-02-08 03:52) @project(Gameplay)
+  ✘ torches? @cancelled(21-02-05 03:25) @project(Gameplay)
+  ✘ limited inventory space @cancelled(21-02-05 03:25) @project(Gameplay)
+  ✔ treasures @done(21-02-05 03:25) @project(Gameplay)
+  ✔ diamonds @done(21-02-05 03:25) @project(Gameplay)
+  ✘ traps? @cancelled(21-02-05 03:25) @project(Gameplay)
+  ✘ secret doors @cancelled(21-02-05 03:25) @project(Gameplay)
+  ✔ monsters @done(21-02-05 03:25) @project(Gameplay)
+  ✔ zombies @done(21-02-05 03:25) @project(Gameplay)
+  ✔ weapons @done(21-02-05 04:47) @project(Gameplay)
+  ✔ a big stick @done(21-02-05 03:26) @project(Gameplay)
+  ✘ yer fists @cancelled(21-02-05 03:26) @project(Gameplay)
+  ✔ armor @done(21-02-05 03:25) @project(Gameplay)
+  ✔ potions/food @done(21-02-05 03:26) @project(Gameplay)
+  ✔ locks @done(21-01-28 05:37) @project(Gameplay)
+  ✔ keys @done(21-01-28 05:38) @project(Gameplay)
+  ✔ the exit @done(21-02-05 04:47) @project(Gameplay)
+  ✔ more "loopy" mazes @done(21-01-30 06:44) @project(Gameplay)
+  ✘ more than one kind of lock @cancelled(21-01-31 05:41) @project(Gameplay)
+  ✘ three types for "normal" doors @cancelled(21-01-31 05:41) @project(Gameplay)
+  ✘ a fourth type for "special" doors where the key is only behind a different door @cancelled(21-01-31 05:41) @project(Gameplay)
+  ✘ maze cell flagifier for rendering @cancelled(21-02-07 06:38) @project(Refactor)
+  ✔ maze cell has a set of flags instead of "lit" and "explored" @done(21-01-31 05:41) @project(Refactor)
+  ✔ way for room panel to look up the sprite for an object type @done(21-02-01 05:54) @project(Refactor)
+  ✔ terrain sprite manager and health level sprite manager are the same except for key types @done(21-02-01 05:54) @project(Refactor)
+  ✔ have descriptor types take a json object! @done(21-02-05 03:25) @project(Refactor)
+  ✔ split out the room generation stuff from gamedata into the room generation context class @done(21-02-02 03:44) @project(Refactor)
+  ✔ a list of things to call "finish" on. maybe finish manager? @done(21-02-02 04:27) @project(Refactor)
+  ✘ "misc" sprite table @cancelled(21-02-07 06:38) @project(Refactor)
+  ✔ move locks into item type @done(21-02-05 03:25) @project(Refactor)
+  ✔ move keys into item type @done(21-02-05 03:25) @project(Refactor)
+  ✔ move diamonds into item type @done(21-02-03 04:19) @project(Refactor)
+  ✔ get the number appearing in dead ends into the config @done(21-02-05 03:25) @project(Refactor)
+    how to configure "the rest"?
+  ✔ creature descriptor @done(21-02-06 04:35) @project(Things To Add)
+  ✔ get hit sound @done(21-02-06 04:35) @project(Things To Add)
+  ✔ die sound @done(21-02-06 04:35) @project(Things To Add)
+  ✔ hunter descriptor @done(21-02-06 04:35) @project(Things To Add)
+  ✔ get hit sound @done(21-02-06 04:35) @project(Things To Add)
+  ✔ die sound @done(21-02-06 04:35) @project(Things To Add)
+  ✔ area effects - decided this is zombie bombs @done(21-02-08 04:12) @project(Whimsy)
+  ✘ monster that move and chase you @cancelled(21-02-08 04:11) @project(Whimsy)
+  ✘ burn the zombies @cancelled(21-02-05 04:48) @project(Whimsy)
+    they can attack you and you might burn
+  ✔ bomb @done(21-02-08 05:50) @project(Audio)
+  ✔ out of bombs @done(21-02-08 05:50) @project(Audio)
+  ✔ get key @done(21-01-28 05:57) @project(Audio)
+  ✔ bump wall @done(21-01-29 04:19) @project(Audio)
+  ✔ bump door/no key @done(21-01-29 04:13) @project(Audio)
+  ✔ unlock door @done(21-01-28 05:57) @project(Audio)
+  ✘ step @cancelled(21-01-29 04:07) @project(Audio)
+  ✔ get diamond @done(21-02-06 04:44) @project(Audio)
+  ✔ hit zombie @done(21-02-06 04:35) @project(Audio)
+  ✔ kill zombie @done(21-02-06 04:35) @project(Audio)
+  ✔ hunter hit @done(21-02-06 04:35) @project(Audio)
+  ✔ hunter killed @done(21-02-06 04:35) @project(Audio)
+  ✔ exit key @done(21-02-06 05:08) @project(Audio)
+  ✔ exit @done(21-02-06 05:08) @project(Audio)
+  ✔ upgrade health @done(21-02-06 05:19) @project(Audio)
+  ✔ upgrade weapon @done(21-02-06 05:19) @project(Audio)
+  ✔ upgrade armor @done(21-02-06 05:19) @project(Audio)
+  ✔ going back to main menu and then selecting start makes a new game even if one is in session @done(21-02-08 04:04) @project(Bug)
+  ✔ I keep spawning in a locked room! @done(21-01-28 05:37) @project(Bug)
+  ✔ health bar left when creature defeated and the health bar is in a not yet rendered portion of the map @done(21-02-02 04:39) @project(Bug)
+  ✔ lock opening does not stop the hunter from moving @done(21-02-03 05:15) @project(Bug)
+  ✔ not having a key does not trigger sound effect @done(21-02-03 05:15) @project(Bug)
