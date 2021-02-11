@@ -4,7 +4,7 @@
 #include "UIState.h"
 #include "Command.h"
 #include "GameData.h"
-class MainMenuCommandProcessor : public BaseCommandProcessor
+class MainMenuCommandProcessor : public tggd::common::BaseCommandProcessor<Command, UIState>
 {
 private:
 	GameData& gameData;

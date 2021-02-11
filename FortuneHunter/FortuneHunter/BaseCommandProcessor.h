@@ -1,13 +1,22 @@
 #pragma once
 #include "CommandProcessor.h"
-#include "Command.h"
-#include "UIState.h"
-class BaseCommandProcessor : public tggd::common::CommandProcessor<Command>
+namespace tggd::common
 {
-private:
-	UIState& uiState;
-protected:
-	void SetUIState(UIState);
-public:
-	BaseCommandProcessor(UIState&);
-};
+	template<typename TCommand, typename TState>
+	class BaseCommandProcessor : public tggd::common::CommandProcessor<TCommand>
+	{
+	private:
+		TState& uiState;
+	protected:
+		void SetUIState(TState state)
+		{
+			uiState = state;
+		}
+	public:
+		BaseCommandProcessor(TState& uiState)
+			: uiState(uiState)
+		{
+
+		}
+	};
+}

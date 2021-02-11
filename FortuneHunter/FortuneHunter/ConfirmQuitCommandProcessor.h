@@ -3,7 +3,7 @@
 #include "Command.h"
 #include "UIState.h"
 #include "ConfirmState.h"
-class ConfirmQuitCommandProcessor : public BaseCommandProcessor
+class ConfirmQuitCommandProcessor : public tggd::common::BaseCommandProcessor<Command, UIState>
 {
 private:
 	ConfirmState& confirmState;

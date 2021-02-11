@@ -5,7 +5,7 @@
 #include "OptionsState.h"
 #include "SoundManager.h"
 #include "Options.h"
-class OptionsCommandProcessor : public BaseCommandProcessor
+class OptionsCommandProcessor : public tggd::common::BaseCommandProcessor<Command, UIState>
 {
 private:
 	OptionsState& optionsState;

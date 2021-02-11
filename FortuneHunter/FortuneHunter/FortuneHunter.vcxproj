@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseCommandProcessor.cpp" />
     <ClCompile Include="BaseDescriptor.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
     <ClCompile Include="FinishManager.cpp" />

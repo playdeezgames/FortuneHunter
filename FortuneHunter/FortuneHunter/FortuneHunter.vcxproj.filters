@@ -131,9 +131,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
-    <ClCompile Include="BaseCommandProcessor.cpp">
-      <Filter>Source Files\CommandProcessors</Filter>
-    </ClCompile>
     <ClCompile Include="BaseRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
