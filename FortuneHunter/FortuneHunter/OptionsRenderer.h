@@ -1,8 +1,8 @@
 #pragma once
-#include "BaseRenderer.h"
+#include "BaseMenuRenderer.h"
 #include "OptionsState.h"
 #include "SoundManager.h"
-class OptionsRenderer : public BaseRenderer
+class OptionsRenderer : public BaseMenuRenderer
 {
 private:
 	const OptionsState& optionsState;
@@ -14,6 +14,7 @@ public:
 	(
 		SDL_Renderer*, 
 		const tggd::common::SpriteFont&, 
+		const tggd::common::Sprite*,
 		const tggd::common::SoundManager&,
 		const OptionsState&);
 	void Draw() const;

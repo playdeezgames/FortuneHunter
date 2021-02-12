@@ -12,4 +12,5 @@ namespace Constants::UI::Options
 	const std::string OPTION_SFX_VOLUME = "SFX Volume";
 	const std::string OPTION_MUX_VOLUME = "MUX Volume";
 	const std::string OPTION_BACK = "Main Menu";
+	const std::string BACKGROUND_SPRITE = "OptionsBackground";
 }

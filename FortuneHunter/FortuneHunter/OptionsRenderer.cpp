@@ -7,10 +7,11 @@ OptionsRenderer::OptionsRenderer
 (
 	SDL_Renderer* renderer,
 	const tggd::common::SpriteFont& romFont,
+	const tggd::common::Sprite* background,
 	const tggd::common::SoundManager& soundManager,
 	const OptionsState& optionsState
 )
-	: BaseRenderer(renderer, romFont)
+	: BaseMenuRenderer(renderer, romFont, background)
 	, soundManager(soundManager)
 	, optionsState(optionsState)
 {
@@ -45,7 +46,9 @@ std::string OptionsRenderer::FormatVolume(int volume)
 
 void OptionsRenderer::Draw() const
 {
+	BaseMenuRenderer::Draw();
 	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::Options::TITLE, Constants::Color::GREEN);
+	//TODO: split vvv into three functions!
 	if (soundManager.IsMuted())
 	{
 		DrawOptionsItem(0, Constants::UI::Options::OPTION_MUTE_ON, OptionsState::TOGGLE_MUTE);
