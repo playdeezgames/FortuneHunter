@@ -8,6 +8,7 @@ private:
 	const OptionsState& optionsState;
 	const tggd::common::SoundManager& soundManager;	
 	void DrawOptionsItem(int, const std::string&, const OptionsState&) const;
+	static std::string FormatVolume(int);
 public:
 	OptionsRenderer
 	(

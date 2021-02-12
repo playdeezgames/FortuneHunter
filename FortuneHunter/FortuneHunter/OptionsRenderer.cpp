@@ -16,6 +16,7 @@ OptionsRenderer::OptionsRenderer
 {
 
 }
+
 void OptionsRenderer::DrawOptionsItem(int line, const std::string& text, const OptionsState& state) const
 {
 	GetRomFont().WriteText
@@ -28,6 +29,20 @@ void OptionsRenderer::DrawOptionsItem(int line, const std::string& text, const O
 	);
 
 }
+
+const std::string VOLUME_FORMAT_PREFIX = "(";
+const std::string VOLUME_FORMAT_SUFFIX = "%)";
+const int MAXIMUM_PERCENT = 100;
+
+std::string OptionsRenderer::FormatVolume(int volume)
+{
+	int percent = volume * MAXIMUM_PERCENT / SDL_MIX_MAXVOLUME;
+	std::stringstream ss;
+	ss << VOLUME_FORMAT_PREFIX << percent << VOLUME_FORMAT_SUFFIX;
+	return ss.str();
+}
+
+
 void OptionsRenderer::Draw() const
 {
 	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::Options::TITLE, Constants::Color::GREEN);
@@ -40,10 +55,10 @@ void OptionsRenderer::Draw() const
 		DrawOptionsItem(0, Constants::UI::Options::OPTION_MUTE_OFF, OptionsState::TOGGLE_MUTE);
 	}
 	std::stringstream ss;
-	ss << Constants::UI::Options::OPTION_SFX_VOLUME << "(" << soundManager.GetSfxVolume() << ")";//TODO magic string
+	ss << Constants::UI::Options::OPTION_SFX_VOLUME << FormatVolume(soundManager.GetSfxVolume());
 	DrawOptionsItem(1, ss.str(), OptionsState::SFX_VOLUME);
 	ss.str("");
-	ss << Constants::UI::Options::OPTION_MUX_VOLUME << "(" << soundManager.GetMuxVolume() << ")";//TODO magic string
+	ss << Constants::UI::Options::OPTION_MUX_VOLUME << FormatVolume(soundManager.GetMuxVolume());
 	DrawOptionsItem(2, ss.str(), OptionsState::MUX_VOLUME);
 	DrawOptionsItem(3, Constants::UI::Options::OPTION_BACK, OptionsState::BACK);
 }
