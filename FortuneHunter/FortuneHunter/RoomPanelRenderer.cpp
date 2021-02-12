@@ -39,6 +39,25 @@ void RoomPanelRenderer::DrawDither(const tggd::common::XY<int>& xy, const tggd::
 	}
 }
 
+void RoomPanelRenderer::DrawHealthLevel
+(
+	const tggd::common::XY<int>& xy, 
+	const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object
+) const
+{
+	const Creature* creature = dynamic_cast<const Creature*>(object);
+	if (creature && creature->GetRoomCell() && creature->GetRoomCell()->IsFlagSet(RoomCellFlags::LIT))
+	{
+		auto level = creature->GetHealthLevel();
+		auto sprite = healthLevelSprites.Get(level);
+		if (sprite)
+		{
+			sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
+		}
+	}
+}
+
+
 void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object) const
 {
 	if (object != nullptr)
@@ -46,16 +65,7 @@ void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::
 		ObjectType objectType = object->GetData();
 		auto sprite= objectSprites.Get(objectType);
 		sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
-		const Creature* creature = dynamic_cast<const Creature*>(object);
-		if (creature && creature->GetRoomCell() && creature->GetRoomCell()->IsFlagSet(RoomCellFlags::LIT))
-		{
-			auto level = creature->GetHealthLevel();
-			auto sprite = healthLevelSprites.Get(level);
-			if (sprite)
-			{
-				sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
-			}
-		}
+		DrawHealthLevel(xy, object);
 	}
 }
 
@@ -64,6 +74,16 @@ void RoomPanelRenderer::DrawUnexplored(const tggd::common::XY<int>& xy) const
 	spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 }
 
+void RoomPanelRenderer::DrawExplored
+(
+	const tggd::common::XY<int>& xy,
+	const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell
+) const
+{
+	DrawTerrain(xy, cell->GetTerrain());
+	DrawObject(xy, cell->GetObject());
+	DrawDither(xy, cell);
+}
 
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
@@ -71,9 +91,7 @@ void RoomPanelRenderer::DrawCell(int column, int row) const
 	tggd::common::XY xy(PlotColumn(column, row), PlotRow(column, row));
 	if (cell->IsFlagSet(RoomCellFlags::EXPLORED))
 	{
-		DrawTerrain(xy, cell->GetTerrain());
-		DrawObject(xy, cell->GetObject());
-		DrawDither(xy, cell);
+		DrawExplored(xy, cell);
 	}
 	else
 	{

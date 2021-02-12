@@ -20,8 +20,26 @@ private:
 	void DrawCell(int, int) const;
 	void DrawTerrain(const tggd::common::XY<int>&, TerrainType) const;
 	void DrawUnexplored(const tggd::common::XY<int>&) const;
-	void DrawObject(const tggd::common::XY<int>&, const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*) const;
-	void DrawDither(const tggd::common::XY<int>&, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*) const;
+	void DrawExplored
+	(
+		const tggd::common::XY<int>&, 
+		const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*
+	) const;
+	void DrawObject
+	(
+		const tggd::common::XY<int>&, 
+		const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*
+	) const;
+	void DrawHealthLevel
+	(
+		const tggd::common::XY<int>&, 
+		const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*
+	) const;
+	void DrawDither
+	(
+		const tggd::common::XY<int>&, 
+		const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*
+	) const;
 public:
 	RoomPanelRenderer
 	(
