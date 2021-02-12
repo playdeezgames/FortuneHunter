@@ -553,5 +553,8 @@
     <ClInclude Include="BaseMenuRenderer.h">
       <Filter>Header Files\Renderers</Filter>
     </ClInclude>
+    <ClInclude Include="InstructionsConstants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

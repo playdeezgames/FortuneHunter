@@ -89,6 +89,7 @@
     <ClInclude Include="HunterDescriptorManager.h" />
     <ClInclude Include="InPlayCommandProcessor.h" />
     <ClInclude Include="InstructionsCommandProcessor.h" />
+    <ClInclude Include="InstructionsConstants.h" />
     <ClInclude Include="InstructionsRenderer.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemDescriptor.h" />

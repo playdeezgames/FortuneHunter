@@ -1,8 +1,8 @@
 #pragma once
-#include "BaseRenderer.h"
-class InstructionsRenderer : public BaseRenderer
+#include "BaseMenuRenderer.h"
+class InstructionsRenderer : public BaseMenuRenderer
 {
 public:
-	InstructionsRenderer(SDL_Renderer*, const tggd::common::SpriteFont&);
+	InstructionsRenderer(SDL_Renderer*, const tggd::common::SpriteFont&, const tggd::common::Sprite*);
 	void Draw() const;
 };

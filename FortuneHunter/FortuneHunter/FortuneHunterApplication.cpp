@@ -16,6 +16,7 @@
 #include "AboutRenderer.h"
 #include "InstructionsRenderer.h"
 #include "MainMenuConstants.h"
+#include "InstructionsConstants.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -100,7 +101,16 @@ void FortuneHunterApplication::Start()
 	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, statusPanelRenderer, roomPanelRenderer, gameData));
 	renderers.AddRenderer(UIState::OPTIONS, new OptionsRenderer(GetMainRenderer(), romFont, soundManager, optionsState));
 	renderers.AddRenderer(UIState::ABOUT, new AboutRenderer(GetMainRenderer(), romFont));
-	renderers.AddRenderer(UIState::INSTRUCTIONS, new InstructionsRenderer(GetMainRenderer(), romFont));
+	renderers.AddRenderer
+	(
+		UIState::INSTRUCTIONS, 
+		new InstructionsRenderer
+		(
+			GetMainRenderer(), 
+			romFont,
+			spriteManager.GetSprite(Constants::UI::Instructions::BACKGROUND_SPRITE)
+		)
+	);
 
 }
 
