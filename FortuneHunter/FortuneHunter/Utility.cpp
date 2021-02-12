@@ -31,14 +31,14 @@ namespace tggd::common
 
 	nlohmann::json Utility::LoadJSON(const std::string& fileName)
 	{
-		nlohmann::json j;
+		nlohmann::json document;
 		std::ifstream input(fileName);
 		if (input.is_open())
 		{
-			input >> j;
+			input >> document;
 			input.close();
 		}
-		return j;
+		return document;
 	}
 
 	int Utility::GenerateRandomNumberFromRange(int minimum, int maximum)
