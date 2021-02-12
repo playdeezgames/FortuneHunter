@@ -6,10 +6,11 @@ MainMenuRenderer::MainMenuRenderer
 (
 	SDL_Renderer* renderer, 
 	const tggd::common::SpriteFont& romFont, 
+	const tggd::common::Sprite* background,
 	const MainMenuState& mainMenuState, 
 	const GameData& gameData
 )
-	: BaseRenderer(renderer, romFont)
+	: BaseMenuRenderer(renderer, romFont, background)
 	, mainMenuState(mainMenuState)
 	, gameData(gameData)
 {
@@ -18,6 +19,7 @@ MainMenuRenderer::MainMenuRenderer
 
 void MainMenuRenderer::Draw() const
 {
+	BaseMenuRenderer::Draw();
 	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::MainMenu::TITLE, Constants::Color::GREEN);
 	if (gameData.CanContinue())
 	{

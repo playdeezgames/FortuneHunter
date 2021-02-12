@@ -281,6 +281,9 @@
     <ClCompile Include="HunterDescriptorManager.cpp">
       <Filter>Source Files\Hunter</Filter>
     </ClCompile>
+    <ClCompile Include="BaseMenuRenderer.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -546,6 +549,9 @@
     </ClInclude>
     <ClInclude Include="HunterDescriptorManager.h">
       <Filter>Header Files\Hunter</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseMenuRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

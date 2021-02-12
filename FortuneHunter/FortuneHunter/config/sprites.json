@@ -2122,5 +2122,19 @@
     "y": 64,
     "w": 16,
     "h": 16
+  },
+  "MainMenuBackground": {
+    "texture": "mainmenubackground",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 480
+  },
+  "InstructionsBackground": {
+    "texture": "instructionsbackground",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 480
   }
 }
