@@ -101,14 +101,18 @@ void FortuneHunterApplication::AddRenderers()
 	);
 }
 
+void FortuneHunterApplication::InitializeDescriptors()
+{
+	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
+	itemDescriptors.Start(Constants::Config::Files::ITEMDESCRIPTORS);
+	hunterDescriptors.Start(Constants::Config::Files::HUNTERDESCRIPTORS);
+}
 
 void FortuneHunterApplication::Start()
 {
 	tggd::common::Utility::SeedRandomNumberGenerator();
 
-	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
-	itemDescriptors.Start(Constants::Config::Files::ITEMDESCRIPTORS);
-	hunterDescriptors.Start(Constants::Config::Files::HUNTERDESCRIPTORS);
+	InitializeDescriptors();
 
 	controllerManager.Start();
 
@@ -116,7 +120,7 @@ void FortuneHunterApplication::Start()
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 
-	options.Start();
+	options.Start();//this has to happen AFTER the sound manager is set up!
 
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
 	healthLevelSprites.Start(spriteManager, Constants::Config::Files::HEALTHLEVELSPRITES);

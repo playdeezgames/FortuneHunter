@@ -60,6 +60,7 @@ private:
 	HealthLevelSprites healthLevelSprites;
 	ObjectSprites objectSprites;
 
+	void InitializeDescriptors();
 	void AddRenderers();
 protected:
 	void Start();
