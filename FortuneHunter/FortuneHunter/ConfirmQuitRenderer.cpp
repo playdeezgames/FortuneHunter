@@ -15,7 +15,7 @@ ConfirmQuitRenderer::ConfirmQuitRenderer
 
 void ConfirmQuitRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, Constants::UI::ConfirmQuit::TITLE, Constants::Color::RED);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::ConfirmQuit::TITLE, Constants::Color::RED);
 	DrawConfirmItem(0, Constants::UI::ConfirmQuit::OPTION_NO, ConfirmState::NO);
 	DrawConfirmItem(1, Constants::UI::ConfirmQuit::OPTION_YES, ConfirmState::YES);
 }
@@ -25,8 +25,8 @@ void ConfirmQuitRenderer::DrawConfirmItem(int line, const std::string& text, con
 	GetRomFont().WriteText
 	(
 		GetMainRenderer(),
-		0,
-		Constants::UI::ConfirmQuit::OFFSET_Y + Constants::UI::ConfirmQuit::LINE_HEIGHT * line,
+		tggd::common::XY<int>(0,
+		Constants::UI::ConfirmQuit::OFFSET_Y + Constants::UI::ConfirmQuit::LINE_HEIGHT * line),
 		text,
 		(confirmState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
 	);

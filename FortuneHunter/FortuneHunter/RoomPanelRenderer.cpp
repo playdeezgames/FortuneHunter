@@ -26,26 +26,26 @@ RoomPanelRenderer::RoomPanelRenderer
 const std::string SPRITE_DITHER = "Dither";
 const std::string SPRITE_UNEXPLORED = "Unexplored";
 
-void RoomPanelRenderer::DrawTerrain(int x, int y, TerrainType terrain) const
+void RoomPanelRenderer::DrawTerrain(const tggd::common::XY<int>& xy, TerrainType terrain) const
 {
-	terrainSprites.Get(terrain)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+	terrainSprites.Get(terrain)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 }
 
-void RoomPanelRenderer::DrawDither(int x, int y, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell) const
+void RoomPanelRenderer::DrawDither(const tggd::common::XY<int>& xy, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell) const
 {
 	if (!cell->IsFlagSet(RoomCellFlags::LIT))
 	{
-		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 	}
 }
 
-void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object) const
+void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>* object) const
 {
 	if (object != nullptr)
 	{
 		ObjectType objectType = object->GetData();
 		auto sprite= objectSprites.Get(objectType);
-		sprite->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+		sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 		const Creature* creature = dynamic_cast<const Creature*>(object);
 		if (creature && creature->GetRoomCell() && creature->GetRoomCell()->IsFlagSet(RoomCellFlags::LIT))
 		{
@@ -53,32 +53,31 @@ void RoomPanelRenderer::DrawObject(int x, int y, const tggd::common::RoomCellObj
 			auto sprite = healthLevelSprites.Get(level);
 			if (sprite)
 			{
-				sprite->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+				sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 			}
 		}
 	}
 }
 
-void RoomPanelRenderer::DrawUnexplored(int x, int y) const
+void RoomPanelRenderer::DrawUnexplored(const tggd::common::XY<int>& xy) const
 {
-	spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), x, y, Constants::Color::WHITE);
+	spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 }
 
 
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
 	auto cell = gameData.GetRoom().GetCell(column, row);
-	int x = PlotColumn(column, row);
-	int y = PlotRow(column, row);
+	tggd::common::XY xy(PlotColumn(column, row), PlotRow(column, row));
 	if (cell->IsFlagSet(RoomCellFlags::EXPLORED))
 	{
-		DrawTerrain(x, y, cell->GetTerrain());
-		DrawObject(x, y, cell->GetObject());
-		DrawDither(x, y, cell);
+		DrawTerrain(xy, cell->GetTerrain());
+		DrawObject(xy, cell->GetObject());
+		DrawDither(xy, cell);
 	}
 	else
 	{
-		DrawUnexplored(x, y);
+		DrawUnexplored(xy);
 	}
 }
 

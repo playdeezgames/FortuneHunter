@@ -22,8 +22,8 @@ void StatusPanelRenderer::DrawGameOver() const
 	{
 		GetRomFont().WriteText(
 			GetMainRenderer(),
-			Constants::UI::StatusPanel::CLIP_X,
-			Constants::UI::StatusPanel::CLIP_Y + 112,//TODO: magic number
+			tggd::common::XY<int>(Constants::UI::StatusPanel::CLIP_X,
+			Constants::UI::StatusPanel::CLIP_Y + 112),//TODO: magic number
 			"Yer dead!",//TODO: magic string
 			Constants::Color::RED);
 	}
@@ -31,8 +31,8 @@ void StatusPanelRenderer::DrawGameOver() const
 	{
 		GetRomFont().WriteText(
 			GetMainRenderer(),
-			Constants::UI::StatusPanel::CLIP_X,
-			Constants::UI::StatusPanel::CLIP_Y + 112,//TODO: magic number
+			tggd::common::XY<int>(Constants::UI::StatusPanel::CLIP_X,
+			Constants::UI::StatusPanel::CLIP_Y + 112),//TODO: magic number
 			"You win!",//TODO: magic string
 			Constants::Color::LIGHT_GREEN);
 	}
@@ -45,14 +45,16 @@ void StatusPanelRenderer::DrawBombs() const
 	spriteManager.GetSprite(Constants::UI::StatusPanel::BOMBS_ICON_SPRITE_NAME)->Draw
 	(
 		GetMainRenderer(),
+		tggd::common::XY<int>(
 		Constants::UI::StatusPanel::BOMBS_ICON_X,
-		Constants::UI::StatusPanel::BOMBS_ICON_Y,
+		Constants::UI::StatusPanel::BOMBS_ICON_Y),
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::BOMBS_TEXT_X,
-		Constants::UI::StatusPanel::BOMBS_TEXT_Y,
+
+		tggd::common::XY<int>(Constants::UI::StatusPanel::BOMBS_TEXT_X,
+		Constants::UI::StatusPanel::BOMBS_TEXT_Y),
 		ss.str(),
 		Constants::Color::WHITE);
 }
@@ -195,14 +197,12 @@ void StatusPanelRenderer::DrawStatistic
 	spriteManager.GetSprite(spriteName)->Draw
 	(
 		GetMainRenderer(),
-		spriteXY.GetX(),
-		spriteXY.GetY(),
+		spriteXY,
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		textXY.GetX(),
-		textXY.GetY(),
+		textXY,
 		text,
 		Constants::Color::WHITE);
 }

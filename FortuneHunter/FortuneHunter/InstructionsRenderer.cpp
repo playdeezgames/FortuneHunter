@@ -8,6 +8,6 @@ InstructionsRenderer::InstructionsRenderer(SDL_Renderer* renderer, const tggd::c
 
 void InstructionsRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "Instructions", Constants::Color::GREEN);
-	GetRomFont().WriteText(GetMainRenderer(), 0, 32, "TODO: put some information here!", Constants::Color::GRAY);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), "Instructions", Constants::Color::GREEN);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 32), "TODO: put some information here!", Constants::Color::GRAY);
 }

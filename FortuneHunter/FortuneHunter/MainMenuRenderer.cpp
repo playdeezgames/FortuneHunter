@@ -18,7 +18,7 @@ MainMenuRenderer::MainMenuRenderer
 
 void MainMenuRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, Constants::UI::MainMenu::TITLE, Constants::Color::GREEN);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::MainMenu::TITLE, Constants::Color::GREEN);
 	if (gameData.CanContinue())
 	{
 		DrawMenuItem(0, Constants::UI::MainMenu::OPTION_CONTINUE, MainMenuState::START);
@@ -38,8 +38,8 @@ void MainMenuRenderer::DrawMenuItem(int line, const std::string& text, const Mai
 	GetRomFont().WriteText
 		(
 			GetMainRenderer(), 
-			0, 
-			Constants::UI::MainMenu::OFFSET_Y + Constants::UI::MainMenu::LINE_HEIGHT * line,
+			tggd::common::XY<int>(0,
+			Constants::UI::MainMenu::OFFSET_Y + Constants::UI::MainMenu::LINE_HEIGHT * line),
 			text, 
 			(mainMenuState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
 		);

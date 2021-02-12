@@ -21,8 +21,8 @@ void OptionsRenderer::DrawOptionsItem(int line, const std::string& text, const O
 	GetRomFont().WriteText
 	(
 		GetMainRenderer(),
-		0,
-		Constants::UI::Options::OFFSET_Y + Constants::UI::Options::LINE_HEIGHT * line,
+		tggd::common::XY<int>(0,
+		Constants::UI::Options::OFFSET_Y + Constants::UI::Options::LINE_HEIGHT * line),
 		text,
 		(optionsState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
 	);
@@ -30,7 +30,7 @@ void OptionsRenderer::DrawOptionsItem(int line, const std::string& text, const O
 }
 void OptionsRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, Constants::UI::Options::TITLE, Constants::Color::GREEN);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::Options::TITLE, Constants::Color::GREEN);
 	if (soundManager.IsMuted())
 	{
 		DrawOptionsItem(0, Constants::UI::Options::OPTION_MUTE_ON, OptionsState::TOGGLE_MUTE);

@@ -5,6 +5,7 @@
 #include "TerrainSprites.h"
 #include "HealthLevelSprites.h"
 #include "ObjectSprites.h"
+#include "XY.h"
 class RoomPanelRenderer : public BaseRenderer
 {
 private:
@@ -17,10 +18,10 @@ private:
 	static int PlotRow(int, int);
 	void DrawCells() const;
 	void DrawCell(int, int) const;
-	void DrawTerrain(int, int, TerrainType) const;
-	void DrawUnexplored(int, int) const;
-	void DrawObject(int, int, const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*) const;
-	void DrawDither(int, int, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*) const;
+	void DrawTerrain(const tggd::common::XY<int>&, TerrainType) const;
+	void DrawUnexplored(const tggd::common::XY<int>&) const;
+	void DrawObject(const tggd::common::XY<int>&, const tggd::common::RoomCellObject<TerrainType, ObjectType, RoomCellFlags>*) const;
+	void DrawDither(const tggd::common::XY<int>&, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>*) const;
 public:
 	RoomPanelRenderer
 	(

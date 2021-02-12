@@ -14,13 +14,13 @@ namespace tggd::common
 
 	}
 
-	void Sprite::Draw(SDL_Renderer* renderer, int x, int y, const SDL_Color& color) const
+	void Sprite::Draw(SDL_Renderer* renderer, const XY<int>& xy, const SDL_Color& color) const
 	{
 		SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
 		SDL_Rect rcDst =
 		{
-			x + offset.GetX(),
-			y + offset.GetY(),
+			xy.GetX() + offset.GetX(),
+			xy.GetY() + offset.GetY(),
 			source.w,
 			source.h
 		};

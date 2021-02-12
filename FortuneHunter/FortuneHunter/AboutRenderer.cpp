@@ -8,6 +8,6 @@ AboutRenderer::AboutRenderer(SDL_Renderer* renderer, const tggd::common::SpriteF
 
 void AboutRenderer::Draw() const
 {
-	GetRomFont().WriteText(GetMainRenderer(), 0, 0, "About", Constants::Color::GREEN);
-	GetRomFont().WriteText(GetMainRenderer(), 0, 32, "TODO: put some information here!", Constants::Color::GRAY);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), "About", Constants::Color::GREEN);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 32), "TODO: put some information here!", Constants::Color::GRAY);
 }

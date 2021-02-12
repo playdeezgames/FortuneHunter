@@ -11,7 +11,7 @@ namespace tggd::common
 		XY<int> offset;
 	public:
 		Sprite(SDL_Texture*, const SDL_Rect&, const XY<int>&);
-		void Draw(SDL_Renderer*, int, int, const SDL_Color&) const;
+		void Draw(SDL_Renderer*, const XY<int>&, const SDL_Color&) const;
 		int GetWidth() const;
 	};
 }
