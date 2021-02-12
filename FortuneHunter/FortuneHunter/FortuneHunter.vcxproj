@@ -76,6 +76,7 @@
     <ClInclude Include="AboutCommandProcessor.h" />
     <ClInclude Include="AboutConstants.h" />
     <ClInclude Include="AboutRenderer.h" />
+    <ClInclude Include="BackgroundConstants.h" />
     <ClInclude Include="BaseCommandProcessor.h" />
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />

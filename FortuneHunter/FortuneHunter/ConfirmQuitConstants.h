@@ -8,5 +8,4 @@ namespace Constants::UI::ConfirmQuit
 	const std::string TITLE = "Are you sure you want to quit?";
 	const std::string OPTION_YES = "Yes";
 	const std::string OPTION_NO = "No";
-	const std::string BACKGROUND_SPRITE = "ConfirmQuitBackground";
 }

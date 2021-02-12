@@ -15,13 +15,7 @@
 #include "InstructionsCommandProcessor.h"
 #include "AboutRenderer.h"
 #include "InstructionsRenderer.h"
-//TODO: vvv does it make more sense to put all background sprites into its own namespace?
-#include "MainMenuConstants.h"
-#include "InstructionsConstants.h"
-#include "AboutConstants.h"
-#include "OptionsConstants.h"
-#include "ConfirmQuitConstants.h"
-//TODO: ^^^ does it make more sense to put all background sprites into its own namespace?
+#include "BackgroundConstants.h"
 
 FortuneHunterApplication FortuneHunterApplication::application;
 
@@ -75,7 +69,7 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(),
 			romFont,
-			spriteManager.GetSprite(Constants::UI::MainMenu::BACKGROUND_SPRITE),
+			spriteManager.GetSprite(Constants::UI::Backgrounds::MAIN_MENU),
 			mainMenuState,
 			gameData
 		)
@@ -87,7 +81,7 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(), 
 			romFont, 
-			spriteManager.GetSprite(Constants::UI::ConfirmQuit::BACKGROUND_SPRITE),
+			spriteManager.GetSprite(Constants::UI::Backgrounds::CONFIRM_QUIT),
 			confirmState
 		)
 	);
@@ -99,7 +93,7 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(), 
 			romFont, 
-			spriteManager.GetSprite(Constants::UI::Options::BACKGROUND_SPRITE),
+			spriteManager.GetSprite(Constants::UI::Backgrounds::OPTIONS),
 			soundManager, 
 			optionsState
 		)
@@ -111,7 +105,7 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(),
 			romFont,
-			spriteManager.GetSprite(Constants::UI::About::BACKGROUND_SPRITE)
+			spriteManager.GetSprite(Constants::UI::Backgrounds::ABOUT)
 		)
 	);
 	renderers.AddRenderer
@@ -121,7 +115,7 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(),
 			romFont,
-			spriteManager.GetSprite(Constants::UI::Instructions::BACKGROUND_SPRITE)
+			spriteManager.GetSprite(Constants::UI::Backgrounds::INSTRUCTIONS)
 		)
 	);
 }
