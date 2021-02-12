@@ -2,11 +2,13 @@
 #include "BaseRenderer.h"
 #include "GameData.h"
 #include "SpriteManager.h"
+#include "XY.h"
 class StatusPanelRenderer : public BaseRenderer 
 {
 private:
 	const GameData& gameData;
 	const tggd::common::SpriteManager& spriteManager;
+	void DrawStatistic(const std::string&, const tggd::common::XY<int>&, const std::string&, const tggd::common::XY<int>&) const;
 	void DrawMoves() const;
 	void DrawKeys() const;
 	void DrawWounds() const;

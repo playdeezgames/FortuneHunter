@@ -83,115 +83,147 @@ void StatusPanelRenderer::DrawMoves() const
 {
 	std::stringstream ss;
 	ss << gameData.GetMoves();
-	spriteManager.GetSprite(Constants::UI::StatusPanel::MOVE_ICON_SPRITE_NAME)->Draw
+	DrawStatistic
 	(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::MOVE_ICON_X,
-		Constants::UI::StatusPanel::MOVE_ICON_Y,
-		Constants::Color::WHITE
-	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::MOVE_TEXT_X,
-		Constants::UI::StatusPanel::MOVE_TEXT_Y,
+		Constants::UI::StatusPanel::MOVE_ICON_SPRITE_NAME,
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::MOVE_ICON_X,
+			Constants::UI::StatusPanel::MOVE_ICON_Y
+			),
 		ss.str(),
-		Constants::Color::WHITE);
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::MOVE_TEXT_X,
+			Constants::UI::StatusPanel::MOVE_TEXT_Y
+			)
+	);
 }
 
 void StatusPanelRenderer::DrawKeys() const
 {
 	std::stringstream ss;
 	ss << gameData.GetHunter()->GetKeys();
-	spriteManager.GetSprite(Constants::UI::StatusPanel::KEYS_ICON_SPRITE_NAME)->Draw
+	DrawStatistic
 	(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::KEYS_ICON_X,
-		Constants::UI::StatusPanel::KEYS_ICON_Y,
-		Constants::Color::WHITE
-	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::KEYS_TEXT_X,
-		Constants::UI::StatusPanel::KEYS_TEXT_Y,
+		Constants::UI::StatusPanel::KEYS_ICON_SPRITE_NAME,
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::KEYS_ICON_X,
+			Constants::UI::StatusPanel::KEYS_ICON_Y
+			),
 		ss.str(),
-		Constants::Color::WHITE);
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::KEYS_TEXT_X,
+			Constants::UI::StatusPanel::KEYS_TEXT_Y
+			)
+	);
 }
 
 void StatusPanelRenderer::DrawWounds() const
 {
 	std::stringstream ss;
 	ss << gameData.GetHunter()->GetHealth() << "/" << gameData.GetHunter()->GetMaximumHealth();
-	spriteManager.GetSprite(Constants::UI::StatusPanel::HEALTH_ICON_SPRITE_NAME)->Draw
+	DrawStatistic
 	(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::HEALTH_ICON_X,
-		Constants::UI::StatusPanel::HEALTH_ICON_Y,
-		Constants::Color::WHITE
-	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::HEALTH_TEXT_X,
-		Constants::UI::StatusPanel::HEALTH_TEXT_Y,
+		Constants::UI::StatusPanel::HEALTH_ICON_SPRITE_NAME,
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::HEALTH_ICON_X,
+			Constants::UI::StatusPanel::HEALTH_ICON_Y
+			),
 		ss.str(),
-		Constants::Color::WHITE);
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::HEALTH_TEXT_X,
+			Constants::UI::StatusPanel::HEALTH_TEXT_Y
+			)
+	);
 }
 
 void StatusPanelRenderer::DrawArmor() const
 {
 	std::stringstream ss;
 	ss << gameData.GetHunter()->GetArmor() << "/" << gameData.GetHunter()->GetMaximumArmor();
-	spriteManager.GetSprite(Constants::UI::StatusPanel::ARMOR_ICON_SPRITE_NAME)->Draw
+	DrawStatistic
 	(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::ARMOR_ICON_X,
-		Constants::UI::StatusPanel::ARMOR_ICON_Y,
-		Constants::Color::WHITE
-	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::ARMOR_TEXT_X,
-		Constants::UI::StatusPanel::ARMOR_TEXT_Y,
+		Constants::UI::StatusPanel::ARMOR_ICON_SPRITE_NAME,
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::ARMOR_ICON_X,
+			Constants::UI::StatusPanel::ARMOR_ICON_Y
+			),
 		ss.str(),
-		Constants::Color::WHITE);
-
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::ARMOR_TEXT_X,
+			Constants::UI::StatusPanel::ARMOR_TEXT_Y
+			)
+	);
 }
 
 void StatusPanelRenderer::DrawAttack() const
 {
 	std::stringstream ss;
 	ss << "1d" << gameData.GetHunter()->GetMaximumAttack();
-	spriteManager.GetSprite(Constants::UI::StatusPanel::ATTACK_ICON_SPRITE_NAME)->Draw
+	DrawStatistic
+	(
+		Constants::UI::StatusPanel::ATTACK_ICON_SPRITE_NAME,
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::ATTACK_ICON_X,
+			Constants::UI::StatusPanel::ATTACK_ICON_Y
+		),
+		ss.str(),
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::ATTACK_TEXT_X,
+			Constants::UI::StatusPanel::ATTACK_TEXT_Y
+		)
+	);
+}
+
+void StatusPanelRenderer::DrawStatistic
+(
+	const std::string& spriteName, 
+	const tggd::common::XY<int>& spriteXY, 
+	const std::string& text, 
+	const tggd::common::XY<int>& textXY
+) const
+{
+	spriteManager.GetSprite(spriteName)->Draw
 	(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::ATTACK_ICON_X,
-		Constants::UI::StatusPanel::ATTACK_ICON_Y,
+		spriteXY.GetX(),
+		spriteXY.GetY(),
 		Constants::Color::WHITE
 	);
 	GetRomFont().WriteText(
 		GetMainRenderer(),
-		Constants::UI::StatusPanel::ATTACK_TEXT_X,
-		Constants::UI::StatusPanel::ATTACK_TEXT_Y,
-		ss.str(),
+		textXY.GetX(),
+		textXY.GetY(),
+		text,
 		Constants::Color::WHITE);
 }
-
 
 void StatusPanelRenderer::DrawDiamonds() const
 {
 	std::stringstream ss;
 	ss << gameData.GetHunter()->GetDiamonds();
-	spriteManager.GetSprite(Constants::UI::StatusPanel::DIAMOND_ICON_SPRITE_NAME)->Draw
+	DrawStatistic
 	(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::DIAMOND_ICON_X,
-		Constants::UI::StatusPanel::DIAMOND_ICON_Y,
-		Constants::Color::WHITE
-	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
-		Constants::UI::StatusPanel::DIAMOND_TEXT_X,
-		Constants::UI::StatusPanel::DIAMOND_TEXT_Y,
+		Constants::UI::StatusPanel::DIAMOND_ICON_SPRITE_NAME,
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::DIAMOND_ICON_X,
+			Constants::UI::StatusPanel::DIAMOND_ICON_Y
+		),
 		ss.str(),
-		Constants::Color::WHITE);
-
+		tggd::common::XY<int>
+		(
+			Constants::UI::StatusPanel::DIAMOND_TEXT_X,
+			Constants::UI::StatusPanel::DIAMOND_TEXT_Y
+		)
+	);
 }
