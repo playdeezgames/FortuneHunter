@@ -61,6 +61,7 @@ private:
 	ObjectSprites objectSprites;
 
 	void InitializeDescriptors();
+	void InitializeAssetManagers();
 	void AddRenderers();
 protected:
 	void Start();
