@@ -3,13 +3,14 @@
 #include "ColorConstants.h"
 #include "StatusPanelConstants.h"
 #include <sstream>
-InPlayRenderer::InPlayRenderer(//TODO: give this a background sprite!
+InPlayRenderer::InPlayRenderer(
 	SDL_Renderer* renderer,
 	const tggd::common::SpriteFont& romFont,
+	const tggd::common::Sprite* background,
 	const StatusPanelRenderer* statusPanelRenderer,
 	const RoomPanelRenderer* roomPanelRenderer,
 	const GameData& gameData)
-	: BaseRenderer(renderer, romFont)
+	: BaseMenuRenderer(renderer, romFont, background)
 	, statusPanelRenderer(statusPanelRenderer)
 	, roomPanelRenderer(roomPanelRenderer)
 	, gameData(gameData)
@@ -18,7 +19,7 @@ InPlayRenderer::InPlayRenderer(//TODO: give this a background sprite!
 
 void InPlayRenderer::Draw() const
 {
-	SDL_RenderClear(GetMainRenderer());
+	BaseMenuRenderer::Draw();
 	roomPanelRenderer->Draw();
 	statusPanelRenderer->Draw();
 }

@@ -1,11 +1,11 @@
 #pragma once
-#include "BaseRenderer.h"
+#include "BaseMenuRenderer.h"
 #include "GameData.h"
 #include "SpriteManager.h"
 #include <map>
 #include "StatusPanelRenderer.h"
 #include "RoomPanelRenderer.h"
-class InPlayRenderer : public BaseRenderer
+class InPlayRenderer : public BaseMenuRenderer
 {
 private:
 	const StatusPanelRenderer* statusPanelRenderer;
@@ -15,6 +15,7 @@ public:
 	InPlayRenderer(
 		SDL_Renderer*, 
 		const tggd::common::SpriteFont&, 
+		const tggd::common::Sprite*,
 		const StatusPanelRenderer*,
 		const RoomPanelRenderer*,
 		const GameData&);

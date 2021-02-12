@@ -85,7 +85,19 @@ void FortuneHunterApplication::AddRenderers()
 			confirmState
 		)
 	);
-	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, statusPanelRenderer, roomPanelRenderer, gameData));
+	renderers.AddRenderer
+	(
+		UIState::IN_PLAY, 
+		new InPlayRenderer
+		(
+			GetMainRenderer(), 
+			romFont, 
+			spriteManager.GetSprite(Constants::UI::Backgrounds::IN_PLAY),
+			statusPanelRenderer, 
+			roomPanelRenderer, 
+			gameData
+		)
+	);
 	renderers.AddRenderer
 	(
 		UIState::OPTIONS, 

@@ -2157,5 +2157,12 @@
     "y": 0,
     "w": 640,
     "h": 480
+  },
+  "InPlayBackground": {
+    "texture": "inplaybackground",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 480
   }
 }
