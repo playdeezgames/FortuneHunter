@@ -67,12 +67,11 @@ void RoomPanelRenderer::DrawUnexplored(int x, int y) const
 
 void RoomPanelRenderer::DrawCell(int column, int row) const
 {
-	const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell = gameData.GetRoom().GetCell(column, row);
+	auto cell = gameData.GetRoom().GetCell(column, row);
 	int x = PlotColumn(column, row);
 	int y = PlotRow(column, row);
 	if (cell->IsFlagSet(RoomCellFlags::EXPLORED))
 	{
-
 		DrawTerrain(x, y, cell->GetTerrain());
 		DrawObject(x, y, cell->GetObject());
 		DrawDither(x, y, cell);
