@@ -12,6 +12,7 @@ namespace tggd::common
 		static void SeedRandomNumberGenerator();
 		static int GenerateRandomNumberFromRange(int, int);
 		static nlohmann::json LoadJSON(const std::string&);
+		static void SaveJSON(const std::string&, const nlohmann::json&);
 		static int StringToInt(const std::string&);
 		template<typename TDelete>
 		static void SafeDelete(TDelete*& ptr)

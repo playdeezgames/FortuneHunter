@@ -41,6 +41,17 @@ namespace tggd::common
 		return document;
 	}
 
+	void Utility::SaveJSON(const std::string& fileName, const nlohmann::json& document)
+	{
+		std::ofstream output(fileName);
+		if (output.is_open())
+		{
+			output << document;
+			output.close();
+		}
+	}
+
+
 	int Utility::GenerateRandomNumberFromRange(int minimum, int maximum)
 	{
 		return rand() % (maximum - minimum) + minimum;

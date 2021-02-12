@@ -25,20 +25,9 @@ void Options::Start()
 
 void Options::Save() const
 {
-	FILE* output = nullptr;
-	if (0 == fopen_s(&output, fileName.c_str(), "w"))
-	{
-		if (output)
-		{
-			fprintf
-			(
-				output, 
-				"{\"muted\":%s,\"sfxVolume\":%d,\"muxVolume\":%d}",
-				(soundManager.IsMuted()) ? ( "true" ) : ( "false" ),
-				soundManager.GetSfxVolume(),
-				soundManager.GetMuxVolume()
-			);
-			fclose(output);
-		}
-	}
+	nlohmann::json properties;
+	properties[PROPERTY_MUTED] = soundManager.IsMuted();
+	properties[PROPERTY_MUX_VOLUME] = soundManager.GetMuxVolume();
+	properties[PROPERTY_SFX_VOLUME] = soundManager.GetSfxVolume();
+	tggd::common::Utility::SaveJSON(fileName, properties);
 }
