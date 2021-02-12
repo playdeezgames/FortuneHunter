@@ -17,6 +17,7 @@
 #include "InstructionsRenderer.h"
 #include "MainMenuConstants.h"
 #include "InstructionsConstants.h"
+#include "AboutConstants.h"
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
@@ -48,6 +49,59 @@ FortuneHunterApplication::FortuneHunterApplication()
 
 }
 
+void FortuneHunterApplication::AddRenderers()
+{
+	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, spriteManager, gameData);
+	roomPanelRenderer =
+		new RoomPanelRenderer
+		(
+			GetMainRenderer(),
+			romFont,
+			spriteManager,
+			terrainSprites,
+			healthLevelSprites,
+			objectSprites,
+			gameData
+		);
+
+	renderers.AddRenderer
+	(
+		UIState::MAIN_MENU,
+		new MainMenuRenderer
+		(
+			GetMainRenderer(),
+			romFont,
+			spriteManager.GetSprite(Constants::UI::MainMenu::BACKGROUND_SPRITE),
+			mainMenuState,
+			gameData
+		)
+	);
+	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
+	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, statusPanelRenderer, roomPanelRenderer, gameData));
+	renderers.AddRenderer(UIState::OPTIONS, new OptionsRenderer(GetMainRenderer(), romFont, soundManager, optionsState));
+	renderers.AddRenderer
+	(
+		UIState::ABOUT,
+		new AboutRenderer
+		(
+			GetMainRenderer(),
+			romFont,
+			spriteManager.GetSprite(Constants::UI::About::BACKGROUND_SPRITE)
+		)
+	);
+	renderers.AddRenderer
+	(
+		UIState::INSTRUCTIONS,
+		new InstructionsRenderer
+		(
+			GetMainRenderer(),
+			romFont,
+			spriteManager.GetSprite(Constants::UI::Instructions::BACKGROUND_SPRITE)
+		)
+	);
+}
+
+
 void FortuneHunterApplication::Start()
 {
 	tggd::common::Utility::SeedRandomNumberGenerator();
@@ -55,12 +109,15 @@ void FortuneHunterApplication::Start()
 	creatureDescriptors.Start(Constants::Config::Files::CREATUREDESCRIPTORS);
 	itemDescriptors.Start(Constants::Config::Files::ITEMDESCRIPTORS);
 	hunterDescriptors.Start(Constants::Config::Files::HUNTERDESCRIPTORS);
+
 	controllerManager.Start();
 
 	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
+
 	options.Start();
+
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
 	healthLevelSprites.Start(spriteManager, Constants::Config::Files::HEALTHLEVELSPRITES);
 	objectSprites.Start(spriteManager, Constants::Config::Files::OBJECTSPRITES);
@@ -72,46 +129,7 @@ void FortuneHunterApplication::Start()
 	commandProcessors.AddCommandProcessor(UIState::ABOUT, new AboutCommandProcessor(uiState));
 	commandProcessors.AddCommandProcessor(UIState::INSTRUCTIONS, new InstructionsCommandProcessor(uiState));
 
-	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, spriteManager, gameData);
-	roomPanelRenderer = 
-		new RoomPanelRenderer
-		(
-			GetMainRenderer(), 
-			romFont, 
-			spriteManager, 
-			terrainSprites, 
-			healthLevelSprites,
-			objectSprites,
-			gameData
-		);
-
-	renderers.AddRenderer
-	(
-		UIState::MAIN_MENU, 
-		new MainMenuRenderer
-		(
-			GetMainRenderer(), 
-			romFont, 
-			spriteManager.GetSprite(Constants::UI::MainMenu::BACKGROUND_SPRITE),
-			mainMenuState, 
-			gameData
-		)
-	);
-	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
-	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, statusPanelRenderer, roomPanelRenderer, gameData));
-	renderers.AddRenderer(UIState::OPTIONS, new OptionsRenderer(GetMainRenderer(), romFont, soundManager, optionsState));
-	renderers.AddRenderer(UIState::ABOUT, new AboutRenderer(GetMainRenderer(), romFont));
-	renderers.AddRenderer
-	(
-		UIState::INSTRUCTIONS, 
-		new InstructionsRenderer
-		(
-			GetMainRenderer(), 
-			romFont,
-			spriteManager.GetSprite(Constants::UI::Instructions::BACKGROUND_SPRITE)
-		)
-	);
-
+	AddRenderers();
 }
 
 void FortuneHunterApplication::Finish()

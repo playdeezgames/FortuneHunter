@@ -2,5 +2,6 @@
     "romfont8x8": "assets/images/romfont8x8.png",
     "tiles": "assets/images/tiles.png",
     "mainmenubackground": "assets/images/backgrounds/mainmenu.png",
-    "instructionsbackground": "assets/images/backgrounds/instructions.png"
+    "instructionsbackground": "assets/images/backgrounds/instructions.png",
+    "aboutbackground": "assets/images/backgrounds/about.png"
 }

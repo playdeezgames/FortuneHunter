@@ -556,5 +556,8 @@
     <ClInclude Include="InstructionsConstants.h">
       <Filter>Header Files\Constants</Filter>
     </ClInclude>
+    <ClInclude Include="AboutConstants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

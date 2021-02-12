@@ -1,8 +1,8 @@
 #pragma once
-#include "BaseRenderer.h"
-class AboutRenderer: public BaseRenderer
+#include "BaseMenuRenderer.h"
+class AboutRenderer: public BaseMenuRenderer
 {
 public:
-	AboutRenderer(SDL_Renderer*, const tggd::common::SpriteFont&);
+	AboutRenderer(SDL_Renderer*, const tggd::common::SpriteFont&, const tggd::common::Sprite*);
 	void Draw() const;
 };
