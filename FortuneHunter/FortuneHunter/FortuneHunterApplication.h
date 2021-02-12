@@ -62,6 +62,8 @@ private:
 
 	void InitializeDescriptors();
 	void InitializeAssetManagers();
+	void InitializeSpriteTables();
+	void AddCommandProcessors();
 	void AddRenderers();
 protected:
 	void Start();

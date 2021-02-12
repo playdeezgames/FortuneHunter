@@ -115,30 +115,32 @@ void FortuneHunterApplication::InitializeAssetManagers()
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 }
 
-
-void FortuneHunterApplication::Start()
+void FortuneHunterApplication::InitializeSpriteTables()
 {
-	tggd::common::Utility::SeedRandomNumberGenerator();
-
-	InitializeDescriptors();
-
-	controllerManager.Start();
-
-	InitializeAssetManagers();
-
-	options.Start();//this has to happen AFTER the sound manager is set up!
-
 	terrainSprites.Start(spriteManager, Constants::Config::Files::TERRAINSPRITES);
 	healthLevelSprites.Start(spriteManager, Constants::Config::Files::HEALTHLEVELSPRITES);
 	objectSprites.Start(spriteManager, Constants::Config::Files::OBJECTSPRITES);
+}
 
+void FortuneHunterApplication::AddCommandProcessors()
+{
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
 	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::OPTIONS, new OptionsCommandProcessor(uiState, optionsState, soundManager, options));
 	commandProcessors.AddCommandProcessor(UIState::ABOUT, new AboutCommandProcessor(uiState));
 	commandProcessors.AddCommandProcessor(UIState::INSTRUCTIONS, new InstructionsCommandProcessor(uiState));
+}
 
+void FortuneHunterApplication::Start()
+{
+	tggd::common::Utility::SeedRandomNumberGenerator();
+	InitializeDescriptors();
+	controllerManager.Start();
+	InitializeAssetManagers();
+	options.Start();//this has to happen AFTER the asset managers are set up!
+	InitializeSpriteTables();
+	AddCommandProcessors();
 	AddRenderers();
 }
 
