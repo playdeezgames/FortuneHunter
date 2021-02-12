@@ -4,5 +4,6 @@
     "mainmenubackground": "assets/images/backgrounds/mainmenu.png",
     "instructionsbackground": "assets/images/backgrounds/instructions.png",
     "aboutbackground": "assets/images/backgrounds/about.png",
-    "optionsbackground": "assets/images/backgrounds/options.png"
+    "optionsbackground": "assets/images/backgrounds/options.png",
+    "confirmquitbackground": "assets/images/backgrounds/confirmquit.png"
 }

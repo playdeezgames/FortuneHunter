@@ -20,6 +20,7 @@
 #include "InstructionsConstants.h"
 #include "AboutConstants.h"
 #include "OptionsConstants.h"
+#include "ConfirmQuitConstants.h"
 //TODO: ^^^ does it make more sense to put all background sprites into its own namespace?
 
 FortuneHunterApplication FortuneHunterApplication::application;
@@ -67,7 +68,6 @@ void FortuneHunterApplication::AddRenderers()
 			objectSprites,
 			gameData
 		);
-
 	renderers.AddRenderer
 	(
 		UIState::MAIN_MENU,
@@ -80,7 +80,17 @@ void FortuneHunterApplication::AddRenderers()
 			gameData
 		)
 	);
-	renderers.AddRenderer(UIState::CONFIRM_QUIT, new ConfirmQuitRenderer(GetMainRenderer(), romFont, confirmState));
+	renderers.AddRenderer
+	(
+		UIState::CONFIRM_QUIT, 
+		new ConfirmQuitRenderer
+		(
+			GetMainRenderer(), 
+			romFont, 
+			spriteManager.GetSprite(Constants::UI::ConfirmQuit::BACKGROUND_SPRITE),
+			confirmState
+		)
+	);
 	renderers.AddRenderer(UIState::IN_PLAY, new InPlayRenderer(GetMainRenderer(), romFont, statusPanelRenderer, roomPanelRenderer, gameData));
 	renderers.AddRenderer
 	(

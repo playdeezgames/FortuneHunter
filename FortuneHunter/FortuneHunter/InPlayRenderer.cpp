@@ -3,7 +3,7 @@
 #include "ColorConstants.h"
 #include "StatusPanelConstants.h"
 #include <sstream>
-InPlayRenderer::InPlayRenderer(
+InPlayRenderer::InPlayRenderer(//TODO: give this a background sprite!
 	SDL_Renderer* renderer,
 	const tggd::common::SpriteFont& romFont,
 	const StatusPanelRenderer* statusPanelRenderer,

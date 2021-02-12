@@ -5,9 +5,10 @@ ConfirmQuitRenderer::ConfirmQuitRenderer
 	(
 		SDL_Renderer* renderer,
 		const tggd::common::SpriteFont& romFont,
+		const tggd::common::Sprite* background,
 		const ConfirmState& confirmState
 	)
-	: BaseRenderer(renderer, romFont)
+	: BaseMenuRenderer(renderer, romFont, background)
 	, confirmState(confirmState)
 {
 
@@ -15,6 +16,7 @@ ConfirmQuitRenderer::ConfirmQuitRenderer
 
 void ConfirmQuitRenderer::Draw() const
 {
+	BaseMenuRenderer::Draw();
 	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::ConfirmQuit::TITLE, Constants::Color::RED);
 	DrawConfirmItem(0, Constants::UI::ConfirmQuit::OPTION_NO, ConfirmState::NO);
 	DrawConfirmItem(1, Constants::UI::ConfirmQuit::OPTION_YES, ConfirmState::YES);
