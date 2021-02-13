@@ -47,6 +47,7 @@
     <ClCompile Include="OptionsRenderer.cpp" />
     <ClCompile Include="OptionsState.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Statistics.cpp" />
     <ClCompile Include="StatisticsCommandProcessor.cpp" />
     <ClCompile Include="StatisticsRenderer.cpp" />
     <ClCompile Include="Utility.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="OptionsState.h" />
     <ClInclude Include="RoomCellFlags.h" />
     <ClInclude Include="SpriteTable.h" />
+    <ClInclude Include="Statistics.h" />
     <ClInclude Include="StatisticsCommandProcessor.h" />
     <ClInclude Include="StatisticsRenderer.h" />
     <ClInclude Include="XY.h" />

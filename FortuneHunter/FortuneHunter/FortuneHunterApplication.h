@@ -26,6 +26,7 @@
 #include "Options.h"
 #include "OptionsState.h"
 #include "HunterDescriptorManager.h"
+#include "Statistics.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -50,6 +51,7 @@ private:
 	MainMenuState mainMenuState;
 	ConfirmState confirmState;
 	OptionsState optionsState;
+	Statistics statistics;
 
 	CreatureDescriptorManager creatureDescriptors;
 	ItemDescriptorManager itemDescriptors;

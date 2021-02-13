@@ -55,4 +55,5 @@ public:
 	size_t GetMoves() const;
 	void MoveHunter(RoomDirection);
 	void UseBomb();
+	int GetScore() const;
 };

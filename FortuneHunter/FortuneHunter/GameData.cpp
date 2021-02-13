@@ -317,3 +317,9 @@ void GameData::UseBomb()
 		}
 	}
 }
+
+int GameData::GetScore() const
+{
+	return GetHunter()->GetScore();
+}
+

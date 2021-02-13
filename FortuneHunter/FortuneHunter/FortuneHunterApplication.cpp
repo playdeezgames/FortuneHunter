@@ -48,6 +48,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, objectSprites(finishManager)
 	, roomPanelRenderer(nullptr)
 	, optionsState(OptionsState::BACK)
+	, statistics(Constants::Config::Files::STATISTICS)
 {
 
 }
@@ -182,7 +183,7 @@ void FortuneHunterApplication::AddCommandProcessors()
 {
 	commandProcessors.AddCommandProcessor(UIState::MAIN_MENU, new MainMenuCommandProcessor(uiState, mainMenuState, gameData));
 	commandProcessors.AddCommandProcessor(UIState::CONFIRM_QUIT, new ConfirmQuitCommandProcessor(uiState, confirmState));
-	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData));
+	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData, statistics));
 	commandProcessors.AddCommandProcessor(UIState::OPTIONS, new OptionsCommandProcessor(uiState, optionsState, soundManager, options));
 	commandProcessors.AddCommandProcessor(UIState::ABOUT, new AboutCommandProcessor(uiState));
 	commandProcessors.AddCommandProcessor(UIState::INSTRUCTIONS, new InstructionsCommandProcessor(uiState));

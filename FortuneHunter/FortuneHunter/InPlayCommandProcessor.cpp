@@ -1,10 +1,18 @@
 #include "InPlayCommandProcessor.h"
-InPlayCommandProcessor::InPlayCommandProcessor(UIState& uiState, GameData& gameData)
+InPlayCommandProcessor::InPlayCommandProcessor(UIState& uiState, GameData& gameData, Statistics& statistics)
 	: BaseCommandProcessor(uiState)
 	, gameData(gameData)
+	, statistics(statistics)
 {
 
 }
+
+void InPlayCommandProcessor::TransitionToFinalScore()
+{
+	statistics.AddGame(gameData.GetScore());
+	SetUIState(UIState::FINAL_SCORE);
+}
+
 void InPlayCommandProcessor::OnCommand(const Command& command)
 {
 	switch (command)
@@ -16,7 +24,7 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 		}
 		else
 		{
-			SetUIState(UIState::FINAL_SCORE);
+			TransitionToFinalScore();
 		}
 		return;
 	case Command::UP:
@@ -38,7 +46,7 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 		}
 		else
 		{
-			SetUIState(UIState::FINAL_SCORE);
+			TransitionToFinalScore();
 		}
 		return;
 	}
