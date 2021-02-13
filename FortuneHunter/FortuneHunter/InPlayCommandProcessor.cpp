@@ -10,7 +10,14 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 	switch (command)
 	{
 	case Command::BACK:
-		SetUIState(UIState::MAIN_MENU);
+		if (gameData.CanContinue())
+		{
+			SetUIState(UIState::MAIN_MENU);
+		}
+		else
+		{
+			SetUIState(UIState::FINAL_SCORE);
+		}
 		return;
 	case Command::UP:
 		gameData.MoveHunter(RoomDirection::NORTH);
@@ -25,7 +32,14 @@ void InPlayCommandProcessor::OnCommand(const Command& command)
 		gameData.MoveHunter(RoomDirection::EAST);
 		return;
 	case Command::GREEN:
-		gameData.UseBomb();
+		if (gameData.CanContinue())
+		{
+			gameData.UseBomb();
+		}
+		else
+		{
+			SetUIState(UIState::FINAL_SCORE);
+		}
 		return;
 	}
 }
