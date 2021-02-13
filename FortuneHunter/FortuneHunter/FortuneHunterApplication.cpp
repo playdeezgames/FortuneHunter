@@ -133,7 +133,8 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(),
 			romFont,
-			spriteManager.GetSprite(Constants::UI::Backgrounds::STATISTICS)
+			spriteManager.GetSprite(Constants::UI::Backgrounds::STATISTICS),
+			statistics
 		)
 	);
 	renderers.AddRenderer
@@ -201,6 +202,7 @@ void FortuneHunterApplication::Start()
 	InitializeSpriteTables();
 	AddCommandProcessors();
 	AddRenderers();
+	statistics.Load();
 }
 
 void FortuneHunterApplication::Finish()
