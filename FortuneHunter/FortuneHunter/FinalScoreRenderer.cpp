@@ -12,5 +12,5 @@ FinalScoreRenderer::FinalScoreRenderer
 
 void FinalScoreRenderer::Draw() const
 {
-
+	BaseMenuRenderer::Draw();
 }

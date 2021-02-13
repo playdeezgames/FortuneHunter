@@ -49,6 +49,9 @@ void MainMenuCommandProcessor::DoMenuItemAction()
 	case MainMenuState::ABOUT:
 		SetUIState(UIState::ABOUT);
 		return;
+	case MainMenuState::STATISTICS:
+		SetUIState(UIState::STATISTICS);
+		return;
 	case MainMenuState::INSTRUCTIONS:
 		SetUIState(UIState::INSTRUCTIONS);
 		return;

@@ -12,5 +12,5 @@ StatisticsRenderer::StatisticsRenderer
 
 void StatisticsRenderer::Draw() const
 {
-
+	BaseMenuRenderer::Draw();
 }
