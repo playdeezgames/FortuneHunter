@@ -10,6 +10,7 @@ namespace Constants::UI::MainMenu
 	const std::string OPTION_START = "Start";
 	const std::string OPTION_CONTINUE = "Continue";
 	const std::string OPTION_INSTRUCTIONS = "Instructions";
+	const std::string OPTION_STATISTICS = "Statistics";
 	const std::string OPTION_ABOUT = "About";
 	const std::string OPTION_OPTIONS = "Options";
 	const std::string OPTION_QUIT = "Quit";
