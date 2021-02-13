@@ -23,6 +23,12 @@
         "bombSfx": "badoosh",
         "noBombSfx": "shucks",
         "initialBombs": 3,
-        "bombDamage": 10
+        "bombDamage": 10,
+        "awards":{
+            "0": 1000,
+            "1": 100,
+            "2": 500,
+            "3": 4500
+        }
     }
 }

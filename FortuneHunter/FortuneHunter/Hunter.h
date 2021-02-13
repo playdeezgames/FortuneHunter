@@ -53,4 +53,7 @@ public:
 	bool IsWinner() const;
 	size_t GetBombs() const;
 	bool UseBomb();
+	int GetTally(HunterAward) const;
+	int GetScore(HunterAward) const;
+	int GetScore() const;
 };

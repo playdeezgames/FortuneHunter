@@ -121,7 +121,8 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetMainRenderer(),
 			romFont,
-			spriteManager.GetSprite(Constants::UI::Backgrounds::FINAL_SCORE)
+			spriteManager.GetSprite(Constants::UI::Backgrounds::FINAL_SCORE),
+			gameData
 		)
 	);
 	renderers.AddRenderer

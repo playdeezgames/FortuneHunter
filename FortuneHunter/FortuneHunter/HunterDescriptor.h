@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include "json.hpp"
+#include <map>
+#include "HunterAward.h"
 class HunterDescriptor
 {
 private:
@@ -14,6 +16,7 @@ private:
 	std::string bombSfx;
 	std::string noBombSfx;
 	int bombDamage;
+	std::map<HunterAward, int> awards;
 public:
 	HunterDescriptor(const nlohmann::json&);
 	int GetMaximumHealth(size_t) const;
@@ -25,5 +28,6 @@ public:
 	const std::string GetNoBombSfx() const;
 	size_t GetInitialBombs() const;
 	int GetBombDamage() const;
+	int GetAward(HunterAward) const;
 };
 

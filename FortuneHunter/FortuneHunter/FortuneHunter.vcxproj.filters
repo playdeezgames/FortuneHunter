@@ -296,6 +296,9 @@
     <ClCompile Include="StatisticsRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
+    <ClCompile Include="HunterAward.cpp">
+      <Filter>Source Files\Hunter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -585,6 +588,9 @@
     </ClInclude>
     <ClInclude Include="StatisticsRenderer.h">
       <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="HunterAward.h">
+      <Filter>Header Files\Hunter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

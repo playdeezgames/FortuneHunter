@@ -242,3 +242,36 @@ const HunterDescriptor* Hunter::GetDescriptor() const
 {
 	return hunterDescriptor;
 }
+
+int Hunter::GetTally(HunterAward award) const
+{
+	switch (award)
+	{
+	case HunterAward::DIAMOND:
+		return diamonds;
+	case HunterAward::HEALTH:
+		return GetHealth();
+	case HunterAward::EXIT_KEY:
+		return (exitKey) ? (1) : (0);
+	case HunterAward::EXIT:
+		return (exited) ? (1) : (0);
+	default:
+		return 0;
+	}
+}
+
+
+int Hunter::GetScore(HunterAward award) const
+{
+	return GetTally(award) * hunterDescriptor->GetAward(award);
+}
+
+int Hunter::GetScore() const
+{
+	int score = 0;
+	for (auto award : HunterAwardHelper::GetAll())
+	{
+		score += GetScore(award);
+	}
+	return score;
+}

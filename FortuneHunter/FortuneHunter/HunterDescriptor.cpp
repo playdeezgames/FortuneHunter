@@ -11,6 +11,7 @@ const std::string PROPERTY_BOMB_SFX = "bombSfx";
 const std::string PROPERTY_NO_BOMB_SFX = "noBombSfx";
 const std::string PROPERTY_INITIAL_BOMBS = "initialBombs";
 const std::string PROPERTY_BOMB_DAMAGE = "bombDamage";
+const std::string PROPERTY_AWARDS = "awards";
 
 HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
 	: maximumHealths()
@@ -42,6 +43,12 @@ HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
 	noBombSfx = j[PROPERTY_NO_BOMB_SFX];
 	initialBombs = j[PROPERTY_INITIAL_BOMBS];
 	bombDamage = j[PROPERTY_BOMB_DAMAGE];
+	auto awardItems = j[PROPERTY_AWARDS];
+	for (auto& item : awardItems.items())
+	{
+		HunterAward id = (HunterAward)tggd::common::Utility::StringToInt(item.key());
+		awards[id] = (int)item.value();
+	}
 }
 
 static int GetLevel(size_t level, const std::vector<int>& levels)
@@ -93,4 +100,14 @@ const std::string HunterDescriptor::GetNoBombSfx() const
 int HunterDescriptor::GetBombDamage() const
 {
 	return bombDamage;
+}
+
+int HunterDescriptor::GetAward(HunterAward award) const
+{
+	auto iter = awards.find(award);
+	if (iter != awards.end())
+	{
+		return iter->second;
+	}
+	return 0;
 }
