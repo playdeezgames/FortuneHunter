@@ -284,6 +284,12 @@
     <ClCompile Include="BaseMenuRenderer.cpp">
       <Filter>Source Files\Renderers</Filter>
     </ClCompile>
+    <ClCompile Include="StatisticsCommandProcessor.cpp">
+      <Filter>Source Files\CommandProcessors</Filter>
+    </ClCompile>
+    <ClCompile Include="FinalScoreCommandProcessor.cpp">
+      <Filter>Source Files\CommandProcessors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -561,6 +567,12 @@
     </ClInclude>
     <ClInclude Include="BackgroundConstants.h">
       <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalScoreCommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticsCommandProcessor.h">
+      <Filter>Header Files\CommandProcessors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

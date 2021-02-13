@@ -16,6 +16,8 @@
 #include "AboutRenderer.h"
 #include "InstructionsRenderer.h"
 #include "BackgroundConstants.h"
+#include "FinalScoreCommandProcessor.h"
+#include "StatisticsCommandProcessor.h"
 
 FortuneHunterApplication FortuneHunterApplication::application;
 
@@ -161,6 +163,8 @@ void FortuneHunterApplication::AddCommandProcessors()
 	commandProcessors.AddCommandProcessor(UIState::OPTIONS, new OptionsCommandProcessor(uiState, optionsState, soundManager, options));
 	commandProcessors.AddCommandProcessor(UIState::ABOUT, new AboutCommandProcessor(uiState));
 	commandProcessors.AddCommandProcessor(UIState::INSTRUCTIONS, new InstructionsCommandProcessor(uiState));
+	commandProcessors.AddCommandProcessor(UIState::FINAL_SCORE, new FinalScoreCommandProcessor(uiState));
+	commandProcessors.AddCommandProcessor(UIState::STATISTICS, new StatisticsCommandProcessor(uiState));
 }
 
 void FortuneHunterApplication::Start()

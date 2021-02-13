@@ -24,6 +24,7 @@
     <ClCompile Include="BaseDescriptor.cpp" />
     <ClCompile Include="BaseMenuRenderer.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
+    <ClCompile Include="FinalScoreCommandProcessor.cpp" />
     <ClCompile Include="FinishManager.cpp" />
     <ClCompile Include="HealthLevelSprites.cpp" />
     <ClCompile Include="HunterDescriptor.cpp" />
@@ -44,6 +45,7 @@
     <ClCompile Include="OptionsRenderer.cpp" />
     <ClCompile Include="OptionsState.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="StatisticsCommandProcessor.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="FortuneHunterEventHandler.cpp" />
     <ClCompile Include="FortuneHunterApplication.cpp" />
@@ -83,6 +85,7 @@
     <ClInclude Include="BaseMenuRenderer.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="DescribedObject.h" />
+    <ClInclude Include="FinalScoreCommandProcessor.h" />
     <ClInclude Include="Finisher.h" />
     <ClInclude Include="FinishManager.h" />
     <ClInclude Include="HealthLevel.h" />
@@ -108,6 +111,7 @@
     <ClInclude Include="OptionsState.h" />
     <ClInclude Include="RoomCellFlags.h" />
     <ClInclude Include="SpriteTable.h" />
+    <ClInclude Include="StatisticsCommandProcessor.h" />
     <ClInclude Include="XY.h" />
     <ClInclude Include="CommandProcessorManager.h" />
     <ClInclude Include="ControllerManager.h" />
