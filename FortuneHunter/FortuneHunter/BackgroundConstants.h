@@ -8,4 +8,6 @@ namespace Constants::UI::Backgrounds
 	const std::string MAIN_MENU = "MainMenuBackground";
 	const std::string OPTIONS = "OptionsBackground";
 	const std::string IN_PLAY = "InPlayBackground";
+	const std::string FINAL_SCORE = "FinalScoreBackground";
+	const std::string STATISTICS = "StatisticsBackground";
 }

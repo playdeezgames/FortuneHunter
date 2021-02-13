@@ -6,5 +6,7 @@
     "aboutbackground": "assets/images/backgrounds/about.png",
     "optionsbackground": "assets/images/backgrounds/options.png",
     "confirmquitbackground": "assets/images/backgrounds/confirmquit.png",
-    "inplaybackground": "assets/images/backgrounds/inplay.png"
+    "inplaybackground": "assets/images/backgrounds/inplay.png",
+    "finalscorebackground": "assets/images/backgrounds/finalscore.png",
+    "statisticsbackground": "assets/images/backgrounds/statistics.png"
 }

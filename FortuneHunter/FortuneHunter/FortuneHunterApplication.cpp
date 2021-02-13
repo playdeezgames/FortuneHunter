@@ -18,6 +18,8 @@
 #include "BackgroundConstants.h"
 #include "FinalScoreCommandProcessor.h"
 #include "StatisticsCommandProcessor.h"
+#include "FinalScoreRenderer.h"
+#include "StatisticsRenderer.h"
 
 FortuneHunterApplication FortuneHunterApplication::application;
 
@@ -110,6 +112,26 @@ void FortuneHunterApplication::AddRenderers()
 			spriteManager.GetSprite(Constants::UI::Backgrounds::OPTIONS),
 			soundManager, 
 			optionsState
+		)
+	);
+	renderers.AddRenderer
+	(
+		UIState::FINAL_SCORE,
+		new FinalScoreRenderer
+		(
+			GetMainRenderer(),
+			romFont,
+			spriteManager.GetSprite(Constants::UI::Backgrounds::FINAL_SCORE)
+		)
+	);
+	renderers.AddRenderer
+	(
+		UIState::STATISTICS,
+		new StatisticsRenderer
+		(
+			GetMainRenderer(),
+			romFont,
+			spriteManager.GetSprite(Constants::UI::Backgrounds::STATISTICS)
 		)
 	);
 	renderers.AddRenderer

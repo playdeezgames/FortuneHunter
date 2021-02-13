@@ -290,6 +290,12 @@
     <ClCompile Include="FinalScoreCommandProcessor.cpp">
       <Filter>Source Files\CommandProcessors</Filter>
     </ClCompile>
+    <ClCompile Include="FinalScoreRenderer.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticsRenderer.cpp">
+      <Filter>Source Files\Renderers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCommandProcessor.h">
@@ -573,6 +579,12 @@
     </ClInclude>
     <ClInclude Include="StatisticsCommandProcessor.h">
       <Filter>Header Files\CommandProcessors</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalScoreRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticsRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

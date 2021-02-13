@@ -2164,5 +2164,19 @@
     "y": 0,
     "w": 640,
     "h": 480
+  },
+  "FinalScoreBackground": {
+    "texture": "finalscorebackground",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 480
+  },
+  "StatisticsBackground": {
+    "texture": "statisticsbackground",
+    "x": 0,
+    "y": 0,
+    "w": 640,
+    "h": 480
   }
 }
