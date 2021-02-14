@@ -20,7 +20,8 @@ MainMenuRenderer::MainMenuRenderer
 void MainMenuRenderer::Draw() const
 {
 	BaseMenuRenderer::Draw();
-	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::MainMenu::TITLE, Constants::Color::GREEN);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(Constants::UI::MainMenu::TITLE_OFFSET_X + Constants::UI::DROP_SHADOW_X, Constants::UI::DROP_SHADOW_Y + Constants::UI::MainMenu::TITLE_OFFSET_Y), Constants::UI::MainMenu::TITLE, Constants::Color::BLACK);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(Constants::UI::MainMenu::TITLE_OFFSET_X, Constants::UI::MainMenu::TITLE_OFFSET_Y), Constants::UI::MainMenu::TITLE, Constants::Color::LIGHT_GREEN);
 	if (gameData.CanContinue())
 	{
 		DrawMenuItem(0, Constants::UI::MainMenu::OPTION_CONTINUE, MainMenuState::START);
@@ -39,12 +40,20 @@ void MainMenuRenderer::Draw() const
 void MainMenuRenderer::DrawMenuItem(int line, const std::string& text, const MainMenuState& state) const
 {
 	GetRomFont().WriteText
+	(
+		GetMainRenderer(),
+		tggd::common::XY<int>(Constants::UI::DROP_SHADOW_X + Constants::UI::MainMenu::MENU_OFFSET_X,
+			Constants::UI::MainMenu::MENU_OFFSET_Y + Constants::UI::MainMenu::LINE_HEIGHT * line + Constants::UI::DROP_SHADOW_Y),
+		text,
+		(Constants::Color::BLACK)
+	);
+	GetRomFont().WriteText
 		(
 			GetMainRenderer(), 
-			tggd::common::XY<int>(0,
-			Constants::UI::MainMenu::OFFSET_Y + Constants::UI::MainMenu::LINE_HEIGHT * line),
+			tggd::common::XY<int>(Constants::UI::MainMenu::MENU_OFFSET_X,
+			Constants::UI::MainMenu::MENU_OFFSET_Y + Constants::UI::MainMenu::LINE_HEIGHT * line),
 			text, 
-			(mainMenuState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
+			(mainMenuState == state) ? (Constants::Color::YELLOW) : (Constants::Color::WHITE)
 		);
 }
 

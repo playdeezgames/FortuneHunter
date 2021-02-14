@@ -365,7 +365,7 @@ void RoomGenerator::ClearRoom()
 			auto cell = room.GetCell(column, row);
 			cell->RemoveObject();
 			cell->ClearAllFlags();
-			//cell->SetFlag(RoomCellFlags::EXPLORED);//TODO: delete line
+			cell->SetFlag(RoomCellFlags::EXPLORED);//TODO: delete line
 			bool isMazeCell = column % 2 == 1 && row % 2 == 1;//TODO: rewrite this to use PlotColumn/PlotRow
 			cell->SetTerrain((isMazeCell) ? (TerrainType::FLOOR) : (TerrainType::WALL_NESW));
 		}
