@@ -27,6 +27,7 @@ namespace tggd::common
 		static void DoFinish();
 	protected:
 		SDL_Renderer* GetMainRenderer() const { return renderer; }
+		SDL_Window* GetMainWindow() const { return window; }
 		virtual bool IsRunning() const = 0;
 		virtual void Start() = 0;
 		virtual void Finish() = 0;

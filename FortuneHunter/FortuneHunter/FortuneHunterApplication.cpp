@@ -20,6 +20,7 @@
 #include "StatisticsCommandProcessor.h"
 #include "FinalScoreRenderer.h"
 #include "StatisticsRenderer.h"
+#include <SDL_image.h>
 
 FortuneHunterApplication FortuneHunterApplication::application;
 
@@ -194,6 +195,10 @@ void FortuneHunterApplication::AddCommandProcessors()
 
 void FortuneHunterApplication::Start()
 {
+	auto s = IMG_Load(Constants::Config::Files::ICON.c_str());
+	SDL_SetWindowIcon(GetMainWindow(), s);
+	SDL_FreeSurface(s);
+
 	tggd::common::Utility::SeedRandomNumberGenerator();
 	InitializeDescriptors();
 	controllerManager.Start();
