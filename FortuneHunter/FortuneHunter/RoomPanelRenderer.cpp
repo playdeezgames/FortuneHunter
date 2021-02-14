@@ -69,11 +69,6 @@ void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::
 	}
 }
 
-void RoomPanelRenderer::DrawUnexplored(const tggd::common::XY<int>& xy) const
-{
-	//spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
-}
-
 void RoomPanelRenderer::DrawExplored
 (
 	const tggd::common::XY<int>& xy,
@@ -92,10 +87,6 @@ void RoomPanelRenderer::DrawCell(int column, int row) const
 	if (cell->IsFlagSet(RoomCellFlags::EXPLORED))
 	{
 		DrawExplored(xy, cell);
-	}
-	else
-	{
-		DrawUnexplored(xy);
 	}
 }
 

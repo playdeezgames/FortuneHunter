@@ -19,7 +19,6 @@ private:
 	void DrawCells() const;
 	void DrawCell(int, int) const;
 	void DrawTerrain(const tggd::common::XY<int>&, TerrainType) const;
-	void DrawUnexplored(const tggd::common::XY<int>&) const;
 	void DrawExplored
 	(
 		const tggd::common::XY<int>&, 
