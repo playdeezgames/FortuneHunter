@@ -14,6 +14,7 @@ GameData::GameData
 	, creatureDescriptors(creatureDescriptors)
 	, itemDescriptors(itemDescriptors)
 	, hunterDescriptors(hunterDescriptors)
+	, difficulty(0)
 {
 }
 
@@ -61,7 +62,7 @@ Hunter* GameData::GetHunter()
 
 void GameData::PlaceHunter()
 {
-	hunter = new Hunter(hunterDescriptors.GetDescriptor(0));
+	hunter = new Hunter(hunterDescriptors.GetDescriptor(GetDifficulty()));
 	while (hunter->GetRoomCell() == nullptr)
 	{
 		int column = tggd::common::Utility::GenerateRandomNumberFromRange(0, Constants::Room::COLUMNS);
@@ -323,3 +324,12 @@ int GameData::GetScore() const
 	return GetHunter()->GetScore();
 }
 
+void GameData::SetDifficulty(int value)
+{
+	difficulty = value;
+}
+
+int GameData::GetDifficulty() const
+{
+	return difficulty;
+}

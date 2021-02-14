@@ -1,5 +1,6 @@
 {
     "0": {
+        "name": "easy",
         "maximumHealths": [
             25,
             30,
@@ -32,6 +33,7 @@
         }
     },
     "1": {
+        "name": "normal",
         "maximumHealths": [
             20,
             25,
@@ -64,6 +66,7 @@
         }
     },
     "2": {
+        "name": "hard",
         "maximumHealths": [
             15,
             20,

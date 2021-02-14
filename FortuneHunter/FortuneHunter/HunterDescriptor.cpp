@@ -12,6 +12,8 @@ const std::string PROPERTY_NO_BOMB_SFX = "noBombSfx";
 const std::string PROPERTY_INITIAL_BOMBS = "initialBombs";
 const std::string PROPERTY_BOMB_DAMAGE = "bombDamage";
 const std::string PROPERTY_AWARDS = "awards";
+const std::string PROPERTY_NAME = "name";
+
 
 HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
 	: maximumHealths()
@@ -43,6 +45,7 @@ HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
 	noBombSfx = j[PROPERTY_NO_BOMB_SFX];
 	initialBombs = j[PROPERTY_INITIAL_BOMBS];
 	bombDamage = j[PROPERTY_BOMB_DAMAGE];
+	name = j[PROPERTY_NAME];
 	auto awardItems = j[PROPERTY_AWARDS];
 	for (auto& item : awardItems.items())
 	{
@@ -72,12 +75,12 @@ int HunterDescriptor::GetMaximumArmor(size_t level) const
 	return GetLevel(level, maximumArmors);
 }
 
-const std::string HunterDescriptor::GetDamageSfx() const
+const std::string& HunterDescriptor::GetDamageSfx() const
 {
 	return damageSfx;
 }
 
-const std::string HunterDescriptor::GetDeathSfx() const
+const std::string& HunterDescriptor::GetDeathSfx() const
 {
 	return deathSfx;
 }
@@ -87,12 +90,12 @@ size_t HunterDescriptor::GetInitialBombs() const
 	return initialBombs;
 }
 
-const std::string HunterDescriptor::GetBombSfx() const
+const std::string& HunterDescriptor::GetBombSfx() const
 {
 	return bombSfx;
 }
 
-const std::string HunterDescriptor::GetNoBombSfx() const
+const std::string& HunterDescriptor::GetNoBombSfx() const
 {
 	return noBombSfx;
 }
@@ -110,4 +113,9 @@ int HunterDescriptor::GetAward(HunterAward award) const
 		return iter->second;
 	}
 	return 0;
+}
+
+const std::string& HunterDescriptor::GetName() const
+{
+	return name;
 }

@@ -15,6 +15,7 @@ private:
 	size_t initialBombs;
 	std::string bombSfx;
 	std::string noBombSfx;
+	std::string name;
 	int bombDamage;
 	std::map<HunterAward, int> awards;
 public:
@@ -22,12 +23,13 @@ public:
 	int GetMaximumHealth(size_t) const;
 	int GetMaximumAttack(size_t) const;
 	int GetMaximumArmor(size_t) const;
-	const std::string GetDamageSfx() const;
-	const std::string GetDeathSfx() const;
-	const std::string GetBombSfx() const;
-	const std::string GetNoBombSfx() const;
+	const std::string& GetDamageSfx() const;
+	const std::string& GetDeathSfx() const;
+	const std::string& GetBombSfx() const;
+	const std::string& GetNoBombSfx() const;
 	size_t GetInitialBombs() const;
 	int GetBombDamage() const;
 	int GetAward(HunterAward) const;
+	const std::string& GetName() const;
 };
 

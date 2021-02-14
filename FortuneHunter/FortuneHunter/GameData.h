@@ -22,6 +22,7 @@ private:
 	const ItemDescriptorManager& itemDescriptors;
 	tggd::common::Room<TerrainType, ObjectType, RoomCellFlags> room;
 	Hunter* hunter;
+	int difficulty;
 
 	void ClearHunter();
 	void PlaceHunter();
@@ -56,4 +57,6 @@ public:
 	void MoveHunter(RoomDirection);
 	void UseBomb();
 	int GetScore() const;
+	void SetDifficulty(int);
+	int GetDifficulty() const;
 };
