@@ -1,6 +1,38 @@
 {
     "0": {
         "maximumHealths": [
+            25,
+            30,
+            35,
+            40
+        ],
+        "maximumAttacks": [
+            6,
+            8,
+            10,
+            12
+        ],
+        "maximumArmors": [
+            10,
+            15,
+            20,
+            25
+        ],
+        "damageSfx": "hithunter",
+        "deathSfx": "deadhunter",
+        "bombSfx": "badoosh",
+        "noBombSfx": "shucks",
+        "initialBombs": 5,
+        "bombDamage": 10,
+        "awards":{
+            "0": 500,
+            "1": 50,
+            "2": 250,
+            "3": 2250
+        }
+    },
+    "1": {
+        "maximumHealths": [
             20,
             25,
             30,
@@ -29,6 +61,38 @@
             "1": 100,
             "2": 500,
             "3": 4500
+        }
+    },
+    "2": {
+        "maximumHealths": [
+            15,
+            20,
+            25,
+            30
+        ],
+        "maximumAttacks": [
+            3,
+            4,
+            5,
+            6
+        ],
+        "maximumArmors": [
+            10,
+            15,
+            20,
+            25
+        ],
+        "damageSfx": "hithunter",
+        "deathSfx": "deadhunter",
+        "bombSfx": "badoosh",
+        "noBombSfx": "shucks",
+        "initialBombs": 1,
+        "bombDamage": 10,
+        "awards":{
+            "0": 2000,
+            "1": 200,
+            "2": 1000,
+            "3": 9000
         }
     }
 }
