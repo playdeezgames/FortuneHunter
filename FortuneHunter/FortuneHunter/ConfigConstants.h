@@ -17,5 +17,6 @@ namespace Constants::Config
 		const std::string OBJECTSPRITES = "config/objectsprites.json";
 		const std::string OPTIONS = "config/options.json";
 		const std::string STATISTICS = "config/statistics.json";
+		const std::string ICON = "assets/images/icon.png";
 	}
 }

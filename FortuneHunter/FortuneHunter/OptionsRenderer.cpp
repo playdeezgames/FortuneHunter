@@ -23,12 +23,19 @@ void OptionsRenderer::DrawOptionsItem(int line, const std::string& text, const O
 	GetRomFont().WriteText
 	(
 		GetMainRenderer(),
-		tggd::common::XY<int>(0,
-		Constants::UI::Options::OFFSET_Y + Constants::UI::Options::LINE_HEIGHT * line),
+		tggd::common::XY<int>(Constants::UI::Options::MENU_OFFSET_X + Constants::UI::DROP_SHADOW_X,
+			Constants::UI::Options::MENU_OFFSET_Y + Constants::UI::Options::LINE_HEIGHT * line + Constants::UI::DROP_SHADOW_Y),
 		text,
-		(optionsState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
+		Constants::Color::BLACK
 	);
-
+	GetRomFont().WriteText
+	(
+		GetMainRenderer(),
+		tggd::common::XY<int>(Constants::UI::Options::MENU_OFFSET_X,
+		Constants::UI::Options::MENU_OFFSET_Y + Constants::UI::Options::LINE_HEIGHT * line),
+		text,
+		(optionsState == state) ? (Constants::Color::YELLOW) : (Constants::Color::WHITE)
+	);
 }
 
 const std::string VOLUME_FORMAT_PREFIX = "(";
@@ -47,7 +54,18 @@ std::string OptionsRenderer::FormatVolume(int volume)
 void OptionsRenderer::Draw() const
 {
 	BaseMenuRenderer::Draw();
-	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::Options::TITLE, Constants::Color::GREEN);
+	GetRomFont().WriteText
+	(
+		GetMainRenderer(), 
+		tggd::common::XY<int>
+		(
+			Constants::UI::Options::TITLE_OFFSET_X + Constants::UI::DROP_SHADOW_X, 
+			Constants::UI::Options::TITLE_OFFSET_Y + Constants::UI::DROP_SHADOW_Y
+		), 
+		Constants::UI::Options::TITLE, 
+		Constants::Color::BLACK
+	);
+	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(Constants::UI::Options::TITLE_OFFSET_X, Constants::UI::Options::TITLE_OFFSET_Y), Constants::UI::Options::TITLE, Constants::Color::LIGHT_GREEN);
 	//TODO: split vvv into three functions!
 	if (soundManager.IsMuted())
 	{
