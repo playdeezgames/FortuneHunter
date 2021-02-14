@@ -1,6 +1,6 @@
 Placeholder Screens:
-    ☐ statistics screen
-    ☐ final scoring?
+    ✔ statistics screen @done(21-02-13 06:21)
+    ✔ final scoring? @done(21-02-13 06:21)
 Finalize Screens:
     ☐ main menu
     ☐ about
@@ -8,24 +8,42 @@ Finalize Screens:
     ☐ status panel
     ☐ statistics
     ☐ final scoring?
+Game Balance:
+    ☐ difficulty curve lowers as the game progresses
+        generate more traps?
 Gameplay:
-    there is no way of getting any more
-    ☐ scoring
+    ☐ sight radius?
+        can there be an upgrade to increase it?
+    ✔ scoring @done(21-02-13 06:21)
         diamond
         found exit key
         exit bonus
         health left
-    ☐ statistics tracking
+    ✔ statistics tracking @done(21-02-13 06:21)
         games played
         games won
         games lost
         high score
         total score(allows calculation of average score)
     ☐ difficulty levels?
-        vary number of starting bombs
-        vary health upgrade levels
-        vary weapon upgrade levels
-        vary score multiplier
+        ☐ easy
+            bombs - 5
+            health - 25/30/35/40
+            weapon - 6/8/10/12
+            armor - 10/15/20/25
+            scores - 500/50/250/2250
+        ☐ normal
+            bombs - 3
+            health - 20/25/30/35
+            weapon - 4/6/8/10
+            armor - 10/15/20/25
+            scores - 1000/100/500/4500
+        ☐ hard
+            bombs - 1
+            health - 15/20/25/30
+            weapon - 3/4/5/6
+            armor - 10/15/20/25
+            scores - 2000/200/1000/9000
 Audio:
     ☐ music!
 

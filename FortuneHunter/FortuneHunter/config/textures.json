@@ -1,5 +1,5 @@
 {
-    "romfont8x8": "assets/images/romfont8x8.png",
+    "romfont8x8": "assets/images/font.png",
     "tiles": "assets/images/tiles.png",
     "mainmenubackground": "assets/images/backgrounds/mainmenu.png",
     "instructionsbackground": "assets/images/backgrounds/instructions.png",

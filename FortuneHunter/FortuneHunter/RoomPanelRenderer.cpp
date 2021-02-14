@@ -71,7 +71,7 @@ void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::
 
 void RoomPanelRenderer::DrawUnexplored(const tggd::common::XY<int>& xy) const
 {
-	spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
+	//spriteManager.GetSprite(SPRITE_UNEXPLORED)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
 }
 
 void RoomPanelRenderer::DrawExplored
