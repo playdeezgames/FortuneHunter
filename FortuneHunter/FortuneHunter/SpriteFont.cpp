@@ -2,8 +2,14 @@
 #include "Utility.h"
 namespace tggd::common
 {
-	SpriteFont::SpriteFont(const SpriteManager& spriteManager, const std::string& fileName)
+	SpriteFont::SpriteFont
+	(
+		const SpriteManager& spriteManager, 
+		const ColorManager& colorManager,
+		const std::string& fileName
+	)
 		: spriteManager(spriteManager)
+		, colorManager(colorManager)
 		, glyphs()
 	{
 		nlohmann::json j = Utility::LoadJSON(fileName);
