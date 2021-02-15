@@ -20,12 +20,18 @@
 #include "StatisticsCommandProcessor.h"
 #include "FinalScoreRenderer.h"
 #include "StatisticsRenderer.h"
-#include <SDL_image.h>
+#include "UIConstants.h"
 
 FortuneHunterApplication FortuneHunterApplication::application;
 
 FortuneHunterApplication::FortuneHunterApplication()
-	: Application(Constants::Window::WIDTH, Constants::Window::HEIGHT, Constants::Window::TITLE)
+	: Application
+	(
+		Constants::Window::WIDTH, 
+		Constants::Window::HEIGHT, 
+		Constants::Window::TITLE, 
+		Constants::Config::Files::ICON
+	)
 	, finishManager()
 	, soundManager(finishManager)
 	, textureManager(finishManager)
@@ -195,10 +201,6 @@ void FortuneHunterApplication::AddCommandProcessors()
 
 void FortuneHunterApplication::Start()
 {
-	auto s = IMG_Load(Constants::Config::Files::ICON.c_str());
-	SDL_SetWindowIcon(GetMainWindow(), s);
-	SDL_FreeSurface(s);
-
 	tggd::common::Utility::SeedRandomNumberGenerator();
 	InitializeDescriptors();
 	controllerManager.Start();
@@ -215,11 +217,6 @@ void FortuneHunterApplication::Finish()
 	finishManager.Finish();
 	tggd::common::Utility::SafeDelete(statusPanelRenderer);
 	tggd::common::Utility::SafeDelete(roomPanelRenderer);
-}
-
-void FortuneHunterApplication::Update(int milliSeconds)
-{
-
 }
 
 void FortuneHunterApplication::Draw() const

@@ -126,7 +126,6 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="SoundManager.h" />
-    <ClInclude Include="Updater.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="CellConstants.h" />
     <ClInclude Include="ColorConstants.h" />

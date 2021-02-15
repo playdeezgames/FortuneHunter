@@ -3,11 +3,10 @@
 #include <string>
 #include <vector>
 #include "Renderer.h"
-#include "Updater.h"
 #include "EventHandler.h"
 namespace tggd::common
 {
-	class Application : public Renderer, public Updater, public EventHandler
+	class Application : public Renderer, public EventHandler
 	{
 	private:
 		Application() = delete;
@@ -16,6 +15,7 @@ namespace tggd::common
 
 		SDL_Window* window;
 		std::string windowTitle;
+		std::string iconFileName;
 		int windowWidth;
 		int windowHeight;
 		
@@ -27,12 +27,11 @@ namespace tggd::common
 		static void DoFinish();
 	protected:
 		SDL_Renderer* GetMainRenderer() const { return renderer; }
-		SDL_Window* GetMainWindow() const { return window; }
 		virtual bool IsRunning() const = 0;
 		virtual void Start() = 0;
 		virtual void Finish() = 0;
 	public:
-		Application(int, int, const std::string&);
+		Application(int, int, const std::string&, const std::string&);
 		static int Run(const std::vector<std::string>&);
 	};
 }

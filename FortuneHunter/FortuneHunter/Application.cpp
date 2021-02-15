@@ -1,6 +1,7 @@
 #include "Application.h"
-#include "SDL.h"
-#include "SDL_mixer.h"
+#include <SDL.h>
+#include <SDL_mixer.h>
+#include <SDL_image.h>
 namespace tggd::common
 {
 	const int MIXER_FREQUENCY = 44100;
@@ -9,12 +10,19 @@ namespace tggd::common
 
 	Application* Application::s_application = nullptr;
 
-	Application::Application(int width, int height, const std::string& title)
+	Application::Application
+	(
+		int width, 
+		int height, 
+		const std::string& title,
+		const std::string& iconFileName
+	)
 		: window(nullptr)
 		, renderer(nullptr)
 		, windowWidth(width)
 		, windowHeight(height)
 		, windowTitle(title)
+		, iconFileName(iconFileName)
 	{
 		if (!s_application)
 		{
@@ -27,6 +35,7 @@ namespace tggd::common
 		SDL_Init(SDL_INIT_EVERYTHING);
 		Mix_Init(MIX_INIT_OGG);
 		Mix_OpenAudio(MIXER_FREQUENCY, MIX_DEFAULT_FORMAT, CHANNEL_COUNT, CHUNK_SIZE);
+
 		SDL_CreateWindowAndRenderer(
 			s_application->windowWidth,
 			s_application->windowHeight,
@@ -34,19 +43,18 @@ namespace tggd::common
 			&s_application->window,
 			&s_application->renderer);
 		SDL_SetWindowTitle(s_application->window, s_application->windowTitle.c_str());
+		auto iconSurface = IMG_Load(s_application->iconFileName.c_str());
+		SDL_SetWindowIcon(s_application->window, iconSurface);
+		SDL_FreeSurface(iconSurface);
+
 		s_application->Start();
 	}
 
 	void Application::DoPump()
 	{
-		int oldCounter = SDL_GetTicks();
-		int frameCounter;
 		SDL_Event evt;
 		while(s_application->IsRunning())
 		{
-			frameCounter = SDL_GetTicks();
-			s_application->Update(frameCounter - oldCounter);
-			oldCounter = frameCounter;
 			s_application->Draw();
 			SDL_RenderPresent(s_application->renderer);
 			if (SDL_PollEvent(&evt))

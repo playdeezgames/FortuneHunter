@@ -48,9 +48,6 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{cf6fc6a5-d1d2-4eaf-955a-9c95f8b6082d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Updaters">
-      <UniqueIdentifier>{5bdf3a39-e927-4d04-ac1f-4b8f47824871}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Utility">
       <UniqueIdentifier>{032a168b-d834-4028-b81c-11795d38be4e}</UniqueIdentifier>
     </Filter>
@@ -80,9 +77,6 @@
     </Filter>
     <Filter Include="Source Files\Renderers">
       <UniqueIdentifier>{d8c2d4e0-0090-4668-87e0-b6706e665825}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Room">
-      <UniqueIdentifier>{563816a8-c72d-4d33-9b49-84b34811a1c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\UI">
       <UniqueIdentifier>{451a17bd-b119-454d-bf91-8bf69a2cf525}</UniqueIdentifier>
@@ -462,9 +456,6 @@
     </ClInclude>
     <ClInclude Include="UIState.h">
       <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Updater.h">
-      <Filter>Header Files\Updaters</Filter>
     </ClInclude>
     <ClInclude Include="Utility.h">
       <Filter>Header Files\Utility</Filter>

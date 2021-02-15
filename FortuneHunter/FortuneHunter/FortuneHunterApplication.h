@@ -70,7 +70,6 @@ private:
 protected:
 	void Start();
 	void Finish();
-	void Update(int);
 	bool IsRunning() const;
 public:
 	FortuneHunterApplication();
