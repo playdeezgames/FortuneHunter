@@ -1,7 +1,7 @@
 #pragma once
 #include "HunterDescriptor.h"
 #include "BaseDescriptorManager.h"
-class HunterDescriptorManager : public BaseDescriptorManager<int, HunterDescriptor>
+class HunterDescriptorManager : public tggd::common::BaseDescriptorManager<int, HunterDescriptor>
 {
 protected:
 	int ParseKey(const std::string&);

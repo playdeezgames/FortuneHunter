@@ -7,47 +7,49 @@
 #include "Finisher.h"
 #include "FinishManager.h"
 #include "Utility.h"
-template<typename TIdentifer, typename TDescriptor>
-class BaseDescriptorManager: public tggd::common::Finisher
+namespace tggd::common
 {
-private:
-	std::map<TIdentifer, TDescriptor*> descriptors;
-	std::vector<TIdentifer> identifiers;
-protected:
-	virtual TIdentifer ParseKey(const std::string&) = 0;
-	virtual TDescriptor* ParseDescriptor(const nlohmann::json&) = 0;
-public:
-	BaseDescriptorManager(tggd::common::FinishManager& finishManager)
+	template<typename TIdentifer, typename TDescriptor>
+	class BaseDescriptorManager : public tggd::common::Finisher
 	{
-		finishManager.Add(this);
-	}
-	void Start(const std::string& fileName)
-	{
-		nlohmann::json properties = tggd::common::Utility::LoadJSON(fileName);
-		for (auto& item : properties.items())
+	private:
+		std::map<TIdentifer, TDescriptor*> descriptors;
+		std::vector<TIdentifer> identifiers;
+	protected:
+		virtual TIdentifer ParseKey(const std::string&) = 0;
+		virtual TDescriptor* ParseDescriptor(const nlohmann::json&) = 0;
+	public:
+		BaseDescriptorManager(tggd::common::FinishManager& finishManager)
 		{
-			auto identifier = ParseKey(item.key());
-			identifiers.push_back(identifier);
-			descriptors[identifier] =
-				ParseDescriptor(item.value());
+			finishManager.Add(this);
 		}
-	}
-	void Finish()
-	{
-		tggd::common::Utility::SafeDeleteMap(descriptors);
-	}
-	const std::vector<TIdentifer>& GetTypes() const
-	{
-		return identifiers;
-	}
-	const TDescriptor* GetDescriptor(TIdentifer identifier) const
-	{
-		auto iter = descriptors.find(identifier);
-		if (iter != descriptors.end())
+		void Start(const std::string& fileName)
 		{
-			return iter->second;
+			nlohmann::json properties = tggd::common::Utility::LoadJSON(fileName);
+			for (auto& item : properties.items())
+			{
+				auto identifier = ParseKey(item.key());
+				identifiers.push_back(identifier);
+				descriptors[identifier] =
+					ParseDescriptor(item.value());
+			}
 		}
-		return nullptr;
-	}
-};
-
+		void Finish()
+		{
+			tggd::common::Utility::SafeDeleteMap(descriptors);
+		}
+		const std::vector<TIdentifer>& GetTypes() const
+		{
+			return identifiers;
+		}
+		const TDescriptor* GetDescriptor(TIdentifer identifier) const
+		{
+			auto iter = descriptors.find(identifier);
+			if (iter != descriptors.end())
+			{
+				return iter->second;
+			}
+			return nullptr;
+		}
+	};
+}

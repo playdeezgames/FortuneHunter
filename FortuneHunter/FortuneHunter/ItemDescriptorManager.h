@@ -3,7 +3,7 @@
 #include "ItemType.h"
 #include "ItemDescriptor.h"
 #include "FinishManager.h"
-class ItemDescriptorManager: public BaseDescriptorManager<ItemType, ItemDescriptor>
+class ItemDescriptorManager: public tggd::common::BaseDescriptorManager<ItemType, ItemDescriptor>
 {
 protected:
 	ItemType ParseKey(const std::string&);
