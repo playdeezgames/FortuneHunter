@@ -34,14 +34,7 @@ namespace tggd::common
 		}
 		void Finish()
 		{
-			for (auto& entry : commandProcessors)
-			{
-				if (entry.second)
-				{
-					Utility::SafeDelete(entry.second);
-				}
-			}
-			commandProcessors.clear();
+			Utility::SafeDeleteMap(commandProcessors);
 		}
 	};
 }

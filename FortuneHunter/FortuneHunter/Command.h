@@ -1,5 +1,5 @@
 #pragma once
-enum class Command
+enum class Command//TODO: is the command processor folder the best place?
 {
 	UP,
 	DOWN,

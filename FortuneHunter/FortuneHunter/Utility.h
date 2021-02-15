@@ -23,6 +23,18 @@ namespace tggd::common
 				ptr = nullptr;
 			}
 		}
+		template<typename TIdentifier, typename TDelete>
+		static void SafeDeleteMap(std::map<TIdentifier, TDelete*>& table)
+		{
+			for (auto& entry : table)
+			{
+				if (entry.second)
+				{
+					SafeDelete(entry.second);
+				}
+			}
+			table.clear();
+		}
 	};
 }
 
