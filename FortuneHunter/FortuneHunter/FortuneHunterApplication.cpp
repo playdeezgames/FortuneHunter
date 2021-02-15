@@ -57,6 +57,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, roomPanelRenderer(nullptr)
 	, optionsState(OptionsState::BACK)
 	, statistics(Constants::Config::Files::STATISTICS)
+	, helpPages(finishManager, romFont)
 {
 
 }
@@ -162,7 +163,8 @@ void FortuneHunterApplication::AddRenderers()
 		(
 			GetRenderer(),
 			romFont,
-			spriteManager.GetSprite(Constants::UI::Backgrounds::INSTRUCTIONS)
+			spriteManager.GetSprite(Constants::UI::Backgrounds::INSTRUCTIONS),
+			helpPages
 		)
 	);
 }
@@ -212,6 +214,7 @@ void FortuneHunterApplication::Start()
 	AddCommandProcessors();
 	AddRenderers();
 	statistics.Load();
+	helpPages.Start(Constants::Config::Files::HELP_PAGES);
 }
 
 void FortuneHunterApplication::Finish()

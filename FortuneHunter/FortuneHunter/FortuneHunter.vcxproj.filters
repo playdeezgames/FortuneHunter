@@ -305,6 +305,9 @@
     <ClCompile Include="HelpPage.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="HelpPageManager.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandProcessor.h">
@@ -605,6 +608,9 @@
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="HelpPage.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpPageManager.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>

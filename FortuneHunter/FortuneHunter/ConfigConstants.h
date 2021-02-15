@@ -19,5 +19,6 @@ namespace Constants::Config
 		const std::string STATISTICS = "config/statistics.json";
 		const std::string ICON = "assets/images/icon.png";
 		const std::string COLORS = "config/colors.json";
+		const std::string HELP_PAGES = "config/helppages.json";
 	}
 }

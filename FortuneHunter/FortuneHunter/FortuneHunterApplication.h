@@ -28,6 +28,7 @@
 #include "HunterDescriptorManager.h"
 #include "Statistics.h"
 #include "ColorManager.h"
+#include "HelpPageManager.h"
 class FortuneHunterApplication : public tggd::common::Application
 {
 private:
@@ -41,6 +42,7 @@ private:
 	tggd::common::SpriteManager spriteManager;
 	tggd::common::SpriteFont romFont;
 	tggd::common::ColorManager colorManager;
+	HelpPageManager helpPages;
 
 	tggd::common::CommandProcessorManager<UIState, Command> commandProcessors;
 	FortuneHunterEventHandler eventHandler;
