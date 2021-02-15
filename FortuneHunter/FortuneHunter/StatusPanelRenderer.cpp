@@ -48,7 +48,7 @@ void StatusPanelRenderer::DrawBombs() const
 		tggd::common::XY<int>(
 		Constants::UI::StatusPanel::BOMBS_ICON_X,
 		Constants::UI::StatusPanel::BOMBS_ICON_Y),
-		Constants::Color::WHITE
+		{ 255, 255, 255, 255 }
 	);
 	GetFont().WriteText(
 		GetRenderer(),
@@ -198,7 +198,7 @@ void StatusPanelRenderer::DrawStatistic
 	(
 		GetRenderer(),
 		spriteXY,
-		Constants::Color::WHITE
+		{ 255, 255, 255, 255 }
 	);
 	GetFont().WriteText(
 		GetRenderer(),

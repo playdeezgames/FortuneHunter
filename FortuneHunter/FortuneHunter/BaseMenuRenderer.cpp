@@ -1,6 +1,11 @@
 #include "BaseMenuRenderer.h"
 #include "ColorConstants.h"
-BaseMenuRenderer::BaseMenuRenderer(SDL_Renderer* renderer, const tggd::common::SpriteFont& romFont, const tggd::common::Sprite* background)
+BaseMenuRenderer::BaseMenuRenderer
+(
+	SDL_Renderer* renderer, 
+	const tggd::common::SpriteFont& romFont, 
+	const tggd::common::Sprite* background
+)
 	: BaseRenderer(renderer, romFont)
 	, background(background)
 {
@@ -8,5 +13,5 @@ BaseMenuRenderer::BaseMenuRenderer(SDL_Renderer* renderer, const tggd::common::S
 }
 void BaseMenuRenderer::Draw() const
 {
-	background->Draw(GetRenderer(), tggd::common::XY<int>(0, 0), Constants::Color::WHITE);
+	background->Draw(GetRenderer(), tggd::common::XY<int>(0, 0), { 255, 255, 255, 255 });
 }

@@ -6,7 +6,7 @@ namespace tggd::common
 		const tggd::common::XY<int>& xy,
 		const std::string& text,
 		const tggd::common::SpriteFont& font, 
-		const SDL_Color& color
+		const std::string& color
 	)
 		: xy(xy)
 		, text(text)

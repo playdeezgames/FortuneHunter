@@ -1,22 +1,22 @@
 #pragma once
-#include <SDL.h>
+#include <string>
 namespace Constants::Color
 {
-	const SDL_Color BLACK = { 0x00, 0x00, 0x00, 0xFF };
-	const SDL_Color BLUE = { 0x00, 0x00, 0xAA, 0xFF };
-	const SDL_Color GREEN = { 0x00, 0xaa, 0x00, 0xff };
-	const SDL_Color CYAN = { 0x00, 0xAA, 0xAA, 0xFF };
-	const SDL_Color RED = { 0xAA, 0x00, 0x00, 0xFF };
-	const SDL_Color MAGENTA = { 0xAA, 0x00, 0xAA, 0xFF };
-	const SDL_Color BROWN = { 0xAA, 0x55, 0x00, 0xFF };
-	const SDL_Color GRAY = { 0xAA, 0xAA, 0xAA, 0xFF };
-	const SDL_Color DARK_GRAY = { 0x55, 0x55, 0x55, 0xFF };
-	const SDL_Color LIGHT_BLUE = { 0x55, 0x55, 0xFF, 0xFF };
-	const SDL_Color LIGHT_GREEN = { 0x55, 0xFF, 0x55, 0xff };
-	const SDL_Color LIGHT_CYAN = { 0x55, 0xFF, 0xFF, 0xFF };
-	const SDL_Color LIGHT_RED = { 0xFF, 0x55, 0x55, 0xFF };
-	const SDL_Color LIGHT_MAGENTA = { 0xFF, 0x55, 0xFF, 0xFF };
-	const SDL_Color YELLOW = { 0xFF, 0xFF, 0x00, 0xFF };
-	const SDL_Color WHITE = { 0xFF, 0xFF, 0xFF, 0xFF };
+	const std::string BLACK = "Black";
+	const std::string BLUE = "Blue";
+	const std::string GREEN = "Green";
+	const std::string CYAN = "Cyan";
+	const std::string RED = "Red";
+	const std::string MAGENTA = "Magenta";
+	const std::string BROWN = "Brown";
+	const std::string GRAY = "Gray";
+	const std::string DARK_GRAY = "DarkGray";
+	const std::string LIGHT_BLUE = "LightBlue";
+	const std::string LIGHT_GREEN = "LightGreen";
+	const std::string LIGHT_CYAN = "LightCyan";
+	const std::string LIGHT_RED = "LightRed";
+	const std::string LIGHT_MAGENTA = "LightMagenta";
+	const std::string YELLOW = "Yellow";
+	const std::string WHITE = "White";
 }
 

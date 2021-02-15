@@ -10,14 +10,14 @@ namespace tggd::common
 		tggd::common::XY<int> xy;
 		std::string text;
 		const tggd::common::SpriteFont& font;
-		SDL_Color color;
+		std::string color;
 	public:
 		Label
 		(
 			const tggd::common::XY<int>&,
 			const std::string&,
 			const tggd::common::SpriteFont&,
-			const SDL_Color&
+			const std::string&
 		);
 		void Draw(SDL_Renderer*) const;
 	};

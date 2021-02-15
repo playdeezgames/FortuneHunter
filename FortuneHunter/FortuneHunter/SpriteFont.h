@@ -19,8 +19,8 @@ namespace tggd::common
 			const ColorManager&,
 			const std::string&
 		);
-		tggd::common::XY<int> WriteGlyph(SDL_Renderer*, const tggd::common::XY<int>&, char, const SDL_Color&) const;
-		tggd::common::XY<int> WriteText(SDL_Renderer*, const tggd::common::XY<int>&, const std::string&, const SDL_Color&) const;
+		tggd::common::XY<int> WriteGlyph(SDL_Renderer*, const tggd::common::XY<int>&, char, const std::string&) const;
+		tggd::common::XY<int> WriteText(SDL_Renderer*, const tggd::common::XY<int>&, const std::string&, const std::string&) const;
 	};
 }
 
