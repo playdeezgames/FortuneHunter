@@ -20,8 +20,8 @@ void StatusPanelRenderer::DrawGameOver() const
 {
 	if (!gameData.GetHunter()->IsAlive())
 	{
-		GetRomFont().WriteText(
-			GetMainRenderer(),
+		GetFont().WriteText(
+			GetRenderer(),
 			tggd::common::XY<int>(Constants::UI::StatusPanel::CLIP_X,
 			Constants::UI::StatusPanel::CLIP_Y + 112),//TODO: magic number
 			"Yer dead!",//TODO: magic string
@@ -29,8 +29,8 @@ void StatusPanelRenderer::DrawGameOver() const
 	}
 	else if (gameData.GetHunter()->IsWinner())
 	{
-		GetRomFont().WriteText(
-			GetMainRenderer(),
+		GetFont().WriteText(
+			GetRenderer(),
 			tggd::common::XY<int>(Constants::UI::StatusPanel::CLIP_X,
 			Constants::UI::StatusPanel::CLIP_Y + 112),//TODO: magic number
 			"You win!",//TODO: magic string
@@ -44,14 +44,14 @@ void StatusPanelRenderer::DrawBombs() const
 	ss << gameData.GetHunter()->GetBombs();
 	spriteManager.GetSprite(Constants::UI::StatusPanel::BOMBS_ICON_SPRITE_NAME)->Draw
 	(
-		GetMainRenderer(),
+		GetRenderer(),
 		tggd::common::XY<int>(
 		Constants::UI::StatusPanel::BOMBS_ICON_X,
 		Constants::UI::StatusPanel::BOMBS_ICON_Y),
 		Constants::Color::WHITE
 	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
+	GetFont().WriteText(
+		GetRenderer(),
 
 		tggd::common::XY<int>(Constants::UI::StatusPanel::BOMBS_TEXT_X,
 		Constants::UI::StatusPanel::BOMBS_TEXT_Y),
@@ -69,7 +69,7 @@ void StatusPanelRenderer::Draw() const
 		Constants::UI::StatusPanel::CLIP_WIDTH,
 		Constants::UI::StatusPanel::CLIP_HEIGHT,
 	};
-	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
+	SDL_RenderSetClipRect(GetRenderer(), &clipRect);
 	DrawMoves();
 	DrawKeys();
 	DrawWounds();
@@ -78,7 +78,7 @@ void StatusPanelRenderer::Draw() const
 	DrawAttack();
 	DrawBombs();
 	DrawGameOver();
-	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
+	SDL_RenderSetClipRect(GetRenderer(), nullptr);
 }
 
 void StatusPanelRenderer::DrawMoves() const
@@ -196,12 +196,12 @@ void StatusPanelRenderer::DrawStatistic
 {
 	spriteManager.GetSprite(spriteName)->Draw
 	(
-		GetMainRenderer(),
+		GetRenderer(),
 		spriteXY,
 		Constants::Color::WHITE
 	);
-	GetRomFont().WriteText(
-		GetMainRenderer(),
+	GetFont().WriteText(
+		GetRenderer(),
 		textXY,
 		text,
 		Constants::Color::WHITE);

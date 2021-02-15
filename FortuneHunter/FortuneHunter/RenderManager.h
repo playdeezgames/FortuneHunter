@@ -7,14 +7,11 @@ namespace tggd::common
 {
 	template<typename TIdentifier>
 	class RenderManager 
-		: public Renderer
-		, public Finisher
+		: public Finisher
 	{
 	private:
 		std::map<TIdentifier, Renderer*> renderers;
 		const TIdentifier& current;
-	protected:
-		SDL_Renderer* GetMainRenderer() const { return nullptr; }
 	public:
 		RenderManager
 		(

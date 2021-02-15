@@ -14,6 +14,6 @@ InstructionsRenderer::InstructionsRenderer
 void InstructionsRenderer::Draw() const
 {
 	BaseMenuRenderer::Draw();
-	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 0), "Instructions", Constants::Color::GREEN);
-	GetRomFont().WriteText(GetMainRenderer(), tggd::common::XY<int>(0, 32), "TODO: put some information here!", Constants::Color::GRAY);
+	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(0, 0), "Instructions", Constants::Color::GREEN);
+	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(0, 32), "TODO: put some information here!", Constants::Color::GRAY);
 }

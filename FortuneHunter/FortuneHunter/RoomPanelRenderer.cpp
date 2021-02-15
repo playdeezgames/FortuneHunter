@@ -28,14 +28,14 @@ const std::string SPRITE_UNEXPLORED = "Unexplored";
 
 void RoomPanelRenderer::DrawTerrain(const tggd::common::XY<int>& xy, TerrainType terrain) const
 {
-	terrainSprites.Get(terrain)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
+	terrainSprites.Get(terrain)->Draw(GetRenderer(), xy, Constants::Color::WHITE);
 }
 
 void RoomPanelRenderer::DrawDither(const tggd::common::XY<int>& xy, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell) const
 {
 	if (!cell->IsFlagSet(RoomCellFlags::LIT))
 	{
-		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
+		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetRenderer(), xy, Constants::Color::WHITE);
 	}
 }
 
@@ -52,7 +52,7 @@ void RoomPanelRenderer::DrawHealthLevel
 		auto sprite = healthLevelSprites.Get(level);
 		if (sprite)
 		{
-			sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
+			sprite->Draw(GetRenderer(), xy, Constants::Color::WHITE);
 		}
 	}
 }
@@ -64,7 +64,7 @@ void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::
 	{
 		ObjectType objectType = object->GetData();
 		auto sprite= objectSprites.Get(objectType);
-		sprite->Draw(GetMainRenderer(), xy, Constants::Color::WHITE);
+		sprite->Draw(GetRenderer(), xy, Constants::Color::WHITE);
 		DrawHealthLevel(xy, object);
 	}
 }
@@ -110,9 +110,9 @@ void RoomPanelRenderer::Draw() const
 		Constants::UI::RoomPanel::CLIP_WIDTH,
 		Constants::UI::RoomPanel::CLIP_HEIGHT,
 	};
-	SDL_RenderSetClipRect(GetMainRenderer(), &clipRect);
+	SDL_RenderSetClipRect(GetRenderer(), &clipRect);
 	DrawCells();
-	SDL_RenderSetClipRect(GetMainRenderer(), nullptr);
+	SDL_RenderSetClipRect(GetRenderer(), nullptr);
 
 }
 

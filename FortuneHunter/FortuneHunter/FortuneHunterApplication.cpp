@@ -62,11 +62,11 @@ FortuneHunterApplication::FortuneHunterApplication()
 
 void FortuneHunterApplication::AddRenderers()
 {
-	statusPanelRenderer = new StatusPanelRenderer(GetMainRenderer(), romFont, spriteManager, gameData);
+	statusPanelRenderer = new StatusPanelRenderer(GetRenderer(), romFont, spriteManager, gameData);
 	roomPanelRenderer =
 		new RoomPanelRenderer
 		(
-			GetMainRenderer(),
+			GetRenderer(),
 			romFont,
 			spriteManager,
 			terrainSprites,
@@ -79,7 +79,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::MAIN_MENU,
 		new MainMenuRenderer
 		(
-			GetMainRenderer(),
+			GetRenderer(),
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::MAIN_MENU),
 			mainMenuState,
@@ -91,7 +91,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::CONFIRM_QUIT, 
 		new ConfirmQuitRenderer
 		(
-			GetMainRenderer(), 
+			GetRenderer(),
 			romFont, 
 			spriteManager.GetSprite(Constants::UI::Backgrounds::CONFIRM_QUIT),
 			confirmState
@@ -102,7 +102,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::IN_PLAY, 
 		new InPlayRenderer
 		(
-			GetMainRenderer(), 
+			GetRenderer(),
 			romFont, 
 			spriteManager.GetSprite(Constants::UI::Backgrounds::IN_PLAY),
 			statusPanelRenderer, 
@@ -115,7 +115,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::OPTIONS, 
 		new OptionsRenderer
 		(
-			GetMainRenderer(), 
+			GetRenderer(),
 			romFont, 
 			spriteManager.GetSprite(Constants::UI::Backgrounds::OPTIONS),
 			soundManager, 
@@ -127,7 +127,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::FINAL_SCORE,
 		new FinalScoreRenderer
 		(
-			GetMainRenderer(),
+			GetRenderer(),
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::FINAL_SCORE),
 			gameData
@@ -138,7 +138,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::STATISTICS,
 		new StatisticsRenderer
 		(
-			GetMainRenderer(),
+			GetRenderer(),
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::STATISTICS),
 			statistics
@@ -149,7 +149,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::ABOUT,
 		new AboutRenderer
 		(
-			GetMainRenderer(),
+			GetRenderer(),
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::ABOUT)
 		)
@@ -159,7 +159,7 @@ void FortuneHunterApplication::AddRenderers()
 		UIState::INSTRUCTIONS,
 		new InstructionsRenderer
 		(
-			GetMainRenderer(),
+			GetRenderer(),
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::INSTRUCTIONS)
 		)
@@ -175,7 +175,7 @@ void FortuneHunterApplication::InitializeDescriptors()
 
 void FortuneHunterApplication::InitializeAssetManagers()
 {
-	textureManager.Start(GetMainRenderer(), Constants::Config::Files::TEXTURES);
+	textureManager.Start(GetRenderer(), Constants::Config::Files::TEXTURES);
 	spriteManager.Start(textureManager, Constants::Config::Files::SPRITES);
 	soundManager.Start(Constants::Config::Files::SFX, Constants::Config::Files::MUX);
 }
@@ -221,7 +221,7 @@ void FortuneHunterApplication::Finish()
 
 void FortuneHunterApplication::Draw() const
 {
-	SDL_RenderClear(GetMainRenderer());
+	SDL_RenderClear(GetRenderer());
 	renderers.Draw();
 }
 

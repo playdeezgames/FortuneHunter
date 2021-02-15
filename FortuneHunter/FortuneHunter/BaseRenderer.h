@@ -7,8 +7,8 @@ private:
 	SDL_Renderer* renderer;
 	const tggd::common::SpriteFont& romFont;
 protected:
-	SDL_Renderer* GetMainRenderer() const;
-	const tggd::common::SpriteFont& GetRomFont() const;
+	SDL_Renderer* GetRenderer() const;
+	const tggd::common::SpriteFont& GetFont() const;
 public:
 	BaseRenderer(SDL_Renderer*, const tggd::common::SpriteFont&);
 };

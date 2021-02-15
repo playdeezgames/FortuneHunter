@@ -1,10 +1,10 @@
 #include "BaseRenderer.h"
-SDL_Renderer* BaseRenderer::GetMainRenderer() const
+SDL_Renderer* BaseRenderer::GetRenderer() const
 {
 	return renderer;
 }
 
-const tggd::common::SpriteFont& BaseRenderer::GetRomFont() const
+const tggd::common::SpriteFont& BaseRenderer::GetFont() const
 {
 	return romFont;
 }

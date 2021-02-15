@@ -8,5 +8,5 @@ BaseMenuRenderer::BaseMenuRenderer(SDL_Renderer* renderer, const tggd::common::S
 }
 void BaseMenuRenderer::Draw() const
 {
-	background->Draw(GetMainRenderer(), tggd::common::XY<int>(0, 0), Constants::Color::WHITE);
+	background->Draw(GetRenderer(), tggd::common::XY<int>(0, 0), Constants::Color::WHITE);
 }
