@@ -11,10 +11,15 @@ void InstructionsCommandProcessor::OnCommand(const Command& command)
 	switch (command)
 	{
 	case Command::GREEN:
-	case Command::RED:
 	case Command::BACK:
 	case Command::START:
 		SetUIState(UIState::MAIN_MENU);
-		break;
+		return;
+	case Command::NEXT:
+	case Command::RIGHT:
+		return;
+	case Command::PREVIOUS:
+	case Command::LEFT:
+		return;
 	}
 }

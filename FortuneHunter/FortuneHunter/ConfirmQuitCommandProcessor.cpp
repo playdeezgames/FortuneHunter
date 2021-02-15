@@ -7,7 +7,6 @@ void ConfirmQuitCommandProcessor::OnCommand(const Command& command)
 	case Command::DOWN:
 		confirmState = (confirmState==ConfirmState::YES) ? (ConfirmState::NO) : (ConfirmState::YES);
 		return;
-	case Command::RED:
 	case Command::BACK:
 		SetUIState(UIState::MAIN_MENU);
 		return;
