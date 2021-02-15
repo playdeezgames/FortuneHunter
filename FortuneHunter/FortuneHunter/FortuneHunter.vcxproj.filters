@@ -296,11 +296,14 @@
     <ClCompile Include="BaseRenderer.cpp">
       <Filter>Source Files\BaseClasses</Filter>
     </ClCompile>
-    <ClCompile Include="Label.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
     <ClCompile Include="ColorManager.cpp">
       <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="HelpPage.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -595,11 +598,14 @@
     <ClInclude Include="BaseRenderer.h">
       <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
     <ClInclude Include="ColorManager.h">
       <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpPage.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

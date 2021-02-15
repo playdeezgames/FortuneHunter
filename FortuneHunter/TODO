@@ -4,7 +4,8 @@ Placeholder Screens:
 Finalize Screens:
     ✔ main menu @done(21-02-14 05:59)
     ☐ about
-    ☐ instructions
+    ☐ instructions @started(21-02-15 05:54)
+        ☐ help page manager
     ☐ status panel
     ☐ statistics
     ☐ final scoring?
@@ -26,20 +27,20 @@ Gameplay:
         games lost
         high score
         total score(allows calculation of average score)
-    ☐ difficulty levels?
-        ☐ easy
+    ✔ difficulty levels? @done(21-02-15 05:53)
+        ✔ easy @done(21-02-15 05:53)
             bombs - 5
             health - 25/30/35/40
             weapon - 6/8/10/12
             armor - 10/15/20/25
             scores - 500/50/250/2250
-        ☐ normal
+        ✔ normal @done(21-02-15 05:53)
             bombs - 3
             health - 20/25/30/35
             weapon - 4/6/8/10
             armor - 10/15/20/25
             scores - 1000/100/500/4500
-        ☐ hard
+        ✔ hard @done(21-02-15 05:53)
             bombs - 1
             health - 15/20/25/30
             weapon - 3/4/5/6

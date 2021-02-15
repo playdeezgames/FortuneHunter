@@ -15,7 +15,6 @@ namespace tggd::common
 	{
 
 	}
-
 	void Label::Draw(SDL_Renderer* renderer) const
 	{
 		font.WriteText(renderer, xy, text, color);

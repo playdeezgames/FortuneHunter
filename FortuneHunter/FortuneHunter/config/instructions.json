@@ -1,0 +1,32 @@
+{
+    "first": {
+        "nextPage": "first",
+        "previousPage": "first",
+        "labels": [
+            {
+                "x": 4,
+                "y": 4,
+                "text": "Instructions",
+                "color": "Black"
+            },
+            {
+                "x": 0,
+                "y": 0,
+                "text": "Instructions",
+                "color": "LightGreen"
+            },
+            {
+                "x": 4,
+                "y": 36,
+                "text": "TODO: put some information here!",
+                "color": "Black"
+            },
+            {
+                "x": 0,
+                "y": 0,
+                "text": "TODO: put some information here!",
+                "color": "White"
+            }
+        ]
+    }
+}

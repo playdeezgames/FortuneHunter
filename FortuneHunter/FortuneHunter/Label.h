@@ -2,6 +2,7 @@
 #include "XY.h"
 #include <string>
 #include "SpriteFont.h"
+#include "json.hpp"
 namespace tggd::common
 {
 	class Label
@@ -19,6 +20,7 @@ namespace tggd::common
 			const tggd::common::SpriteFont&,
 			const std::string&
 		);
+		Label(const nlohmann::json&);
 		void Draw(SDL_Renderer*) const;
 	};
 }
