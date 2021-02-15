@@ -27,14 +27,14 @@ const std::string SPRITE_UNEXPLORED = "Unexplored";
 
 void RoomPanelRenderer::DrawTerrain(const tggd::common::XY<int>& xy, TerrainType terrain) const
 {
-	terrainSprites.Get(terrain)->Draw(GetRenderer(), xy, { 255, 255, 255, 255 });
+	terrainSprites.Get(terrain)->Draw(GetRenderer(), xy);
 }
 
 void RoomPanelRenderer::DrawDither(const tggd::common::XY<int>& xy, const tggd::common::RoomCell<TerrainType, ObjectType, RoomCellFlags>* cell) const
 {
 	if (!cell->IsFlagSet(RoomCellFlags::LIT))
 	{
-		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetRenderer(), xy, { 255, 255, 255, 255 });
+		spriteManager.GetSprite(SPRITE_DITHER)->Draw(GetRenderer(), xy);
 	}
 }
 
@@ -51,7 +51,7 @@ void RoomPanelRenderer::DrawHealthLevel
 		auto sprite = healthLevelSprites.Get(level);
 		if (sprite)
 		{
-			sprite->Draw(GetRenderer(), xy, { 255, 255, 255, 255 });
+			sprite->Draw(GetRenderer(), xy);
 		}
 	}
 }
@@ -63,7 +63,7 @@ void RoomPanelRenderer::DrawObject(const tggd::common::XY<int>& xy, const tggd::
 	{
 		ObjectType objectType = object->GetData();
 		auto sprite= objectSprites.Get(objectType);
-		sprite->Draw(GetRenderer(), xy, { 255, 255, 255, 255 });
+		sprite->Draw(GetRenderer(), xy);
 		DrawHealthLevel(xy, object);
 	}
 }

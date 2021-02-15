@@ -26,7 +26,7 @@ namespace tggd::common
 		if (iter != glyphs.end())
 		{
 			auto sprite = spriteManager.GetSprite(iter->second);
-			sprite->Draw(renderer, xy, *colorManager.GetDescriptor(color));//TODO: fix this horrible idea!
+			sprite->Draw(renderer, xy, colorManager.GetDescriptor(color));
 			return XY(xy.GetX() + sprite->GetWidth(), xy.GetY());
 		}
 		return xy;

@@ -13,5 +13,5 @@ BaseMenuRenderer::BaseMenuRenderer
 }
 void BaseMenuRenderer::Draw() const
 {
-	background->Draw(GetRenderer(), tggd::common::XY<int>(0, 0), { 255, 255, 255, 255 });
+	background->Draw(GetRenderer(), tggd::common::XY<int>(0, 0));
 }

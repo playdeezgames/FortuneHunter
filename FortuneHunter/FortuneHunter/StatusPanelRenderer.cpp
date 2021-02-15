@@ -47,8 +47,7 @@ void StatusPanelRenderer::DrawBombs() const
 		GetRenderer(),
 		tggd::common::XY<int>(
 		Constants::UI::StatusPanel::BOMBS_ICON_X,
-		Constants::UI::StatusPanel::BOMBS_ICON_Y),
-		{ 255, 255, 255, 255 }
+		Constants::UI::StatusPanel::BOMBS_ICON_Y)
 	);
 	GetFont().WriteText(
 		GetRenderer(),
@@ -197,8 +196,7 @@ void StatusPanelRenderer::DrawStatistic
 	spriteManager.GetSprite(spriteName)->Draw
 	(
 		GetRenderer(),
-		spriteXY,
-		{ 255, 255, 255, 255 }
+		spriteXY
 	);
 	GetFont().WriteText(
 		GetRenderer(),
