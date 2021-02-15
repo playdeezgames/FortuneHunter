@@ -33,6 +33,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 		Constants::Config::Files::ICON
 	)
 	, finishManager()
+	, colorManager(finishManager)
 	, soundManager(finishManager)
 	, textureManager(finishManager)
 	, uiState(UIState::MAIN_MENU)
@@ -201,6 +202,7 @@ void FortuneHunterApplication::AddCommandProcessors()
 
 void FortuneHunterApplication::Start()
 {
+	colorManager.Start(Constants::Config::Files::COLORS);
 	tggd::common::Utility::SeedRandomNumberGenerator();
 	InitializeDescriptors();
 	controllerManager.Start();

@@ -299,6 +299,9 @@
     <ClCompile Include="Label.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ColorManager.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandProcessor.h">
@@ -594,6 +597,9 @@
     </ClInclude>
     <ClInclude Include="Label.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorManager.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

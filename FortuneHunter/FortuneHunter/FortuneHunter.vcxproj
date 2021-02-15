@@ -23,6 +23,7 @@
     <ClCompile Include="AboutRenderer.cpp" />
     <ClCompile Include="BaseDescriptor.cpp" />
     <ClCompile Include="BaseMenuRenderer.cpp" />
+    <ClCompile Include="ColorManager.cpp" />
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp" />
     <ClCompile Include="FinalScoreCommandProcessor.cpp" />
     <ClCompile Include="FinalScoreRenderer.cpp" />
@@ -88,6 +89,7 @@
     <ClInclude Include="BaseDescriptor.h" />
     <ClInclude Include="BaseDescriptorManager.h" />
     <ClInclude Include="BaseMenuRenderer.h" />
+    <ClInclude Include="ColorManager.h" />
     <ClInclude Include="ConfirmQuitCommandProcessor.h" />
     <ClInclude Include="DescribedObject.h" />
     <ClInclude Include="FinalScoreCommandProcessor.h" />
