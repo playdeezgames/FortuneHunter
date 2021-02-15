@@ -12,6 +12,7 @@ class BaseDescriptorManager: public tggd::common::Finisher
 {
 private:
 	std::map<TIdentifer, TDescriptor*> descriptors;
+	std::vector<TIdentifer> identifiers;
 protected:
 	virtual TIdentifer ParseKey(const std::string&) = 0;
 	virtual TDescriptor* ParseDescriptor(const nlohmann::json&) = 0;
@@ -25,29 +26,19 @@ public:
 		nlohmann::json properties = tggd::common::Utility::LoadJSON(fileName);
 		for (auto& item : properties.items())
 		{
-			descriptors[ParseKey(item.key())] =
+			auto identifier = ParseKey(item.key());
+			identifiers.push_back(identifier);
+			descriptors[identifier] =
 				ParseDescriptor(item.value());
 		}
 	}
 	void Finish()
 	{
-		for (auto& entry : descriptors)
-		{
-			if (entry.second)
-			{
-				tggd::common::Utility::SafeDelete(entry.second);
-			}
-		}
+		tggd::common::Utility::SafeDeleteMap(descriptors);
 	}
-	std::vector<TIdentifer> GetTypes() const
+	const std::vector<TIdentifer>& GetTypes() const
 	{
-		std::vector<TIdentifer> result;
-		for (auto& entry : descriptors)
-		{
-			result.push_back(entry.first);
-		}
-		return result;
-
+		return identifiers;
 	}
 	const TDescriptor* GetDescriptor(TIdentifer identifier) const
 	{
