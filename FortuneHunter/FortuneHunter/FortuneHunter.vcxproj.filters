@@ -125,9 +125,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>Source Files\Application</Filter>
     </ClCompile>
-    <ClCompile Include="BaseRenderer.cpp">
-      <Filter>Source Files\Renderers</Filter>
-    </ClCompile>
     <ClCompile Include="ConfirmQuitCommandProcessor.cpp">
       <Filter>Source Files\CommandProcessors</Filter>
     </ClCompile>
@@ -275,9 +272,6 @@
     <ClCompile Include="HunterDescriptorManager.cpp">
       <Filter>Source Files\Hunter</Filter>
     </ClCompile>
-    <ClCompile Include="BaseMenuRenderer.cpp">
-      <Filter>Source Files\Renderers</Filter>
-    </ClCompile>
     <ClCompile Include="StatisticsCommandProcessor.cpp">
       <Filter>Source Files\CommandProcessors</Filter>
     </ClCompile>
@@ -296,11 +290,14 @@
     <ClCompile Include="Statistics.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="BaseMenuRenderer.cpp">
+      <Filter>Source Files\BaseClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseRenderer.cpp">
+      <Filter>Source Files\BaseClasses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseCommandProcessor.h">
-      <Filter>Header Files\CommandProcessors</Filter>
-    </ClInclude>
     <ClInclude Include="CommandProcessor.h">
       <Filter>Header Files\CommandProcessors</Filter>
     </ClInclude>
@@ -315,9 +312,6 @@
     </ClInclude>
     <ClInclude Include="ColorConstants.h">
       <Filter>Header Files\Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseRenderer.h">
-      <Filter>Header Files\Renderers</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Header Files\CommandProcessors</Filter>
@@ -559,9 +553,6 @@
     <ClInclude Include="HunterDescriptorManager.h">
       <Filter>Header Files\Hunter</Filter>
     </ClInclude>
-    <ClInclude Include="BaseMenuRenderer.h">
-      <Filter>Header Files\Renderers</Filter>
-    </ClInclude>
     <ClInclude Include="InstructionsConstants.h">
       <Filter>Header Files\Constants</Filter>
     </ClInclude>
@@ -588,6 +579,15 @@
     </ClInclude>
     <ClInclude Include="Statistics.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCommandProcessor.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseMenuRenderer.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseRenderer.h">
+      <Filter>Header Files\BaseClasses</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
