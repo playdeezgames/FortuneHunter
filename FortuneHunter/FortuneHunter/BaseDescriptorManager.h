@@ -22,8 +22,8 @@ public:
 	}
 	void Start(const std::string& fileName)
 	{
-		nlohmann::json j = tggd::common::Utility::LoadJSON(fileName);
-		for (auto& item : j.items())
+		nlohmann::json properties = tggd::common::Utility::LoadJSON(fileName);
+		for (auto& item : properties.items())
 		{
 			descriptors[ParseKey(item.key())] =
 				ParseDescriptor(item.value());
