@@ -5,11 +5,12 @@ InstructionsRenderer::InstructionsRenderer
 	SDL_Renderer* renderer, 
 	const tggd::common::SpriteFont& font,
 	const tggd::common::Sprite* background,
-	const HelpPageManager& helpPages
+	const HelpPageManager& helpPages,
+	const std::string& currentPage
 )
 	: BaseMenuRenderer(renderer, font, background)
 	, helpPages(helpPages)
-	, currentPage("first") //TODO: magic string
+	, currentPage(currentPage)
 {
 }
 

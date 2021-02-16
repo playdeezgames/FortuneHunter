@@ -1,7 +1,7 @@
 {
     "first": {
-        "nextPage": "first",
-        "previousPage": "first",
+        "nextPage": "second",
+        "previousPage": "third",
         "labels": [
             {"x":228,"y":4,"color":"Black","text":"==THE GOAL=="},
             {"x":4,"y":36,"color":"Black","text":"As the FORTUNE HUNTER, your goal is to"},
@@ -54,6 +54,22 @@
             {"x":0,"y":392,"color":"Brown","text":"ARMOR      HEALTH UPGRADES."},
             {"x":0,"y":416,"color":"White","text":"Best of luck, FORTUNE HUNTER!"},
             {"x":224,"y":416,"color":"Brown","text":"FORTUNE HUNTER"}
+        ]
+    },
+    "second": {
+        "nextPage": "third",
+        "previousPage": "first",
+        "labels": [
+            {"x":228,"y":4,"color":"Black","text":"==CONTROLS=="},
+            {"x":224,"y":0,"color":"Green","text":"==CONTROLS=="}
+        ]
+    },
+    "third": {
+        "nextPage": "first",
+        "previousPage": "second",
+        "labels": [
+            {"x":180,"y":4,"color":"Black","text":"==HINTS AND TIPS=="},
+            {"x":176,"y":0,"color":"Green","text":"==HINTS AND TIPS=="}
         ]
     }
 }

@@ -55,6 +55,7 @@ private:
 	MainMenuState mainMenuState;
 	ConfirmState confirmState;
 	OptionsState optionsState;
+	std::string helpPage;
 	Statistics statistics;
 
 	CreatureDescriptorManager creatureDescriptors;

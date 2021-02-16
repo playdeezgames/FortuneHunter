@@ -58,6 +58,7 @@ FortuneHunterApplication::FortuneHunterApplication()
 	, optionsState(OptionsState::BACK)
 	, statistics(Constants::Config::Files::STATISTICS)
 	, helpPages(finishManager, romFont)
+	, helpPage("first") //TODO: magic string
 {
 
 }
@@ -164,7 +165,8 @@ void FortuneHunterApplication::AddRenderers()
 			GetRenderer(),
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::INSTRUCTIONS),
-			helpPages
+			helpPages,
+			helpPage
 		)
 	);
 }
@@ -197,7 +199,7 @@ void FortuneHunterApplication::AddCommandProcessors()
 	commandProcessors.AddCommandProcessor(UIState::IN_PLAY, new InPlayCommandProcessor(uiState, gameData, statistics));
 	commandProcessors.AddCommandProcessor(UIState::OPTIONS, new OptionsCommandProcessor(uiState, optionsState, soundManager, options));
 	commandProcessors.AddCommandProcessor(UIState::ABOUT, new AboutCommandProcessor(uiState));
-	commandProcessors.AddCommandProcessor(UIState::INSTRUCTIONS, new InstructionsCommandProcessor(uiState));
+	commandProcessors.AddCommandProcessor(UIState::INSTRUCTIONS, new InstructionsCommandProcessor(uiState, helpPages, helpPage));
 	commandProcessors.AddCommandProcessor(UIState::FINAL_SCORE, new FinalScoreCommandProcessor(uiState));
 	commandProcessors.AddCommandProcessor(UIState::STATISTICS, new StatisticsCommandProcessor(uiState));
 }
