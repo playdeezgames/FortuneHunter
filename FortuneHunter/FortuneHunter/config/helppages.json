@@ -61,7 +61,28 @@
         "previousPage": "first",
         "labels": [
             {"x":228,"y":4,"color":"Black","text":"==CONTROLS=="},
-            {"x":224,"y":0,"color":"Green","text":"==CONTROLS=="}
+            {"x":224,"y":0,"color":"Green","text":"==CONTROLS=="},
+
+            {"x":4,"y":36,"color":"Black","text":"<KEYBOARD>/(GamePad)"},
+            {"x":0,"y":32,"color":"Cyan","text":"<KEYBOARD>/(GamePad)"},
+
+            {"x":4,"y":68,"color":"Black","text":"<ARROWS>/(D-Pad)"},
+            {"x":0,"y":64,"color":"Cyan","text":"<ARROWS>/(D-Pad)"},
+
+            {"x":196,"y":84,"color":"Black","text":"Navigate/move"},
+            {"x":192,"y":80,"color":"Gray","text":"Navigate/move"},
+
+            {"x":4,"y":116,"color":"Black","text":"<ESC>/(Back)"},
+            {"x":0,"y":112,"color":"Cyan","text":"<ESC>/(Back)"},
+
+            {"x":196,"y":132,"color":"Black","text":"Go back"},
+            {"x":192,"y":128,"color":"Gray","text":"Go back"},
+
+            {"x":4,"y":164,"color":"Black","text":"<SPACE>/<ENTER>/(A)/(Start)"},
+            {"x":0,"y":160,"color":"Cyan","text":"<SPACE>/<ENTER>/(A)/(Start)"},
+
+            {"x":196,"y":180,"color":"Black","text":"Select menu item/Use Bomb"},
+            {"x":192,"y":176,"color":"Gray","text":"Select menu item/Use Bomb"}
         ]
     },
     "third": {
