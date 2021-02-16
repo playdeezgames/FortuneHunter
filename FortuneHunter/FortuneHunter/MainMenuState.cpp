@@ -2,6 +2,7 @@
 
 static MainMenuState nextStates[] =
 {
+	MainMenuState::DIFFICULTY,
 	MainMenuState::INSTRUCTIONS,
 	MainMenuState::STATISTICS,
 	MainMenuState::ABOUT,
@@ -19,6 +20,7 @@ static MainMenuState previousStates[] =
 {
 	MainMenuState::QUIT,
 	MainMenuState::START,
+	MainMenuState::DIFFICULTY,
 	MainMenuState::INSTRUCTIONS,
 	MainMenuState::STATISTICS,
 	MainMenuState::ABOUT,

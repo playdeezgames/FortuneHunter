@@ -8,11 +8,13 @@ MainMenuRenderer::MainMenuRenderer
 	const tggd::common::SpriteFont& romFont, 
 	const tggd::common::Sprite* background,
 	const MainMenuState& mainMenuState, 
-	const GameData& gameData
+	const GameData& gameData,
+	const HunterDescriptorManager& hunterDescriptors
 )
 	: BaseMenuRenderer(renderer, romFont, background)
 	, mainMenuState(mainMenuState)
 	, gameData(gameData)
+	, hunterDescriptors(hunterDescriptors)
 {
 
 }
@@ -30,11 +32,13 @@ void MainMenuRenderer::Draw() const
 	{
 		DrawMenuItem(0, Constants::UI::MainMenu::OPTION_START, MainMenuState::START);
 	}
-	DrawMenuItem(1, Constants::UI::MainMenu::OPTION_INSTRUCTIONS, MainMenuState::INSTRUCTIONS);
-	DrawMenuItem(2, Constants::UI::MainMenu::OPTION_STATISTICS, MainMenuState::STATISTICS);
-	DrawMenuItem(3, Constants::UI::MainMenu::OPTION_ABOUT, MainMenuState::ABOUT);
-	DrawMenuItem(4, Constants::UI::MainMenu::OPTION_OPTIONS, MainMenuState::OPTIONS);
-	DrawMenuItem(5, Constants::UI::MainMenu::OPTION_QUIT, MainMenuState::QUIT);
+	auto hunterDescriptor = hunterDescriptors.GetDescriptor(gameData.GetDifficulty());
+	DrawMenuItem(1, hunterDescriptor->GetName(), MainMenuState::DIFFICULTY);
+	DrawMenuItem(2, Constants::UI::MainMenu::OPTION_INSTRUCTIONS, MainMenuState::INSTRUCTIONS);
+	DrawMenuItem(3, Constants::UI::MainMenu::OPTION_STATISTICS, MainMenuState::STATISTICS);
+	DrawMenuItem(4, Constants::UI::MainMenu::OPTION_ABOUT, MainMenuState::ABOUT);
+	DrawMenuItem(5, Constants::UI::MainMenu::OPTION_OPTIONS, MainMenuState::OPTIONS);
+	DrawMenuItem(6, Constants::UI::MainMenu::OPTION_QUIT, MainMenuState::QUIT);
 }
 
 void MainMenuRenderer::DrawMenuItem(int line, const std::string& text, const MainMenuState& state) const

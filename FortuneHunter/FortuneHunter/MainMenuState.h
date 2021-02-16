@@ -2,6 +2,7 @@
 enum class MainMenuState
 {
 	START,
+	DIFFICULTY,
 	INSTRUCTIONS,
 	STATISTICS,
 	ABOUT,

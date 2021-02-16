@@ -86,7 +86,8 @@ void FortuneHunterApplication::AddRenderers()
 			romFont,
 			spriteManager.GetSprite(Constants::UI::Backgrounds::MAIN_MENU),
 			mainMenuState,
-			gameData
+			gameData,
+			hunterDescriptors
 		)
 	);
 	renderers.AddRenderer
