@@ -3,30 +3,42 @@
         "nextPage": "first",
         "previousPage": "first",
         "labels": [
-            {
-                "x": 228,
-                "y": 4,
-                "text": "Instructions",
-                "color": "Black"
-            },
-            {
-                "x": 224,
-                "y": 0,
-                "text": "Instructions",
-                "color": "LightGreen"
-            },
-            {
-                "x": 4,
-                "y": 36,
-                "text": "TODO: put some information here!",
-                "color": "Black"
-            },
-            {
-                "x": 0,
-                "y": 32,
-                "text": "TODO: put some information here!",
-                "color": "White"
-            }
+            {"x":228,"y":36,"color":"Black","text":"==THE GOAL=="},
+            {"x":4,"y":66,"color":"Black","text":"As the FORTUNE HUNTER, your goal is to"},
+            {"x":4,"y":92,"color":"Black","text":"acquire as many DIAMONDS from the maze"},
+            {"x":4,"y":116,"color":"Black","text":"as you can. Beware, though, because the"},
+            {"x":4,"y":140,"color":"Black","text":"labyrinth is filled with ZOMBIES, who"},
+            {"x":4,"y":164,"color":"Black","text":"will strike at you as you move near"},
+            {"x":4,"y":188,"color":"Black","text":"them. To attack a ZOMBIE, simply move"},
+            {"x":4,"y":212,"color":"Black","text":"into them. The DIAMONDS are behind"},
+            {"x":4,"y":236,"color":"Black","text":"locked DOORS that you will need KEYS"},
+            {"x":4,"y":260,"color":"Black","text":"to open. To open a LOCK, simply move"},
+            {"x":4,"y":284,"color":"Black","text":"into it. Finally, to exit the dungeon,"},
+            {"x":4,"y":308,"color":"Black","text":"you will need an EXIT KEY which will"},
+            {"x":4,"y":332,"color":"Black","text":"allow you to leave via the EXIT. There"},
+            {"x":4,"y":356,"color":"Black","text":"are a lot of ZOMBIES, but despair not!"},
+            {"x":4,"y":380,"color":"Black","text":"There are numerous POTIONS and SHIELDS"},
+            {"x":4,"y":402,"color":"Black","text":"to help you, as well as ATTACK,"},
+            {"x":4,"y":428,"color":"Black","text":"ARMOR, and HEALTH UPGRADES."},
+            {"x":4,"y":452,"color":"Black","text":"Best of luck, FORTUNE HUNTER!"},
+            {"x":224,"y":32,"color":"Green","text":"==THE GOAL=="},
+            {"x":0,"y":64,"color":"White","text":"As the FORTUNE HUNTER, your goal is to"},
+            {"x":0,"y":88,"color":"White","text":"acquire as many DIAMONDS from the maze"},
+            {"x":0,"y":112,"color":"White","text":"as you can. Beware, though, because the"},
+            {"x":0,"y":136,"color":"White","text":"labyrinth is filled with ZOMBIES, who"},
+            {"x":0,"y":160,"color":"White","text":"will strike at you as you move near"},
+            {"x":0,"y":184,"color":"White","text":"them. To attack a ZOMBIE, simply move"},
+            {"x":0,"y":208,"color":"White","text":"into them. The DIAMONDS are behind"},
+            {"x":0,"y":232,"color":"White","text":"locked DOORS that you will need KEYS"},
+            {"x":0,"y":256,"color":"White","text":"to open. To open a LOCK, simply move"},
+            {"x":0,"y":280,"color":"White","text":"into it. Finally, to exit the dungeon,"},
+            {"x":0,"y":304,"color":"White","text":"you will need an EXIT KEY which will"},
+            {"x":0,"y":328,"color":"White","text":"allow you to leave via the EXIT. There"},
+            {"x":0,"y":352,"color":"White","text":"are a lot of ZOMBIES, but despair not!"},
+            {"x":0,"y":376,"color":"White","text":"There are numerous POTIONS and SHIELDS"},
+            {"x":0,"y":400,"color":"White","text":"to help you, as well as ATTACK,"},
+            {"x":0,"y":424,"color":"White","text":"ARMOR, and HEALTH UPGRADES."},
+            {"x":0,"y":448,"color":"White","text":"Best of luck, FORTUNE HUNTER!"}
         ]
     }
 }

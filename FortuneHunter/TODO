@@ -5,7 +5,14 @@ Finalize Screens:
     ✔ main menu @done(21-02-14 05:59)
     ☐ about
     ☐ instructions @started(21-02-15 05:54)
-        ☐ help page manager
+        ✔ help page manager @done(21-02-16 03:38)
+        ☐ first page (goals)
+          ☐ move everything up by 32px
+          ☐ highlight ALL CAPS words
+        ☐ second page (controls)
+          ☐ content
+        ☐ third page (tips)
+          ☐ content
     ☐ status panel
     ☐ statistics
     ☐ final scoring?
