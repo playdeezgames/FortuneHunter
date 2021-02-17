@@ -1,5 +1,5 @@
 Oddities:
-    ☐ i can start a game with a particular difficulty and go to the main menu and change the difficulty but it doesnt change the current game
+    ✔ i can start a game with a particular difficulty and go to the main menu and change the difficulty but it doesnt change the current game @done(21-02-17 04:53)
 Placeholder Screens:
     ✔ statistics screen @done(21-02-13 06:21)
     ✔ final scoring? @done(21-02-13 06:21)
@@ -17,15 +17,15 @@ Finalize Screens:
           ☐ content
     ☐ status panel
     ☐ statistics
-    ☐ final scoring?
+    ☐ final scoring
     ✔ select difficulty level @done(21-02-17 04:51)
         main menu
     ✔ options @done(21-02-14 06:31)
 Game Balance:
     ☐ difficulty curve lowers as the game progresses
-        generate more traps?
+        generate more traps when receiving upgrade
 Gameplay:
-    ☐ sight radius?
+    ✘ sight radius? @cancelled(21-02-17 04:54)
         can there be an upgrade to increase it?
     ✔ scoring @done(21-02-13 06:21)
         diamond

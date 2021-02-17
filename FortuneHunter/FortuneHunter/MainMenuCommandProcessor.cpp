@@ -39,8 +39,11 @@ void MainMenuCommandProcessor::DoMenuItemAction()
 		SetUIState(UIState::CONFIRM_QUIT);
 		return;
 	case MainMenuState::DIFFICULTY:
-		gameData.NextDifficulty();
-		options.Save();
+		if (!gameData.CanContinue())
+		{
+			gameData.NextDifficulty();
+			options.Save();
+		}
 		return;
 	case MainMenuState::START:
 		if (!gameData.CanContinue())
