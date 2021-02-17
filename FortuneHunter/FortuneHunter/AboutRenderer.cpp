@@ -14,6 +14,15 @@ AboutRenderer::AboutRenderer
 void AboutRenderer::Draw() const
 {
 	BaseMenuRenderer::Draw();
-	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(0, 0), "About", Constants::Color::GREEN);
-	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(0, 32), "TODO: put some information here!", Constants::Color::GRAY);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(324, 164), "==About Fortune Hunter==", Constants::Color::BLACK);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(320, 160), "==About Fortune Hunter==", Constants::Color::LIGHT_GREEN);
+
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(324, 324), "A Production of TheGrumpyGameDev", Constants::Color::BLACK);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(320, 320), "A Production of TheGrumpyGameDev", Constants::Color::GRAY);
+
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(324, 340), "https://thegrumpygamedev.itch.io/", Constants::Color::BLACK);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(320, 336), "https://thegrumpygamedev.itch.io/", Constants::Color::LIGHT_BLUE);
+
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(324, 356), "(URL copied to clipboard!)", Constants::Color::BLACK);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(320, 352), "(URL copied to clipboard!)", Constants::Color::DARK_GRAY);
 }

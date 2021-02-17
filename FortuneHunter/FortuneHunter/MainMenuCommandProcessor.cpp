@@ -1,4 +1,5 @@
 #include "MainMenuCommandProcessor.h"
+#include <SDL.h>
 void MainMenuCommandProcessor::OnCommand(const Command& command)
 {
 	switch (command)
@@ -56,6 +57,7 @@ void MainMenuCommandProcessor::DoMenuItemAction()
 		SetUIState(UIState::OPTIONS);
 		return;
 	case MainMenuState::ABOUT:
+		SDL_SetClipboardText("https://thegrumpygamedev.itch.io/");
 		SetUIState(UIState::ABOUT);
 		return;
 	case MainMenuState::STATISTICS:
