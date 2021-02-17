@@ -86,7 +86,11 @@
             16
         ],
         "pickUpSfx": "woohoo",
-        "protectors": [ 1 ]
+        "protectors": [ 1 ],
+        "spawnItems":{
+            "itemType":11,
+            "count":25
+        }
     },
     "9": {
         "itemType": 9,
@@ -97,7 +101,11 @@
             16
         ],
         "pickUpSfx": "woohoo",
-        "protectors": [ 1 ]
+        "protectors": [ 1 ],
+        "spawnItems":{
+            "itemType":11,
+            "count":50
+        }
     },
     "10": {
         "itemType": 10,
@@ -108,7 +116,11 @@
             16
         ],
         "pickUpSfx": "woohoo",
-        "protectors": [ 1 ]
+        "protectors": [ 1 ],
+        "spawnItems":{
+            "itemType":11,
+            "count":10
+        }
     },
     "11": {
         "itemType": 11,

@@ -1,66 +1,62 @@
-Oddities:
-    ✔ i can start a game with a particular difficulty and go to the main menu and change the difficulty but it doesnt change the current game @done(21-02-17 04:53)
-Placeholder Screens:
-    ✔ statistics screen @done(21-02-13 06:21)
-    ✔ final scoring? @done(21-02-13 06:21)
 Finalize Screens:
-    ✔ main menu @done(21-02-14 05:59)
     ☐ about
     ☐ instructions @started(21-02-15 05:54)
-        ✔ help page manager @done(21-02-16 03:38)
-        ✔ first page (goals) @done(21-02-17 04:51)
-          ✔ move everything up by 32px @done(21-02-17 04:51)
-          ✔ highlight ALL CAPS words @done(21-02-17 04:51)
-        ✔ second page (controls) @done(21-02-17 04:51)
-          ✔ content @done(21-02-17 04:51)
         ☐ third page (tips)
           ☐ content
     ☐ status panel
     ☐ statistics
     ☐ final scoring
-    ✔ select difficulty level @done(21-02-17 04:51)
-        main menu
-    ✔ options @done(21-02-14 06:31)
-Game Balance:
-    ☐ difficulty curve lowers as the game progresses
-        generate more traps when receiving upgrade
-Gameplay:
-    ✘ sight radius? @cancelled(21-02-17 04:54)
-        can there be an upgrade to increase it?
-    ✔ scoring @done(21-02-13 06:21)
-        diamond
-        found exit key
-        exit bonus
-        health left
-    ✔ statistics tracking @done(21-02-13 06:21)
-        games played
-        games won
-        games lost
-        high score
-        total score(allows calculation of average score)
-    ✔ difficulty levels? @done(21-02-15 05:53)
-        ✔ easy @done(21-02-15 05:53)
-            bombs - 5
-            health - 25/30/35/40
-            weapon - 6/8/10/12
-            armor - 10/15/20/25
-            scores - 500/50/250/2250
-        ✔ normal @done(21-02-15 05:53)
-            bombs - 3
-            health - 20/25/30/35
-            weapon - 4/6/8/10
-            armor - 10/15/20/25
-            scores - 1000/100/500/4500
-        ✔ hard @done(21-02-15 05:53)
-            bombs - 1
-            health - 15/20/25/30
-            weapon - 3/4/5/6
-            armor - 10/15/20/25
-            scores - 2000/200/1000/9000
 Audio:
     ☐ music!
 
 Archive:
+  ✔ i can start a game with a particular difficulty and go to the main menu and change the difficulty but it doesnt change the current game @done(21-02-17 04:53) @project(Oddities)
+  ✔ statistics screen @done(21-02-13 06:21) @project(Placeholder Screens)
+  ✔ final scoring? @done(21-02-13 06:21) @project(Placeholder Screens)
+  ✔ main menu @done(21-02-14 05:59) @project(Finalize Screens)
+  ✔ help page manager @done(21-02-16 03:38) @project(Finalize Screens)
+  ✔ first page (goals) @done(21-02-17 04:51) @project(Finalize Screens)
+  ✔ move everything up by 32px @done(21-02-17 04:51) @project(Finalize Screens)
+  ✔ highlight ALL CAPS words @done(21-02-17 04:51) @project(Finalize Screens)
+  ✔ second page (controls) @done(21-02-17 04:51) @project(Finalize Screens)
+  ✔ content @done(21-02-17 04:51) @project(Finalize Screens)
+  ✔ select difficulty level @done(21-02-17 04:51) @project(Finalize Screens)
+    main menu
+  ✔ options @done(21-02-14 06:31) @project(Finalize Screens)
+  ✔ difficulty curve lowers as the game progresses @done(21-02-17 05:20) @project(Game Balance)
+    generate more traps when receiving upgrade
+  ✘ sight radius? @cancelled(21-02-17 04:54) @project(Gameplay)
+    can there be an upgrade to increase it?
+  ✔ scoring @done(21-02-13 06:21) @project(Gameplay)
+    diamond
+    found exit key
+    exit bonus
+    health left
+  ✔ statistics tracking @done(21-02-13 06:21) @project(Gameplay)
+    games played
+    games won
+    games lost
+    high score
+    total score(allows calculation of average score)
+  ✔ difficulty levels? @done(21-02-15 05:53) @project(Gameplay)
+  ✔ easy @done(21-02-15 05:53) @project(Gameplay)
+    bombs - 5
+    health - 25/30/35/40
+    weapon - 6/8/10/12
+    armor - 10/15/20/25
+    scores - 500/50/250/2250
+  ✔ normal @done(21-02-15 05:53) @project(Gameplay)
+    bombs - 3
+    health - 20/25/30/35
+    weapon - 4/6/8/10
+    armor - 10/15/20/25
+    scores - 1000/100/500/4500
+  ✔ hard @done(21-02-15 05:53) @project(Gameplay)
+    bombs - 1
+    health - 15/20/25/30
+    weapon - 3/4/5/6
+    armor - 10/15/20/25
+    scores - 2000/200/1000/9000
   ✔ instructions screen @done(21-02-11 05:09) @project(Placeholder Screens)
     move between pages (if more than one)
     go back to main menu

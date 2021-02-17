@@ -149,6 +149,28 @@ void GameData::AttackCreature(Creature* creature)
 	DamageCreature(creature, hunter->GetAttackStrength());
 }
 
+const size_t MAXIMUM_SPAWN_ATTEMPTS = 50;
+
+void GameData::SpawnItems(ItemType itemType, size_t count)
+{
+	size_t attempts = 0;
+	auto descriptor = itemDescriptors.GetDescriptor(itemType);
+	while (count > 0 && attempts < MAXIMUM_SPAWN_ATTEMPTS)
+	{
+		attempts++;
+		size_t column = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, room.GetColumns());
+		size_t row = (size_t)tggd::common::Utility::GenerateRandomNumberFromRange(0, room.GetRows());
+		auto cell = room.GetCell(column, row);
+		if (!cell->HasObject() && descriptor->CanSpawnOnTerrain(cell->GetTerrain()))
+		{
+			cell->SetObject(new Item(descriptor));
+			attempts = 0;
+			count--;
+		}
+	}
+}
+
+
 bool GameData::AttemptToPickUpItem(Item* item)
 {
 	bool result = true;
@@ -160,6 +182,10 @@ bool GameData::AttemptToPickUpItem(Item* item)
 			hunter->PickUp(itemType);
 			soundManager.PlaySound(item->GetDescriptor()->GetPickUpSfx());
 			result = !item->GetDescriptor()->DoesStopMovement();
+			if (item->GetDescriptor()->DoesSpawnItems())
+			{
+				SpawnItems(item->GetDescriptor()->GetSpawnItemType(), item->GetDescriptor()->GetSpawnItemCount());
+			}
 			item->GetRoomCell()->RemoveObject();//leave on bottom, because deletes item!
 		}
 		else

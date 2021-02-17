@@ -14,6 +14,8 @@ private:
 	bool stopsMovement;
 	size_t deadEndAppearing;
 	std::vector<CreatureType> protectors;
+	ItemType spawnItemType;
+	size_t spawnItemCount;
 public:
 	ItemDescriptor
 	(
@@ -25,5 +27,8 @@ public:
 	bool DoesStopMovement() const;
 	size_t GetDeadEndAppearing() const;
 	const std::vector<CreatureType> GetProtectors() const;
+	bool DoesSpawnItems() const;
+	ItemType GetSpawnItemType() const;
+	size_t GetSpawnItemCount() const;
 };
 
