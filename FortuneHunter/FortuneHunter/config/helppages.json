@@ -395,6 +395,248 @@
                     "y": 4,
                     "color": "Black"
                 }
+            },
+            {
+                "x": 0,
+                "y": 32,
+                "color": "Gray",
+                "text": "1). Items in this game are immediately",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 48,
+                "color": "Gray",
+                "text": "used upon collecting them, which means",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 64,
+                "color": "Gray",
+                "text": "that when you pick up a POTION, you ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 80,
+                "color": "Gray",
+                "text": "immediately drink it, and when you pick ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 96,
+                "color": "Gray",
+                "text": "up a SHIELD, your ARMOR instantly goes ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 112,
+                "color": "Gray",
+                "text": "up. Since a POTION gives you a parti-",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 128,
+                "color": "Gray",
+                "text": "cular amount of HEALTH back, and because ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 144,
+                "color": "Gray",
+                "text": "your ARMOR statistic has a maximum based ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 160,
+                "color": "Gray",
+                "text": "on your current upgrade level, you may ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 176,
+                "color": "Gray",
+                "text": "not always receive the full benefit of ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 192,
+                "color": "Gray",
+                "text": "the POTION or SHIELD.",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 224,
+                "color": "Gray",
+                "text": "2). After each move you make, you will ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 240,
+                "color": "Gray",
+                "text": "be struck by every ZOMBIE that was adj-",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 256,
+                "color": "Gray",
+                "text": "acent to you that lives after your move ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 272,
+                "color": "Gray",
+                "text": "is complete. Attempt to face ZOMBIES one ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 288,
+                "color": "Gray",
+                "text": "at a time to minimize ARMOR and HEALTH ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 304,
+                "color": "Gray",
+                "text": "loss.",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 336,
+                "color": "Gray",
+                "text": "3). You start with a particular number ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 352,
+                "color": "Gray",
+                "text": "of BOMBS based on your difficulty level. ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 368,
+                "color": "Gray",
+                "text": "A BOMB will damage all enemies next to ",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 384,
+                "color": "Gray",
+                "text": "you. Use them sparingly!",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 400,
+                "color": "Gray",
+                "text": "",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
             }
         ]
     }
