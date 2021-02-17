@@ -12,6 +12,7 @@ namespace tggd::common
 		std::map<char, std::string> glyphs;
 		const SpriteManager& spriteManager;
 		const ColorManager& colorManager;
+		tggd::common::Sprite* GetGlyphSprite(char) const;
 	public:
 		SpriteFont
 		(
@@ -21,6 +22,7 @@ namespace tggd::common
 		);
 		tggd::common::XY<int> WriteGlyph(SDL_Renderer*, const tggd::common::XY<int>&, char, const std::string&) const;
 		tggd::common::XY<int> WriteText(SDL_Renderer*, const tggd::common::XY<int>&, const std::string&, const std::string&) const;
+		void WriteTextCentered(SDL_Renderer*, const tggd::common::XY<int>&, const std::string&, const std::string&) const;
 	};
 }
 

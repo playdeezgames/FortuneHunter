@@ -1,6 +1,6 @@
 {
     "0": {
-        "name": " Easy Difficulty",
+        "name": "Easy Difficulty",
         "maximumHealths": [
             25,
             30,
@@ -66,7 +66,7 @@
         }
     },
     "2": {
-        "name": " Hard Difficulty",
+        "name": "Hard Difficulty",
         "maximumHealths": [
             15,
             20,

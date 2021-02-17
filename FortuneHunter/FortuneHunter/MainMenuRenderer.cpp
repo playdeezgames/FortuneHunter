@@ -22,8 +22,8 @@ MainMenuRenderer::MainMenuRenderer
 void MainMenuRenderer::Draw() const
 {
 	BaseMenuRenderer::Draw();
-	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(Constants::UI::MainMenu::TITLE_OFFSET_X + Constants::UI::DROP_SHADOW_X, Constants::UI::DROP_SHADOW_Y + Constants::UI::MainMenu::TITLE_OFFSET_Y), Constants::UI::MainMenu::TITLE, Constants::Color::BLACK);
-	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(Constants::UI::MainMenu::TITLE_OFFSET_X, Constants::UI::MainMenu::TITLE_OFFSET_Y), Constants::UI::MainMenu::TITLE, Constants::Color::LIGHT_GREEN);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(Constants::UI::MainMenu::TITLE_OFFSET_X + Constants::UI::DROP_SHADOW_X, Constants::UI::DROP_SHADOW_Y + Constants::UI::MainMenu::TITLE_OFFSET_Y), Constants::UI::MainMenu::TITLE, Constants::Color::BLACK);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(Constants::UI::MainMenu::TITLE_OFFSET_X, Constants::UI::MainMenu::TITLE_OFFSET_Y), Constants::UI::MainMenu::TITLE, Constants::Color::LIGHT_GREEN);
 	if (gameData.CanContinue())
 	{
 		DrawMenuItem(0, Constants::UI::MainMenu::OPTION_CONTINUE, MainMenuState::START);
@@ -43,7 +43,7 @@ void MainMenuRenderer::Draw() const
 
 void MainMenuRenderer::DrawMenuItem(int line, const std::string& text, const MainMenuState& state) const
 {
-	GetFont().WriteText
+	GetFont().WriteTextCentered
 	(
 		GetRenderer(),
 		tggd::common::XY<int>(Constants::UI::DROP_SHADOW_X + Constants::UI::MainMenu::MENU_OFFSET_X,
@@ -51,7 +51,7 @@ void MainMenuRenderer::DrawMenuItem(int line, const std::string& text, const Mai
 		text,
 		(Constants::Color::BLACK)
 	);
-	GetFont().WriteText
+	GetFont().WriteTextCentered
 		(
 			GetRenderer(), 
 			tggd::common::XY<int>(Constants::UI::MainMenu::MENU_OFFSET_X,
