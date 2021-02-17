@@ -13,4 +13,9 @@ namespace tggd::common
 		const TDimension& GetX() const { return x; }
 		const TDimension& GetY() const { return y; }
 	};
+	template<typename TDimension>
+	XY<TDimension> operator+(const XY<TDimension>& first, const XY<TDimension>& second)
+	{
+		return XY<TDimension>(first.GetX() + second.GetX(), first.GetY() + second.GetY());
+	}
 }

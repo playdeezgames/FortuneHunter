@@ -12,12 +12,18 @@ namespace tggd::common
 		std::string text;
 		const tggd::common::SpriteFont& font;
 		std::string color;
+		bool hasDropShadow;
+		tggd::common::XY<int> dropShadowXY;
+		std::string dropShadowColor;
 	public:
 		Label
 		(
 			const tggd::common::XY<int>&,
 			const std::string&,
 			const tggd::common::SpriteFont&,
+			const std::string&,
+			bool,
+			const tggd::common::XY<int>&,
 			const std::string&
 		);
 		Label(const nlohmann::json&);

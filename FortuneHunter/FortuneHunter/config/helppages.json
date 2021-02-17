@@ -3,94 +3,399 @@
         "nextPage": "second",
         "previousPage": "third",
         "labels": [
-            {"x":228,"y":4,"color":"Black","text":"==THE GOAL=="},
-            {"x":4,"y":36,"color":"Black","text":"As the FORTUNE HUNTER, your goal is to"},
-            {"x":4,"y":60,"color":"Black","text":"acquire as many DIAMONDS from the maze"},
-            {"x":4,"y":84,"color":"Black","text":"as you can. Beware, though, because the"},
-            {"x":4,"y":108,"color":"Black","text":"labyrinth is filled with ZOMBIES, who"},
-            {"x":4,"y":132,"color":"Black","text":"will strike at you as you move near"},
-            {"x":4,"y":156,"color":"Black","text":"them. To attack a ZOMBIE, simply move"},
-            {"x":4,"y":180,"color":"Black","text":"into them. The DIAMONDS are behind"},
-            {"x":4,"y":204,"color":"Black","text":"locked DOORS that you will need KEYS"},
-            {"x":4,"y":228,"color":"Black","text":"to open. To open a LOCK, simply move"},
-            {"x":4,"y":252,"color":"Black","text":"into it. Finally, to exit the dungeon,"},
-            {"x":4,"y":276,"color":"Black","text":"you will need an EXIT KEY which will"},
-            {"x":4,"y":300,"color":"Black","text":"allow you to leave via the EXIT. There"},
-            {"x":4,"y":324,"color":"Black","text":"are a lot of ZOMBIES, but despair not!"},
-            {"x":4,"y":348,"color":"Black","text":"There are numerous POTIONS and SHIELDS"},
-            {"x":4,"y":372,"color":"Black","text":"to help you, as well as ATTACK,"},
-            {"x":4,"y":396,"color":"Black","text":"ARMOR, and HEALTH UPGRADES."},
-            {"x":4,"y":420,"color":"Black","text":"Best of luck, FORTUNE HUNTER!"},
-            {"x":224,"y":0,"color":"Green","text":"==THE GOAL=="},
-
-            {"x":0,"y":32,"color":"White","text":"As the FORTUNE HUNTER, your goal is to"},
-            {"x":112,"y":32,"color":"Brown","text":"FORTUNE HUNTER"},
-            {"x":0,"y":56,"color":"White","text":"acquire as many DIAMONDS from the maze"},
-            {"x":256,"y":56,"color":"Brown","text":"DIAMONDS"},
-            {"x":0,"y":80,"color":"White","text":"as you can. Beware, though, because the"},
-            {"x":0,"y":104,"color":"White","text":"labyrinth is filled with ZOMBIES, who"},
-            {"x":400,"y":104,"color":"Brown","text":"ZOMBIES"},
-            {"x":0,"y":128,"color":"White","text":"will strike at you as you move near"},
-            {"x":0,"y":152,"color":"White","text":"them. To attack a ZOMBIE, simply move"},
-            {"x":288,"y":152,"color":"Brown","text":"ZOMBIE"},
-            {"x":0,"y":176,"color":"White","text":"into them. The DIAMONDS are behind"},
-            {"x":240,"y":176,"color":"Brown","text":"DIAMONDS"},
-            {"x":0,"y":200,"color":"White","text":"locked DOORS that you will need KEYS"},
-            {"x":112,"y":200,"color":"Brown","text":"DOORS                    KEYS"},
-            {"x":0,"y":224,"color":"White","text":"to open. To open a LOCK, simply move"},
-            {"x":304,"y":224,"color":"Brown","text":"LOCK"},
-            {"x":0,"y":248,"color":"White","text":"into it. Finally, to exit the dungeon,"},
-            {"x":0,"y":272,"color":"White","text":"you will need an EXIT KEY which will"},
-            {"x":272,"y":272,"color":"Brown","text":"EXIT KEY"},
-            {"x":0,"y":296,"color":"White","text":"allow you to leave via the EXIT. There"},
-            {"x":432,"y":296,"color":"Brown","text":"EXIT"},
-            {"x":0,"y":320,"color":"White","text":"are a lot of ZOMBIES, but despair not!"},
-            {"x":208,"y":320,"color":"Brown","text":"ZOMBIES"},
-            {"x":0,"y":344,"color":"White","text":"There are numerous POTIONS and SHIELDS"},
-            {"x":304,"y":344,"color":"Brown","text":"POTIONS     SHIELDS"},
-            {"x":0,"y":368,"color":"White","text":"to help you, as well as ATTACK,"},
-            {"x":384,"y":368,"color":"Brown","text":"ATTACK"},
-            {"x":0,"y":392,"color":"White","text":"ARMOR, and HEALTH UPGRADES."},
-            {"x":0,"y":392,"color":"Brown","text":"ARMOR      HEALTH UPGRADES."},
-            {"x":0,"y":416,"color":"White","text":"Best of luck, FORTUNE HUNTER!"},
-            {"x":224,"y":416,"color":"Brown","text":"FORTUNE HUNTER"}
+            {
+                "x": 224,
+                "y": 0,
+                "color": "LightGreen",
+                "text": "==THE GOAL==",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 32,
+                "color": "White",
+                "text": "As the FORTUNE HUNTER, your goal is to",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 56,
+                "color": "White",
+                "text": "acquire as many DIAMONDS from the maze",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 80,
+                "color": "White",
+                "text": "as you can. Beware, though, because the",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 104,
+                "color": "White",
+                "text": "labyrinth is filled with ZOMBIES, who",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 128,
+                "color": "White",
+                "text": "will strike at you as you move near",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 152,
+                "color": "White",
+                "text": "them. To attack a ZOMBIE, simply move",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 176,
+                "color": "White",
+                "text": "into them. The DIAMONDS are behind",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 200,
+                "color": "White",
+                "text": "locked DOORS that you will need KEYS",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 224,
+                "color": "White",
+                "text": "to open. To open a LOCK, simply move",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 248,
+                "color": "White",
+                "text": "into it. Finally, to exit the dungeon,",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 272,
+                "color": "White",
+                "text": "you will need an EXIT KEY which will",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 296,
+                "color": "White",
+                "text": "allow you to leave via the EXIT. There",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 320,
+                "color": "White",
+                "text": "are a lot of ZOMBIES, but despair not!",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 344,
+                "color": "White",
+                "text": "There are numerous POTIONS and SHIELDS",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 368,
+                "color": "White",
+                "text": "to help you, as well as ATTACK,",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 392,
+                "color": "White",
+                "text": "ARMOR, and HEALTH UPGRADES.",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 416,
+                "color": "White",
+                "text": "Best of luck, FORTUNE HUNTER!",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 112,
+                "y": 32,
+                "color": "Brown",
+                "text": "FORTUNE HUNTER"
+            },
+            {
+                "x": 256,
+                "y": 56,
+                "color": "Brown",
+                "text": "DIAMONDS"
+            },
+            {
+                "x": 400,
+                "y": 104,
+                "color": "Brown",
+                "text": "ZOMBIES"
+            },
+            {
+                "x": 288,
+                "y": 152,
+                "color": "Brown",
+                "text": "ZOMBIE"
+            },
+            {
+                "x": 240,
+                "y": 176,
+                "color": "Brown",
+                "text": "DIAMONDS"
+            },
+            {
+                "x": 112,
+                "y": 200,
+                "color": "Brown",
+                "text": "DOORS                    KEYS"
+            },
+            {
+                "x": 304,
+                "y": 224,
+                "color": "Brown",
+                "text": "LOCK"
+            },
+            {
+                "x": 272,
+                "y": 272,
+                "color": "Brown",
+                "text": "EXIT KEY"
+            },
+            {
+                "x": 432,
+                "y": 296,
+                "color": "Brown",
+                "text": "EXIT"
+            },
+            {
+                "x": 208,
+                "y": 320,
+                "color": "Brown",
+                "text": "ZOMBIES"
+            },
+            {
+                "x": 304,
+                "y": 344,
+                "color": "Brown",
+                "text": "POTIONS     SHIELDS"
+            },
+            {
+                "x": 384,
+                "y": 368,
+                "color": "Brown",
+                "text": "ATTACK"
+            },
+            {
+                "x": 0,
+                "y": 392,
+                "color": "Brown",
+                "text": "ARMOR      HEALTH UPGRADES."
+            },
+            {
+                "x": 224,
+                "y": 416,
+                "color": "Brown",
+                "text": "FORTUNE HUNTER"
+            }
         ]
     },
     "second": {
         "nextPage": "third",
         "previousPage": "first",
         "labels": [
-            {"x":228,"y":4,"color":"Black","text":"==CONTROLS=="},
-            {"x":224,"y":0,"color":"Green","text":"==CONTROLS=="},
-
-            {"x":4,"y":36,"color":"Black","text":"<KEYBOARD>/(GamePad)"},
-            {"x":0,"y":32,"color":"Cyan","text":"<KEYBOARD>/(GamePad)"},
-
-            {"x":4,"y":68,"color":"Black","text":"<ARROWS>/(D-Pad)"},
-            {"x":0,"y":64,"color":"Cyan","text":"<ARROWS>/(D-Pad)"},
-
-            {"x":196,"y":84,"color":"Black","text":"Navigate/move"},
-            {"x":192,"y":80,"color":"Gray","text":"Navigate/move"},
-
-            {"x":4,"y":116,"color":"Black","text":"<ESC>/(Back)"},
-            {"x":0,"y":112,"color":"Cyan","text":"<ESC>/(Back)"},
-
-            {"x":196,"y":132,"color":"Black","text":"Go back"},
-            {"x":192,"y":128,"color":"Gray","text":"Go back"},
-
-            {"x":4,"y":164,"color":"Black","text":"<SPACE>/<ENTER>/(A)/(Start)"},
-            {"x":0,"y":160,"color":"Cyan","text":"<SPACE>/<ENTER>/(A)/(Start)"},
-
-            {"x":196,"y":180,"color":"Black","text":"Select menu item/Use Bomb"},
-            {"x":192,"y":176,"color":"Gray","text":"Select menu item/Use Bomb"}
+            {
+                "x": 224,
+                "y": 0,
+                "color": "Green",
+                "text": "==CONTROLS==",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 32,
+                "color": "Cyan",
+                "text": "<KEYBOARD>/(GamePad)",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 64,
+                "color": "Cyan",
+                "text": "<ARROWS>/(D-Pad)",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 192,
+                "y": 80,
+                "color": "Gray",
+                "text": "Navigate/move",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 112,
+                "color": "Cyan",
+                "text": "<ESC>/(Back)",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 192,
+                "y": 128,
+                "color": "Gray",
+                "text": "Go back",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 0,
+                "y": 160,
+                "color": "Cyan",
+                "text": "<SPACE>/<ENTER>/(A)/(Start)",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            },
+            {
+                "x": 192,
+                "y": 176,
+                "color": "Gray",
+                "text": "Select menu item/Use Bomb",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            }
         ]
     },
     "third": {
         "nextPage": "first",
         "previousPage": "second",
         "labels": [
-            {"x":180,"y":4,"color":"Black","text":"==HINTS AND TIPS=="},
-            {"x":176,"y":0,"color":"Green","text":"==HINTS AND TIPS=="}
+            {
+                "x": 176,
+                "y": 0,
+                "color": "Green",
+                "text": "==HINTS AND TIPS==",
+                "dropShadow": {
+                    "x": 4,
+                    "y": 4,
+                    "color": "Black"
+                }
+            }
         ]
     }
 }
