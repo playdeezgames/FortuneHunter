@@ -13,9 +13,10 @@ const std::string PROPERTY_INITIAL_BOMBS = "initialBombs";
 const std::string PROPERTY_BOMB_DAMAGE = "bombDamage";
 const std::string PROPERTY_AWARDS = "awards";
 const std::string PROPERTY_NAME = "name";
+const std::string PROPERTY_NEXT_DIFFICULTY = "nextDifficulty";
 
 
-HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
+HunterDescriptor::HunterDescriptor(const nlohmann::json& properties)
 	: maximumHealths()
 	, maximumAttacks()
 	, maximumArmors()
@@ -24,29 +25,30 @@ HunterDescriptor::HunterDescriptor(const nlohmann::json& j)
 	, damageSfx("")
 	, bombDamage(0)
 {
-	auto& maxHealths = j[PROPERTY_MAXIMUM_HEALTHS];
+	auto& maxHealths = properties[PROPERTY_MAXIMUM_HEALTHS];
 	for (auto& maxHealth : maxHealths)
 	{
 		maximumHealths.push_back(maxHealth);
 	}
-	auto& maxAttacks = j[PROPERTY_MAXIMUM_ATTACKS];
+	auto& maxAttacks = properties[PROPERTY_MAXIMUM_ATTACKS];
 	for (auto& maxAttack : maxAttacks)
 	{
 		maximumAttacks.push_back(maxAttack);
 	}
-	auto& maxArmors = j[PROPERTY_MAXIMUM_ARMOR];
+	auto& maxArmors = properties[PROPERTY_MAXIMUM_ARMOR];
 	for (auto& maxArmor : maxArmors)
 	{
 		maximumArmors.push_back(maxArmor);
 	}
-	deathSfx = j[PROPERTY_DEATH_SFX];
-	damageSfx = j[PROPERTY_DAMAGE_SFX];
-	bombSfx = j[PROPERTY_BOMB_SFX];
-	noBombSfx = j[PROPERTY_NO_BOMB_SFX];
-	initialBombs = j[PROPERTY_INITIAL_BOMBS];
-	bombDamage = j[PROPERTY_BOMB_DAMAGE];
-	name = j[PROPERTY_NAME];
-	auto awardItems = j[PROPERTY_AWARDS];
+	deathSfx = properties[PROPERTY_DEATH_SFX];
+	damageSfx = properties[PROPERTY_DAMAGE_SFX];
+	bombSfx = properties[PROPERTY_BOMB_SFX];
+	noBombSfx = properties[PROPERTY_NO_BOMB_SFX];
+	initialBombs = properties[PROPERTY_INITIAL_BOMBS];
+	bombDamage = properties[PROPERTY_BOMB_DAMAGE];
+	nextDifficulty = properties[PROPERTY_NEXT_DIFFICULTY];
+	name = properties[PROPERTY_NAME];
+	auto awardItems = properties[PROPERTY_AWARDS];
 	for (auto& item : awardItems.items())
 	{
 		HunterAward id = (HunterAward)tggd::common::Utility::StringToInt(item.key());
@@ -118,4 +120,9 @@ int HunterDescriptor::GetAward(HunterAward award) const
 const std::string& HunterDescriptor::GetName() const
 {
 	return name;
+}
+
+int HunterDescriptor::GetNextDifficulty() const
+{
+	return nextDifficulty;
 }

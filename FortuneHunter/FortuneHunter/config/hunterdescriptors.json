@@ -1,5 +1,6 @@
 {
     "0": {
+        "nextDifficulty" : 1,
         "name": "Easy Difficulty",
         "maximumHealths": [
             25,
@@ -33,6 +34,7 @@
         }
     },
     "1": {
+        "nextDifficulty" : 2,
         "name": "Normal Difficulty",
         "maximumHealths": [
             20,
@@ -66,6 +68,7 @@
         }
     },
     "2": {
+        "nextDifficulty" : 0,
         "name": "Hard Difficulty",
         "maximumHealths": [
             15,

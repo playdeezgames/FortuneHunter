@@ -18,6 +18,7 @@ private:
 	std::string name;
 	int bombDamage;
 	std::map<HunterAward, int> awards;
+	int nextDifficulty;
 public:
 	HunterDescriptor(const nlohmann::json&);
 	int GetMaximumHealth(size_t) const;
@@ -31,5 +32,6 @@ public:
 	int GetBombDamage() const;
 	int GetAward(HunterAward) const;
 	const std::string& GetName() const;
+	int GetNextDifficulty() const;
 };
 

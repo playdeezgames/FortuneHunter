@@ -20,11 +20,13 @@ MainMenuCommandProcessor::MainMenuCommandProcessor
 	(
 		UIState& uiState, 
 		MainMenuState& mainMenuState,
-		GameData& gameData
+		GameData& gameData, 
+		Options& options
 	)
 	: BaseCommandProcessor(uiState)
 	, mainMenuState(mainMenuState)
 	, gameData(gameData)
+	, options(options)
 {
 
 }
@@ -35,6 +37,10 @@ void MainMenuCommandProcessor::DoMenuItemAction()
 	{
 	case MainMenuState::QUIT:
 		SetUIState(UIState::CONFIRM_QUIT);
+		return;
+	case MainMenuState::DIFFICULTY:
+		gameData.NextDifficulty();
+		options.Save();
 		return;
 	case MainMenuState::START:
 		if (!gameData.CanContinue())

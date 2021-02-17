@@ -59,4 +59,5 @@ public:
 	int GetScore() const;
 	void SetDifficulty(int);
 	int GetDifficulty() const;
+	void NextDifficulty();
 };

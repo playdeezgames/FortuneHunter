@@ -1,3 +1,5 @@
+Oddities:
+    ☐ i can start a game with a particular difficulty and go to the main menu and change the difficulty but it doesnt change the current game
 Placeholder Screens:
     ✔ statistics screen @done(21-02-13 06:21)
     ✔ final scoring? @done(21-02-13 06:21)
@@ -6,17 +8,17 @@ Finalize Screens:
     ☐ about
     ☐ instructions @started(21-02-15 05:54)
         ✔ help page manager @done(21-02-16 03:38)
-        ☐ first page (goals)
-          ☐ move everything up by 32px
-          ☐ highlight ALL CAPS words
-        ☐ second page (controls)
-          ☐ content
+        ✔ first page (goals) @done(21-02-17 04:51)
+          ✔ move everything up by 32px @done(21-02-17 04:51)
+          ✔ highlight ALL CAPS words @done(21-02-17 04:51)
+        ✔ second page (controls) @done(21-02-17 04:51)
+          ✔ content @done(21-02-17 04:51)
         ☐ third page (tips)
           ☐ content
     ☐ status panel
     ☐ statistics
     ☐ final scoring?
-    ☐ select difficulty level
+    ✔ select difficulty level @done(21-02-17 04:51)
         main menu
     ✔ options @done(21-02-14 06:31)
 Game Balance:

@@ -333,3 +333,8 @@ int GameData::GetDifficulty() const
 {
 	return difficulty;
 }
+
+void GameData::NextDifficulty()
+{
+	difficulty = hunterDescriptors.GetDescriptor(difficulty)->GetNextDifficulty();
+}
