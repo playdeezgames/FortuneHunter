@@ -218,6 +218,7 @@ void FortuneHunterApplication::Start()
 	AddRenderers();
 	statistics.Load();
 	helpPages.Start(Constants::Config::Files::HELP_PAGES);
+	soundManager.PlayMusic("song");
 }
 
 void FortuneHunterApplication::Finish()
