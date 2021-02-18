@@ -17,19 +17,28 @@ ConfirmQuitRenderer::ConfirmQuitRenderer
 void ConfirmQuitRenderer::Draw() const
 {
 	BaseMenuRenderer::Draw();
-	GetFont().WriteText(GetRenderer(), tggd::common::XY<int>(0, 0), Constants::UI::ConfirmQuit::TITLE, Constants::Color::RED);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(324, 124), Constants::UI::ConfirmQuit::TITLE, Constants::Color::BLACK);
+	GetFont().WriteTextCentered(GetRenderer(), tggd::common::XY<int>(320, 120), Constants::UI::ConfirmQuit::TITLE, Constants::Color::RED);
 	DrawConfirmItem(0, Constants::UI::ConfirmQuit::OPTION_NO, ConfirmState::NO);
 	DrawConfirmItem(1, Constants::UI::ConfirmQuit::OPTION_YES, ConfirmState::YES);
 }
 
 void ConfirmQuitRenderer::DrawConfirmItem(int line, const std::string& text, const ConfirmState& state) const
 {
-	GetFont().WriteText
+	GetFont().WriteTextCentered
 	(
 		GetRenderer(),
-		tggd::common::XY<int>(0,
+		tggd::common::XY<int>(324,
+			Constants::UI::ConfirmQuit::OFFSET_Y + Constants::UI::ConfirmQuit::LINE_HEIGHT * line + 4),
+		text,
+		Constants::Color::BLACK
+	);
+	GetFont().WriteTextCentered
+	(
+		GetRenderer(),
+		tggd::common::XY<int>(320,
 		Constants::UI::ConfirmQuit::OFFSET_Y + Constants::UI::ConfirmQuit::LINE_HEIGHT * line),
 		text,
-		(confirmState == state) ? (Constants::Color::LIGHT_BLUE) : (Constants::Color::GRAY)
+		(confirmState == state) ? (Constants::Color::YELLOW) : (Constants::Color::GRAY)
 	);
 }
