@@ -1,9 +1,7 @@
 Finalize Screens:
-    ✔ about @done(21-02-17 05:35)
-    ☐ instructions @started(21-02-15 05:54)
-        ☐ third page (tips)
-          ✔ content @done(21-02-17 05:51)
-          ☐ hilighting
+    ✔ instructions @started(21-02-15 05:54) @done(21-02-18 04:25) @lasted(2d22h31m49s)
+        ✔ third page (tips) @done(21-02-18 04:25)
+          ✔ hilighting @done(21-02-18 04:25)
     ☐ status panel
     ☐ statistics
     ☐ final scoring
@@ -11,6 +9,8 @@ Audio:
     ☐ music!
 
 Archive:
+  ✔ about @done(21-02-17 05:35) @project(Finalize Screens)
+  ✔ content @done(21-02-17 05:51) @project(Finalize Screens)
   ✔ i can start a game with a particular difficulty and go to the main menu and change the difficulty but it doesnt change the current game @done(21-02-17 04:53) @project(Oddities)
   ✔ statistics screen @done(21-02-13 06:21) @project(Placeholder Screens)
   ✔ final scoring? @done(21-02-13 06:21) @project(Placeholder Screens)

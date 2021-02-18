@@ -430,6 +430,12 @@
                 }
             },
             {
+                "x": 384,
+                "y": 64,
+                "color": "Brown",
+                "text": "POTION"
+            },
+            {
                 "x": 0,
                 "y": 80,
                 "color": "Gray",
@@ -452,6 +458,12 @@
                 }
             },
             {
+                "x": 80,
+                "y": 96,
+                "color": "Brown",
+                "text": "SHIELD       ARMOR"
+            },
+            {
                 "x": 0,
                 "y": 112,
                 "color": "Gray",
@@ -461,6 +473,12 @@
                     "y": 4,
                     "color": "Black"
                 }
+            },
+            {
+                "x": 192,
+                "y": 112,
+                "color": "Brown",
+                "text": "POTION"
             },
             {
                 "x": 0,
@@ -474,6 +492,12 @@
                 }
             },
             {
+                "x": 256,
+                "y": 128,
+                "color": "Brown",
+                "text": "HEALTH"
+            },
+            {
                 "x": 0,
                 "y": 144,
                 "color": "Gray",
@@ -483,6 +507,12 @@
                     "y": 4,
                     "color": "Black"
                 }
+            },
+            {
+                "x": 80,
+                "y": 144,
+                "color": "Brown",
+                "text": "ARMOR"
             },
             {
                 "x": 0,
@@ -518,6 +548,12 @@
                 }
             },
             {
+                "x": 64,
+                "y": 192,
+                "color": "Brown",
+                "text": "POTION    SHIELD."
+            },
+            {
                 "x": 0,
                 "y": 224,
                 "color": "Gray",
@@ -538,6 +574,12 @@
                     "y": 4,
                     "color": "Black"
                 }
+            },
+            {
+                "x": 304,
+                "y": 240,
+                "color": "Brown",
+                "text": "ZOMBIE"
             },
             {
                 "x": 0,
@@ -562,6 +604,12 @@
                 }
             },
             {
+                "x": 464,
+                "y": 272,
+                "color": "Brown",
+                "text": "ZOMBIES"
+            },
+            {
                 "x": 0,
                 "y": 288,
                 "color": "Gray",
@@ -571,6 +619,12 @@
                     "y": 4,
                     "color": "Black"
                 }
+            },
+            {
+                "x": 352,
+                "y": 288,
+                "color": "Brown",
+                "text": "ARMOR     HEALTH "
             },
             {
                 "x": 0,
@@ -606,6 +660,12 @@
                 }
             },
             {
+                "x": 48,
+                "y": 352,
+                "color": "Brown",
+                "text": "BOMBS"
+            },
+            {
                 "x": 0,
                 "y": 368,
                 "color": "Gray",
@@ -617,21 +677,16 @@
                 }
             },
             {
+                "x": 32,
+                "y": 368,
+                "color": "Brown",
+                "text": "BOMB"
+            },
+            {
                 "x": 0,
                 "y": 384,
                 "color": "Gray",
                 "text": "you. Use them sparingly!",
-                "dropShadow": {
-                    "x": 4,
-                    "y": 4,
-                    "color": "Black"
-                }
-            },
-            {
-                "x": 0,
-                "y": 400,
-                "color": "Gray",
-                "text": "",
                 "dropShadow": {
                     "x": 4,
                     "y": 4,
