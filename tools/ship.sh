@@ -3,7 +3,7 @@
 # anything. Usage: tools/ship.sh [--push]
 set -euo pipefail
 cd "$(dirname "$0")/.."
-# The itch.io page's slug is a guess until the user creates the page: change it here if the page is called something else.
+# The page: https://thegrumpygamedev.itch.io/fortune-hunter-of-splorr
 TARGET="thegrumpygamedev/fortune-hunter-of-splorr:html"
 ZIP="build/fortune-hunter-html5.zip"
 

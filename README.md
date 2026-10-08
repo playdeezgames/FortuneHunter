@@ -5,6 +5,10 @@ A small maze crawler by TheGrumpyGameDev. Explore a dark labyrinth, fight zombie
 
 The game was written in C++ with SDL2 in early 2021 and rewritten in Odin for the browser in October 2026.
 
+## Credits
+
+Code, art and sound effects by TheGrumpyGameDev. The 2026 Odin port was written with Claude Code.
+
 ## Layout
 
 - `odin/` is the game: Odin, compiled to `js_wasm32`. `odin/game` is the portable core (rules, level generator, screens, software renderer, save format); `odin/platform/web` only shows its 640 by 480 frame, plays its sound effects, and passes keyboard, gamepad and touch input in.
