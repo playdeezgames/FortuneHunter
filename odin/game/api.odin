@@ -32,7 +32,6 @@ Step_Output :: struct {
 	quit_requested: bool,
 	sounds:         []Sound_Id, // effects to play this step (empty while muted); valid until the next step
 	sfx_volume:     int,        // 0 to 128
-	clipboard:      string,     // text to copy to the clipboard this step, if not empty
 }
 
 // Platform functions the core calls synchronously. Supplied once to core_init so the core has no platform imports

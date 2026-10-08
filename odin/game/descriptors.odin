@@ -44,7 +44,7 @@ Hunter_Descriptor :: struct {
 	name:            string,
 	next_difficulty: Difficulty,
 	max_healths:     [LEVELS]int,
-	max_attacks:     [LEVELS]int, // a hit rolls 1 to max - 1 (see docs/QUIRKS.md)
+	max_attacks:     [LEVELS]int, // a hit rolls 1 to max
 	max_armors:      [LEVELS]int,
 	initial_bombs:   int,
 	bomb_damage:     int,

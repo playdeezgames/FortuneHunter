@@ -39,8 +39,14 @@ The user dropped music completely for now. Removed: the song file and its load, 
 - Itch page: https://thegrumpygamedev.itch.io/fortune-hunter-of-splorr (slug confirmed).
 - Credits: art, sound effects and code are the author's own; the page says so.
 - The page text discloses that the Odin port was written with Claude Code.
+- Quirk decisions are in `docs/QUIRKS.md`: attack rolls 1..N, armor-absorbed hits keep the original hurt sound (a dedicated armor sound is a TODO), health bar never empty while alive, About shows a QR code instead of copying a link, Options opens on Mute, creature outlines made transparent; all other quirks kept.
+- Canvas fills the window (fractional scales are drawn from a whole-number enlargement so pixels stay crisp; `?filter=nearest` forces plain nearest-neighbour).
 - The C++ source stays until the port has shipped and been played.
 - Not shipping yet: the user inspects the look first; push only when told.
 
+## Notes for a possible Steam version
+- Steam does not allow linking to anything but the game's Steam page. The About screen's itch.io link and QR code (and any other external link) must be removed or replaced with the Steam page before a Steam release. Also drop the Quit-on-web workaround (a native build can really quit).
+
 ## Open items
+- TODO (user): a sound effect for armor absorbing a hit (see docs/QUIRKS.md item 3). Until then absorbed hits play the hurt sound, as in the original.
 - Read `GameData.cpp`, `RoomGenerator.cpp` and `HelpPage*.cpp` closely at milestone 3/4 and log quirks.

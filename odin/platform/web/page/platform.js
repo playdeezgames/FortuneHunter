@@ -52,18 +52,49 @@
 	const unlockAudio = () => audio.unlock();
 	addEventListener("pointerdown", unlockAudio);
 
-	// ---- layout: the largest whole multiple of the frame that fits, else a smooth fit; centred on black ----------
+	// ---- layout and drawing -------------------------------------------------------------------------------
+	// The picture is as large as fits the window in one direction, centred, with black bars on the other sides.
+	// The visible canvas has exactly the device pixels of that area, so nothing is stretched by CSS. On a whole-number
+	// scale every game pixel is a crisp square. Otherwise the frame is first enlarged to the next whole multiple with
+	// nearest-neighbour (so no pixel is ever smeared) and then shrunk once with smoothing to fit.
 	const canvas = document.getElementById("screen"), ctx = canvas.getContext("2d");
-	let laidOutFor = "";
+	const frameCanvas = document.createElement("canvas"); // the core's 640x480 frame, unscaled
+	frameCanvas.width = FRAME_W; frameCanvas.height = FRAME_H;
+	const frameCtx = frameCanvas.getContext("2d");
+	const upCanvas = document.createElement("canvas");    // the frame enlarged by a whole number
+	const upCtx = upCanvas.getContext("2d");
+	let laidOutFor = "", targetW = FRAME_W, targetH = FRAME_H;
+
+	function present() {
+		const k = Math.ceil(targetW / FRAME_W);
+		if (targetW === k * FRAME_W || params.get("filter") === "nearest") { // ?filter=nearest: always nearest-neighbour (sharp, uneven pixels at odd scales) // a whole-number scale: straight nearest-neighbour
+			ctx.imageSmoothingEnabled = false;
+			ctx.drawImage(frameCanvas, 0, 0, targetW, targetH);
+			return;
+		}
+		if (upCanvas.width !== k * FRAME_W || upCanvas.height !== k * FRAME_H) { upCanvas.width = k * FRAME_W; upCanvas.height = k * FRAME_H; }
+		upCtx.imageSmoothingEnabled = false;
+		upCtx.drawImage(frameCanvas, 0, 0, upCanvas.width, upCanvas.height);
+		ctx.imageSmoothingEnabled = true;
+		ctx.imageSmoothingQuality = "high";
+		ctx.drawImage(upCanvas, 0, 0, targetW, targetH);
+	}
+
 	function layout() {
 		const w = innerWidth, h = innerHeight;
-		laidOutFor = w + "x" + h;
+		laidOutFor = w + "x" + h + "@" + devicePixelRatio;
 		if (w === 0 || h === 0) return;
-		let scale = Math.min(w / FRAME_W, h / FRAME_H);
-		if (scale >= 1) scale = Math.floor(scale);
-		const cw = Math.floor(FRAME_W * scale), ch = Math.floor(FRAME_H * scale);
-		canvas.style.width = cw + "px"; canvas.style.height = ch + "px";
-		canvas.style.left = Math.floor((w - cw) / 2) + "px"; canvas.style.top = Math.floor((h - ch) / 2) + "px";
+		const dpr = devicePixelRatio || 1;
+		let scale = Math.min(w / FRAME_W, h / FRAME_H) * dpr; // device pixels per game pixel
+		const whole = Math.round(scale);
+		if (whole >= 1 && scale >= whole && (scale - whole) / whole < 0.03) scale = whole; // just over: drop to the whole number
+		targetW = Math.max(1, Math.floor(FRAME_W * scale));
+		targetH = Math.max(1, Math.round(targetW * FRAME_H / FRAME_W));
+		canvas.width = targetW; canvas.height = targetH; // resizing clears it
+		const cssW = targetW / dpr, cssH = targetH / dpr;
+		canvas.style.width = cssW + "px"; canvas.style.height = cssH + "px";
+		canvas.style.left = Math.max(0, Math.floor((w - cssW) / 2)) + "px"; canvas.style.top = Math.max(0, Math.floor((h - cssH) / 2)) + "px";
+		present();
 	}
 	addEventListener("resize", layout); layout();
 
@@ -88,20 +119,16 @@
 	// ---- the frame loop ---------------------------------------------------------------------------------
 	let prev = performance.now();
 	function frame(now) {
-		if (laidOutFor !== innerWidth + "x" + innerHeight) layout(); // a pane that was hidden at load reports 0 by 0
+		if (laidOutFor !== innerWidth + "x" + innerHeight + "@" + devicePixelRatio) layout(); // a pane that was hidden at load reports 0 by 0
 		gamepads.poll();
 		if (scriptedKeys.length > 0) send(scriptedKeys.shift());
 		exports.platform_frame(Math.min((now - prev) / 1000, 0.25), Date.now()); prev = now;
 		const ptr = exports.platform_frame_ptr();
 		if (ptr && exports.platform_frame_changed()) {
-			ctx.putImageData(new ImageData(new Uint8ClampedArray(mem.memory.buffer, ptr, FRAME_W * FRAME_H * 4), FRAME_W, FRAME_H), 0, 0);
+			frameCtx.putImageData(new ImageData(new Uint8ClampedArray(mem.memory.buffer, ptr, FRAME_W * FRAME_H * 4), FRAME_W, FRAME_H), 0, 0);
+			present();
 		}
 		audio.update();
-		const clipLen = exports.platform_clipboard_len();
-		if (clipLen > 0) { // the About screen copies the author's page, as the original did
-			const text = mem.loadString(exports.platform_clipboard_ptr(), clipLen);
-			if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
-		}
 		if (exports.platform_quit()) { // "Yes" on the quit screen: a page cannot close itself, so say goodbye
 			document.body.insertAdjacentHTML("beforeend", '<div id="bye">Thanks for playing Fortune Hunter!<br>Reload the page to play again.</div>');
 			return;

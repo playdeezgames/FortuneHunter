@@ -140,6 +140,8 @@ traps_wound_by_one_and_armor_soaks_it :: proc(t: ^testing.T) {
 	testing.expect_value(t, g.hunter.wounds, 1)
 	testing.expect_value(t, g.hunter.armor, 2)
 	testing.expect(t, g.hunter.hit, "armor soaking the damage still counts as a hit")
+	s = sounds(g)
+	testing.expect(t, len(s) == 2 && s[0] == .Trap && s[1] == .Hit_Hunter, "so the hurt sound plays")
 }
 
 @(test)
@@ -175,7 +177,7 @@ attacking_a_zombie_takes_several_hits_then_it_drops_its_item :: proc(t: ^testing
 		hits += 1
 		testing.expect_value(t, g.hunter.column, 10) // attacking never moves him
 	}
-	testing.expect(t, hits >= 4 && hits <= 10, "10 health, 1 to 5 damage per hit on easy")
+	testing.expect(t, hits >= 2 && hits <= 10, "10 health, 1 to 6 damage per hit on easy")
 	testing.expect_value(t, at(g, 11, 10).object.kind, game.Object_Kind.Item)
 	testing.expect_value(t, at(g, 11, 10).object.item, game.Item_Type.Diamond)
 	game.move_hunter(g, .East)
@@ -292,18 +294,18 @@ difficulty_cycles_easy_normal_hard :: proc(t: ^testing.T) {
 }
 
 @(test)
-attack_rolls_run_from_one_to_one_below_the_maximum :: proc(t: ^testing.T) {
+attack_rolls_run_from_one_to_the_maximum :: proc(t: ^testing.T) {
 	g := arena()
 	defer free(g)
-	g.difficulty = .Normal // max attack 4: rolls 1 to 3
+	g.difficulty = .Normal // max attack 4: rolls 1 to 4
 	seen: [8]int
-	for _ in 0 ..< 3000 { seen[game.attack_strength(g)] += 1 }
-	testing.expect(t, seen[0] == 0 && seen[4] == 0, "never 0, never the maximum")
-	testing.expect(t, seen[1] > 500 && seen[2] > 500 && seen[3] > 500)
+	for _ in 0 ..< 4000 { seen[game.attack_strength(g)] += 1 }
+	testing.expect(t, seen[0] == 0 && seen[5] == 0, "never 0, never above the maximum")
+	testing.expect(t, seen[1] > 700 && seen[2] > 700 && seen[3] > 700 && seen[4] > 700)
 }
 
 @(test)
-creature_health_level_is_tenths_of_health_rounded_down :: proc(t: ^testing.T) {
+creature_health_level_is_tenths_of_health_never_zero_while_alive :: proc(t: ^testing.T) {
 	z := zombie()
 	testing.expect_value(t, game.creature_health_level(z), 10)
 	z.wounds = 1; testing.expect_value(t, game.creature_health_level(z), 9)
@@ -312,7 +314,9 @@ creature_health_level_is_tenths_of_health_rounded_down :: proc(t: ^testing.T) {
 	m := game.Object{kind = .Creature, creature = .Miniboss, wounds = 1}
 	testing.expect_value(t, game.creature_health_level(m), 9) // 19 * 10 / 20
 	m.wounds = 19
-	testing.expect_value(t, game.creature_health_level(m), 0) // 1 * 10 / 20: the bar is empty with one hit point left
+	testing.expect_value(t, game.creature_health_level(m), 1) // 1 * 10 / 20 is 0, but a living creature shows a tenth
+	m.wounds = 20
+	testing.expect_value(t, game.creature_health_level(m), 0)
 }
 
 @(test)

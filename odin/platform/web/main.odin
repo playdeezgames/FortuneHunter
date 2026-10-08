@@ -55,10 +55,6 @@ main :: proc() {
 @(export) platform_frame_changed :: proc "c" () -> bool { return out.frame_changed }
 @(export) platform_quit :: proc "c" () -> bool { return out.quit_requested }
 
-// Text the core wants copied to the clipboard this step (empty most steps).
-@(export) platform_clipboard_ptr :: proc "c" () -> rawptr { return raw_data(out.clipboard) }
-@(export) platform_clipboard_len :: proc "c" () -> i32 { return i32(len(out.clipboard)) }
-
 // Sound for the page's Web Audio shim: this step's effects (ids of game.Sound_Id; 0 is never sent) and the effects
 // volume (0 to 128, SDL_mixer's range).
 @(export) platform_sounds_ptr :: proc "c" () -> rawptr { return raw_data(out.sounds) }

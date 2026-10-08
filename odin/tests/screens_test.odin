@@ -17,7 +17,7 @@ the_game_opens_on_the_main_menu_with_the_shipped_defaults :: proc(t: ^testing.T)
 	defer free_core(core)
 	testing.expect_value(t, core.ui.state, game.UI_State.Main_Menu)
 	testing.expect_value(t, core.ui.menu, game.Main_Menu_State.Start)
-	testing.expect_value(t, core.ui.options, game.Options_State.Back)
+	testing.expect_value(t, core.ui.options, game.Options_State.Toggle_Mute)
 	testing.expect_value(t, core.ui.confirm, game.Confirm_State.No)
 	testing.expect_value(t, core.game.difficulty, game.Difficulty.Normal)
 	testing.expect_value(t, core.options, game.Options{muted = false, sfx_volume = 64})
@@ -97,8 +97,8 @@ options_adjust_volumes_mute_and_persist :: proc(t: ^testing.T) {
 	testing.expect_value(t, core.ui.menu, game.Main_Menu_State.Options)
 	step(core, .Green)
 	testing.expect_value(t, core.ui.state, game.UI_State.Options)
-	testing.expect_value(t, core.ui.options, game.Options_State.Back)
-	step(core, .Up) // Sfx volume
+	testing.expect_value(t, core.ui.options, game.Options_State.Toggle_Mute)
+	step(core, .Down) // Sfx volume
 	testing.expect_value(t, core.ui.options, game.Options_State.Sfx_Volume)
 	for _ in 0 ..< 5 { step(core, .Left) }
 	testing.expect_value(t, core.options.sfx_volume, 0) // clamped
@@ -129,17 +129,43 @@ options_adjust_volumes_mute_and_persist :: proc(t: ^testing.T) {
 }
 
 @(test)
-about_copies_the_url_for_one_step :: proc(t: ^testing.T) {
+about_shows_the_link_and_returns :: proc(t: ^testing.T) {
 	core := menu_core(t)
 	defer free_core(core)
 	core.ui.menu = .About
-	out := step(core, .Green)
+	step(core, .Green)
 	testing.expect_value(t, core.ui.state, game.UI_State.About)
-	testing.expect_value(t, out.clipboard, "https://thegrumpygamedev.itch.io/")
-	out = step(core)
-	testing.expect_value(t, out.clipboard, "")
+	testing.expect_value(t, game.ABOUT_URL, "https://thegrumpygamedev.itch.io/")
 	step(core, .Back)
 	testing.expect_value(t, core.ui.state, game.UI_State.Main_Menu)
+}
+
+@(test)
+qr_code_has_the_fixed_patterns_and_is_drawn_with_a_quiet_zone :: proc(t: ^testing.T) {
+	rows := game.QR_ROWS
+	dark :: proc(rows: [game.QR_SIZE]u32, x, y: int) -> bool { return rows[y] >> uint(x) & 1 == 1 }
+	corners := [3][2]int{{0, 0}, {game.QR_SIZE - 7, 0}, {0, game.QR_SIZE - 7}} // not in the for header (see the vault's gotchas)
+	for corner in corners {
+		for dy in 0 ..< 7 {
+			for dx in 0 ..< 7 {
+				ring := max(abs(dx - 3), abs(dy - 3))
+				testing.expect_value(t, dark(rows, corner.x + dx, corner.y + dy), ring != 2)
+			}
+		}
+	}
+	for i in 8 ..< game.QR_SIZE - 8 { testing.expect_value(t, dark(rows, i, 6), i % 2 == 0); testing.expect_value(t, dark(rows, 6, i), i % 2 == 0) }
+	testing.expect(t, dark(rows, 8, game.QR_SIZE - 8), "the dark module")
+	frame := new(game.Frame)
+	defer free(frame)
+	canvas: game.Canvas
+	game.canvas_init(&canvas, frame)
+	game.draw_qr(&canvas, 320, 100, 3)
+	side := (game.QR_SIZE + 2 * game.QR_QUIET_ZONE) * 3
+	left := 320 - side / 2
+	testing.expect_value(t, frame[left + 100 * game.FRAME_WIDTH], game.rgba(255, 255, 255))
+	testing.expect_value(t, frame[(left + 4 * 3) + (100 + 4 * 3) * game.FRAME_WIDTH], game.rgba(0, 0, 0))
+	testing.expect_value(t, frame[(left + side - 1) + (100 + side - 1) * game.FRAME_WIDTH], game.rgba(255, 255, 255))
+	testing.expect_value(t, frame[(left - 1) + 100 * game.FRAME_WIDTH], u32(0)) // nothing outside the square
 }
 
 @(test)

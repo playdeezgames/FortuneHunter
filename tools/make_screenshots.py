@@ -13,6 +13,7 @@ scenes = {
     "3-playing": (11, walk),
     "4-options": (11, "up,up,green"),
     "5-statistics": (11, "down,down,down,green"),
+    "6-about": (11, "down,down,down,down,green"),
 }
 os.makedirs("assets/screenshots", exist_ok=True)
 for name, (seed, keys) in scenes.items():

@@ -6,7 +6,8 @@ package game
 import "core:fmt"
 
 MENU_TITLE :: "Welcome to Fortune Hunter!"
-ABOUT_URL :: "https://thegrumpygamedev.itch.io/"
+ABOUT_URL :: QR_URL // the text and the QR code on the About screen are the same link
+QR_SCALE :: 3 // screen pixels per QR module
 
 // ---- commands -------------------------------------------------------------------------------------------
 
@@ -81,10 +82,10 @@ main_menu_action :: proc(core: ^Core) {
 	case .Start:
 		if !can_continue(g) { start_game(g, rng_next(&core.seeder)) }
 		ui.state = .In_Play
-	case .Options: ui.state = .Options
-	case .About:
-		core.clipboard = ABOUT_URL
-		ui.state = .About
+	case .Options:
+		ui.state = .Options
+		ui.options = .Toggle_Mute // the screen always opens on its first item (the original opened on Main Menu)
+	case .About: ui.state = .About
 	case .Statistics: ui.state = .Statistics
 	case .Instructions: ui.state = .Instructions
 	}
@@ -228,9 +229,9 @@ draw_about :: proc(core: ^Core) {
 	canvas := &core.canvas
 	background(core, .Bg_About)
 	draw_text_shadowed(core, canvas, 320, 160, "==About Fortune Hunter==", .Light_Green, centered = true)
+	draw_qr(canvas, 320, 188, QR_SCALE)
 	draw_text_shadowed(core, canvas, 320, 320, "A Production of TheGrumpyGameDev", .Gray, centered = true)
 	draw_text_shadowed(core, canvas, 320, 336, ABOUT_URL, .Light_Blue, centered = true)
-	draw_text_shadowed(core, canvas, 320, 352, "(URL copied to clipboard!)", .Dark_Gray, centered = true)
 }
 
 @(private)

@@ -49,7 +49,7 @@ const command = (step) => { // same weights as parity_command in parity_test.odi
   }
   function assert(ok, message) { if (!ok) throw new Error(message); }
 
-  let frames = 2166136261, sounds = 2166136261, clipboard = 2166136261;
+  let frames = 2166136261, sounds = 2166136261;
   let now = 1790000000000;
   const W = 640, H = 480;
   for (let step = 0; step < STEPS; step++) {
@@ -63,13 +63,11 @@ const command = (step) => { // same weights as parity_command in parity_test.odi
     const n = ex.platform_sounds_len();
     if (n > 0) for (const id of new Uint8Array(mem.memory.buffer, ex.platform_sounds_ptr(), n)) sounds = fnv(sounds, id);
     sounds = fnv(sounds, n);
-    const clipLen = ex.platform_clipboard_len();
-    if (clipLen > 0) for (const b of new Uint8Array(mem.memory.buffer, ex.platform_clipboard_ptr(), clipLen)) clipboard = fnv(clipboard, b);
     frames = fnv(frames, (ex.platform_sfx_volume() + (ex.platform_quit() ? 1 << 16 : 0)) >>> 0);
   }
   let saved = 2166136261;
   for (const key of ["fh:options", "fh:statistics"]) for (const b of Buffer.from(store.get(key) || "")) saved = fnv(saved, b);
   const stats = JSON.parse(store.get("fh:statistics") || '{"gamesPlayed":0}');
-  fs.writeFileSync(process.argv[3], `frames=${frames} sounds=${sounds} clipboard=${clipboard} saved=${saved} games=${stats.gamesPlayed}\n`);
+  fs.writeFileSync(process.argv[3], `frames=${frames} sounds=${sounds} saved=${saved} games=${stats.gamesPlayed}\n`);
   console.log("wasm parity digest written");
 })().catch((e) => { console.error("FAILED:", e); process.exit(1); });

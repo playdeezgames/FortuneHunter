@@ -6,6 +6,9 @@ mkdir -p build
 fail=0
 step() { echo; echo "== $1"; }
 
+step "generated QR data is up to date and decodes (python)"
+python3 tools/gen/gen_qr.py --check && echo "ok" || { echo "FAIL: qr_data.odin"; fail=1; }
+
 step "native suite (odin test)"
 odin test odin/tests -collection:fh=odin -o:speed -out:build/tests_native -define:ODIN_TEST_THREADS=1 2>&1 | tee build/native_tests.log | grep -E "FAIL|passed|failed|Finished|error" || true
 grep -qE "All tests were successful|successful" build/native_tests.log || fail=1

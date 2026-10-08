@@ -14,6 +14,8 @@ The decisions for the port (software framebuffer, web only, JS-decoded PNGs, Web
 
 ## Standing rules (from the author's other repos)
 
+- **A possible Steam version must not link to anything except its own Steam page**: the About screen's itch.io URL and QR code would have to go (`docs/QUIRKS.md` item 14).
+
 - Never run `butler push`, `tools/ship.sh --push`, `shippit.sh --push` or `git push` unless the user says so in chat. Commit only when asked.
 - Do not `pkill -f` patterns that also match your own command line (it kills the shell); and do not start two `tools/test.sh` runs at once (they share `build/`).
 - Do not "fix" deliberate design; if behaviour of the C++ game looks odd, record it (a `docs/QUIRKS.md`) and ask before changing it.

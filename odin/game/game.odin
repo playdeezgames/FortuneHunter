@@ -12,7 +12,7 @@ Hunter :: struct {
 	diamonds:     int,
 	exit_key:     bool,
 	exited:       bool,
-	hit:          bool, // wounded by the last move (even if armor soaked it all)
+	hit:          bool, // struck by the last move (even if armor soaked it all)
 	bombs_used:   int,
 	health_level: int, // upgrades collected
 	attack_level: int,
@@ -70,13 +70,16 @@ can_continue :: proc(g: ^Game) -> bool { return g.has_hunter && is_alive(g) && !
 
 next_difficulty :: proc(g: ^Game) { g.difficulty = hunter_descriptor(g).next_difficulty }
 
-// A hit rolls 1 to max - 1 (the original's range is [1, max), so the status panel's "1d4" really deals 1 to 3).
+// A hit rolls 1 to max, as the status panel's "1dN" says. (The original rolled 1 to max - 1; the user chose to make
+// the label true. See docs/QUIRKS.md.)
 attack_strength :: proc(g: ^Game) -> int {
-	return rng_range(&g.rng, 1, max(max_attack(g), 2))
+	return rng_range(&g.rng, 1, max(max_attack(g), 1) + 1)
 }
 
 hunter_add_wounds :: proc(g: ^Game, amount: int) {
 	amount := amount
+	// As in the original, any strike counts as a hit, even one the armor absorbs completely, so the hurt sound plays
+	// (the user tried silent absorbed hits and reverted; a dedicated armor sound is a TODO, see docs/QUIRKS.md).
 	if amount > 0 { g.hunter.hit = true }
 	absorbed := min(g.hunter.armor, amount)
 	amount -= absorbed

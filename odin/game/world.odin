@@ -44,10 +44,13 @@ object_type_of :: proc(o: Object) -> Object_Type {
 	return .Hunter
 }
 
-// 1 to 10 for a creature's health bar, 0 when nothing is left (Creature::GetHealthLevel).
+// 1 to 10 for a creature's health bar, 0 when nothing is left. Rounded down as in Creature::GetHealthLevel, but a
+// creature that is still alive always shows at least one tenth (the original hid the bar of a miniboss on its last
+// hit point; user decision, see docs/QUIRKS.md).
 creature_health_level :: proc(o: Object) -> int {
 	creatures := CREATURE_DESCRIPTORS
 	health := creatures[o.creature].health
 	left := max(health - o.wounds, 0)
-	return left * 10 / health
+	if left > 0 { return max(left * 10 / health, 1) }
+	return 0
 }

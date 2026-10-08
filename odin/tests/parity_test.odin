@@ -4,7 +4,7 @@ package tests
 // The scripted game that tools/wasm_parity.js plays through the built wasm; both write the same digest and
 // tools/test.sh requires them to be equal. The wasm has a 32-bit int and its own allocator; the game must not notice.
 // The script presses every command (so every screen, a few full games, options and statistics get used), and the
-// digest covers every frame, every sound effect, every clipboard request, and the saved text.
+// digest covers every frame, every sound effect, and the saved text.
 
 import "core:fmt"
 import "core:os"
@@ -58,7 +58,7 @@ write_the_native_digest_for_the_wasm_parity_check :: proc(t: ^testing.T) {
 	steps := 6000
 	if text := os.get_env("PARITY_STEPS", context.temp_allocator); text != "" { if n, ok := strconv.parse_int(text); ok { steps = n } }
 	parity_lcg = 12345
-	frames, sounds, clipboard := u32(2166136261), u32(2166136261), u32(2166136261)
+	frames, sounds := u32(2166136261), u32(2166136261)
 	counts: [game.UI_State]int
 	now := f64(1_790_000_000_000)
 	for step in 0 ..< steps {
@@ -76,7 +76,6 @@ write_the_native_digest_for_the_wasm_parity_check :: proc(t: ^testing.T) {
 		}
 		for id in out.sounds { sounds = fnv_word(sounds, u32(id)) }
 		sounds = fnv_word(sounds, u32(len(out.sounds)))
-		for b in transmute([]u8)out.clipboard { clipboard = fnv_word(clipboard, u32(b)) }
 		frames = fnv_word(frames, u32(out.sfx_volume) + (1 << 16 if out.quit_requested else 0))
 		free_all(context.temp_allocator)
 	}
@@ -84,7 +83,7 @@ write_the_native_digest_for_the_wasm_parity_check :: proc(t: ^testing.T) {
 	for key in ([]string{game.OPTIONS_KEY, game.STATISTICS_KEY}) {
 		for b in transmute([]u8)stored(key) { saved = fnv_word(saved, u32(b)) }
 	}
-	line := fmt.tprintf("frames=%d sounds=%d clipboard=%d saved=%d games=%d\n", frames, sounds, clipboard, saved, core.stats.games_played)
+	line := fmt.tprintf("frames=%d sounds=%d saved=%d games=%d\n", frames, sounds, saved, core.stats.games_played)
 	testing.expect(t, os.write_entire_file("build/parity_native.txt", transmute([]byte)line) == nil)
 	// the script must actually have visited the screens, or the comparison proves little
 	for state in game.UI_State {
