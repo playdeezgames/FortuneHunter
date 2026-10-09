@@ -1,6 +1,6 @@
 # Fortune Hunter of SPLORR!! is back, and it runs in yer browser
 
-(Draft for the itch.io devlog. Written on October 8, 2026, the day of the rebuild, for posting when the browser build goes up on October 9. Written in the repo; the user posts it. Cut freely.)
+(Draft for the itch.io devlog. Written on October 8, 2026, the day of the rebuild, for posting when the browser build goes up on October 9. The section headed "What happened on October 8" describes that one day. Written in the repo; the user posts it. Cut freely.)
 
 Fortune Hunter is a little maze crawl I made on stream in early 2021: C++, SDL2, Visual Studio, Windows only. A dark labyrinth, a hundred zombies, locked doors, keys, diamonds, an exit you cannot use without an exit key. It never made it to a place where you could just click and play. Now it is.
 
@@ -8,7 +8,7 @@ Fortune Hunter is a little maze crawl I made on stream in early 2021: C++, SDL2,
 
 You are the hunter. The maze is 15 by 15 rooms drawn as 31 by 31 tiles, and you can only see what is near you. Walk into a zombie to hit it, walk into a lock to open it (you need a key, and the lock goes but you do not move, so you step again). Every dead end has a lock on it and a key somewhere else. The dead ends hold the diamonds, the exit key, the exit, and nine upgrades (attack, armor, health) each guarded by a miniboss. Bombs hurt everything in the light. Pick Easy, Normal or Hard, and see yer score at the end.
 
-## What happened today
+## What happened on October 8
 
 On October 8, 2026 I rebuilt it in Odin for the browser, in one sitting, working with Claude Code, an AI model. I want to be plain about the split. I decided what the game should be, what to keep and what to change, and I looked at it and played it. Claude wrote the Odin. It read the old C++ first, and we made a plan in seven pieces before anything was built: skeleton, drawing, rules, screens, sound, gamepad and touch, shipping.
 

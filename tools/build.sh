@@ -10,6 +10,8 @@ cp odin/platform/web/page/index.html odin/platform/web/page/platform.js odin/pla
 cp "$(odin root)/core/sys/wasm/js/odin.js" build/web/odin.js
 mkdir -p build/web/assets
 cp -r "$ASSETS/images" build/web/assets/
+rm -f build/web/assets/images/romfont8x8.png # unused by the port (the game draws text with font.png)
 mkdir -p build/web/assets/audio
 cp -r "$ASSETS/audio/sfx" build/web/assets/audio/ # the music is not shipped
+rm -f build/web/assets/audio/sfx/hit.wav # unused: no sound in sfx.json points at it
 echo "web build: build/web (serve with tools/serve.sh)"
