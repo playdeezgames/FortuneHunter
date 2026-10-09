@@ -35,6 +35,9 @@ Core API: `core_step(core, {dt, now_ms, events}, &out)`; `Services` (storage get
 ## Decision: no music (2026-10-08)
 The user dropped music completely for now. Removed: the song file and its load, the music on/off and music volume outputs, the "MUX Volume" option (the options screen now has Mute, SFX Volume and Main Menu), `muxVolume` in the saved options, and the Komiku licence question. The 4 MB OGG is not copied into the web build (it stays in the C++ folder). Muting now just means no effects are sent. To bring music back later, see git history before this change or `audio.js` in the milestone 5 notes below.
 
+## Shipped (2026-10-09)
+Uploaded to `thegrumpygamedev/fortune-hunter-of-splorr:html` with `tools/ship.sh --push` (build 2092311, version 1). The page settings, devlog post, QR scan and real-device checks are the user's.
+
 ## Decisions after milestone 7 (2026-10-08)
 - Itch page: https://thegrumpygamedev.itch.io/fortune-hunter-of-splorr (slug confirmed).
 - Credits: art, sound effects and code are the author's own; the page says so.
